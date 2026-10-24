@@ -1,12 +1,15 @@
 // Ask across meetings (PLAN.md P2-4, SPEC §2 stretch, §7 "budget" eval).
 // Retrieval first: keyword overlap picks candidate segments. Nothing relevant means the exact
 // sentinel without an LLM call. Otherwise one JSON LLM call answers only from those segments,
-// citing segment ids per claim; uncited or invalid claims are dropped.
+// citing segment ids per claim; lib/askFilter.ts then enforces citations, dedupe, no hedged
+// "commitments" and a 3-sentence cap in code.
 import { completeJSON } from "./llm";
 import { formatTimestamp } from "./time";
+import { filterClaims, MAX_CLAIMS, MAX_WORDS, NOT_FOUND, type RawClaim } from "./askFilter";
+import { stem, terms } from "./terms";
 import type { Meeting, Segment } from "./types";
 
-export const NOT_FOUND = "not found in meetings";
+export { NOT_FOUND };
 
 export interface AskCitation {
   meeting_id: string;
@@ -28,47 +31,11 @@ export interface AskResult {
 type Corpus = { meeting: Meeting; segments: Segment[] }[];
 
 export const MAX_QUESTION_CHARS = 300;
-const MAX_ANSWER_WORDS = 120;
 const MAX_CONTEXT_SEGMENTS = 40;
 const TOP_HITS = 12;
 const MAX_SEGMENT_CHARS = 600;
 
-// Function words and question scaffolding: they never decide relevance.
-const STOPWORDS = new Set(
-  (
-    "a an the and or but if then so of to in on at by for from with about into over under as is are was were be been being " +
-    "am do does did done doing have has had having will would shall should can could may might must " +
-    "i me my we us our you your he him his she her it its they them their this that these those there here " +
-    "what which who whom whose when where why how whats any anything some something all every each no not " +
-    "yes ok okay just also very really much many more most less least than too only own same other " +
-    "say said says tell told talk talked discuss discussed mention mentioned meeting meetings call calls " +
-    "anyone someone everyone get got let lets know think thing things one ones out up down off again"
-  ).split(" "),
-);
-
-/** Light suffix stemmer: enough to match budget/budgets, commit/committed, check/checking. */
-export function stem(word: string): string {
-  let w = word;
-  if (w.length > 4 && w.endsWith("ies")) w = `${w.slice(0, -3)}y`;
-  else if (w.length > 5 && w.endsWith("ing")) w = w.slice(0, -3);
-  else if (w.length > 4 && w.endsWith("ed")) w = w.slice(0, -2);
-  else if (w.length > 4 && w.endsWith("es") && /(ss|sh|ch|x|z)es$/.test(w)) w = w.slice(0, -2);
-  else if (w.length > 3 && w.endsWith("s") && !w.endsWith("ss")) w = w.slice(0, -1);
-  else if (w.length > 4 && w.endsWith("ly")) w = w.slice(0, -2);
-  // committ -> commit, plann -> plan
-  if (w.length > 4 && /([b-df-hj-np-tv-z])\1$/.test(w) && !/(ll|ss|zz)$/.test(w)) w = w.slice(0, -1);
-  return w;
-}
-
-/** Content terms of a text: lowercased, split on non-alphanumerics, stopwords removed, stemmed. */
-export function terms(text: string): string[] {
-  const out: string[] = [];
-  for (const raw of text.toLowerCase().replace(/['’]s\b/g, "").split(/[^\p{L}\p{N}]+/u)) {
-    if (raw.length < 2 || STOPWORDS.has(raw)) continue;
-    out.push(stem(raw));
-  }
-  return out;
-}
+export { stem, terms };
 
 export interface Candidate {
   meeting: Meeting;
@@ -133,22 +100,6 @@ function clip(text: string, max: number): string {
   return text.length <= max ? text : `${text.slice(0, max)}…`;
 }
 
-function limitWords(claims: AskClaim[], max: number): AskClaim[] {
-  const out: AskClaim[] = [];
-  let used = 0;
-  for (const c of claims) {
-    const words = c.text.split(/\s+/).filter(Boolean);
-    if (used + words.length > max) {
-      const room = max - used;
-      if (room >= 5) out.push({ ...c, text: `${words.slice(0, room).join(" ")}…` });
-      break;
-    }
-    out.push(c);
-    used += words.length;
-  }
-  return out;
-}
-
 const SYSTEM = `You answer questions about recorded meetings using ONLY the transcript lines given.
 Each line starts with its id in square brackets.
 Rules:
@@ -157,7 +108,9 @@ Rules:
 - Lines next to each other in the same meeting are consecutive: read them together as context.
 - If the lines discuss what the question asks about, answer with what they say about it (figures, limits, decisions, who said what), citing those lines, even when they answer only part of the question.
 - Set "found" to false and return no claims only when no line says anything about it. A line that uses the same word in an unrelated sense is not an answer.
-- At most 4 short claims, ${MAX_ANSWER_WORDS} words in total. Plain sentences, no markdown.
+- At most ${MAX_CLAIMS} short sentences, ${MAX_WORDS} words in total. Plain sentences, no markdown.
+- Never repeat a point: each claim says something the others do not. Cite every supporting line on that one claim instead.
+- A suggestion or idea ("we should probably", "maybe", "at some point", "it would be nice") is NOT a commitment, promise or action item. Only first-person agreement ("I'll", "I will", "sure", "by Thursday") is a commitment.
 Return JSON: {"found": true|false, "claims": [{"text": "one sentence", "citations": ["<line id>", ...]}]}`;
 
 /**
@@ -170,7 +123,6 @@ export async function ask(question: string, corpus: Corpus): Promise<AskResult> 
   const candidates = retrieve(q, corpus);
   if (candidates.length === 0) return notFound();
 
-  const byId = new Map(candidates.map((c) => [c.segment.id, c]));
   const lines = candidates.map(
     (c) =>
       `[${c.segment.id}] ${c.meeting.title} (${c.meeting.date}) · ${c.speaker} · ${formatTimestamp(c.segment.start_s)}: ${clip(c.segment.text, MAX_SEGMENT_CHARS)}`,
@@ -190,27 +142,14 @@ export async function ask(question: string, corpus: Corpus): Promise<AskResult> 
   })) as { found?: unknown; claims?: unknown };
 
   if (raw?.found === false || !Array.isArray(raw?.claims)) return notFound();
-  const claims: AskClaim[] = [];
+  const claims: RawClaim[] = [];
   for (const c of raw.claims as unknown[]) {
     const item = c as { text?: unknown; citations?: unknown };
     if (typeof item?.text !== "string" || !Array.isArray(item.citations)) continue;
-    const text = item.text.replace(/\s+/g, " ").trim();
-    if (!text || text.toLowerCase().includes(NOT_FOUND)) continue;
-    const ids = [...new Set(item.citations.filter((id): id is string => typeof id === "string" && byId.has(id)))];
-    if (ids.length === 0) continue; // uncited (or cited outside the given lines): drop the claim
-    claims.push({ text, citations: ids.map((id) => ({ meeting_id: byId.get(id)!.meeting.id, segment_id: id })) });
+    claims.push({ text: item.text, citations: item.citations.filter((id): id is string => typeof id === "string") });
   }
-  const kept = limitWords(claims, MAX_ANSWER_WORDS);
-  if (kept.length === 0) return notFound();
-
-  const seen = new Set<string>();
-  const citations: AskCitation[] = [];
-  for (const c of kept) {
-    for (const cit of c.citations) {
-      if (seen.has(cit.segment_id)) continue;
-      seen.add(cit.segment_id);
-      citations.push(cit);
-    }
-  }
-  return { answer: kept.map((c) => c.text).join(" "), citations, claims: kept };
+  const retrieved = new Map(
+    candidates.map((c) => [c.segment.id, { meeting_id: c.meeting.id, text: c.segment.text }]),
+  );
+  return filterClaims(q, claims, retrieved);
 }

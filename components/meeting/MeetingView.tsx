@@ -98,7 +98,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const mediaUrl = mediaFailed ? null : meeting.media_url;
   const isVideo = !!mediaUrl && VIDEO_EXT.test(mediaUrl);
 
-  const { time, playing, rate, duration: total, seek, play, toggle, cycleRate, attachMedia } = usePlayback(duration, initialTime);
+  const { time, playing, rate, duration: total, seek, play, toggle, cycleRate, attachMedia } = usePlayback(duration, initialTime, bundle.meeting.id);
 
   const [follow, setFollow] = useState(true);
   const [jumpKey, setJumpKey] = useState(0);
@@ -137,14 +137,9 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
     timeRef.current = time;
   }, [time]);
 
-  // `?t=` (search jump): the clock already starts at t and the transcript places that line on
-  // mount; also start playing. If the browser blocks autoplay, play() fails quietly and the
-  // page stays paused with the line in view.
-  useEffect(() => {
-    if (initialTime > 0) play();
-    // Once, on load.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // `?t=` (search jump, Ask chip): the clock starts at t and the transcript places that line on
+  // mount, paused. No autoplay: after an in-app click the browser would allow it, so the next
+  // meeting would start talking on its own (DECISIONS.md).
 
   /** One total for the top bar and the player (rule in DECISIONS.md). */
   const lengthShown = shownTotal(duration, total);
