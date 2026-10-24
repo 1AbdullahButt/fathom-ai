@@ -5,7 +5,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { MeetingBundle } from "@/lib/data";
 import type { ActionItem as ActionItemData, Highlight, Speaker } from "@/lib/types";
 import { sendEdit } from "@/lib/edits";
-import { formatTimestamp } from "@/lib/time";
+import { formatDuration, formatTimestamp, shownTotal } from "@/lib/time";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { usePlayback } from "@/lib/usePlayback";
 import { Avatar } from "@/components/ui/Avatar";
@@ -146,6 +146,8 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /** One total for the top bar and the player (rule in DECISIONS.md). */
+  const lengthShown = shownTotal(duration, total);
   const activeIndex = useMemo(() => activeAt(segments, time), [segments, time]);
   const active = activeIndex >= 0 ? segments[activeIndex] : undefined;
   // Before the first line starts, the stage shows the first speaker and line (no dark empty block).
@@ -364,7 +366,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
           <span className={styles.meta}>
             {formatMeetingDate(meeting.date)}
             <span aria-hidden="true">·</span>
-            <span className={styles.mono}>{formatTimestamp(duration)}</span>
+            <span className={styles.mono}>{formatDuration(lengthShown)}</span>
             <span aria-hidden="true">·</span>
             {speakers.length} {speakers.length === 1 ? "speaker" : "speakers"}
             {meeting.source === "upload" ? (
@@ -439,7 +441,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
             <PlayerControls
               playing={playing}
               current={time}
-              duration={total}
+              duration={lengthShown}
               onToggle={toggle}
               onSeek={seekOnly}
               rate={rate}

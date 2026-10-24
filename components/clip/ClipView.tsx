@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Clip, Meeting, Segment } from "@/lib/types";
-import { formatTimestamp } from "@/lib/time";
+import { formatDuration, formatTimestamp } from "@/lib/time";
 import { usePlayback } from "@/lib/usePlayback";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -94,7 +94,7 @@ export function ClipView({ clip, meeting, segments, meetingLength }: ClipViewPro
               Public clip
             </Badge>
             <Badge tone="outline" icon="clock" size="sm">
-              <span className={styles.mono}>{formatTimestamp(len)}</span>
+              <span className={styles.mono}>{formatDuration(len)}</span>
             </Badge>
           </div>
           <h1 className={styles.title}>{clip.title}</h1>
@@ -103,7 +103,7 @@ export function ClipView({ clip, meeting, segments, meetingLength }: ClipViewPro
             <span className={styles.mono}>
               {formatTimestamp(start)}–{formatTimestamp(end)}
             </span>{" "}
-            of <span className={styles.mono}>{formatTimestamp(meetingLength)}</span>
+            of <span className={styles.mono}>{formatDuration(meetingLength)}</span>
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { ProgressBar } from "@/components/ui/ProgressBar";
-import { formatTimestamp } from "@/lib/time";
+import { formatDuration } from "@/lib/time";
 import type { Meeting } from "@/lib/types";
 import styles from "./MeetingRow.module.css";
 
@@ -57,7 +57,7 @@ export function MeetingRow({ meeting, upload }: { meeting: Meeting; upload?: Row
           {duration_s > 0 ? (
             <>
               <span aria-hidden="true">·</span>
-              <span className={styles.duration}>{formatTimestamp(duration_s)}</span>
+              <span className={styles.duration}>{formatDuration(duration_s)}</span>
             </>
           ) : null}
           {/* Source badge only once ready, so "Uploaded" never sits next to "Uploading" (review-p0 §6). */}

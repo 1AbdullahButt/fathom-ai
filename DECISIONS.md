@@ -367,3 +367,10 @@ Format: what the reference (Fathom) does / what we do / why.
   "Saving…" and a reload or tab close asks first. If a seeded meeting's edit overlay (summary
   edits or action items) didn't load in time, the panel says "Edits couldn't load" instead of
   silently showing the AI text.
+- **One rule for every length shown: floor to the second (`formatDuration` in lib/time.ts).**
+  The meeting list row, the meeting top bar, the player total, the clip page and highlight cards
+  all floor. The meeting page shows the stored meeting length (or transcript end if longer) in both
+  the top bar and the player; the media file's own duration replaces it only when it is more than
+  1 s away (so Seattle reads 55:55 everywhere, not 55:54 in the player).
+- **Ask citation chips link to the cited line's exact start (`?t=1234.56`),** like search hits,
+  so the meeting opens with that line active instead of the one before it.
