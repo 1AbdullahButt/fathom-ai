@@ -114,6 +114,16 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 - [ ] P2-3 Inline edits marked human-written (summary points + action items), `components/meeting/HumanEdit.tsx`, persisted.
 - [ ] P2-4 Ask across meetings (minimal, needed by the locked "budget" eval): `lib/ask.ts`, answer only from cited segments, else "not found in meetings". Box on `/search`.
 
+### Security (human-requested; before the final QA)
+- [ ] SEC-1 Security pass, fixes + SECURITY.md (checked / fixed / known limits) + DECISIONS.md entry:
+  1. Scan repo, full git history and .agent-logs/ for secrets; rotate-and-redact anything found.
+  2. Confirm no Supabase service-role key exists in code/env/client bundles (we use only the
+     publishable key; check `.next/static` after build for any secret-looking strings).
+  3. Supabase security advisors; RLS on every table, least privilege for the public demo
+     (read seeded/public data; insert own uploads/highlights/clips; no updates or deletes of others' rows).
+  4. Uploads: audio/video MIME only, max size and duration, per-IP rate limit (verify server-side too).
+  5. No raw HTML rendering of transcript or model output (`dangerouslySetInnerHTML`, markdown-to-HTML).
+
 ### Stretch (only if everything above is green)
 - [ ] S-1 Themes across meetings (fixture: "Phone verification friction").
 - [ ] S-2 Browser recording (mic/tab) -> same upload pipeline.
