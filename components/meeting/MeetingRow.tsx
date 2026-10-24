@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { Avatar } from "@/components/ui/Avatar";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
+import { ProgressBar } from "@/components/ui/ProgressBar";
 import { formatTimestamp } from "@/lib/time";
 import type { Meeting } from "@/lib/types";
 import styles from "./MeetingRow.module.css";
@@ -22,16 +24,31 @@ function tileIcon(m: Meeting): string {
   return VIDEO_EXT.test(m.media_url) ? "video" : "audio-lines";
 }
 
-/** One meeting in the list. The whole row links to the meeting page. */
-export function MeetingRow({ meeting }: { meeting: Meeting }) {
-  const { id, title, date, duration_s, speakers, status, source } = meeting;
+export interface RowProgress {
+  stage: "uploading" | "transcribing" | "writing_notes" | "ready" | "error";
+  /** Upload progress 0–100 (uploading only). */
+  progress: number;
+  error: string | null;
+  onRetry?: () => void;
+}
+
+const STAGE_LABEL = { uploading: "Uploading", transcribing: "Transcribing", writing_notes: "Writing notes" } as const;
+
+/**
+ * One meeting in the list. A ready row is a link to the meeting page; processing and failed
+ * uploads are not clickable (design/screens.md §2) and show progress or the reason + Retry.
+ */
+export function MeetingRow({ meeting, upload }: { meeting: Meeting; upload?: RowProgress }) {
+  const { id, title, date, duration_s, speakers, source } = meeting;
+  const status = upload?.stage === "error" ? "error" : upload && upload.stage !== "ready" ? "processing" : meeting.status;
   const ready = status === "ready";
+  const stage = upload && upload.stage in STAGE_LABEL ? (upload.stage as keyof typeof STAGE_LABEL) : "transcribing";
   const shown = speakers.slice(0, MAX_AVATARS);
   const extra = speakers.length - shown.length;
-  return (
-    <Link href={`/m/${id}`} className={styles.row}>
+  const content = (
+    <>
       <span className={`${styles.tile} ${status === "error" ? styles.tileError : ""}`} aria-hidden="true">
-        <Icon name={tileIcon(meeting)} size={18} />
+        <Icon name={tileIcon({ ...meeting, status })} size={18} />
       </span>
       <span className={styles.body}>
         <span className={`${styles.title} ${ready ? "" : styles.titleMuted}`}>{title}</span>
@@ -52,7 +69,7 @@ export function MeetingRow({ meeting }: { meeting: Meeting }) {
               Sample
             </Badge>
           )}
-          {status === "processing" ? (
+          {status === "processing" && !upload ? (
             <Badge size="sm" tone="accent">
               Processing
             </Badge>
@@ -68,6 +85,29 @@ export function MeetingRow({ meeting }: { meeting: Meeting }) {
             </span>
           ) : null}
         </span>
+        {status === "processing" && upload ? (
+          <span className={styles.progress}>
+            <span className={styles.stage}>
+              {STAGE_LABEL[stage]}
+              {stage === "uploading" ? ` · ${Math.round(upload.progress)}%` : "…"}
+            </span>
+            <ProgressBar
+              value={upload.progress}
+              indeterminate={stage !== "uploading"}
+              label={`${STAGE_LABEL[stage]} ${title}`}
+            />
+          </span>
+        ) : null}
+        {status === "error" ? (
+          <span className={styles.failed}>
+            <span className={styles.reason}>{upload?.error ?? "We couldn’t process this recording."}</span>
+            {upload?.onRetry ? (
+              <Button variant="ghost" size="sm" icon="rotate-ccw" onClick={upload.onRetry}>
+                Retry
+              </Button>
+            ) : null}
+          </span>
+        ) : null}
       </span>
       {speakers.length ? (
         <span className={styles.stack} role="img" aria-label={`${speakers.length} ${speakers.length === 1 ? "speaker" : "speakers"}: ${speakers.map((s) => s.name).join(", ")}`}>
@@ -77,7 +117,16 @@ export function MeetingRow({ meeting }: { meeting: Meeting }) {
           {extra > 0 ? <span className={styles.more}>+{extra}</span> : null}
         </span>
       ) : null}
+    </>
+  );
+  return ready ? (
+    <Link href={`/m/${id}`} className={styles.row}>
+      {content}
     </Link>
+  ) : (
+    <div className={styles.row} aria-busy={status === "processing" || undefined}>
+      {content}
+    </div>
   );
 }
 
