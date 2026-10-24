@@ -1,0 +1,99 @@
+/* Sotto design tokens, ported from design/styles.css (same import order, minus tokens/fonts.css:
+   fonts come from next/font/google in app/layout.tsx, see design/FONTS.md). */
+
+/* ---- tokens/colors.css ---- */
+:root{
+/* Paper — warm neutrals (surfaces, lines) */
+--paper-0:#FFFFFF;--paper-50:#FBFAF7;--paper-100:#F5F3EE;--paper-150:#EFECE5;--paper-200:#E7E3DA;--paper-300:#D6D1C5;
+/* Ink — warm text greys */
+--ink-400:#9C978B;--ink-500:#6F6A5E;--ink-600:#57534A;--ink-700:#3D3A33;--ink-800:#2B2924;--ink-900:#1C1A17;
+/* Tide — the single brand accent (calm deep teal) */
+--tide-50:#ECF4F2;--tide-100:#D5E8E4;--tide-200:#ABD1C9;--tide-500:#2E7A70;--tide-600:#246760;--tide-700:#1C524C;
+/* Pencil — human-authored / edited text */
+--pencil-50:#EEF1F9;--pencil-100:#DCE2F2;--pencil-500:#3D5A9E;--pencil-700:#2D4479;
+/* Amber — low confidence / needs review */
+--amber-50:#FBF3E1;--amber-100:#F4E2BA;--amber-500:#B3761C;--amber-700:#86560F;
+/* Rust — errors, destructive, recording */
+--rust-50:#FBEDE9;--rust-100:#F4D3CA;--rust-500:#B4462F;--rust-700:#8C3221;
+/* Night — media player surfaces */
+--night-950:#111314;--night-900:#17191B;--night-800:#212427;--night-700:#2D3135;--night-500:#5B6167;--night-300:#A9AFB4;--night-100:#E8EAEB;
+/* Speakers — 8 calm, distinguishable hues (fg on paper ≥ 4.5:1) */
+--spk-1:#2E7A70;--spk-2:#3D5A9E;--spk-3:#8E4F84;--spk-4:#9A6614;--spk-5:#567226;--spk-6:#B0442E;--spk-7:#3F7593;--spk-8:#76593F;
+
+/* Semantic aliases */
+--surface-app:var(--paper-50);--surface-card:var(--paper-0);--surface-sunken:var(--paper-100);--surface-hover:var(--paper-150);--surface-selected:var(--tide-50);
+--surface-player:var(--night-900);--surface-player-raised:var(--night-800);
+--line-1:var(--paper-200);--line-2:var(--paper-300);--line-focus:var(--tide-500);
+--text-1:var(--ink-900);--text-2:var(--ink-600);--text-muted:var(--ink-500);--text-disabled:var(--ink-400);--text-on-accent:#FFFFFF;--text-on-player:var(--night-100);--text-on-player-muted:var(--night-300);
+--accent:var(--tide-500);--accent-hover:var(--tide-600);--accent-press:var(--tide-700);--accent-soft:var(--tide-50);--accent-soft-2:var(--tide-100);
+--human-text:var(--pencil-700);--human-soft:var(--pencil-50);--human-mark:var(--pencil-500);
+--warn-text:var(--amber-700);--warn-soft:var(--amber-50);--warn-mark:var(--amber-500);
+--danger-text:var(--rust-700);--danger-soft:var(--rust-50);--danger:var(--rust-500);--record:var(--rust-500);
+--playhead:var(--tide-500);--quote-bg:var(--paper-100);
+}
+
+
+/* ---- tokens/typography.css ---- */
+:root{
+--font-sans:var(--font-instrument-sans),"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+--font-serif:var(--font-newsreader),"Newsreader",Georgia,serif;
+--font-mono:var(--font-ibm-plex-mono),"IBM Plex Mono",ui-monospace,Menlo,monospace;
+--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-15:15px;--fs-16:16px;--fs-17:17px;--fs-20:20px;--fs-24:24px;--fs-30:30px;--fs-40:40px;
+--lh-tight:1.2;/* @kind font */--lh-snug:1.35;/* @kind font */--lh-body:1.55;/* @kind font */--lh-read:1.65;/* @kind font */
+--fw-regular:400;/* @kind font */--fw-medium:500;/* @kind font */--fw-semibold:600;/* @kind font */
+--tracking-caps:0.06em;/* @kind font */--tracking-tight:-0.01em;/* @kind font */
+/* Semantic */
+--type-display:var(--fw-regular) var(--fs-30)/var(--lh-tight) var(--font-serif);
+--type-title:var(--fw-semibold) var(--fs-20)/var(--lh-snug) var(--font-sans);
+--type-heading:var(--fw-semibold) var(--fs-15)/var(--lh-snug) var(--font-sans);
+--type-body:var(--fw-regular) var(--fs-14)/var(--lh-body) var(--font-sans);
+--type-read:var(--fw-regular) var(--fs-15)/var(--lh-read) var(--font-sans);
+--type-human:var(--fw-regular) var(--fs-16)/var(--lh-body) var(--font-serif);
+--type-label:var(--fw-medium) var(--fs-13)/var(--lh-snug) var(--font-sans);
+--type-caption:var(--fw-regular) var(--fs-12)/var(--lh-snug) var(--font-sans);
+--type-overline:var(--fw-semibold) var(--fs-11)/var(--lh-snug) var(--font-sans);
+--type-time:var(--fw-regular) var(--fs-12)/var(--lh-snug) var(--font-mono);
+}
+
+
+/* ---- tokens/spacing.css ---- */
+:root{
+--space-0:0;--space-1:2px;--space-2:4px;--space-3:6px;--space-4:8px;--space-5:12px;--space-6:16px;--space-7:20px;--space-8:24px;--space-9:32px;--space-10:40px;--space-11:56px;--space-12:72px;
+--control-sm:28px;--control-md:36px;--control-lg:44px;
+--sidebar-w:232px;--panel-w:420px;--content-max:1440px;--read-max:680px;
+}
+
+
+/* ---- tokens/radius.css ---- */
+:root{--radius-xs:4px;--radius-sm:6px;--radius-md:10px;--radius-lg:14px;--radius-xl:20px;--radius-pill:999px;}
+
+
+/* ---- tokens/shadows.css ---- */
+:root{
+--shadow-1:0 1px 2px rgba(28,26,23,.06);
+--shadow-2:0 1px 2px rgba(28,26,23,.05),0 4px 14px -6px rgba(28,26,23,.14);
+--shadow-3:0 2px 6px rgba(28,26,23,.06),0 18px 40px -12px rgba(28,26,23,.24);
+--ring-focus:0 0 0 2px var(--paper-0),0 0 0 4px var(--tide-200);
+}
+
+
+/* ---- tokens/motion.css ---- */
+:root{
+--ease-out:cubic-bezier(.2,.7,.2,1);/* @kind other */--ease-in-out:cubic-bezier(.45,0,.25,1);/* @kind other */
+--dur-1:120ms;/* @kind other */--dur-2:180ms;/* @kind other */--dur-3:260ms;/* @kind other */--dur-4:420ms;/* @kind other */
+}
+@keyframes sotto-spin{to{transform:rotate(360deg)}}
+@keyframes sotto-shimmer{0%{background-position:-240px 0}100%{background-position:240px 0}}
+@keyframes sotto-fade-up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes sotto-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){:root{--dur-1:0ms;/* @kind other */--dur-2:0ms;/* @kind other */--dur-3:0ms;/* @kind other */--dur-4:0ms;/* @kind other */}}
+
+
+/* ---- tokens/base.css ---- */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--surface-app);color:var(--text-1);font:var(--type-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline;text-underline-offset:2px}
+button{font:inherit;color:inherit}
+::selection{background:var(--tide-100)}
+:focus-visible{outline:2px solid var(--line-focus);outline-offset:2px;border-radius:var(--radius-xs)}
+
