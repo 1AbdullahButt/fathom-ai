@@ -91,7 +91,10 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 ## Tasks
 
 ### P0 (deploy after)
-- [ ] P0-1 Types + validator + time format: `lib/types.ts`, `lib/validate.ts`, `lib/time.ts`. Makes locked unit tests pass.
+- [ ] P0-1 Make `npm run check` green against the locked tests: `lib/types.ts`, `lib/validate.ts`,
+  `lib/time.ts`, `lib/search.ts` (pure, full), `components/meeting/{ActionItem,SummaryPoint,QuoteChip,NotStated,ConfidenceFlag}.tsx`
+  (functional, minimal styling; P0-6 styles them), and typed `lib/extract.ts` / `lib/ask.ts` with the
+  contract signatures that throw "not implemented" (only `npm run eval` calls them; filled in P0-6 / P2-4).
 - [ ] P0-2 Design foundation: port design/ tokens + styles to `app/globals.css`, fonts via next/font, `components/ui/*` primitives used by screens (Button, IconButton, Icon, Badge, Tabs, SegmentedControl, Spinner, Skeleton, StateBlock, ProgressBar, Dialog, Toast).
 - [ ] P0-3 Data layer + seed loader: `lib/data.ts` (memory + Supabase), `lib/seed.ts` reading `seed/meetings/*.json`; Supabase schema migration `supabase/migrations/0001_init.sql` with RLS.
 - [ ] P0-4 Meetings list `/`: seeded rows (title, date, duration, speakers), Upload + Record equal primary buttons (Record opens a "coming soon / no bot" dialog — stub).
