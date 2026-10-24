@@ -1,0 +1,1618 @@
+{
+  "meeting": {
+    "id": "ami-es2002a",
+    "title": "Remote control kickoff: Laura's team (AMI ES2002a)",
+    "date": "2005-01-10",
+    "duration_s": 1273,
+    "media_url": "/media/ami-es2002a.mp3",
+    "speakers": [
+      {
+        "id": "spk-A",
+        "name": "Andrew (marketing)"
+      },
+      {
+        "id": "spk-B",
+        "name": "Laura (project manager)"
+      },
+      {
+        "id": "spk-C",
+        "name": "David (industrial design)"
+      },
+      {
+        "id": "spk-D",
+        "name": "Greg (user interface)"
+      }
+    ],
+    "status": "ready",
+    "source": "seed"
+  },
+  "segments": [
+    {
+      "id": "ami-es2002a-s1",
+      "meeting_id": "ami-es2002a",
+      "start_s": 2.858,
+      "end_s": 7.642,
+      "speaker_id": "spk-A",
+      "text": "My gosh, you've already produced a PowerPoint presentation."
+    },
+    {
+      "id": "ami-es2002a-s2",
+      "meeting_id": "ami-es2002a",
+      "start_s": 8.077,
+      "end_s": 16.277,
+      "speaker_id": "spk-B",
+      "text": "I think it's already on, actually. God, how do I make this thing work?"
+    },
+    {
+      "id": "ami-es2002a-s3",
+      "meeting_id": "ami-es2002a",
+      "start_s": 26.03,
+      "end_s": 33.46,
+      "speaker_id": "spk-B",
+      "text": "Oh, you have to— have you done that?"
+    },
+    {
+      "id": "ami-es2002a-s4",
+      "meeting_id": "ami-es2002a",
+      "start_s": 33.557,
+      "end_s": 36.911,
+      "speaker_id": "spk-B",
+      "text": "I've plugged it in the back, but— Yeah, you have to—"
+    },
+    {
+      "id": "ami-es2002a-s5",
+      "meeting_id": "ami-es2002a",
+      "start_s": 38.153,
+      "end_s": 38.959,
+      "speaker_id": "spk-C",
+      "text": "yep, it's got it."
+    },
+    {
+      "id": "ami-es2002a-s6",
+      "meeting_id": "ami-es2002a",
+      "start_s": 39.927,
+      "end_s": 42.558,
+      "speaker_id": "spk-B",
+      "text": "Okay, right. Turn it on."
+    },
+    {
+      "id": "ami-es2002a-s7",
+      "meeting_id": "ami-es2002a",
+      "start_s": 42.768,
+      "end_s": 48.917,
+      "speaker_id": "spk-C",
+      "text": "It's doing something. Yes, there you go."
+    },
+    {
+      "id": "ami-es2002a-s8",
+      "meeting_id": "ami-es2002a",
+      "start_s": 50.293,
+      "end_s": 56.313,
+      "speaker_id": "spk-B",
+      "text": "Okay. Right."
+    },
+    {
+      "id": "ami-es2002a-s9",
+      "meeting_id": "ami-es2002a",
+      "start_s": 56.576,
+      "end_s": 66.798,
+      "speaker_id": "spk-B",
+      "text": "Well, this is the kickoff meeting for our project. And this is just what we're going to be doing over the next 25 minutes."
+    },
+    {
+      "id": "ami-es2002a-s10",
+      "meeting_id": "ami-es2002a",
+      "start_s": 68.66,
+      "end_s": 74.556,
+      "speaker_id": "spk-B",
+      "text": "So first of all, just to kind of make sure that we all know each other, I'm Laura and I'm the project manager."
+    },
+    {
+      "id": "ami-es2002a-s11",
+      "meeting_id": "ami-es2002a",
+      "start_s": 74.894,
+      "end_s": 75.152,
+      "speaker_id": "spk-A",
+      "text": "Great."
+    },
+    {
+      "id": "ami-es2002a-s12",
+      "meeting_id": "ami-es2002a",
+      "start_s": 75.651,
+      "end_s": 77.359,
+      "speaker_id": "spk-B",
+      "text": "Do you want to introduce yourself again?"
+    },
+    {
+      "id": "ami-es2002a-s13",
+      "meeting_id": "ami-es2002a",
+      "start_s": 77.76,
+      "end_s": 80.493,
+      "speaker_id": "spk-C",
+      "text": "I'm David, and I'm supposed to be an industrial designer."
+    },
+    {
+      "id": "ami-es2002a-s14",
+      "meeting_id": "ami-es2002a",
+      "start_s": 80.865,
+      "end_s": 81.124,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-es2002a-s15",
+      "meeting_id": "ami-es2002a",
+      "start_s": 82.224,
+      "end_s": 85.685,
+      "speaker_id": "spk-A",
+      "text": "And I'm Andrew, and I'm our marketing expert."
+    },
+    {
+      "id": "ami-es2002a-s16",
+      "meeting_id": "ami-es2002a",
+      "start_s": 87.18,
+      "end_s": 88.547,
+      "speaker_id": "spk-D",
+      "text": "I'm Greg, and I'm user interface."
+    },
+    {
+      "id": "ami-es2002a-s17",
+      "meeting_id": "ami-es2002a",
+      "start_s": 89.303,
+      "end_s": 98.172,
+      "speaker_id": "spk-B",
+      "text": "Great. Okay. So we're designing a new remote control, and— oh, I have to record who's here, actually."
+    },
+    {
+      "id": "ami-es2002a-s18",
+      "meeting_id": "ami-es2002a",
+      "start_s": 98.626,
+      "end_s": 106.194,
+      "speaker_id": "spk-B",
+      "text": "So that's David, Andrew, and Greg, isn't it? And you all arrived on time."
+    },
+    {
+      "id": "ami-es2002a-s19",
+      "meeting_id": "ami-es2002a",
+      "start_s": 109.77,
+      "end_s": 115.795,
+      "speaker_id": "spk-B",
+      "text": "Yes, we did design a new remote control. As you can see, it's supposed to be original, trendy, and user-friendly."
+    },
+    {
+      "id": "ami-es2002a-s20",
+      "meeting_id": "ami-es2002a",
+      "start_s": 118.174,
+      "end_s": 125.619,
+      "speaker_id": "spk-B",
+      "text": "So that's kind of our brief, as it were. And so there are 3 different stages to the design."
+    },
+    {
+      "id": "ami-es2002a-s21",
+      "meeting_id": "ami-es2002a",
+      "start_s": 126.076,
+      "end_s": 132.037,
+      "speaker_id": "spk-B",
+      "text": "I'm not really sure what, what you guys have already received. In your emails, what did you get?"
+    },
+    {
+      "id": "ami-es2002a-s22",
+      "meeting_id": "ami-es2002a",
+      "start_s": 132.666,
+      "end_s": 138.105,
+      "speaker_id": "spk-C",
+      "text": "I just got the project announcement. What project is that? Designing a remote control?"
+    },
+    {
+      "id": "ami-es2002a-s23",
+      "meeting_id": "ami-es2002a",
+      "start_s": 139.5,
+      "end_s": 140.146,
+      "speaker_id": "spk-A",
+      "text": "Yeah, that's— Is"
+    },
+    {
+      "id": "ami-es2002a-s24",
+      "meeting_id": "ami-es2002a",
+      "start_s": 140.178,
+      "end_s": 151.105,
+      "speaker_id": "spk-B",
+      "text": "that what everybody got? Okay. So we're going to have individual work and then a meeting about it and repeat that process 3 times."
+    },
+    {
+      "id": "ami-es2002a-s25",
+      "meeting_id": "ami-es2002a",
+      "start_s": 154.568,
+      "end_s": 166.909,
+      "speaker_id": "spk-B",
+      "text": "And at this point, we get to try out the whiteboard over there. So you get to draw your favorite animal and sum up your favorite characteristics of it. So who would like to go first?"
+    },
+    {
+      "id": "ami-es2002a-s26",
+      "meeting_id": "ami-es2002a",
+      "start_s": 167.31,
+      "end_s": 167.583,
+      "speaker_id": "spk-A",
+      "text": "I'll go."
+    },
+    {
+      "id": "ami-es2002a-s27",
+      "meeting_id": "ami-es2002a",
+      "start_s": 167.808,
+      "end_s": 170.575,
+      "speaker_id": "spk-B",
+      "text": "Very good. All"
+    },
+    {
+      "id": "ami-es2002a-s28",
+      "meeting_id": "ami-es2002a",
+      "start_s": 173.052,
+      "end_s": 182.193,
+      "speaker_id": "spk-A",
+      "text": "right. So— This one here, right?"
+    },
+    {
+      "id": "ami-es2002a-s29",
+      "meeting_id": "ami-es2002a",
+      "start_s": 183.322,
+      "end_s": 183.628,
+      "speaker_id": "spk-B",
+      "text": "Mm-hmm."
+    },
+    {
+      "id": "ami-es2002a-s30",
+      "meeting_id": "ami-es2002a",
+      "start_s": 183.918,
+      "end_s": 200.779,
+      "speaker_id": "spk-A",
+      "text": "Okay, very nice. All right, my favorite animal is like a beagle."
+    },
+    {
+      "id": "ami-es2002a-s31",
+      "meeting_id": "ami-es2002a",
+      "start_s": 213.209,
+      "end_s": 215.343,
+      "speaker_id": "spk-A",
+      "text": "Characters, favorite characteristics of it, is that right?"
+    },
+    {
+      "id": "ami-es2002a-s32",
+      "meeting_id": "ami-es2002a",
+      "start_s": 216.018,
+      "end_s": 216.274,
+      "speaker_id": "spk-B",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s33",
+      "meeting_id": "ami-es2002a",
+      "start_s": 216.917,
+      "end_s": 228.49,
+      "speaker_id": "spk-A",
+      "text": "Right. Well, basically, high priority for any animal for me is that they be willing to take a lot of physical affection from their family."
+    },
+    {
+      "id": "ami-es2002a-s34",
+      "meeting_id": "ami-es2002a",
+      "start_s": 229.341,
+      "end_s": 237.56,
+      "speaker_id": "spk-A",
+      "text": "And yeah, they have lots of personality and be fit and in robust good health."
+    },
+    {
+      "id": "ami-es2002a-s35",
+      "meeting_id": "ami-es2002a",
+      "start_s": 238.013,
+      "end_s": 242.284,
+      "speaker_id": "spk-A",
+      "text": "So this is Blue, Blue Beagle, my family's beagle."
+    },
+    {
+      "id": "ami-es2002a-s36",
+      "meeting_id": "ami-es2002a",
+      "start_s": 243.416,
+      "end_s": 245.089,
+      "speaker_id": "spk-B",
+      "text": "Right, lovely."
+    },
+    {
+      "id": "ami-es2002a-s37",
+      "meeting_id": "ami-es2002a",
+      "start_s": 255.088,
+      "end_s": 273.478,
+      "speaker_id": "spk-D",
+      "text": "My favorite animal would be a monkey. I'm a small, cute furry, and when Planet of the Apes becomes real, I'm going to be up there with them."
+    },
+    {
+      "id": "ami-es2002a-s38",
+      "meeting_id": "ami-es2002a",
+      "start_s": 275.695,
+      "end_s": 276.19,
+      "speaker_id": "spk-B",
+      "text": "Nice."
+    },
+    {
+      "id": "ami-es2002a-s39",
+      "meeting_id": "ami-es2002a",
+      "start_s": 280.689,
+      "end_s": 281.584,
+      "speaker_id": "spk-C",
+      "text": "There's too much gear."
+    },
+    {
+      "id": "ami-es2002a-s40",
+      "meeting_id": "ami-es2002a",
+      "start_s": 285.966,
+      "end_s": 290.282,
+      "speaker_id": "spk-B",
+      "text": "You can take as long over this as you like because we haven't got an awful lot to discuss."
+    },
+    {
+      "id": "ami-es2002a-s41",
+      "meeting_id": "ami-es2002a",
+      "start_s": 290.428,
+      "end_s": 293.446,
+      "speaker_id": "spk-B",
+      "text": "Oh, we do, we do. Don't feel like you're in a rush anyway."
+    },
+    {
+      "id": "ami-es2002a-s42",
+      "meeting_id": "ami-es2002a",
+      "start_s": 296.043,
+      "end_s": 297.78,
+      "speaker_id": "spk-A",
+      "text": "I could have told you a whole lot more about beagles."
+    },
+    {
+      "id": "ami-es2002a-s43",
+      "meeting_id": "ami-es2002a",
+      "start_s": 297.989,
+      "end_s": 303.377,
+      "speaker_id": "spk-B",
+      "text": "Okay, we might have to get you up again then. I don't know what mine is. I'm going to have to think on the spot now."
+    },
+    {
+      "id": "ami-es2002a-s44",
+      "meeting_id": "ami-es2002a",
+      "start_s": 307,
+      "end_s": 307.861,
+      "speaker_id": "spk-A",
+      "text": "Impressionist."
+    },
+    {
+      "id": "ami-es2002a-s45",
+      "meeting_id": "ami-es2002a",
+      "start_s": 308.561,
+      "end_s": 309.732,
+      "speaker_id": "spk-C",
+      "text": "Can't draw."
+    },
+    {
+      "id": "ami-es2002a-s46",
+      "meeting_id": "ami-es2002a",
+      "start_s": 312.088,
+      "end_s": 312.683,
+      "speaker_id": "spk-B",
+      "text": "Is that a whale?"
+    },
+    {
+      "id": "ami-es2002a-s47",
+      "meeting_id": "ami-es2002a",
+      "start_s": 313.182,
+      "end_s": 313.376,
+      "speaker_id": "spk-C",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s48",
+      "meeting_id": "ami-es2002a",
+      "start_s": 313.601,
+      "end_s": 314.326,
+      "speaker_id": "spk-B",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s49",
+      "meeting_id": "ami-es2002a",
+      "start_s": 318.753,
+      "end_s": 323.925,
+      "speaker_id": "spk-C",
+      "text": "Um, well, my— I don't know, it's just the first animal I can think of off the top of my head."
+    },
+    {
+      "id": "ami-es2002a-s50",
+      "meeting_id": "ami-es2002a",
+      "start_s": 324.231,
+      "end_s": 331.065,
+      "speaker_id": "spk-C",
+      "text": "I guess a big reason is because I'm allergic to most animals, allergic to animal fur, so fish was a natural choice."
+    },
+    {
+      "id": "ami-es2002a-s51",
+      "meeting_id": "ami-es2002a",
+      "start_s": 332.918,
+      "end_s": 340.603,
+      "speaker_id": "spk-C",
+      "text": "Yeah, and I kind of like whales. They come in and go eat everything in sight. They're quite harmless and mild and interesting."
+    },
+    {
+      "id": "ami-es2002a-s52",
+      "meeting_id": "ami-es2002a",
+      "start_s": 343.371,
+      "end_s": 345.244,
+      "speaker_id": "spk-B",
+      "text": "Okay. I still don't know what I'm going to write about."
+    },
+    {
+      "id": "ami-es2002a-s53",
+      "meeting_id": "ami-es2002a",
+      "start_s": 349.694,
+      "end_s": 351.634,
+      "speaker_id": "spk-A",
+      "text": "Superb sketch, by the way."
+    },
+    {
+      "id": "ami-es2002a-s54",
+      "meeting_id": "ami-es2002a",
+      "start_s": 353.88,
+      "end_s": 354.802,
+      "speaker_id": "spk-C",
+      "text": "Tail's a bit big, I think."
+    },
+    {
+      "id": "ami-es2002a-s55",
+      "meeting_id": "ami-es2002a",
+      "start_s": 355.045,
+      "end_s": 359.806,
+      "speaker_id": "spk-B",
+      "text": "I was going to choose a dog as well, but I'll just draw a different kind of dog."
+    },
+    {
+      "id": "ami-es2002a-s56",
+      "meeting_id": "ami-es2002a",
+      "start_s": 360.469,
+      "end_s": 368.674,
+      "speaker_id": "spk-B",
+      "text": "My favorite animal is my own dog at home. That doesn't really look like him, actually."
+    },
+    {
+      "id": "ami-es2002a-s57",
+      "meeting_id": "ami-es2002a",
+      "start_s": 373.347,
+      "end_s": 376.928,
+      "speaker_id": "spk-B",
+      "text": "He looks more like a pig, actually. Oh well."
+    },
+    {
+      "id": "ami-es2002a-s58",
+      "meeting_id": "ami-es2002a",
+      "start_s": 378.555,
+      "end_s": 379.368,
+      "speaker_id": "spk-A",
+      "text": "I see a dog in there."
+    },
+    {
+      "id": "ami-es2002a-s59",
+      "meeting_id": "ami-es2002a",
+      "start_s": 379.596,
+      "end_s": 380.979,
+      "speaker_id": "spk-B",
+      "text": "Do you? Oh, that's very good of you."
+    },
+    {
+      "id": "ami-es2002a-s60",
+      "meeting_id": "ami-es2002a",
+      "start_s": 382.865,
+      "end_s": 393.859,
+      "speaker_id": "spk-A",
+      "text": "Now I see a rooster. What kind is"
+    },
+    {
+      "id": "ami-es2002a-s61",
+      "meeting_id": "ami-es2002a",
+      "start_s": 394.716,
+      "end_s": 401.279,
+      "speaker_id": "spk-B",
+      "text": "it? He's a mixture of various things. And what do I like about him?"
+    },
+    {
+      "id": "ami-es2002a-s62",
+      "meeting_id": "ami-es2002a",
+      "start_s": 403.256,
+      "end_s": 420.784,
+      "speaker_id": "spk-B",
+      "text": "That's supposed to suggest that his tail wags. He's very friendly and cheery and always pleased to see you and very kind of affectionate and And he's quite wee as well, so he doesn't take up too much space."
+    },
+    {
+      "id": "ami-es2002a-s63",
+      "meeting_id": "ami-es2002a",
+      "start_s": 426.227,
+      "end_s": 431.191,
+      "speaker_id": "spk-B",
+      "text": "And he does a funny thing where he chases his tail as well. This is quite amusing."
+    },
+    {
+      "id": "ami-es2002a-s64",
+      "meeting_id": "ami-es2002a",
+      "start_s": 431.32,
+      "end_s": 433.36,
+      "speaker_id": "spk-A",
+      "text": "Is he aware that it's his own tail he's chasing?"
+    },
+    {
+      "id": "ami-es2002a-s65",
+      "meeting_id": "ami-es2002a",
+      "start_s": 433.939,
+      "end_s": 441.531,
+      "speaker_id": "spk-B",
+      "text": "It is. I think it is. He only does it after he's had his dinner. And he'll just all of a sudden get up and start chasing his tail. He's around the living room."
+    },
+    {
+      "id": "ami-es2002a-s66",
+      "meeting_id": "ami-es2002a",
+      "start_s": 441.822,
+      "end_s": 443.18,
+      "speaker_id": "spk-C",
+      "text": "It's an after-dinner dog then."
+    },
+    {
+      "id": "ami-es2002a-s67",
+      "meeting_id": "ami-es2002a",
+      "start_s": 443.649,
+      "end_s": 443.843,
+      "speaker_id": "spk-B",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s68",
+      "meeting_id": "ami-es2002a",
+      "start_s": 444.07,
+      "end_s": 448.519,
+      "speaker_id": "spk-A",
+      "text": "Probably when he was little, he got lots of attention for doing it and has forever been conditioned."
+    },
+    {
+      "id": "ami-es2002a-s69",
+      "meeting_id": "ami-es2002a",
+      "start_s": 449.073,
+      "end_s": 455.946,
+      "speaker_id": "spk-B",
+      "text": "Maybe. Where did you find this? Just down here? Okay."
+    },
+    {
+      "id": "ami-es2002a-s70",
+      "meeting_id": "ami-es2002a",
+      "start_s": 460.264,
+      "end_s": 468.259,
+      "speaker_id": "spk-B",
+      "text": "What are we doing next? Okay, we now need to discuss the project finance."
+    },
+    {
+      "id": "ami-es2002a-s71",
+      "meeting_id": "ami-es2002a",
+      "start_s": 472.419,
+      "end_s": 481.146,
+      "speaker_id": "spk-B",
+      "text": "So according to the brief, we're going to be selling this remote control for €25, and we're aiming to make €50 million."
+    },
+    {
+      "id": "ami-es2002a-s72",
+      "meeting_id": "ami-es2002a",
+      "start_s": 483.272,
+      "end_s": 494.682,
+      "speaker_id": "spk-B",
+      "text": "So we're going to be selling this on an international scale, and we don't want it to cost any more than €12.50, so 50% of the selling price."
+    },
+    {
+      "id": "ami-es2002a-s73",
+      "meeting_id": "ami-es2002a",
+      "start_s": 496.025,
+      "end_s": 497.6,
+      "speaker_id": "spk-A",
+      "text": "Can we just go over that again?"
+    },
+    {
+      "id": "ami-es2002a-s74",
+      "meeting_id": "ami-es2002a",
+      "start_s": 498.033,
+      "end_s": 498.435,
+      "speaker_id": "spk-B",
+      "text": "Sure."
+    },
+    {
+      "id": "ami-es2002a-s75",
+      "meeting_id": "ami-es2002a",
+      "start_s": 499.864,
+      "end_s": 503.993,
+      "speaker_id": "spk-A",
+      "text": "So basically, all right. Yeah. Okay."
+    },
+    {
+      "id": "ami-es2002a-s76",
+      "meeting_id": "ami-es2002a",
+      "start_s": 505.342,
+      "end_s": 507.719,
+      "speaker_id": "spk-A",
+      "text": "So cost, like production cost is"
+    },
+    {
+      "id": "ami-es2002a-s77",
+      "meeting_id": "ami-es2002a",
+      "start_s": 508.313,
+      "end_s": 508.779,
+      "speaker_id": "spk-B",
+      "text": "altogether"
+    },
+    {
+      "id": "ami-es2002a-s78",
+      "meeting_id": "ami-es2002a",
+      "start_s": 508.779,
+      "end_s": 513.839,
+      "speaker_id": "spk-A",
+      "text": "$1,250, but selling prices, is that wholesale or retail? Like on the shelf?"
+    },
+    {
+      "id": "ami-es2002a-s79",
+      "meeting_id": "ami-es2002a",
+      "start_s": 514.883,
+      "end_s": 518.947,
+      "speaker_id": "spk-B",
+      "text": "Um, I don't know. I imagine that's a good question."
+    },
+    {
+      "id": "ami-es2002a-s80",
+      "meeting_id": "ami-es2002a",
+      "start_s": 519.236,
+      "end_s": 519.654,
+      "speaker_id": "spk-A",
+      "text": "Our sale."
+    },
+    {
+      "id": "ami-es2002a-s81",
+      "meeting_id": "ami-es2002a",
+      "start_s": 519.798,
+      "end_s": 528.56,
+      "speaker_id": "spk-B",
+      "text": "I imagine it probably is our sale actually, because it's probably up to the the retailer to sell it for whatever price they want."
+    },
+    {
+      "id": "ami-es2002a-s82",
+      "meeting_id": "ami-es2002a",
+      "start_s": 531.834,
+      "end_s": 538.141,
+      "speaker_id": "spk-B",
+      "text": "But I don't know, I mean, do you think the fact that it's going to be sold internationally will have a bearing on how we design it at all?"
+    },
+    {
+      "id": "ami-es2002a-s83",
+      "meeting_id": "ami-es2002a",
+      "start_s": 538.834,
+      "end_s": 539.06,
+      "speaker_id": "spk-A",
+      "text": "Yes."
+    },
+    {
+      "id": "ami-es2002a-s84",
+      "meeting_id": "ami-es2002a",
+      "start_s": 539.27,
+      "end_s": 539.77,
+      "speaker_id": "spk-B",
+      "text": "I think it will."
+    },
+    {
+      "id": "ami-es2002a-s85",
+      "meeting_id": "ami-es2002a",
+      "start_s": 548.055,
+      "end_s": 553.578,
+      "speaker_id": "spk-A",
+      "text": "Well, right away I'm wondering if there's like with DVD players, if there are zones."
+    },
+    {
+      "id": "ami-es2002a-s86",
+      "meeting_id": "ami-es2002a",
+      "start_s": 553.851,
+      "end_s": 555.359,
+      "speaker_id": "spk-B",
+      "text": "Oh yeah, regions and stuff."
+    },
+    {
+      "id": "ami-es2002a-s87",
+      "meeting_id": "ami-es2002a",
+      "start_s": 555.535,
+      "end_s": 556.385,
+      "speaker_id": "spk-A",
+      "text": "Frequencies or something."
+    },
+    {
+      "id": "ami-es2002a-s88",
+      "meeting_id": "ami-es2002a",
+      "start_s": 556.658,
+      "end_s": 557.813,
+      "speaker_id": "spk-B",
+      "text": "Yeah, okay."
+    },
+    {
+      "id": "ami-es2002a-s89",
+      "meeting_id": "ami-es2002a",
+      "start_s": 558.567,
+      "end_s": 565.129,
+      "speaker_id": "spk-A",
+      "text": "As well as characters, different keypad styles and symbols."
+    },
+    {
+      "id": "ami-es2002a-s90",
+      "meeting_id": "ami-es2002a",
+      "start_s": 565.225,
+      "end_s": 570.985,
+      "speaker_id": "spk-B",
+      "text": "Yeah, well, for a remote control, do you think that would be— I suppose it depends on how complicated our remote control is."
+    },
+    {
+      "id": "ami-es2002a-s91",
+      "meeting_id": "ami-es2002a",
+      "start_s": 571.819,
+      "end_s": 580.185,
+      "speaker_id": "spk-C",
+      "text": "It does make sense from maybe the design point of view because you have more complicated characters like European languages, then you need more buttons."
+    },
+    {
+      "id": "ami-es2002a-s92",
+      "meeting_id": "ami-es2002a",
+      "start_s": 580.459,
+      "end_s": 582.071,
+      "speaker_id": "spk-B",
+      "text": "Yeah. Yeah."
+    },
+    {
+      "id": "ami-es2002a-s93",
+      "meeting_id": "ami-es2002a",
+      "start_s": 582.393,
+      "end_s": 582.699,
+      "speaker_id": "spk-A",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s94",
+      "meeting_id": "ami-es2002a",
+      "start_s": 583.118,
+      "end_s": 583.36,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-es2002a-s95",
+      "meeting_id": "ami-es2002a",
+      "start_s": 583.602,
+      "end_s": 596.655,
+      "speaker_id": "spk-A",
+      "text": "And then, and then the other thing, international, on the topic of price, I'm thinking the price might, might appeal to a certain market in one region, whereas in another it'll be different. So—"
+    },
+    {
+      "id": "ami-es2002a-s96",
+      "meeting_id": "ami-es2002a",
+      "start_s": 597.852,
+      "end_s": 602.929,
+      "speaker_id": "spk-B",
+      "text": "Wait, just like in terms of the country? Like how much money people have to spend on things?"
+    },
+    {
+      "id": "ami-es2002a-s97",
+      "meeting_id": "ami-es2002a",
+      "start_s": 603.01,
+      "end_s": 615.578,
+      "speaker_id": "spk-A",
+      "text": "Or just like Basic product positioning. A €25 remote control might be a big hit in London, might not be such a big hit in Greece. Who knows?"
+    },
+    {
+      "id": "ami-es2002a-s98",
+      "meeting_id": "ami-es2002a",
+      "start_s": 615.856,
+      "end_s": 622.609,
+      "speaker_id": "spk-B",
+      "text": "I see what you mean. Yeah. Marketing. Good marketing thoughts. Oh gosh, I should be writing all this down."
+    },
+    {
+      "id": "ami-es2002a-s99",
+      "meeting_id": "ami-es2002a",
+      "start_s": 655.52,
+      "end_s": 660.312,
+      "speaker_id": "spk-A",
+      "text": "Right away, I'm making some kind of assumptions about what information we're given here."
+    },
+    {
+      "id": "ami-es2002a-s100",
+      "meeting_id": "ami-es2002a",
+      "start_s": 660.78,
+      "end_s": 665.223,
+      "speaker_id": "spk-A",
+      "text": "Thinking, okay, trendy probably means something other than just basic."
+    },
+    {
+      "id": "ami-es2002a-s101",
+      "meeting_id": "ami-es2002a",
+      "start_s": 665.386,
+      "end_s": 665.435,
+      "speaker_id": "spk-B",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s102",
+      "meeting_id": "ami-es2002a",
+      "start_s": 665.5,
+      "end_s": 676.124,
+      "speaker_id": "spk-A",
+      "text": "Something other than just standard. So, I'm wondering right away, is selling €25, is that sort of the— is this going to be like the premium product?"
+    },
+    {
+      "id": "ami-es2002a-s103",
+      "meeting_id": "ami-es2002a",
+      "start_s": 677.16,
+      "end_s": 687.599,
+      "speaker_id": "spk-B",
+      "text": "Yeah, yeah. Like how much does, you know, a remote control cost? Well, €25, I mean, that's, that's about like £18 or something, isn't it?"
+    },
+    {
+      "id": "ami-es2002a-s104",
+      "meeting_id": "ami-es2002a",
+      "start_s": 687.988,
+      "end_s": 691.083,
+      "speaker_id": "spk-B",
+      "text": "Or no, is it as much as that? £16, £17, £18?"
+    },
+    {
+      "id": "ami-es2002a-s105",
+      "meeting_id": "ami-es2002a",
+      "start_s": 691.197,
+      "end_s": 691.689,
+      "speaker_id": "spk-A",
+      "text": "Yeah, I'd say so."
+    },
+    {
+      "id": "ami-es2002a-s106",
+      "meeting_id": "ami-es2002a",
+      "start_s": 693.719,
+      "end_s": 696.048,
+      "speaker_id": "spk-B",
+      "text": "I don't know. I've never bought a remote control, so I don't"
+    },
+    {
+      "id": "ami-es2002a-s107",
+      "meeting_id": "ami-es2002a",
+      "start_s": 696.29,
+      "end_s": 696.517,
+      "speaker_id": "spk-A",
+      "text": "know"
+    },
+    {
+      "id": "ami-es2002a-s108",
+      "meeting_id": "ami-es2002a",
+      "start_s": 696.759,
+      "end_s": 704.954,
+      "speaker_id": "spk-B",
+      "text": "how good a remote control that would get you. But yeah, I suppose it has to look kind of cool and gimmicky."
+    },
+    {
+      "id": "ami-es2002a-s109",
+      "meeting_id": "ami-es2002a",
+      "start_s": 709.867,
+      "end_s": 714.209,
+      "speaker_id": "spk-B",
+      "text": "Right. Okay. Let me just scoot on ahead here. Okay."
+    },
+    {
+      "id": "ami-es2002a-s110",
+      "meeting_id": "ami-es2002a",
+      "start_s": 715.335,
+      "end_s": 721.364,
+      "speaker_id": "spk-B",
+      "text": "Well, does anybody have anything to add to the finance issue at all?"
+    },
+    {
+      "id": "ami-es2002a-s111",
+      "meeting_id": "ami-es2002a",
+      "start_s": 722.849,
+      "end_s": 726.9,
+      "speaker_id": "spk-A",
+      "text": "Do we have any other background information on how that compares to other—"
+    },
+    {
+      "id": "ami-es2002a-s112",
+      "meeting_id": "ami-es2002a",
+      "start_s": 727.689,
+      "end_s": 739.985,
+      "speaker_id": "spk-B",
+      "text": "No, actually. That would be useful though, wouldn't it, if you knew what your money would get you? No."
+    },
+    {
+      "id": "ami-es2002a-s113",
+      "meeting_id": "ami-es2002a",
+      "start_s": 743.9,
+      "end_s": 764.46,
+      "speaker_id": "spk-A",
+      "text": "The interesting thing about discussing production of Remote Control for me is that As you point out, I just don't think remote control is being something people consciously"
+    },
+    {
+      "id": "ami-es2002a-s114",
+      "meeting_id": "ami-es2002a",
+      "start_s": 765.07,
+      "end_s": 772.779,
+      "speaker_id": "spk-A",
+      "text": "assess in their purchasing habits. It's just like getting shoelaces with shoes or something."
+    },
+    {
+      "id": "ami-es2002a-s115",
+      "meeting_id": "ami-es2002a",
+      "start_s": 772.844,
+      "end_s": 776.04,
+      "speaker_id": "spk-B",
+      "text": "5 minutes to end of meeting? Oh, okay. We're a bit behind."
+    },
+    {
+      "id": "ami-es2002a-s116",
+      "meeting_id": "ami-es2002a",
+      "start_s": 776.217,
+      "end_s": 776.843,
+      "speaker_id": "spk-A",
+      "text": "You know what I mean? Like,"
+    },
+    {
+      "id": "ami-es2002a-s117",
+      "meeting_id": "ami-es2002a",
+      "start_s": 777.18,
+      "end_s": 777.823,
+      "speaker_id": "spk-D",
+      "text": "yeah."
+    },
+    {
+      "id": "ami-es2002a-s118",
+      "meeting_id": "ami-es2002a",
+      "start_s": 777.919,
+      "end_s": 786.142,
+      "speaker_id": "spk-A",
+      "text": "So, sort of like, how do you— I mean, one way of looking at it would be, well, the people producing television sets, maybe they have to buy remote controls."
+    },
+    {
+      "id": "ami-es2002a-s119",
+      "meeting_id": "ami-es2002a",
+      "start_s": 786.271,
+      "end_s": 793.609,
+      "speaker_id": "spk-A",
+      "text": "Or another way is maybe people who have TV sets are really fed up with their remote control and they really want a better one or something."
+    },
+    {
+      "id": "ami-es2002a-s120",
+      "meeting_id": "ami-es2002a",
+      "start_s": 794.524,
+      "end_s": 800.449,
+      "speaker_id": "spk-D",
+      "text": "My parents went out and bought remote controls because they got fed up of having 4 or 5 different remote controls for each device."
+    },
+    {
+      "id": "ami-es2002a-s121",
+      "meeting_id": "ami-es2002a",
+      "start_s": 800.786,
+      "end_s": 800.979,
+      "speaker_id": "spk-A",
+      "text": "Right."
+    },
+    {
+      "id": "ami-es2002a-s122",
+      "meeting_id": "ami-es2002a",
+      "start_s": 801.492,
+      "end_s": 804.27,
+      "speaker_id": "spk-D",
+      "text": "So for them it was just how many devices does it control?"
+    },
+    {
+      "id": "ami-es2002a-s123",
+      "meeting_id": "ami-es2002a",
+      "start_s": 804.559,
+      "end_s": 810.388,
+      "speaker_id": "spk-A",
+      "text": "Right, so in function one of the priorities might be to combine as many uses."
+    },
+    {
+      "id": "ami-es2002a-s124",
+      "meeting_id": "ami-es2002a",
+      "start_s": 811.544,
+      "end_s": 814.996,
+      "speaker_id": "spk-B",
+      "text": "Right, so do you think that should be like a main design aim of our remote control? I"
+    },
+    {
+      "id": "ami-es2002a-s125",
+      "meeting_id": "ami-es2002a",
+      "start_s": 815.076,
+      "end_s": 815.333,
+      "speaker_id": "spk-A",
+      "text": "think so."
+    },
+    {
+      "id": "ami-es2002a-s126",
+      "meeting_id": "ami-es2002a",
+      "start_s": 815.574,
+      "end_s": 819.54,
+      "speaker_id": "spk-B",
+      "text": "You know, your satellite and your regular telly and your VCR and everything."
+    },
+    {
+      "id": "ami-es2002a-s127",
+      "meeting_id": "ami-es2002a",
+      "start_s": 819.958,
+      "end_s": 827.841,
+      "speaker_id": "spk-A",
+      "text": "Well, like, maybe what we could use as a sort of like an example of a successful other piece of technology is Palm Pilots."
+    },
+    {
+      "id": "ami-es2002a-s128",
+      "meeting_id": "ami-es2002a",
+      "start_s": 828.323,
+      "end_s": 836.03,
+      "speaker_id": "spk-A",
+      "text": "They've gone from being just like little sort of scribble boards to cameras, MP3 players, telephones, everything, agenda."
+    },
+    {
+      "id": "ami-es2002a-s129",
+      "meeting_id": "ami-es2002a",
+      "start_s": 836.4,
+      "end_s": 842.636,
+      "speaker_id": "spk-A",
+      "text": "So like, I wonder if we might add something new to the remote control market, such as the lighting in your house or—"
+    },
+    {
+      "id": "ami-es2002a-s130",
+      "meeting_id": "ami-es2002a",
+      "start_s": 844.11,
+      "end_s": 850.234,
+      "speaker_id": "spk-B",
+      "text": "Or even like, you know, notes about what you want to watch. Like you might put in there, oh, I want to watch such and such."
+    },
+    {
+      "id": "ami-es2002a-s131",
+      "meeting_id": "ami-es2002a",
+      "start_s": 850.443,
+      "end_s": 852.751,
+      "speaker_id": "spk-B",
+      "text": "That's a good idea. So extra functionalities."
+    },
+    {
+      "id": "ami-es2002a-s132",
+      "meeting_id": "ami-es2002a",
+      "start_s": 852.927,
+      "end_s": 862.081,
+      "speaker_id": "spk-A",
+      "text": "Yeah. Like personally for me at home, I've combined the audio/video of my television set and my DVD player and my CD player."
+    },
+    {
+      "id": "ami-es2002a-s133",
+      "meeting_id": "ami-es2002a",
+      "start_s": 862.912,
+      "end_s": 879.303,
+      "speaker_id": "spk-A",
+      "text": "So they all work, actually function together, but I have different remote controls for each of them. So it's sort of ironic that in their, you know, the sound and everything, it's just one system, but each one's got its own little part."
+    },
+    {
+      "id": "ami-es2002a-s134",
+      "meeting_id": "ami-es2002a",
+      "start_s": 885.775,
+      "end_s": 891.71,
+      "speaker_id": "spk-B",
+      "text": "Okay. We're gonna have to wrap up pretty quickly in the next couple of minutes. I'll just check we've nothing else."
+    },
+    {
+      "id": "ami-es2002a-s135",
+      "meeting_id": "ami-es2002a",
+      "start_s": 892.26,
+      "end_s": 903.08,
+      "speaker_id": "spk-B",
+      "text": "Okay. So anything else anybody wants to add about what they don't like about remote controls they've used, what they would really like to be part of this new one at all?"
+    },
+    {
+      "id": "ami-es2002a-s136",
+      "meeting_id": "ami-es2002a",
+      "start_s": 903.08,
+      "end_s": 904.56,
+      "speaker_id": "spk-C",
+      "text": "You keep losing them."
+    },
+    {
+      "id": "ami-es2002a-s137",
+      "meeting_id": "ami-es2002a",
+      "start_s": 904.56,
+      "end_s": 906.1,
+      "speaker_id": "spk-B",
+      "text": "You keep losing them."
+    },
+    {
+      "id": "ami-es2002a-s138",
+      "meeting_id": "ami-es2002a",
+      "start_s": 906.1,
+      "end_s": 908.9,
+      "speaker_id": "spk-C",
+      "text": "Okay. Finding them is a major pain."
+    },
+    {
+      "id": "ami-es2002a-s139",
+      "meeting_id": "ami-es2002a",
+      "start_s": 908.9,
+      "end_s": 909.06,
+      "speaker_id": "spk-A",
+      "text": "I"
+    },
+    {
+      "id": "ami-es2002a-s140",
+      "meeting_id": "ami-es2002a",
+      "start_s": 909.06,
+      "end_s": 914.71,
+      "speaker_id": "spk-C",
+      "text": "mean, it's usually quite small, or when you want it, right, it's hidden under the couch or under the table."
+    },
+    {
+      "id": "ami-es2002a-s141",
+      "meeting_id": "ami-es2002a",
+      "start_s": 914.76,
+      "end_s": 915.22,
+      "speaker_id": "spk-A",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s142",
+      "meeting_id": "ami-es2002a",
+      "start_s": 915.22,
+      "end_s": 919.34,
+      "speaker_id": "spk-B",
+      "text": "You get those ones where you can, if you like whistle or make a really high-pitched noise, they beep."
+    },
+    {
+      "id": "ami-es2002a-s143",
+      "meeting_id": "ami-es2002a",
+      "start_s": 920.583,
+      "end_s": 925.608,
+      "speaker_id": "spk-B",
+      "text": "I mean, is that something we'd want to include, do you think? I don't know."
+    },
+    {
+      "id": "ami-es2002a-s144",
+      "meeting_id": "ami-es2002a",
+      "start_s": 925.769,
+      "end_s": 925.946,
+      "speaker_id": "spk-A",
+      "text": "Sure."
+    },
+    {
+      "id": "ami-es2002a-s145",
+      "meeting_id": "ami-es2002a",
+      "start_s": 926.285,
+      "end_s": 927.38,
+      "speaker_id": "spk-B",
+      "text": "Okay, maybe."
+    },
+    {
+      "id": "ami-es2002a-s146",
+      "meeting_id": "ami-es2002a",
+      "start_s": 927.574,
+      "end_s": 931.763,
+      "speaker_id": "spk-A",
+      "text": "I remember when the first remote control my family had was on a cable."
+    },
+    {
+      "id": "ami-es2002a-s147",
+      "meeting_id": "ami-es2002a",
+      "start_s": 932.133,
+      "end_s": 936.789,
+      "speaker_id": "spk-A",
+      "text": "Actually, the cable between it and the TV and big buttons that sort of like on a blender or something."
+    },
+    {
+      "id": "ami-es2002a-s148",
+      "meeting_id": "ami-es2002a",
+      "start_s": 937.047,
+      "end_s": 937.401,
+      "speaker_id": "spk-B",
+      "text": "My goodness."
+    },
+    {
+      "id": "ami-es2002a-s149",
+      "meeting_id": "ami-es2002a",
+      "start_s": 937.53,
+      "end_s": 945.929,
+      "speaker_id": "spk-A",
+      "text": "And, you know, when I think about what they are now, it's better, but actually it's still kind of, I don't know, like a massive junky thing on the table."
+    },
+    {
+      "id": "ami-es2002a-s150",
+      "meeting_id": "ami-es2002a",
+      "start_s": 946.373,
+      "end_s": 950.168,
+      "speaker_id": "spk-A",
+      "text": "Maybe we could think about how it could be more streamlined."
+    },
+    {
+      "id": "ami-es2002a-s151",
+      "meeting_id": "ami-es2002a",
+      "start_s": 951.5,
+      "end_s": 952.672,
+      "speaker_id": "spk-B",
+      "text": "Maybe like a touchscreen or something?"
+    },
+    {
+      "id": "ami-es2002a-s152",
+      "meeting_id": "ami-es2002a",
+      "start_s": 953.074,
+      "end_s": 956.287,
+      "speaker_id": "spk-A",
+      "text": "Something like that, yeah. Or whatever would be technologically reasonable."
+    },
+    {
+      "id": "ami-es2002a-s153",
+      "meeting_id": "ami-es2002a",
+      "start_s": 956.577,
+      "end_s": 959.26,
+      "speaker_id": "spk-B",
+      "text": "Okay, well, let's just talk to our industrial designer."
+    },
+    {
+      "id": "ami-es2002a-s154",
+      "meeting_id": "ami-es2002a",
+      "start_s": 959.324,
+      "end_s": 971.113,
+      "speaker_id": "spk-A",
+      "text": "It could be that functionally that doesn't make it any better, but that just the appeal of not having— these days, things in people's homes are becoming more and more chic, nicer materials."
+    },
+    {
+      "id": "ami-es2002a-s155",
+      "meeting_id": "ami-es2002a",
+      "start_s": 972.01,
+      "end_s": 972.123,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-es2002a-s156",
+      "meeting_id": "ami-es2002a",
+      "start_s": 972.526,
+      "end_s": 976.643,
+      "speaker_id": "spk-A",
+      "text": "Might be worth exploring anyway."
+    },
+    {
+      "id": "ami-es2002a-s157",
+      "meeting_id": "ami-es2002a",
+      "start_s": 977.208,
+      "end_s": 985.061,
+      "speaker_id": "spk-B",
+      "text": "Right, well, so just to wrap up, the next meeting is going to be in 30 minutes, so that's about 10 to 12 by my watch."
+    },
+    {
+      "id": "ami-es2002a-s158",
+      "meeting_id": "ami-es2002a",
+      "start_s": 986.112,
+      "end_s": 996.256,
+      "speaker_id": "spk-B",
+      "text": "So in between now and then, as the industrial designer, you're going to be working on, you know, the actual working design of it, so you know what you're doing there."
+    },
+    {
+      "id": "ami-es2002a-s159",
+      "meeting_id": "ami-es2002a",
+      "start_s": 997.866,
+      "end_s": 1004.112,
+      "speaker_id": "spk-B",
+      "text": "for user interface. Technical functions, I guess that's, you know, like what we've been talking about, what it'll actually do."
+    },
+    {
+      "id": "ami-es2002a-s160",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1005.011,
+      "end_s": 1015.865,
+      "speaker_id": "spk-B",
+      "text": "And marketing executive, you'll be just thinking about what it actually, what, you know, what requirements it has to fulfill."
+    },
+    {
+      "id": "ami-es2002a-s161",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1016.652,
+      "end_s": 1019.205,
+      "speaker_id": "spk-B",
+      "text": "And you'll all get instructions emailed to you, I guess."
+    },
+    {
+      "id": "ami-es2002a-s162",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1019.655,
+      "end_s": 1020.04,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-es2002a-s163",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1027.669,
+      "end_s": 1037.667,
+      "speaker_id": "spk-B",
+      "text": "Okay. Yeah, so it said the functional design stage is next, I guess. And that's the end of the meeting."
+    },
+    {
+      "id": "ami-es2002a-s164",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1039.16,
+      "end_s": 1042.531,
+      "speaker_id": "spk-B",
+      "text": "So I got that little message a lot sooner than I thought I would, so."
+    },
+    {
+      "id": "ami-es2002a-s165",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1047.217,
+      "end_s": 1056.641,
+      "speaker_id": "spk-A",
+      "text": "Before we wrap up, just to make sure we're all on the same page here. Do we— we were given sort of an example of a coffee machine or something, right?"
+    },
+    {
+      "id": "ami-es2002a-s166",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1057.154,
+      "end_s": 1066.74,
+      "speaker_id": "spk-A",
+      "text": "Well, are we right now on the assumption that our television remote control may have features which go beyond the television?"
+    },
+    {
+      "id": "ami-es2002a-s167",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1067.638,
+      "end_s": 1073.201,
+      "speaker_id": "spk-A",
+      "text": "Or are we keeping sort of like a design commitment to television features?"
+    },
+    {
+      "id": "ami-es2002a-s168",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1073.65,
+      "end_s": 1078.965,
+      "speaker_id": "spk-B",
+      "text": "Okay, well, just very quickly because we're supposed to finish. No, I guess that's up to us."
+    },
+    {
+      "id": "ami-es2002a-s169",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1079.16,
+      "end_s": 1083.293,
+      "speaker_id": "spk-B",
+      "text": "I mean, you probably want some kind of unique selling point of it. Okay."
+    },
+    {
+      "id": "ami-es2002a-s170",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1084.34,
+      "end_s": 1086.934,
+      "speaker_id": "spk-C",
+      "text": "So, you know— One factor would be production cost."
+    },
+    {
+      "id": "ami-es2002a-s171",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1087.079,
+      "end_s": 1087.224,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-es2002a-s172",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1087.643,
+      "end_s": 1089.48,
+      "speaker_id": "spk-C",
+      "text": "Because there's a cap there, so"
+    },
+    {
+      "id": "ami-es2002a-s173",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1090.136,
+      "end_s": 1090.481,
+      "speaker_id": "spk-A",
+      "text": "it"
+    },
+    {
+      "id": "ami-es2002a-s174",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1090.793,
+      "end_s": 1093.205,
+      "speaker_id": "spk-C",
+      "text": "depends on how much you can cram into that price."
+    },
+    {
+      "id": "ami-es2002a-s175",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1095.879,
+      "end_s": 1096.137,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-es2002a-s176",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1096.201,
+      "end_s": 1098.454,
+      "speaker_id": "spk-C",
+      "text": "Yeah. I think that's the main factor."
+    },
+    {
+      "id": "ami-es2002a-s177",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1098.551,
+      "end_s": 1108.308,
+      "speaker_id": "spk-B",
+      "text": "Okay. Right, okay. Well, that's the end of the meeting then. Thank you all for coming."
+    },
+    {
+      "id": "ami-es2002a-s178",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1111.113,
+      "end_s": 1118.739,
+      "speaker_id": "spk-B",
+      "text": "Good, I hope that was what they wanted us to do. Right."
+    },
+    {
+      "id": "ami-es2002a-s179",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1119.736,
+      "end_s": 1120.058,
+      "speaker_id": "spk-A",
+      "text": "Great."
+    },
+    {
+      "id": "ami-es2002a-s180",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1120.943,
+      "end_s": 1130.162,
+      "speaker_id": "spk-B",
+      "text": "How do you turn this thing off? Function and ah there we go."
+    },
+    {
+      "id": "ami-es2002a-s181",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1133.43,
+      "end_s": 1140.798,
+      "speaker_id": "spk-B",
+      "text": "So I think if you can just leave it on maybe and then um oh god this has turned itself off."
+    },
+    {
+      "id": "ami-es2002a-s182",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1143.274,
+      "end_s": 1147.928,
+      "speaker_id": "spk-C",
+      "text": "Try try pushing the function and eight I think."
+    },
+    {
+      "id": "ami-es2002a-s183",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1148.637,
+      "end_s": 1151.938,
+      "speaker_id": "spk-B",
+      "text": "Uh huh. Oh"
+    },
+    {
+      "id": "ami-es2002a-s184",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1152.163,
+      "end_s": 1152.469,
+      "speaker_id": "spk-C",
+      "text": "there it is."
+    },
+    {
+      "id": "ami-es2002a-s185",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1154.264,
+      "end_s": 1161.287,
+      "speaker_id": "spk-B",
+      "text": "Oh, thank goodness. Okay, right."
+    },
+    {
+      "id": "ami-es2002a-s186",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1167.169,
+      "end_s": 1170.198,
+      "speaker_id": "spk-A",
+      "text": "This is all very high-tech, I must say."
+    },
+    {
+      "id": "ami-es2002a-s187",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1170.506,
+      "end_s": 1179.18,
+      "speaker_id": "spk-B",
+      "text": "I know, isn't it? I don't know, like, do you guys go back to"
+    },
+    {
+      "id": "ami-es2002a-s188",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1185.245,
+      "end_s": 1193.466,
+      "speaker_id": "spk-A",
+      "text": "Lots of unplugging. It's a good thing we don't each have a catheter. Kind of what it feels like."
+    },
+    {
+      "id": "ami-es2002a-s189",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1205.704,
+      "end_s": 1217.083,
+      "speaker_id": "spk-B",
+      "text": "I have to do a design project next semester. This is quite good training."
+    },
+    {
+      "id": "ami-es2002a-s190",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1220.04,
+      "end_s": 1222.459,
+      "speaker_id": "spk-C",
+      "text": "Ah, it's a bad thing when you do."
+    },
+    {
+      "id": "ami-es2002a-s191",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1225.733,
+      "end_s": 1229.816,
+      "speaker_id": "spk-B",
+      "text": "What courses are you taking? Um, well, I'm talking about USDP."
+    },
+    {
+      "id": "ami-es2002a-s192",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1230.222,
+      "end_s": 1230.579,
+      "speaker_id": "spk-C",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-es2002a-s193",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1230.817,
+      "end_s": 1236.53,
+      "speaker_id": "spk-B",
+      "text": "All the lighting, computer design, operating systems, ADS."
+    },
+    {
+      "id": "ami-es2002a-s194",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1239.225,
+      "end_s": 1251.039,
+      "speaker_id": "spk-B",
+      "text": "Next semester. Oh, next semester. Computer security, computer architecture, and something else. I don't know."
+    },
+    {
+      "id": "ami-es2002a-s195",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1251.529,
+      "end_s": 1252.198,
+      "speaker_id": "spk-C",
+      "text": "Databases? No."
+    },
+    {
+      "id": "ami-es2002a-s196",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1252.589,
+      "end_s": 1252.736,
+      "speaker_id": "spk-B",
+      "text": "Sorry?"
+    },
+    {
+      "id": "ami-es2002a-s197",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1252.851,
+      "end_s": 1253.895,
+      "speaker_id": "spk-C",
+      "text": "Databases and privacy."
+    },
+    {
+      "id": "ami-es2002a-s198",
+      "meeting_id": "ami-es2002a",
+      "start_s": 1253.977,
+      "end_s": 1264.171,
+      "speaker_id": "spk-B",
+      "text": "No, we're not doing that. Have a go? I don't know. I mean, I don't really know how it was supposed to go. Yeah. I wasn't expecting the 5 minutes."
+    }
+  ],
+  "chapters": [],
+  "summaries": {},
+  "action_items": []
+}

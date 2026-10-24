@@ -1,0 +1,1058 @@
+{
+  "meeting": {
+    "id": "ami-is1009a",
+    "title": "Remote control kickoff: Betsy's team (AMI IS1009a)",
+    "date": "2005-02-07",
+    "duration_s": 839,
+    "media_url": "/media/ami-is1009a.mp3",
+    "speakers": [
+      {
+        "id": "spk-A",
+        "name": "Eileen (marketing)"
+      },
+      {
+        "id": "spk-B",
+        "name": "Betsy (project manager)"
+      },
+      {
+        "id": "spk-C",
+        "name": "Francina (user interface)"
+      },
+      {
+        "id": "spk-D",
+        "name": "Team member, name not stated (D)"
+      }
+    ],
+    "status": "ready",
+    "source": "seed"
+  },
+  "segments": [
+    {
+      "id": "ami-is1009a-s1",
+      "meeting_id": "ami-is1009a",
+      "start_s": 3.17,
+      "end_s": 24.718,
+      "speaker_id": "spk-A",
+      "text": "How does that work? The microphone's supposed to be to your right."
+    },
+    {
+      "id": "ami-is1009a-s2",
+      "meeting_id": "ami-is1009a",
+      "start_s": 25.812,
+      "end_s": 55.362,
+      "speaker_id": "spk-B",
+      "text": "Right, so, and then where's the other one? Oh, here. Okay."
+    },
+    {
+      "id": "ami-is1009a-s3",
+      "meeting_id": "ami-is1009a",
+      "start_s": 55.747,
+      "end_s": 55.924,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s4",
+      "meeting_id": "ami-is1009a",
+      "start_s": 55.988,
+      "end_s": 56.518,
+      "speaker_id": "spk-B",
+      "text": "Everybody ready?"
+    },
+    {
+      "id": "ami-is1009a-s5",
+      "meeting_id": "ami-is1009a",
+      "start_s": 57.288,
+      "end_s": 57.674,
+      "speaker_id": "spk-A",
+      "text": "I think so."
+    },
+    {
+      "id": "ami-is1009a-s6",
+      "meeting_id": "ami-is1009a",
+      "start_s": 57.818,
+      "end_s": 60.772,
+      "speaker_id": "spk-B",
+      "text": "I think the first thing we do is introduce ourselves."
+    },
+    {
+      "id": "ami-is1009a-s7",
+      "meeting_id": "ami-is1009a",
+      "start_s": 61.591,
+      "end_s": 62.538,
+      "speaker_id": "spk-A",
+      "text": "Yeah, that's a good"
+    },
+    {
+      "id": "ami-is1009a-s8",
+      "meeting_id": "ami-is1009a",
+      "start_s": 62.586,
+      "end_s": 67.29,
+      "speaker_id": "spk-B",
+      "text": "plan. With name and what your function is. So maybe we start with you."
+    },
+    {
+      "id": "ami-is1009a-s9",
+      "meeting_id": "ami-is1009a",
+      "start_s": 67.466,
+      "end_s": 76.039,
+      "speaker_id": "spk-C",
+      "text": "Yeah, my name is Francina and I'm in user interface. My role is— the main responsibility is user interface."
+    },
+    {
+      "id": "ami-is1009a-s10",
+      "meeting_id": "ami-is1009a",
+      "start_s": 76.761,
+      "end_s": 80.759,
+      "speaker_id": "spk-C",
+      "text": "And my role is to design a television remote control."
+    },
+    {
+      "id": "ami-is1009a-s11",
+      "meeting_id": "ami-is1009a",
+      "start_s": 81.13,
+      "end_s": 81.406,
+      "speaker_id": "spk-D",
+      "text": "Mm-hmm."
+    },
+    {
+      "id": "ami-is1009a-s12",
+      "meeting_id": "ami-is1009a",
+      "start_s": 81.795,
+      "end_s": 81.99,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s13",
+      "meeting_id": "ami-is1009a",
+      "start_s": 83.501,
+      "end_s": 87.008,
+      "speaker_id": "spk-A",
+      "text": "And I'm a marketing person. I want to figure out how to sell them."
+    },
+    {
+      "id": "ami-is1009a-s14",
+      "meeting_id": "ami-is1009a",
+      "start_s": 87.608,
+      "end_s": 87.835,
+      "speaker_id": "spk-D",
+      "text": "Mm-hmm."
+    },
+    {
+      "id": "ami-is1009a-s15",
+      "meeting_id": "ami-is1009a",
+      "start_s": 87.997,
+      "end_s": 88.532,
+      "speaker_id": "spk-B",
+      "text": "And your name is?"
+    },
+    {
+      "id": "ami-is1009a-s16",
+      "meeting_id": "ami-is1009a",
+      "start_s": 88.873,
+      "end_s": 89.586,
+      "speaker_id": "spk-A",
+      "text": "My name is Eileen."
+    },
+    {
+      "id": "ami-is1009a-s17",
+      "meeting_id": "ami-is1009a",
+      "start_s": 90.364,
+      "end_s": 90.527,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s18",
+      "meeting_id": "ami-is1009a",
+      "start_s": 91.386,
+      "end_s": 107.285,
+      "speaker_id": "spk-C",
+      "text": "Yeah, I'm Janhavi. I'm— my role is industrial designer, and my responsibilities are deal with technical functional designs and specifications of user interface and dealing with user interface design."
+    },
+    {
+      "id": "ami-is1009a-s19",
+      "meeting_id": "ami-is1009a",
+      "start_s": 107.887,
+      "end_s": 112.439,
+      "speaker_id": "spk-B",
+      "text": "Very good. And as you already know, I'm Betsy. I'm the project manager for today."
+    },
+    {
+      "id": "ami-is1009a-s20",
+      "meeting_id": "ami-is1009a",
+      "start_s": 113.19,
+      "end_s": 118.15,
+      "speaker_id": "spk-B",
+      "text": "So why don't we look at the presentation to see what we really are supposed to do?"
+    },
+    {
+      "id": "ami-is1009a-s21",
+      "meeting_id": "ami-is1009a",
+      "start_s": 118.794,
+      "end_s": 119.019,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s22",
+      "meeting_id": "ami-is1009a",
+      "start_s": 122.45,
+      "end_s": 132.345,
+      "speaker_id": "spk-B",
+      "text": "Yes, opening, acquaintance, tool training. Well, the tools, I think we already— I guess the tool is really our— the computer, as far as I can see."
+    },
+    {
+      "id": "ami-is1009a-s23",
+      "meeting_id": "ami-is1009a",
+      "start_s": 133.225,
+      "end_s": 137.41,
+      "speaker_id": "spk-B",
+      "text": "We get— each of us will get instructions and we'll take it from there."
+    },
+    {
+      "id": "ami-is1009a-s24",
+      "meeting_id": "ami-is1009a",
+      "start_s": 138.068,
+      "end_s": 145.084,
+      "speaker_id": "spk-B",
+      "text": "Project plan, that falls under the same heading pretty much. I don't think we have any great discussion at this point."
+    },
+    {
+      "id": "ami-is1009a-s25",
+      "meeting_id": "ami-is1009a",
+      "start_s": 149.441,
+      "end_s": 156.645,
+      "speaker_id": "spk-B",
+      "text": "No. Here is what this thing should be. This thing we are going to design is a new remote control."
+    },
+    {
+      "id": "ami-is1009a-s26",
+      "meeting_id": "ami-is1009a",
+      "start_s": 157.679,
+      "end_s": 166.872,
+      "speaker_id": "spk-B",
+      "text": "Should be original, trendy, and of course user-friendly. So maybe you want to make some notes of that."
+    },
+    {
+      "id": "ami-is1009a-s27",
+      "meeting_id": "ami-is1009a",
+      "start_s": 179.45,
+      "end_s": 179.77,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s28",
+      "meeting_id": "ami-is1009a",
+      "start_s": 195.858,
+      "end_s": 201.421,
+      "speaker_id": "spk-B",
+      "text": "Okay. All right. Here is what the functional design is supposed to achieve."
+    },
+    {
+      "id": "ami-is1009a-s29",
+      "meeting_id": "ami-is1009a",
+      "start_s": 203.768,
+      "end_s": 210.923,
+      "speaker_id": "spk-B",
+      "text": "That is, it's going to be individual work, and then at the meeting we'll discuss what we have come up with."
+    },
+    {
+      "id": "ami-is1009a-s30",
+      "meeting_id": "ami-is1009a",
+      "start_s": 211.666,
+      "end_s": 222.123,
+      "speaker_id": "spk-B",
+      "text": "The same goes for the conceptual design. There will be individual work. And then discussion afterwards, detailed design. Same thing, basically."
+    },
+    {
+      "id": "ami-is1009a-s31",
+      "meeting_id": "ami-is1009a",
+      "start_s": 222.77,
+      "end_s": 234.149,
+      "speaker_id": "spk-A",
+      "text": "3 different types of design that we're going to be concerned with. Okay."
+    },
+    {
+      "id": "ami-is1009a-s32",
+      "meeting_id": "ami-is1009a",
+      "start_s": 236.086,
+      "end_s": 241.577,
+      "speaker_id": "spk-A",
+      "text": "Functional, conceptual, and detailed."
+    },
+    {
+      "id": "ami-is1009a-s33",
+      "meeting_id": "ami-is1009a",
+      "start_s": 243.99,
+      "end_s": 245.026,
+      "speaker_id": "spk-B",
+      "text": "I can't write with this thing."
+    },
+    {
+      "id": "ami-is1009a-s34",
+      "meeting_id": "ami-is1009a",
+      "start_s": 248.39,
+      "end_s": 252.604,
+      "speaker_id": "spk-A",
+      "text": "Maybe we should redesign it. Yes."
+    },
+    {
+      "id": "ami-is1009a-s35",
+      "meeting_id": "ami-is1009a",
+      "start_s": 252.83,
+      "end_s": 255.912,
+      "speaker_id": "spk-A",
+      "text": "After we finish the remote control, we'll get to that. Yeah, okay."
+    },
+    {
+      "id": "ami-is1009a-s36",
+      "meeting_id": "ami-is1009a",
+      "start_s": 256.299,
+      "end_s": 264.313,
+      "speaker_id": "spk-B",
+      "text": "All right. Then tool training, try out the whiteboard, participants can draw their favorite animal."
+    },
+    {
+      "id": "ami-is1009a-s37",
+      "meeting_id": "ami-is1009a",
+      "start_s": 264.764,
+      "end_s": 275.569,
+      "speaker_id": "spk-B",
+      "text": "Does anybody want to go and see how the whiteboard works? So that in case we have to in the next meeting present something on the whiteboard. You want to go, Eileen?"
+    },
+    {
+      "id": "ami-is1009a-s38",
+      "meeting_id": "ami-is1009a",
+      "start_s": 276.249,
+      "end_s": 277.383,
+      "speaker_id": "spk-A",
+      "text": "Okay, I'll see what I can do."
+    },
+    {
+      "id": "ami-is1009a-s39",
+      "meeting_id": "ami-is1009a",
+      "start_s": 277.626,
+      "end_s": 279.877,
+      "speaker_id": "spk-B",
+      "text": "Whether you— without hanging yourself."
+    },
+    {
+      "id": "ami-is1009a-s40",
+      "meeting_id": "ami-is1009a",
+      "start_s": 280.136,
+      "end_s": 283.715,
+      "speaker_id": "spk-A",
+      "text": "See if I remember how to draw a kitty cat or a rabbit or something."
+    },
+    {
+      "id": "ami-is1009a-s41",
+      "meeting_id": "ami-is1009a",
+      "start_s": 288.16,
+      "end_s": 290.174,
+      "speaker_id": "spk-B",
+      "text": "And remember, you have to press so it works."
+    },
+    {
+      "id": "ami-is1009a-s42",
+      "meeting_id": "ami-is1009a",
+      "start_s": 290.255,
+      "end_s": 297.635,
+      "speaker_id": "spk-A",
+      "text": "So that it will record, okay. Traditional kitty cat."
+    },
+    {
+      "id": "ami-is1009a-s43",
+      "meeting_id": "ami-is1009a",
+      "start_s": 308.036,
+      "end_s": 309.716,
+      "speaker_id": "spk-B",
+      "text": "I have a fat cat."
+    },
+    {
+      "id": "ami-is1009a-s44",
+      "meeting_id": "ami-is1009a",
+      "start_s": 310.303,
+      "end_s": 317.102,
+      "speaker_id": "spk-A",
+      "text": "I have a very fat cat. And it likes to sit like that."
+    },
+    {
+      "id": "ami-is1009a-s45",
+      "meeting_id": "ami-is1009a",
+      "start_s": 317.705,
+      "end_s": 317.982,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s46",
+      "meeting_id": "ami-is1009a",
+      "start_s": 318.21,
+      "end_s": 318.455,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s47",
+      "meeting_id": "ami-is1009a",
+      "start_s": 320.618,
+      "end_s": 327.459,
+      "speaker_id": "spk-B",
+      "text": "And your front scene, right? Would you like like just to see how it feels so that you have a little idea?"
+    },
+    {
+      "id": "ami-is1009a-s48",
+      "meeting_id": "ami-is1009a",
+      "start_s": 328.888,
+      "end_s": 330.172,
+      "speaker_id": "spk-A",
+      "text": "Am I supposed to wipe off that?"
+    },
+    {
+      "id": "ami-is1009a-s49",
+      "meeting_id": "ami-is1009a",
+      "start_s": 330.252,
+      "end_s": 331.73,
+      "speaker_id": "spk-B",
+      "text": "No, no, no, that's okay. No,"
+    },
+    {
+      "id": "ami-is1009a-s50",
+      "meeting_id": "ami-is1009a",
+      "start_s": 331.954,
+      "end_s": 332.211,
+      "speaker_id": "spk-C",
+      "text": "okay."
+    },
+    {
+      "id": "ami-is1009a-s51",
+      "meeting_id": "ami-is1009a",
+      "start_s": 332.356,
+      "end_s": 332.452,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s52",
+      "meeting_id": "ami-is1009a",
+      "start_s": 333.705,
+      "end_s": 335.487,
+      "speaker_id": "spk-B",
+      "text": "I don't know. Get to that later."
+    },
+    {
+      "id": "ami-is1009a-s53",
+      "meeting_id": "ami-is1009a",
+      "start_s": 336.113,
+      "end_s": 336.37,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s54",
+      "meeting_id": "ami-is1009a",
+      "start_s": 337.558,
+      "end_s": 338.65,
+      "speaker_id": "spk-B",
+      "text": "What should I do?"
+    },
+    {
+      "id": "ami-is1009a-s55",
+      "meeting_id": "ami-is1009a",
+      "start_s": 347.93,
+      "end_s": 349.33,
+      "speaker_id": "spk-C",
+      "text": "I'm going to draw a snake."
+    },
+    {
+      "id": "ami-is1009a-s56",
+      "meeting_id": "ami-is1009a",
+      "start_s": 356.664,
+      "end_s": 356.68,
+      "speaker_id": "spk-B",
+      "text": "Oh,"
+    },
+    {
+      "id": "ami-is1009a-s57",
+      "meeting_id": "ami-is1009a",
+      "start_s": 357.63,
+      "end_s": 363.101,
+      "speaker_id": "spk-A",
+      "text": "okay. I hope the kitty cat is hungry because I don't like snakes."
+    },
+    {
+      "id": "ami-is1009a-s58",
+      "meeting_id": "ami-is1009a",
+      "start_s": 367.262,
+      "end_s": 371.928,
+      "speaker_id": "spk-B",
+      "text": "Here's a project finance, which of course we all have to think about when we design this thing."
+    },
+    {
+      "id": "ami-is1009a-s59",
+      "meeting_id": "ami-is1009a",
+      "start_s": 373.29,
+      "end_s": 381.026,
+      "speaker_id": "spk-B",
+      "text": "Um, selling price is supposed to be €25. Profit aim for the company is €50 million."
+    },
+    {
+      "id": "ami-is1009a-s60",
+      "meeting_id": "ami-is1009a",
+      "start_s": 382.78,
+      "end_s": 386.01,
+      "speaker_id": "spk-B",
+      "text": "The market range unlimited, meaning international."
+    },
+    {
+      "id": "ami-is1009a-s61",
+      "meeting_id": "ami-is1009a",
+      "start_s": 386.623,
+      "end_s": 386.946,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s62",
+      "meeting_id": "ami-is1009a",
+      "start_s": 387.479,
+      "end_s": 392.431,
+      "speaker_id": "spk-B",
+      "text": "And the production cost should not exceed, hopefully should be less than €12.50."
+    },
+    {
+      "id": "ami-is1009a-s63",
+      "meeting_id": "ami-is1009a",
+      "start_s": 395.295,
+      "end_s": 398.538,
+      "speaker_id": "spk-A",
+      "text": "Okay, that should keep everybody on their toes and challenged."
+    },
+    {
+      "id": "ami-is1009a-s64",
+      "meeting_id": "ami-is1009a",
+      "start_s": 403.834,
+      "end_s": 412.719,
+      "speaker_id": "spk-B",
+      "text": "So these are all things, of course, to remember with the budget and when you design, materials, cost, etc."
+    },
+    {
+      "id": "ami-is1009a-s65",
+      "meeting_id": "ami-is1009a",
+      "start_s": 419.26,
+      "end_s": 427.391,
+      "speaker_id": "spk-B",
+      "text": "Now, the discussion, I guess, is, does any one of you have experience with remote control."
+    },
+    {
+      "id": "ami-is1009a-s66",
+      "meeting_id": "ami-is1009a",
+      "start_s": 428.395,
+      "end_s": 432.396,
+      "speaker_id": "spk-B",
+      "text": "Yeah, of course. I guess we use them, we use them, right, every day."
+    },
+    {
+      "id": "ami-is1009a-s67",
+      "meeting_id": "ami-is1009a",
+      "start_s": 434.128,
+      "end_s": 447.596,
+      "speaker_id": "spk-B",
+      "text": "And, um, now having used the remote control for years, does anybody already have like an idea, like things you didn't like with it, things you would like to change, things you would like to improve with this thing?"
+    },
+    {
+      "id": "ami-is1009a-s68",
+      "meeting_id": "ami-is1009a",
+      "start_s": 448.015,
+      "end_s": 460.62,
+      "speaker_id": "spk-B",
+      "text": "Any first ideas? Would you like it to be smaller, Bigger, have more, have more buttons on it, or maybe clearly better marked buttons, you know, things like that."
+    },
+    {
+      "id": "ami-is1009a-s69",
+      "meeting_id": "ami-is1009a",
+      "start_s": 461.422,
+      "end_s": 465.11,
+      "speaker_id": "spk-C",
+      "text": "Yes, I, I feel that all the remotes should be very compact,"
+    },
+    {
+      "id": "ami-is1009a-s70",
+      "meeting_id": "ami-is1009a",
+      "start_s": 465.27,
+      "end_s": 465.462,
+      "speaker_id": "spk-B",
+      "text": "small,"
+    },
+    {
+      "id": "ami-is1009a-s71",
+      "meeting_id": "ami-is1009a",
+      "start_s": 465.687,
+      "end_s": 486.619,
+      "speaker_id": "spk-C",
+      "text": "right? Those which we get here nowadays, it's very long. And, um, and it should have multi-purpose, like the remote control which we use for TV, it should, it should be used for some other purpose also, like Controlling the temperature inside the house, or for air conditioners, or for heating system."
+    },
+    {
+      "id": "ami-is1009a-s72",
+      "meeting_id": "ami-is1009a",
+      "start_s": 486.668,
+      "end_s": 495.116,
+      "speaker_id": "spk-B",
+      "text": "So it should be a multifunctional gadget that would control all your household machines, basically."
+    },
+    {
+      "id": "ami-is1009a-s73",
+      "meeting_id": "ami-is1009a",
+      "start_s": 495.246,
+      "end_s": 495.684,
+      "speaker_id": "spk-C",
+      "text": "Exactly."
+    },
+    {
+      "id": "ami-is1009a-s74",
+      "meeting_id": "ami-is1009a",
+      "start_s": 497.63,
+      "end_s": 502.525,
+      "speaker_id": "spk-A",
+      "text": "€1,250 per—"
+    },
+    {
+      "id": "ami-is1009a-s75",
+      "meeting_id": "ami-is1009a",
+      "start_s": 502.815,
+      "end_s": 503.089,
+      "speaker_id": "spk-B",
+      "text": "Well,"
+    },
+    {
+      "id": "ami-is1009a-s76",
+      "meeting_id": "ami-is1009a",
+      "start_s": 503.604,
+      "end_s": 513.041,
+      "speaker_id": "spk-A",
+      "text": "who knows, if we get a really good designer, maybe we can do that. We certainly can try to— I agree with her that to market something successfully, it should do some more things."
+    },
+    {
+      "id": "ami-is1009a-s77",
+      "meeting_id": "ami-is1009a",
+      "start_s": 513.153,
+      "end_s": 517.866,
+      "speaker_id": "spk-B",
+      "text": "It should be something new. It should do something different than just what we have."
+    },
+    {
+      "id": "ami-is1009a-s78",
+      "meeting_id": "ami-is1009a",
+      "start_s": 518.122,
+      "end_s": 520.896,
+      "speaker_id": "spk-B",
+      "text": "Now, of course, the other thing to think there is maybe the design."
+    },
+    {
+      "id": "ami-is1009a-s79",
+      "meeting_id": "ami-is1009a",
+      "start_s": 521.104,
+      "end_s": 524.278,
+      "speaker_id": "spk-C",
+      "text": "Yeah, design should be— yeah, it should be different. All the— almost all the—"
+    },
+    {
+      "id": "ami-is1009a-s80",
+      "meeting_id": "ami-is1009a",
+      "start_s": 524.278,
+      "end_s": 533.095,
+      "speaker_id": "spk-B",
+      "text": "Like trendy, you know, like earlier we saw maybe it should be something trendy, you know. Maybe different colors or materials or, you know."
+    },
+    {
+      "id": "ami-is1009a-s81",
+      "meeting_id": "ami-is1009a",
+      "start_s": 534.169,
+      "end_s": 538.449,
+      "speaker_id": "spk-B",
+      "text": "So, yeah, shapes, right? You know, like kidney-shaped feels better in your hand or something."
+    },
+    {
+      "id": "ami-is1009a-s82",
+      "meeting_id": "ami-is1009a",
+      "start_s": 539.106,
+      "end_s": 539.829,
+      "speaker_id": "spk-A",
+      "text": "Friendly shape."
+    },
+    {
+      "id": "ami-is1009a-s83",
+      "meeting_id": "ami-is1009a",
+      "start_s": 540.005,
+      "end_s": 540.182,
+      "speaker_id": "spk-B",
+      "text": "Yeah."
+    },
+    {
+      "id": "ami-is1009a-s84",
+      "meeting_id": "ami-is1009a",
+      "start_s": 540.631,
+      "end_s": 551.163,
+      "speaker_id": "spk-A",
+      "text": "That would help. I think another thing that would help is if it beeps when you clap, because I think one of the big things that happens is people lose them. They can't find it."
+    },
+    {
+      "id": "ami-is1009a-s85",
+      "meeting_id": "ami-is1009a",
+      "start_s": 552.592,
+      "end_s": 565.26,
+      "speaker_id": "spk-B",
+      "text": "That is true. They put the newspaper or they put it behind a plant or, you know, whatever, and suddenly the phone rings and they want to turn the TV off and they say, where the hell is my remote control?"
+    },
+    {
+      "id": "ami-is1009a-s86",
+      "meeting_id": "ami-is1009a",
+      "start_s": 565.452,
+      "end_s": 573.533,
+      "speaker_id": "spk-B",
+      "text": "Yeah, well, or yeah, or if it's really If it's really in a dark spot, that it gives out a sound or a signal. Yeah."
+    },
+    {
+      "id": "ami-is1009a-s87",
+      "meeting_id": "ami-is1009a",
+      "start_s": 573.629,
+      "end_s": 576.658,
+      "speaker_id": "spk-A",
+      "text": "So it should either beep or a light should blink."
+    },
+    {
+      "id": "ami-is1009a-s88",
+      "meeting_id": "ami-is1009a",
+      "start_s": 576.818,
+      "end_s": 581.384,
+      "speaker_id": "spk-B",
+      "text": "If lost, signal. Throw signal, you know."
+    },
+    {
+      "id": "ami-is1009a-s89",
+      "meeting_id": "ami-is1009a",
+      "start_s": 581.545,
+      "end_s": 585.294,
+      "speaker_id": "spk-D",
+      "text": "Yeah, maybe it should have a light so that we can just recognize where it is."
+    },
+    {
+      "id": "ami-is1009a-s90",
+      "meeting_id": "ami-is1009a",
+      "start_s": 585.742,
+      "end_s": 592.216,
+      "speaker_id": "spk-B",
+      "text": "Exactly. I mean, just that's why I'm saying, I'm just saying throw signal, meaning just whether it's a beep or whether a light or a flag."
+    },
+    {
+      "id": "ami-is1009a-s91",
+      "meeting_id": "ami-is1009a",
+      "start_s": 592.36,
+      "end_s": 605.68,
+      "speaker_id": "spk-A",
+      "text": "And do you think a good clue for That is that it would respond to a clap or respond to your voice or it would respond— what should you have to do to make it beep or blink?"
+    },
+    {
+      "id": "ami-is1009a-s92",
+      "meeting_id": "ami-is1009a",
+      "start_s": 605.826,
+      "end_s": 625.355,
+      "speaker_id": "spk-B",
+      "text": "Okay, my idea is maybe that the minute it's really hidden, in other words, if it's like in a dark spot, meaning, you know, like a newspaper is on top, a sweater is on top, or it's behind a plant, at that moment it's like, what do you call it, the light sensors, you know."
+    },
+    {
+      "id": "ami-is1009a-s93",
+      "meeting_id": "ami-is1009a",
+      "start_s": 625.456,
+      "end_s": 626.246,
+      "speaker_id": "spk-A",
+      "text": "In that moment it has a sensor."
+    },
+    {
+      "id": "ami-is1009a-s94",
+      "meeting_id": "ami-is1009a",
+      "start_s": 627.892,
+      "end_s": 632.399,
+      "speaker_id": "spk-B",
+      "text": "It gets a certain darkness, it has a sensor and it gives out a signal."
+    },
+    {
+      "id": "ami-is1009a-s95",
+      "meeting_id": "ami-is1009a",
+      "start_s": 632.721,
+      "end_s": 637.164,
+      "speaker_id": "spk-B",
+      "text": "Whether that be a light signal or a beep, I mean, we can discuss that later, you know."
+    },
+    {
+      "id": "ami-is1009a-s96",
+      "meeting_id": "ami-is1009a",
+      "start_s": 639.094,
+      "end_s": 641.186,
+      "speaker_id": "spk-A",
+      "text": "So the light sensor would activate the signal?"
+    },
+    {
+      "id": "ami-is1009a-s97",
+      "meeting_id": "ami-is1009a",
+      "start_s": 641.331,
+      "end_s": 650.197,
+      "speaker_id": "spk-B",
+      "text": "That's right. You know, it would be— right, you have to have some kind of sensor. And I think voice or clapping, that's not specific enough."
+    },
+    {
+      "id": "ami-is1009a-s98",
+      "meeting_id": "ami-is1009a",
+      "start_s": 651.18,
+      "end_s": 657.186,
+      "speaker_id": "spk-B",
+      "text": "I know there are the lamps and stuff, you know, you can clap on and off. But I think they only work to a certain degree."
+    },
+    {
+      "id": "ami-is1009a-s99",
+      "meeting_id": "ami-is1009a",
+      "start_s": 658.063,
+      "end_s": 661.845,
+      "speaker_id": "spk-A",
+      "text": "But it could be someplace really obvious and you still wouldn't be able to find it."
+    },
+    {
+      "id": "ami-is1009a-s100",
+      "meeting_id": "ami-is1009a",
+      "start_s": 664.3,
+      "end_s": 664.8,
+      "speaker_id": "spk-D",
+      "text": "What, with—"
+    },
+    {
+      "id": "ami-is1009a-s101",
+      "meeting_id": "ami-is1009a",
+      "start_s": 665.284,
+      "end_s": 667.703,
+      "speaker_id": "spk-A",
+      "text": "Well, because you're silly, because people are silly."
+    },
+    {
+      "id": "ami-is1009a-s102",
+      "meeting_id": "ami-is1009a",
+      "start_s": 667.784,
+      "end_s": 670.494,
+      "speaker_id": "spk-B",
+      "text": "Oh yeah, well, but then those people, we can't help everybody."
+    },
+    {
+      "id": "ami-is1009a-s103",
+      "meeting_id": "ami-is1009a",
+      "start_s": 670.543,
+      "end_s": 679.581,
+      "speaker_id": "spk-A",
+      "text": "Well, if it were like on top of your bookcase and you usually kept it on the coffee table, you know. Okay, we have to move along."
+    },
+    {
+      "id": "ami-is1009a-s104",
+      "meeting_id": "ami-is1009a",
+      "start_s": 679.696,
+      "end_s": 683.767,
+      "speaker_id": "spk-B",
+      "text": "Yeah, we have to move along, but I think we have some good Good points to start with here."
+    },
+    {
+      "id": "ami-is1009a-s105",
+      "meeting_id": "ami-is1009a",
+      "start_s": 685.913,
+      "end_s": 692,
+      "speaker_id": "spk-B",
+      "text": "Okay, the next meeting will be in 30 minutes. I think you all did you get notices on your computer for this?"
+    },
+    {
+      "id": "ami-is1009a-s106",
+      "meeting_id": "ami-is1009a",
+      "start_s": 692.195,
+      "end_s": 702.578,
+      "speaker_id": "spk-B",
+      "text": "Okay, so we'll you got the notice. The working design, I guess that's the function ID. Who is this? The industrial designer?"
+    },
+    {
+      "id": "ami-is1009a-s107",
+      "meeting_id": "ami-is1009a",
+      "start_s": 703.045,
+      "end_s": 703.384,
+      "speaker_id": "spk-D",
+      "text": "Yeah,"
+    },
+    {
+      "id": "ami-is1009a-s108",
+      "meeting_id": "ami-is1009a",
+      "start_s": 703.61,
+      "end_s": 703.996,
+      "speaker_id": "spk-B",
+      "text": "that's you."
+    },
+    {
+      "id": "ami-is1009a-s109",
+      "meeting_id": "ami-is1009a",
+      "start_s": 704.722,
+      "end_s": 706.726,
+      "speaker_id": "spk-D",
+      "text": "Yeah, it's functional. Yeah, exactly."
+    },
+    {
+      "id": "ami-is1009a-s110",
+      "meeting_id": "ami-is1009a",
+      "start_s": 706.941,
+      "end_s": 710.983,
+      "speaker_id": "spk-B",
+      "text": "Okay, so. We're looking for a working design when we come back."
+    },
+    {
+      "id": "ami-is1009a-s111",
+      "meeting_id": "ami-is1009a",
+      "start_s": 712.153,
+      "end_s": 715.632,
+      "speaker_id": "spk-D",
+      "text": "Working design, yeah. It's mainly technical functional design."
+    },
+    {
+      "id": "ami-is1009a-s112",
+      "meeting_id": "ami-is1009a",
+      "start_s": 715.776,
+      "end_s": 720.041,
+      "speaker_id": "spk-B",
+      "text": "And then the technical function— you're the technical function, so you're the working design."
+    },
+    {
+      "id": "ami-is1009a-s113",
+      "meeting_id": "ami-is1009a",
+      "start_s": 720.105,
+      "end_s": 733.715,
+      "speaker_id": "spk-B",
+      "text": "So you have a working design and then a functional design. And the marketing manager is coming up with some user requirement specification, like friendliness and what we just discussed in general."
+    },
+    {
+      "id": "ami-is1009a-s114",
+      "meeting_id": "ami-is1009a",
+      "start_s": 734.292,
+      "end_s": 741.004,
+      "speaker_id": "spk-B",
+      "text": "That would be your idea. And of course, price. That it, that it, that the price is a good price."
+    },
+    {
+      "id": "ami-is1009a-s115",
+      "meeting_id": "ami-is1009a",
+      "start_s": 741.759,
+      "end_s": 744.296,
+      "speaker_id": "spk-B",
+      "text": "I mean, the price is given, but that was—"
+    },
+    {
+      "id": "ami-is1009a-s116",
+      "meeting_id": "ami-is1009a",
+      "start_s": 745.355,
+      "end_s": 749.675,
+      "speaker_id": "spk-A",
+      "text": "We have to justify that price by having sufficient features to make it sell at that price."
+    },
+    {
+      "id": "ami-is1009a-s117",
+      "meeting_id": "ami-is1009a",
+      "start_s": 749.787,
+      "end_s": 756.065,
+      "speaker_id": "spk-B",
+      "text": "That's right. And, you know, you, you will get specific instructions for that."
+    },
+    {
+      "id": "ami-is1009a-s118",
+      "meeting_id": "ami-is1009a",
+      "start_s": 756.194,
+      "end_s": 770.342,
+      "speaker_id": "spk-B",
+      "text": "I think that's the end of the show. Yeah. So we have, well, we have 2, 3 minutes."
+    },
+    {
+      "id": "ami-is1009a-s119",
+      "meeting_id": "ami-is1009a",
+      "start_s": 771.499,
+      "end_s": 775.647,
+      "speaker_id": "spk-B",
+      "text": "Any questions at this point or suggestions?"
+    },
+    {
+      "id": "ami-is1009a-s120",
+      "meeting_id": "ami-is1009a",
+      "start_s": 777.828,
+      "end_s": 786.765,
+      "speaker_id": "spk-B",
+      "text": "I think basically you will get instructions to work with, and if you have any questions— I guess you can—"
+    },
+    {
+      "id": "ami-is1009a-s121",
+      "meeting_id": "ami-is1009a",
+      "start_s": 786.814,
+      "end_s": 792.417,
+      "speaker_id": "spk-A",
+      "text": "Okay, I think I have enough to think about till our next meeting. How about you people?"
+    },
+    {
+      "id": "ami-is1009a-s122",
+      "meeting_id": "ami-is1009a",
+      "start_s": 792.642,
+      "end_s": 794.681,
+      "speaker_id": "spk-D",
+      "text": "Yeah, I think, yeah."
+    },
+    {
+      "id": "ami-is1009a-s123",
+      "meeting_id": "ami-is1009a",
+      "start_s": 795.629,
+      "end_s": 796.319,
+      "speaker_id": "spk-B",
+      "text": "Okay. All"
+    },
+    {
+      "id": "ami-is1009a-s124",
+      "meeting_id": "ami-is1009a",
+      "start_s": 796.544,
+      "end_s": 796.977,
+      "speaker_id": "spk-A",
+      "text": "right, well,"
+    },
+    {
+      "id": "ami-is1009a-s125",
+      "meeting_id": "ami-is1009a",
+      "start_s": 798.117,
+      "end_s": 803.577,
+      "speaker_id": "spk-B",
+      "text": "then we see you in about 30 minutes and see what we can come up with."
+    },
+    {
+      "id": "ami-is1009a-s126",
+      "meeting_id": "ami-is1009a",
+      "start_s": 803.898,
+      "end_s": 804.588,
+      "speaker_id": "spk-A",
+      "text": "Okay, very good."
+    },
+    {
+      "id": "ami-is1009a-s127",
+      "meeting_id": "ami-is1009a",
+      "start_s": 804.925,
+      "end_s": 805.118,
+      "speaker_id": "spk-B",
+      "text": "Okay."
+    },
+    {
+      "id": "ami-is1009a-s128",
+      "meeting_id": "ami-is1009a",
+      "start_s": 805.487,
+      "end_s": 807.671,
+      "speaker_id": "spk-C",
+      "text": "Yes."
+    }
+  ],
+  "chapters": [],
+  "summaries": {},
+  "action_items": []
+}
