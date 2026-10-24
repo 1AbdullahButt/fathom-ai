@@ -83,3 +83,27 @@ Format: what the reference (Fathom) does / what we do / why.
   user. There is no auth and no clips library, so those would be dead links.
 - **Processing and error rows are still links** for now (the kit makes processing rows
   unclickable). P0-7 owns the live processing states and can change this.
+
+## Meeting page (P0-5)
+- **No sidebar on the meeting page.** Like the kit's MeetingPage, the page is full width with a
+  60px top bar ("Meetings" back link, title, meta); the app sidebar would squeeze the 3-column grid.
+- **Top bar has no avatar stack or Share button yet.** Sharing is clips (P1-4); a Share button now
+  would copy a link nobody else can sign in to. Speakers are listed in the wide left column.
+- **Left column is a plain speaker list (with the speaking speaker marked), chapters only if the
+  meeting has any.** Talk-time bars, speaker filter and chapter progress are P2-2. The mid-width
+  Transcript / Chapters / Speakers segmented control is left out for the same reason.
+- **No "Find in transcript" box or "Follow playback" switch in a toolbar.** Follow pauses on any
+  user scroll (wheel, touch, scroll keys, scrollbar drag) and a floating "Resume follow" button
+  turns it back on; clicking a line, the scrubber or a quote also re-enables it. Find is not in PLAN.
+- **Clicking anywhere on a transcript line seeks** (the kit only makes the timestamp clickable),
+  unless the click ends a text selection, so P1-3 highlights from selected text still work.
+  Consecutive lines from one speaker hide the name visually but keep it for screen readers.
+- **Audio-only and transcript-only meetings show the kit's simulated "speaker view" stage**
+  (active speaker + caption) over a hidden `<audio>`; transcript-only meetings (m1, m2) run a
+  simulated clock so play/seek/follow still work. Video files render a real `<video>`.
+- **Phone tabs are Transcript / Summary / Actions** (the kit adds Clips; clips are P1-4).
+- **Quote chips are not marked "active" while their segment plays.** That needs the clock in the
+  side panel (a re-render per tick); the transcript line highlight shows the same thing.
+- **Template select and the AI/human legend are not in the Summary tab yet** (P1-1 / P2-3).
+- **Tab counts are hidden from the tab's accessible name** (`aria-hidden` on the count) so the tab
+  is named exactly "Action items", as the locked e2e test expects.
