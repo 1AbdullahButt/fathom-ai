@@ -1,0 +1,3082 @@
+{
+  "meeting": {
+    "id": "seattle-len-2025-03-13",
+    "title": "Seattle City Council: Libraries, Education & Neighborhoods Committee",
+    "date": "2025-03-13",
+    "duration_s": 3355,
+    "media_url": "/media/seattle-len-2025-03-13.mp3",
+    "speakers": [
+      {
+        "id": "spk-A",
+        "name": "Jennifer Chao (Dept. of Neighborhoods)"
+      },
+      {
+        "id": "spk-B",
+        "name": "Chair Maritza Rivera"
+      },
+      {
+        "id": "spk-C",
+        "name": "Committee clerk"
+      },
+      {
+        "id": "spk-D",
+        "name": "Sokha Danh (Dept. of Neighborhoods)"
+      },
+      {
+        "id": "spk-E",
+        "name": "Councilmember Alexis Mercedes Rinck"
+      },
+      {
+        "id": "spk-F",
+        "name": "Wren Wheeler (public comment)"
+      },
+      {
+        "id": "spk-G",
+        "name": "Remote appointees"
+      },
+      {
+        "id": "spk-H",
+        "name": "Councilmember Mark Solomon"
+      }
+    ],
+    "status": "ready",
+    "source": "seed"
+  },
+  "segments": [
+    {
+      "id": "seattle-len-2025-03-13-s1",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 11.227,
+      "end_s": 13.328,
+      "speaker_id": "spk-A",
+      "text": "All right."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s2",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 13.732,
+      "end_s": 26.141,
+      "speaker_id": "spk-B",
+      "text": "Good morning, everyone. The March 13, 2025 meeting of the Libraries, Education, and Neighborhoods Committee will come to order."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s3",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 26.303,
+      "end_s": 35.758,
+      "speaker_id": "spk-B",
+      "text": "It's 9:31 a.m. I'm Maritza Rivera, chair of the committee. I would like to note that Councilmember Hollingsworth is excused today. Will the clerk please call the roll?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s4",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 36.289,
+      "end_s": 37.352,
+      "speaker_id": "spk-C",
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s5",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 38.608,
+      "end_s": 38.737,
+      "speaker_id": "spk-D",
+      "text": "Here."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s6",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 39.8,
+      "end_s": 40.347,
+      "speaker_id": "spk-C",
+      "text": "Councilmember Moore?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s7",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 40.96,
+      "end_s": 41.443,
+      "speaker_id": "spk-A",
+      "text": "Present."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s8",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 42.313,
+      "end_s": 43.215,
+      "speaker_id": "spk-C",
+      "text": "Vice Chair Rink?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s9",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 43.699,
+      "end_s": 44.182,
+      "speaker_id": "spk-E",
+      "text": "Present."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s10",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 44.988,
+      "end_s": 45.81,
+      "speaker_id": "spk-C",
+      "text": "And Chair Rivera?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s11",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 45.939,
+      "end_s": 46.374,
+      "speaker_id": "spk-B",
+      "text": "Present."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s12",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 47.002,
+      "end_s": 48.613,
+      "speaker_id": "spk-C",
+      "text": "4 councilmembers are present."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s13",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 52.72,
+      "end_s": 60.946,
+      "speaker_id": "spk-B",
+      "text": "All right. If there's no objection, the agenda will be adopted. Hearing no objection, the agenda is adopted."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s14",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 61.235,
+      "end_s": 81.647,
+      "speaker_id": "spk-B",
+      "text": "There are 4 items of business on today's agenda. We have the reappointment of Carmen Bendixen to the Seattle Public Library Board of Trustees, the reappointments of Evan Smith and Linda Thompson Black to the Families Education Preschool and Promise Levy Oversight Committee, and a presentation from the Department of Neighborhoods on the update on"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s15",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 81.695,
+      "end_s": 88.912,
+      "speaker_id": "spk-B",
+      "text": "Chinatown International District community capacity We will now open the hybrid public comment period."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s16",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 89.057,
+      "end_s": 95.392,
+      "speaker_id": "spk-B",
+      "text": "Public comments should relate to the items of the agenda that I just read out loud or within the purview of this committee."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s17",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 95.809,
+      "end_s": 98.087,
+      "speaker_id": "spk-B",
+      "text": "Clerk, how many speakers are signed up today?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s18",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 98.777,
+      "end_s": 103.589,
+      "speaker_id": "spk-C",
+      "text": "Currently we have one in-person speaker and no remote speakers on the list for today."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s19",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 104.615,
+      "end_s": 107.888,
+      "speaker_id": "spk-B",
+      "text": "Thank you, Clerk. Can you please read the public comment instructions?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s20",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 109.283,
+      "end_s": 116.056,
+      "speaker_id": "spk-C",
+      "text": "The public comment period will be moderated in the following manner. The public comment period is up to 20 minutes."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s21",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 116.345,
+      "end_s": 121.74,
+      "speaker_id": "spk-C",
+      "text": "Each speaker will have 2 minutes. Speakers will be called in the order in which they registered."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s22",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 122.189,
+      "end_s": 127.472,
+      "speaker_id": "spk-C",
+      "text": "We will start with in-person speakers first and then remote speakers until the public comment period has ended."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s23",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 128.243,
+      "end_s": 135.259,
+      "speaker_id": "spk-C",
+      "text": "Speakers will hear a chime when 10 seconds are left of their time. The public period— the public comment period is now open."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s24",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 135.853,
+      "end_s": 141.972,
+      "speaker_id": "spk-C",
+      "text": "We will begin with the first speaker on the list. The first in-person speaker is Wren Wheeler."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s25",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 146.687,
+      "end_s": 147.963,
+      "speaker_id": "spk-F",
+      "text": "Hello, is this working?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s26",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 148.076,
+      "end_s": 148.173,
+      "speaker_id": "spk-A",
+      "text": "Okay."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s27",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 148.948,
+      "end_s": 160.743,
+      "speaker_id": "spk-F",
+      "text": "Um, thank you, Chair Rivera, and all members of the committee. My name is Wren Wheeler. I use she/her pronouns, and I'm a staff member at the Wing Luke Museum and an active community member of the Chinatown International District."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s28",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 160.807,
+      "end_s": 169.058,
+      "speaker_id": "spk-F",
+      "text": "So I'm here to talk about that item on the agenda. The museum has been part of the CID Visioning Group since the beginning."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s29",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 169.796,
+      "end_s": 190.571,
+      "speaker_id": "spk-F",
+      "text": "I myself have only been part of the group on a regular basis since the last year, but I have to say that if, and I'll backtrack a little bit, the museum is known for our community advisory committee process, and for those who don't know what that is, we, for almost all of our exhibits, we gather community input and they really direct"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s30",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 190.571,
+      "end_s": 194.665,
+      "speaker_id": "spk-F",
+      "text": "the, how an exhibit will go and what programs will go along with that exhibit."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s31",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 195.147,
+      "end_s": 201.216,
+      "speaker_id": "spk-F",
+      "text": "And similarly, the community, the CID Community Vision Group is very similar."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s32",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 201.73,
+      "end_s": 209.325,
+      "speaker_id": "spk-F",
+      "text": "It's comprised of community members from all facets of the CID, maybe not all, but a lot of members of the community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s33",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 209.903,
+      "end_s": 222.07,
+      "speaker_id": "spk-F",
+      "text": "And we work together really well to— we know we have— we don't agree on everything, but we've figured out a process to work through all of those issues and come together on the things that really matter to all of us."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s34",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 222.651,
+      "end_s": 230.688,
+      "speaker_id": "spk-F",
+      "text": "So I'm here to just give a shout out to our Department of Neighborhoods and hope that you continue to support the CID through their work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s35",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 231.173,
+      "end_s": 233.755,
+      "speaker_id": "spk-F",
+      "text": "And I'm excited to hear their presentation. Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s36",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 235.03,
+      "end_s": 235.383,
+      "speaker_id": "spk-D",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s37",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 239.544,
+      "end_s": 243.866,
+      "speaker_id": "spk-B",
+      "text": "All right. There are no additional speakers, registered speakers."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s38",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 243.963,
+      "end_s": 252.459,
+      "speaker_id": "spk-B",
+      "text": "The public comment period is now closed. So now we'll proceed to our items of business. Will the clerk please read today's first item into the record?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s39",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 253.437,
+      "end_s": 267.211,
+      "speaker_id": "spk-C",
+      "text": "Agenda item 1, appointment 03101, the reappointment of Carmen Bendixen as member of the Seattle Public Library Board of Trustees for a term to April 1st, 2030."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s40",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 268.205,
+      "end_s": 273.576,
+      "speaker_id": "spk-B",
+      "text": "Thank you, clerk. This reappointment has been read into the record. Carmen is joining us virtually."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s41",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 273.721,
+      "end_s": 294.011,
+      "speaker_id": "spk-B",
+      "text": "Welcome, Carmen. Thank you for joining us. Carmen Bendixen was initially appointed to the library board in April 2020 by Mayor Jenny Durkan and has served as an active and engaged trustee for 5 years, during which she has held the position of board president and vice president, as well as serving on the executive search committee"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s42",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 294.043,
+      "end_s": 298.475,
+      "speaker_id": "spk-B",
+      "text": "during the national search to hire a new chief librarian in 2022."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s43",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 299.165,
+      "end_s": 312.089,
+      "speaker_id": "spk-B",
+      "text": "As a library board trustee, she has played an active role in guiding policy and budget issues, as well as the development of the library's 2024-2023 strategic— excuse me, 2033 strategic plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s44",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 312.57,
+      "end_s": 329.251,
+      "speaker_id": "spk-B",
+      "text": "Bendixen previously served on the board of the Friends of the Seattle Public Library, holding roles of president, vice president, and secretary, and helping to lead advocacy efforts during the 2012 and 2019 library levy campaigns."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s45",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 329.588,
+      "end_s": 337.215,
+      "speaker_id": "spk-B",
+      "text": "She's a regular user of the Greenwood and Green Lake branches and has served as a welcome desk and and events volunteer at the Central Library."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s46",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 337.732,
+      "end_s": 346.145,
+      "speaker_id": "spk-B",
+      "text": "Again, I want to thank Carmen for giving generously of her time and for agreeing to extend her time on the library board. Carmen, would you like to say a few words?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s47",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 351.83,
+      "end_s": 358.4,
+      "speaker_id": "spk-G",
+      "text": "Um, good morning everyone. Sorry I'm not there, I'm a little under the weather, but, um, thank you for considering my reappointment."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s48",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 358.706,
+      "end_s": 367.615,
+      "speaker_id": "spk-G",
+      "text": "And, um, yeah, I'm just happy to continue the work and love the Seattle Public Library."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s49",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 368.737,
+      "end_s": 373.92,
+      "speaker_id": "spk-B",
+      "text": "Thank you, Carmen. I'm sorry that you're under the weather. Thank you for joining us virtually."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s50",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 374.162,
+      "end_s": 381.74,
+      "speaker_id": "spk-B",
+      "text": "And again, I agree with you, love the Seattle Public Library, and really want to thank you for your service."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s51",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 382.322,
+      "end_s": 387.735,
+      "speaker_id": "spk-B",
+      "text": "Again, we always talk about this, but these are volunteer positions. People do not get paid to serve."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s52",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 388.369,
+      "end_s": 395.91,
+      "speaker_id": "spk-B",
+      "text": "on these positions and very much appreciate people's willingness and generosity in giving of their time to this important work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s53",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 396.47,
+      "end_s": 401.312,
+      "speaker_id": "spk-B",
+      "text": "So thank you, Carmen. Colleagues, do any of you have any questions or comments?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s54",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 403.248,
+      "end_s": 410.282,
+      "speaker_id": "spk-B",
+      "text": "If not, all right, seeing none, I move that the committee recommend confirmation of the appointment. Is there a second?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s55",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 410.654,
+      "end_s": 411.578,
+      "speaker_id": "spk-D",
+      "text": "Second."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s56",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 411.87,
+      "end_s": 416.399,
+      "speaker_id": "spk-B",
+      "text": "It is moved and seconded to confirm the appointment. Are there Any further comments?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s57",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 417.665,
+      "end_s": 421.047,
+      "speaker_id": "spk-B",
+      "text": "Will the clerk please call the roll on the confirmation of the appointment?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s58",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 421.431,
+      "end_s": 422.425,
+      "speaker_id": "spk-C",
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s59",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 422.938,
+      "end_s": 422.97,
+      "speaker_id": "spk-A",
+      "text": "Aye."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s60",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 423.739,
+      "end_s": 424.508,
+      "speaker_id": "spk-C",
+      "text": "Councilmember Moore?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s61",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 425.101,
+      "end_s": 425.133,
+      "speaker_id": "spk-H",
+      "text": "Aye."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s62",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 426.062,
+      "end_s": 426.96,
+      "speaker_id": "spk-C",
+      "text": "Vice Chair Rink?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s63",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 427.344,
+      "end_s": 427.392,
+      "speaker_id": "spk-H",
+      "text": "Aye."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s64",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 428.306,
+      "end_s": 428.979,
+      "speaker_id": "spk-C",
+      "text": "Chair Rivera?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s65",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 429.267,
+      "end_s": 429.299,
+      "speaker_id": "spk-B",
+      "text": "Aye."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s66",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 430.549,
+      "end_s": 432.424,
+      "speaker_id": "spk-C",
+      "text": "4 in favor, none opposed."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s67",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 432.873,
+      "end_s": 440.789,
+      "speaker_id": "spk-B",
+      "text": "The motion carries, and the recommendation that the appointment be confirmed will be sent to the full, uh, City Council committee on Tuesday, March 18th."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s68",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 441.224,
+      "end_s": 446.431,
+      "speaker_id": "spk-B",
+      "text": "We will now move to the 2nd and 3rd items on the agenda. Again, Carmen, thank you for being here."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s69",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 448.21,
+      "end_s": 451.753,
+      "speaker_id": "spk-B",
+      "text": "Will the clerk please read the 2nd and 3rd agenda items into the record?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s70",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 452.51,
+      "end_s": 468.319,
+      "speaker_id": "spk-C",
+      "text": "Agenda item 2, appointment 03104, the reappointment of Evan Smith as member of the Families Education Preschool and Promise Levy Oversight Committee for a term to December 31st, 2026."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s71",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 469.04,
+      "end_s": 484.589,
+      "speaker_id": "spk-C",
+      "text": "And agenda item 3, appointment 03105, the reappointment of Linda Thompson Black as a member of the Families Education Preschool and Promise Levy Oversight Committee for a term to December 31st, 2026."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s72",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 485.712,
+      "end_s": 492.428,
+      "speaker_id": "spk-B",
+      "text": "Thank you, Clerk. These appointments have been read into the record. Evan is joining us virtually."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s73",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 492.781,
+      "end_s": 498.359,
+      "speaker_id": "spk-B",
+      "text": "I see him on there. And Linda Thompson Black is in person. Thank you for being here this morning."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s74",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 499.273,
+      "end_s": 508.89,
+      "speaker_id": "spk-B",
+      "text": "I want to read about both of them. Evan Smith was appointed to Seattle Families Education Preschool and Promise Levy Oversight Committee in 2022."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s75",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 509.371,
+      "end_s": 517.914,
+      "speaker_id": "spk-B",
+      "text": "In his professional career, Evan has worked as the director of school openings and director for the Office of School Operations for the District of Columbia Public Schools."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s76",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 518.347,
+      "end_s": 526.393,
+      "speaker_id": "spk-B",
+      "text": "Evan transitioned to a different industry and is currently serving as the vice president of technology strategy and business transformation for Starbucks."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s77",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 526.826,
+      "end_s": 531.54,
+      "speaker_id": "spk-B",
+      "text": "He continues to be involved in the education sector as a member of multiple education boards."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s78",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 531.973,
+      "end_s": 543.885,
+      "speaker_id": "spk-B",
+      "text": "Evan currently serves as the board director of the College Success Foundation and as a board officer for Schools First while still being a part of the FEP, excuse me, FEP Levy Oversight Committee."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s79",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 544.238,
+      "end_s": 550.507,
+      "speaker_id": "spk-B",
+      "text": "I wanna thank Evan for agreeing to serve a second term on the Levy Oversight Committee. Evan, would you like to say a few words?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s80",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 551.677,
+      "end_s": 556.616,
+      "speaker_id": "spk-D",
+      "text": "Hi, yes, I'm just, would like to say I'm honored to be considered for reappointment."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s81",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 556.664,
+      "end_s": 564.064,
+      "speaker_id": "spk-D",
+      "text": "It's been a great honor to serve Seattle in the capacity in the first term, and I look forward to being considered."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s82",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 564.112,
+      "end_s": 567.275,
+      "speaker_id": "spk-D",
+      "text": "And thank you all, and apologies I couldn't be there in person today."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s83",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 568.687,
+      "end_s": 575.397,
+      "speaker_id": "spk-B",
+      "text": "Thank you, Evan. Thank you for agreeing to serve a second term on the Levy Oversight Committee on this important work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s84",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 575.927,
+      "end_s": 586.408,
+      "speaker_id": "spk-B",
+      "text": "And now Linda Thompson Black, here in person. Linda Thompson Black was appointed to Seattle Families Education Preschool and Promise Levy Oversight Committee in 2022 as well."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s85",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 586.922,
+      "end_s": 598.198,
+      "speaker_id": "spk-B",
+      "text": "Linda currently works as the area development director for the United Negro College Fund, which helps minority students across Seattle by providing them with the funds they need to support their college education."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s86",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 598.728,
+      "end_s": 608.254,
+      "speaker_id": "spk-B",
+      "text": "Additionally, Linda has experience working for the City of Seattle, where she was a special assistant to Mayor Norm Rice, focusing on education and human services."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s87",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 608.752,
+      "end_s": 622.972,
+      "speaker_id": "spk-B",
+      "text": "While working with Mayor Norm Rice, Linda helped lead the very successful education summit during his tenure, which resulted in the passage of the Families in Education Levy, which is a precursor to the current Families Education Preschool Promise Levy."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s88",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 623.373,
+      "end_s": 627.671,
+      "speaker_id": "spk-B",
+      "text": "I want to thank Linda for agreeing to serve a second term to the Levy Oversight Committee."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s89",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 628.104,
+      "end_s": 631.89,
+      "speaker_id": "spk-B",
+      "text": "Linda, would you like to say a few words? You can step up to the mic."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s90",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 632.034,
+      "end_s": 637.135,
+      "speaker_id": "spk-G",
+      "text": "Yes, thank you so much for the opportunity to be a member of the Levy Oversight Committee."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s91",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 637.568,
+      "end_s": 643.807,
+      "speaker_id": "spk-G",
+      "text": "I want to thank the, um, education team. They are amazing and they do Great work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s92",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 645.17,
+      "end_s": 654.79,
+      "speaker_id": "spk-G",
+      "text": "This is a passion project for me. We have to have that next generation of educated workplace, and we want opportunity for all."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s93",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 654.886,
+      "end_s": 661.861,
+      "speaker_id": "spk-G",
+      "text": "So I'm excited for a second term and look forward to working with my other committee members, if considered."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s94",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 662.742,
+      "end_s": 663.849,
+      "speaker_id": "spk-B",
+      "text": "Thank you, Linda."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s95",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 664.025,
+      "end_s": 664.442,
+      "speaker_id": "spk-G",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s96",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 664.57,
+      "end_s": 675.743,
+      "speaker_id": "spk-B",
+      "text": "And we just so appreciate your expertise, and, and yours too, Evan, and really appreciate again your willingness and your generosity to serve on the Levy Oversight Committee to do this important work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s97",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 676.128,
+      "end_s": 680.887,
+      "speaker_id": "spk-B",
+      "text": "And I should say, colleagues, that the term— the levy expires this year."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s98",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 681.336,
+      "end_s": 687.297,
+      "speaker_id": "spk-B",
+      "text": "The terms are till next year unless there is some change, given now that there's a new levy coming on."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s99",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 687.425,
+      "end_s": 698.081,
+      "speaker_id": "spk-B",
+      "text": "And we have talked to both Linda and Evan about that possibility of that term, you know, if there are any changes to the term, and they both have agreed even with that."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s100",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 699.03,
+      "end_s": 718.043,
+      "speaker_id": "spk-B",
+      "text": "stipulations. So really so fortunate to have them here. And just Linda and I recently met, as I did Evan, I met with all the members of the Levy Oversight Committee, or most of them, and I, I, we just have great folks serving and we are just so lucky to have them on this committee."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s101",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 718.173,
+      "end_s": 722.267,
+      "speaker_id": "spk-B",
+      "text": "So thank you all. Colleagues, do you have any questions or comments?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s102",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 723.43,
+      "end_s": 735.52,
+      "speaker_id": "spk-B",
+      "text": "All right then, I will— I move that the committee recommend Confirmation of both appointments, um, of Evan Smith and Linda Thompson Black. Is there a second?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s103",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 735.728,
+      "end_s": 736.162,
+      "speaker_id": "spk-G",
+      "text": "Second."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s104",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 736.916,
+      "end_s": 741.316,
+      "speaker_id": "spk-B",
+      "text": "It is moved and seconded to confirm the appointments. Are there further comments?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s105",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 741.958,
+      "end_s": 746.277,
+      "speaker_id": "spk-B",
+      "text": "Will the clerk please call the roll on the confirmation of the appointments?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s106",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 746.631,
+      "end_s": 747.626,
+      "speaker_id": "spk-C",
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s107",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 748.06,
+      "end_s": 748.108,
+      "speaker_id": "spk-D",
+      "text": "Aye."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s108",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 748.863,
+      "end_s": 749.633,
+      "speaker_id": "spk-C",
+      "text": "Councilmember Moore?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s109",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 750.147,
+      "end_s": 750.179,
+      "speaker_id": "spk-G",
+      "text": "Aye."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s110",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 751.046,
+      "end_s": 751.849,
+      "speaker_id": "spk-C",
+      "text": "Vice Chair Rank?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s111",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 752.154,
+      "end_s": 752.379,
+      "speaker_id": "spk-F",
+      "text": "Yes."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s112",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 753.278,
+      "end_s": 753.872,
+      "speaker_id": "spk-C",
+      "text": "Chair Rivera."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s113",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 754.241,
+      "end_s": 754.273,
+      "speaker_id": "spk-E",
+      "text": "Aye."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s114",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 755.461,
+      "end_s": 757.242,
+      "speaker_id": "spk-C",
+      "text": "4 in favor, none opposed."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s115",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 757.387,
+      "end_s": 765.7,
+      "speaker_id": "spk-B",
+      "text": "All right, the motion carries, and the recommendation that the appointments be confirmed will be sent to the full City Council meeting on Tuesday, March 18th."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s116",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 766.696,
+      "end_s": 771.077,
+      "speaker_id": "spk-B",
+      "text": "Again, thank you for being here, Linda and Evan. Thanks for joining us online."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s117",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 772.072,
+      "end_s": 778.091,
+      "speaker_id": "spk-B",
+      "text": "We will now move to the 4th item on the agenda. Will the clerk please read the 4th agenda item into the record?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s118",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 778.585,
+      "end_s": 786.168,
+      "speaker_id": "spk-C",
+      "text": "Agenda item 4, update on Chinatown International District community capacity building for briefing and discussion."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s119",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 787.4,
+      "end_s": 800.2,
+      "speaker_id": "spk-B",
+      "text": "We are joined by the Department of Neighborhoods Director Jennifer Chow, director and my friend, I'm lucky to say, and Department of Neighborhoods staff Soka Don for this presentation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s120",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 800.392,
+      "end_s": 807.58,
+      "speaker_id": "spk-B",
+      "text": "Thank you both for joining us at the table. Will you please state your names for the record and then you can begin your presentation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s121",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 807.662,
+      "end_s": 813.573,
+      "speaker_id": "spk-B",
+      "text": "And while they're getting ready, I will also give a shout out to other members of the Don team who are in the audience."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s122",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 813.717,
+      "end_s": 818.003,
+      "speaker_id": "spk-B",
+      "text": "Always love seeing everyone. They come out to support each other. I love it."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s123",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 818.597,
+      "end_s": 830.333,
+      "speaker_id": "spk-B",
+      "text": "Um, and, uh, Director Chow, I say friend because we've been working together for so many years that now via our work we've become friends, and I just so enjoy knowing you and getting to work with you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s124",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 830.798,
+      "end_s": 835.919,
+      "speaker_id": "spk-B",
+      "text": "So looks like you're situated now. I'll let you state your names for the record and begin."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s125",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 836.834,
+      "end_s": 842.663,
+      "speaker_id": "spk-B",
+      "text": "And then, uh, colleagues, if you'll just hold your questions till the end of the presentation. Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s126",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 844.044,
+      "end_s": 847.239,
+      "speaker_id": "spk-A",
+      "text": "Jennifer Chow, Director of Department of Neighborhoods."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s127",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 848.074,
+      "end_s": 851.542,
+      "speaker_id": "spk-D",
+      "text": "Soka Don, CID Community Capacity Coordinator, Department of Neighborhoods."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s128",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 852.891,
+      "end_s": 860.438,
+      "speaker_id": "spk-B",
+      "text": "Thank you. And also, I should say, colleagues, if you recall, we did have a presentation about this last year, and this is an update."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s129",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 861.707,
+      "end_s": 862.176,
+      "speaker_id": "spk-G",
+      "text": "Go ahead."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s130",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 862.241,
+      "end_s": 872.006,
+      "speaker_id": "spk-A",
+      "text": "Thank you so much. Thank you, Council Chair Rivera and council members, for the opportunity to provide an update on our community capacity building work in the Chinatown International District."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s131",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 872.378,
+      "end_s": 883.752,
+      "speaker_id": "spk-A",
+      "text": "It is an honor to always be in this space and to be invited to be able to share about the connections, the relationships, and the impact the city and the community has in partnership to make sure that our city is thriving."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s132",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 885.771,
+      "end_s": 896.142,
+      "speaker_id": "spk-A",
+      "text": "And I would say before I start that the CID, as I will refer to it, as the Chinatown International District, known as the CID, is our beloved neighborhood across the city."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s133",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 896.223,
+      "end_s": 905.947,
+      "speaker_id": "spk-A",
+      "text": "I think every community, every neighborhood really does see it as their beloved place-based Chinatown International District where they find their own belonging and own connection."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s134",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 910.687,
+      "end_s": 919.129,
+      "speaker_id": "spk-A",
+      "text": "The Chinatown International District, which I will refer to as the CID, is a culturally rich neighborhood with a diverse community of people, businesses, and organizations."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s135",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 920.316,
+      "end_s": 930.196,
+      "speaker_id": "spk-A",
+      "text": "The community has historically experienced insufficient investment and has organized themselves for decades to ensure their voices and needs are heard for ensuring the livelihood of their neighborhood."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s136",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 931.58,
+      "end_s": 939.478,
+      "speaker_id": "spk-A",
+      "text": "In 2023, the CID was added to the list of America's 11 most endangered historic places by the National Trust for Historic Preservation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s137",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 940.912,
+      "end_s": 952.394,
+      "speaker_id": "spk-A",
+      "text": "In response to the community's needs and requests, the city has invested significant resources and staff over the past 5 years for community-led visioning and policy changes to address community priorities."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s138",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 953.704,
+      "end_s": 965.5,
+      "speaker_id": "spk-A",
+      "text": "Mayor Harrell and City Council have further committed to prioritizing the CID as we continue to deepen our trust and relationship with the community by collaborating on community-led solutions for their neighborhood."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s139",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 968.29,
+      "end_s": 974.876,
+      "speaker_id": "spk-A",
+      "text": "Some examples of city investments include the Downtown Activation Team, which is focused on public safety in the downtown core."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s140",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 975.412,
+      "end_s": 989.343,
+      "speaker_id": "spk-A",
+      "text": "Which includes Little Saigon and the CID. This effective interdepartmental collaboration of 15 city departments is a prime example of the One Seattle approach and is led by Leanda Kraft, Seattle Restoration Director in the Mayor's Office."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s141",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 990.403,
+      "end_s": 997.416,
+      "speaker_id": "spk-A",
+      "text": "The Downtown Activation Team started scheduled restoration actions in the Little Saigon neighborhood on November 1st, 2024."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s142",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 998.203,
+      "end_s": 1006.024,
+      "speaker_id": "spk-A",
+      "text": "These actions include cleaning 3 times a day to address Visual disorder, including sidewalk pressure washing, litter abatement, and graffiti removal."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s143",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1007.32,
+      "end_s": 1014.422,
+      "speaker_id": "spk-A",
+      "text": "Scheduled restoration actions or in coordination with the Seattle Police Department to disrupt any criminal behavior and provide visible patrols in the area."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s144",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1015.856,
+      "end_s": 1030.359,
+      "speaker_id": "spk-A",
+      "text": "The Downtown Activation Team is also working on coordinating outreach efforts in Little Saigon for a holistic response, which include We Deliver Care, which will start today, which starts today, March 13th, in the CID with a specific emphasis in the Little Saigon neighborhood."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s145",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1031.6,
+      "end_s": 1051.95,
+      "speaker_id": "spk-A",
+      "text": "A central referral source through the Seattle Fire Department to detox and inpatient beds with Valley Cities, identifying a priority area for the Care Department, and working in collaboration with the Human Services Department to refer to outreach providers or the Law Enforcement Assisted Diversion, known as LEAD, and"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s146",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1051.966,
+      "end_s": 1060.433,
+      "speaker_id": "spk-A",
+      "text": "their program. Other city investments include the Downtown Activation Plan, Seattle Restored program, and the Tenant Improvement Fund in the Office of Economic Development."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s147",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1062.625,
+      "end_s": 1082.82,
+      "speaker_id": "spk-A",
+      "text": "The Equitable— a lot of E's— the Equitable Development Initiative in the Office of Planning and Community Development also funds the Little Saigon Landmark Project, which is a mixed-use project that includes affordable housing and a cultural hub, International Community Health Services, which is capacity building in support of the Ron Chu Healthy"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s148",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1082.916,
+      "end_s": 1094.105,
+      "speaker_id": "spk-A",
+      "text": "Aging and Wellness Center, Interim Community Development Association to complete Busch Garden, Uncle Bob's Place, and the Wing Luke Memorial Foundation's capacity building to support their Ing Family Homestead."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s149",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1095.18,
+      "end_s": 1100.105,
+      "speaker_id": "spk-A",
+      "text": "So those are some areas of the city investments that we have poured into the community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s150",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1100.605,
+      "end_s": 1104.852,
+      "speaker_id": "spk-A",
+      "text": "Now I am excited to share about the investments for the CID from the Department of Neighborhoods."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s151",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1107.12,
+      "end_s": 1114.978,
+      "speaker_id": "spk-A",
+      "text": "Najma Sheikh is the Department of Neighborhoods Central Area Community Engagement Coordinator. She makes sure that the community is engaged with the city and connected to each other."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s152",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1116.709,
+      "end_s": 1131.311,
+      "speaker_id": "spk-A",
+      "text": "After the tragic murder of Donnie Chin, the city funded a community safety coordinator position in the neighborhood in partnership with the CID Public Safety Council and the CID Business Improvement Area, an organization that supports the public safety coordinator."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s153",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1133.55,
+      "end_s": 1147.48,
+      "speaker_id": "spk-A",
+      "text": "FODAP, beautiful neighborhood. In addition to funding the community safety coordinator position, the Department of Neighborhoods partnered with the Seattle Police Department Care and the mayor's office to support the Friends of Little Saigon community safety plan and strategies."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s154",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1148.379,
+      "end_s": 1157.247,
+      "speaker_id": "spk-A",
+      "text": "Pho Dep means beautiful neighborhood, and this initiative took inspiration from a place-based effort in Rainier Beach called Rainier Beach: A Beautiful Safe Place for Youth."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s155",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1158.275,
+      "end_s": 1167.64,
+      "speaker_id": "spk-A",
+      "text": "What is amazing and inspirational about Pho Dep is that it is bridging cultures and people are finding their place-based solutions, but across connecting with other communities."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s156",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1167.768,
+      "end_s": 1171.966,
+      "speaker_id": "spk-A",
+      "text": "So seeing what Rainier Beach has been able to do really inspired them to be able to reach out."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s157",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1172.432,
+      "end_s": 1179.307,
+      "speaker_id": "spk-A",
+      "text": "Department of Neighborhoods was able to connect the community members, and they got to share about their lessons learned and their journey and was able to create this."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s158",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1181.01,
+      "end_s": 1198.605,
+      "speaker_id": "spk-A",
+      "text": "The goals of FODEP include building a coalition of community members, business owners, property managers, organizations, institutions, service providers, and local governments to collectively improve public safety in Little Saigon and identify ideas and strategies to address the root cause root causes of the neighborhood's biggest challenges."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s159",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1200.12,
+      "end_s": 1211.695,
+      "speaker_id": "spk-A",
+      "text": "An element of the plan involves improving the public realm in Little Saigon using crime prevention through environmental design, known as CPTED, which can include strategies like lighting, tree pruning, and public art."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s160",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1212.389,
+      "end_s": 1219.87,
+      "speaker_id": "spk-A",
+      "text": "This month, Seattle City Light completed 10 lights improvement in the area, including upgrading light wattages and installing floodlights."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s161",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1221.692,
+      "end_s": 1233.9,
+      "speaker_id": "spk-A",
+      "text": "FoDEP had their phase 2 kickoff on February 27th. and I saw some council members there— with the community and city departments, and the ideas suggested in the 100-day challenge for public safety improvements are already being implemented."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s162",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1234.07,
+      "end_s": 1249.424,
+      "speaker_id": "spk-A",
+      "text": "So it's already underway. So that's to share a little bit about FODEP, and then now to talk about the International Special Review District, known as the ISRD, which was established to promote and preserve the distinct history of architecture and the place in the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s163",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1250.612,
+      "end_s": 1265.655,
+      "speaker_id": "spk-A",
+      "text": "In order to preserve the cultural character, the International Special Review District Board must review and approve all uses, including public sidewalks, new construction, and changes to building exteriors within the district, including signs or new paint colors or security gates before installation or construction."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s164",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1268.79,
+      "end_s": 1277.369,
+      "speaker_id": "spk-A",
+      "text": "The Department of Neighborhood also partners with other city departments to invest in culturally responsive and in-language engagement through our community liaisons and equity engagement advisors."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s165",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1278.809,
+      "end_s": 1288.375,
+      "speaker_id": "spk-A",
+      "text": "Starting this year, DON has increased our staff presence in the neighborhood with 3 staff members holding regular office hours at Hinhay Cowork and Friends of Little Saigon workspace."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s166",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1289.353,
+      "end_s": 1300.233,
+      "speaker_id": "spk-A",
+      "text": "Rebecca Freestad is DON's ISRD coordinator, Najma Sheikh, Central Area Community Engagement coordinator, and Sokha Don, our CID Community Capacity Building coordinator."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s167",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1301.066,
+      "end_s": 1317.602,
+      "speaker_id": "spk-A",
+      "text": "Increasing staff presence helps us to belong in community, and we are embedded in the work. On that note, I would like to hand it over to Soka to introduce himself and his role and the phenomenal work he is doing in partnership with the community as Don's CID Community Capacity Building Coordinator."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s168",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1319.66,
+      "end_s": 1324.222,
+      "speaker_id": "spk-D",
+      "text": "Thank you, Director Chow, and thank you, Council, for having us today. Again, my name is Soka Don."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s169",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1324.496,
+      "end_s": 1328.496,
+      "speaker_id": "spk-D",
+      "text": "I've been working with the Chinatown International District community for the last 10 years."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s170",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1329.091,
+      "end_s": 1350.13,
+      "speaker_id": "spk-D",
+      "text": "I first began my work in the neighborhood in 2014 working for SCID PDA, or the Seattle Chinatown International District Preservation and Development Authority, and was appointed to Mayor Murray's Special Task Force on Public Safety and Neighborhood Vitality after the murder of community hero and founder of the International District Emergency Center, Donnie Chin, in 2015."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s171",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1350.13,
+      "end_s": 1359.21,
+      "speaker_id": "spk-D",
+      "text": "I oversaw local lead operations for King County 2017, also known as Law Enforcement Assistance Diversion, for the Public Defender Association, now known as Purpose, Dignity, and Action."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s172",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1360.058,
+      "end_s": 1365.022,
+      "speaker_id": "spk-D",
+      "text": "I expanded the LEAD program into the East Precinct in coordination with the Little Saigon neighborhood."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s173",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1365.698,
+      "end_s": 1369.802,
+      "speaker_id": "spk-D",
+      "text": "Finally, I also work a second job on the weekends in the Chinatown International District."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s174",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1370.142,
+      "end_s": 1376.077,
+      "speaker_id": "spk-D",
+      "text": "I guess you can say I'm very much rooted past and present. I'm also a renter in the neighborhood as well."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s175",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1377.815,
+      "end_s": 1382.188,
+      "speaker_id": "spk-D",
+      "text": "Thank you for allowing me to share my connection to the community. Now on to the official part of the presentation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s176",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1383.881,
+      "end_s": 1391.007,
+      "speaker_id": "spk-D",
+      "text": "In 2019, the CID Vision Advisory Group saw a shared community vision for a neighborhood plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s177",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1391.521,
+      "end_s": 1402.279,
+      "speaker_id": "spk-D",
+      "text": "These groups of leaders successfully advocated for seed funding and sponsored a community-led visioning process that reflects the diversity of the community and seeks to address the complexity of the Chinatown International District."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s178",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1403.001,
+      "end_s": 1414.047,
+      "speaker_id": "spk-D",
+      "text": "The commitment of these community leaders to work has been rooted in providing an authentic community voice, representing business owners, community leaders, seniors, residents, and non-English-speaking community members."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s179",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1414.545,
+      "end_s": 1422.636,
+      "speaker_id": "spk-D",
+      "text": "Hundreds of community members have participated and provided critical input through interviews, focus groups, and community-wide surveys through this community-led visioning process."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s180",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1423.374,
+      "end_s": 1443.61,
+      "speaker_id": "spk-D",
+      "text": "The CID Vision Advisory Group, with support from the city, provides a clear path forward by community self-determination with strategies and a call to action to address community issues in both the near and long term through building infrastructure for inclusive community engagement and decision-making, ensuring community self-determination in projects that impact the CID, and finally,"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s181",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1443.707,
+      "end_s": 1450.813,
+      "speaker_id": "spk-D",
+      "text": "creating a long-term community visioning plan. All these 3 items which I have the privilege of talking and diving deeper during this presentation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s182",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1455.507,
+      "end_s": 1462.139,
+      "speaker_id": "spk-D",
+      "text": "The CID Visioning Advisory Group membership is the largest, most united coalition representing the Chinatown International District."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s183",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1462.624,
+      "end_s": 1469.835,
+      "speaker_id": "spk-D",
+      "text": "The stakeholder group is comprised of 16 organizations, based in the neighborhood who saw a need for a shared community vision and neighborhood plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s184",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1470.492,
+      "end_s": 1478.119,
+      "speaker_id": "spk-D",
+      "text": "The advisory group represents a significant cross-section of diverse stakeholders and organizations ranging from family associations to community nonprofits."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s185",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1478.856,
+      "end_s": 1490.681,
+      "speaker_id": "spk-D",
+      "text": "It's important to stress that the CID Vision Advisory Group members have full-time jobs. The majority are executive directors of these organizations in addition to committing their time to the CID Vision Advisory Group and their incredible work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s186",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1491.418,
+      "end_s": 1500.74,
+      "speaker_id": "spk-D",
+      "text": "This is incredibly telling of the commitment and passion of these individuals and these organizations to continue to serve the CID and share a united vision for themselves and the community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s187",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1501.726,
+      "end_s": 1512.188,
+      "speaker_id": "spk-D",
+      "text": "As previously noted, the CID organizations came together informally in 2019 so the community could have a stronger voice and influence against multiple pressures occurring in the community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s188",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1516.77,
+      "end_s": 1526.874,
+      "speaker_id": "spk-D",
+      "text": "The CID Vision Advisory Group has really approached this community-led visioning model by focusing on 5 fundamental items that very much defines whether or not a neighborhood is able to thrive."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s189",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1527.531,
+      "end_s": 1542.911,
+      "speaker_id": "spk-D",
+      "text": "The CIED vision advisory group created 5 subcommittees and areas of focus, including housing, that housing is available for both longtime and existing residents, particularly elders and families, and for residents who can strengthen the customer base to support businesses in the neighborhood."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s190",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1543.969,
+      "end_s": 1562.52,
+      "speaker_id": "spk-D",
+      "text": "Business and economic strength. We know that a thriving neighborhood business district includes the preservation of longstanding and legacy businesses who wish to stay in the CID while also attractively— while also attractively attracting ethnically diverse businesses that contribute to the CID's distinct character."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s191",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1563.466,
+      "end_s": 1576.435,
+      "speaker_id": "spk-D",
+      "text": "Neighborhood character and culture and history. It's undeniable that the Asian culture and history is central to the CID's identity and should be preserved and honored, and that other communities that are part of the neighborhood's diverse history and identity are also recognized."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s192",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1577.253,
+      "end_s": 1586.31,
+      "speaker_id": "spk-D",
+      "text": "And celebrate it. Community self-safety and health. Individual and community safety, health, and wellness is paramount to the quality of life for residents."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s193",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1586.951,
+      "end_s": 1595.736,
+      "speaker_id": "spk-D",
+      "text": "Thank you for Director Chow for talking about this in your presentation, especially for vulnerable community members who face language and literacy barriers."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s194",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1596.489,
+      "end_s": 1602.821,
+      "speaker_id": "spk-D",
+      "text": "Transportation mobility. The connectivity and ease of getting around within and to from the CID will benefit residents."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s195",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1603.063,
+      "end_s": 1618.838,
+      "speaker_id": "spk-D",
+      "text": "particularly elders and visitors to neighborhoods alike. These issues are grounded in the CID Vision Advisory Group's vision for a community that's inclusive of diverse groups and across generations who use their collective voice and power for community self-determination and the CID's growth and development."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s196",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1623.962,
+      "end_s": 1628.504,
+      "speaker_id": "spk-D",
+      "text": "I'd like to talk now about the distinct phases of the CID Vision Advisory Group's visioning work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s197",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1628.955,
+      "end_s": 1635.362,
+      "speaker_id": "spk-D",
+      "text": "The Seattle Vision Advisory Group has engaged strategically in 4 phases of work to date, with a 4th phase occurring this year."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s198",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1636.28,
+      "end_s": 1648.093,
+      "speaker_id": "spk-D",
+      "text": "Phase 1, community engagement framework. Phase 1 started in 2019 to 2020 with a focus on building a community-led and developed model for community engagement, decision-making, advocacy."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s199",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1648.753,
+      "end_s": 1654.278,
+      "speaker_id": "spk-D",
+      "text": "This model includes strategies for community representation and desired roles for the City of Seattle and other project sponsors."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s200",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1654.748,
+      "end_s": 1666.213,
+      "speaker_id": "spk-D",
+      "text": "It includes a plan for participation of community members in the Chinatown International District and decision-making and centering groups that do not have the opportunity to meaningfully participate, in particular in the past."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s201",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1666.855,
+      "end_s": 1673.963,
+      "speaker_id": "spk-D",
+      "text": "This funding supported a consultant for research, structure and decision-making, values and priorities, and an attorney outreach and engagement plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s202",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1675.73,
+      "end_s": 1685.346,
+      "speaker_id": "spk-D",
+      "text": "Phase 2, the community engagement toolkit. The primary objective of Phase 2 in 2020 to 2020-21 was the development of the CID Community Engagement Toolkit."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s203",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1685.971,
+      "end_s": 1693.477,
+      "speaker_id": "spk-D",
+      "text": "This toolkit recognizes that different types of community issues or projects cannot be served by a one cookie-cutter model for community engagement in the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s204",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1694.166,
+      "end_s": 1701.527,
+      "speaker_id": "spk-D",
+      "text": "Scoping and planning intentional tailored process for the community is required for all stakeholders to come together for a specific issue or project."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s205",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1702.714,
+      "end_s": 1710.495,
+      "speaker_id": "spk-D",
+      "text": "This toolkit can be used to collectively engage, make decisions, and advocate for community interests when faced with issues, concerns, or projects that impact the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s206",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1711.635,
+      "end_s": 1731.352,
+      "speaker_id": "spk-D",
+      "text": "This toolkit is a framework for private and public projects that impact the CID, from city, state agencies, and private developers, nonprofit agencies, and other stakeholders, to meaningfully and— to meaningfully and equitably engage the neighborhood and carry out these projects in a way that avoids community harm, respects community vision and self-determination."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s207",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1732.187,
+      "end_s": 1742.993,
+      "speaker_id": "spk-D",
+      "text": "This collaborative model This toolkit developed by these 16 community organizations known as the CID Vision of Aja Group is the first of its kind for the CID in the neighborhood in the history of the community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s208",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1743.748,
+      "end_s": 1757.171,
+      "speaker_id": "spk-D",
+      "text": "This funding also supports direct costs for translations, stipends, communications, community meeting venues, food, childcare, data visualization, and storytelling materials for the CID Vision of Aja Group."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s209",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1759.164,
+      "end_s": 1766.399,
+      "speaker_id": "spk-D",
+      "text": "Phase 3, neighborhood strategic plan. The creation of the, the CID neighborhood strategic plan in phase 3 was divided into 3 subphases."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s210",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1767.61,
+      "end_s": 1775.85,
+      "speaker_id": "spk-D",
+      "text": "The first phase is engaging community in a community vision process that results in a neighborhood plan with long-term community vision, key issues, and strategies."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s211",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1784.692,
+      "end_s": 1790.275,
+      "speaker_id": "spk-D",
+      "text": "And third, building a structure for Phase 3 work to create implementation details of the neighborhood plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s212",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1791.253,
+      "end_s": 1806.396,
+      "speaker_id": "spk-D",
+      "text": "Key deliverables in Phase 3 included a community survey, which garnered close to 600 responses from community members, a refined communication toolkit, and the CID neighborhood strategic plan with a 10-year vision and identification of priority issues, goals, and strategies."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s213",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1807.375,
+      "end_s": 1811.177,
+      "speaker_id": "spk-D",
+      "text": "The CID implementation plan also resulted in Phase 3, which I'll talk more about."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s214",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1811.241,
+      "end_s": 1811.369,
+      "speaker_id": "spk-H",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s215",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1811.723,
+      "end_s": 1820.848,
+      "speaker_id": "spk-D",
+      "text": "But this translates the CID's visioning of Archer Group's 10-year vision into accountable tasks for the city, along with other responsible government and additional community partners."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s216",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1821.764,
+      "end_s": 1828.962,
+      "speaker_id": "spk-D",
+      "text": "This includes details regarding actions, timelines, and budgets for implementation of the strategies of the neighborhood strategic plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s217",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1829.958,
+      "end_s": 1842.929,
+      "speaker_id": "spk-D",
+      "text": "The key step of translating the, the 10-year vision into actual items as detailed into the plan was done through the CID's vision of AIGRA's groups, direct input from residents, community-based organizations, and small business owners."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s218",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1844.067,
+      "end_s": 1858.799,
+      "speaker_id": "spk-D",
+      "text": "Phase 3 funding supported the hiring of new consultants tasked with facilitation and coordination of the CID management of AIGRA group and outreach engagement staff person, direct cost participant stipends, including CID community members, and translation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s219",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1859.873,
+      "end_s": 1863.945,
+      "speaker_id": "spk-D",
+      "text": "This also included commercial storefront rental space used for outreach and engagement in the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s220",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1864.51,
+      "end_s": 1871.383,
+      "speaker_id": "spk-D",
+      "text": "for the CID Vision of Aisha Group. Phase 4, implementation of this strategic plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s221",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1872.219,
+      "end_s": 1883.412,
+      "speaker_id": "spk-D",
+      "text": "Phase 4 builds on the first 3 phases of the CID Vision of Aisha Group's 5 years of strategic work, planning with basic measures of accountability to implement and operationalize the community's vision for the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s222",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1884.461,
+      "end_s": 1889.448,
+      "speaker_id": "spk-D",
+      "text": "The CID Vision of Aisha Group has outlined the basic measures of accountability and what they should include."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s223",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1890.212,
+      "end_s": 1896.948,
+      "speaker_id": "spk-D",
+      "text": "Timeline and milestones. Each commitment should have a clear timeline and milestone to ensure progress is measurable and accountable."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s224",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1897.653,
+      "end_s": 1907.291,
+      "speaker_id": "spk-D",
+      "text": "Reporting requirements. Regular reporting from involved city departments to the city council and the public on the status of these recommendations, including challenges and the progress made."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s225",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1908.093,
+      "end_s": 1920.806,
+      "speaker_id": "spk-D",
+      "text": "It's all about accountability. Community feedback loops. Mechanisms for ongoing feedback from CBOs and the broader community to adjust strategies, and approaches as needed, ensuring responsiveness to evolving needs and circumstances."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s226",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1922.039,
+      "end_s": 1927.166,
+      "speaker_id": "spk-D",
+      "text": "Ultimately, Phase 4 is the result of years of coordination, volunteer time, and community-led engagement."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s227",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1927.727,
+      "end_s": 1935.466,
+      "speaker_id": "spk-D",
+      "text": "As we know, the CID is a diverse, dynamic neighborhood of stakeholders with many different cultural and diverse backgrounds."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s228",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1935.963,
+      "end_s": 1940.321,
+      "speaker_id": "spk-D",
+      "text": "Heather, the thinking here, represents an exceptional unified voice for the community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s229",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1941.346,
+      "end_s": 1948.104,
+      "speaker_id": "spk-D",
+      "text": "Overall funding for the CID Vision Advisory Group from 2019 to the present is $1,408,000."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s230",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1948.573,
+      "end_s": 1958.957,
+      "speaker_id": "spk-D",
+      "text": "This investment seeks to help reconcile the historic impacts the community experienced from infrastructure, sports and entertainment, social agency placements, transportation, and development projects."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s231",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1960.897,
+      "end_s": 1968.449,
+      "speaker_id": "spk-B",
+      "text": "Would you like to read all those 16 advisory board group members into the record so we know who they are?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s232",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1969.493,
+      "end_s": 1970.832,
+      "speaker_id": "spk-D",
+      "text": "Oh yes, perfect."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s233",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1972.081,
+      "end_s": 1972.724,
+      "speaker_id": "spk-H",
+      "text": "Yeah."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s234",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1973.173,
+      "end_s": 1993.228,
+      "speaker_id": "spk-D",
+      "text": "Yeah, the 16 members of the coalition for the record. The API Coalition Advocating Together for Health, the Chinatown International District Business Improvement Association, Chinese Information and Service Center, Chung Wah Benevolent Association, Denise Louie Education Center, Friends of Chinatown Seattle, Friends of Japantown,"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s235",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 1993.902,
+      "end_s": 2010.23,
+      "speaker_id": "spk-D",
+      "text": "Friends of Little Saigon, Hip Sing Top, We're halfway there. Inter-American Community Development Association, International Community Health Services, Japanese American Museum, Seattle Chinatown International District Preservation Development Authority, Seniors in Action, Wing Luke Museum, and Yi Fong Toy."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s236",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2012.042,
+      "end_s": 2017.703,
+      "speaker_id": "spk-B",
+      "text": "Thank you. I just wanted to make sure and give recognition to all these group members for the record."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s237",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2018.35,
+      "end_s": 2029.437,
+      "speaker_id": "spk-B",
+      "text": "It's really important to name these names and recognize we have Wing Luke in the audience who spoke during public comment, but it's really important for folks to know who's been involved."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s238",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2029.501,
+      "end_s": 2042.919,
+      "speaker_id": "spk-B",
+      "text": "And this is just the advisory group members. This isn't everyone who's been involved in the effort in community, but it's just so important to name the folks who have been on this advisory group. So thank you for doing that."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s239",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2043.143,
+      "end_s": 2054.094,
+      "speaker_id": "spk-D",
+      "text": "Thank you so much. Thank you for making that call to do that. Without the Vision Advisory Group members who have No work tirelessly these past 5 years to advocate for this plan, this would not be possible. So thank you for saying that."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s240",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2054.417,
+      "end_s": 2055.242,
+      "speaker_id": "spk-B",
+      "text": "Thank you, Soka."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s241",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2057.766,
+      "end_s": 2063.26,
+      "speaker_id": "spk-D",
+      "text": "A community-led and ongoing city partnership. The city partners with the CID's Vision Advisory Group."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s242",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2063.582,
+      "end_s": 2069.285,
+      "speaker_id": "spk-D",
+      "text": "As we just said, as we just stated, it's vital to understand the needs, priorities, and the impacts of our work in the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s243",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2070.111,
+      "end_s": 2075.749,
+      "speaker_id": "spk-D",
+      "text": "This work is challenging and consequential. My director, Jennifer Chow, has communicated."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s244",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2076.214,
+      "end_s": 2082.354,
+      "speaker_id": "spk-D",
+      "text": "This community-led visioning process is pivotal to how the city is building trust in BIPOC communities like the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s245",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2082.803,
+      "end_s": 2087.612,
+      "speaker_id": "spk-D",
+      "text": "Our job alongside Mayor Herbold is to invest in this community's visions for transformational change."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s246",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2088.638,
+      "end_s": 2100.229,
+      "speaker_id": "spk-D",
+      "text": "Examples of Don's commitment and investment into community trust building and support for the CID Vision Advisory Group are partnering with OPCD as a strategic partner in the community-led and city-supported visioning process."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s247",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2100.754,
+      "end_s": 2108.933,
+      "speaker_id": "spk-D",
+      "text": "including working in tandem with Open City's new Downtown Activation Coordinator, Taryn Morton, and the director of Open City, Rico Carandungo."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s248",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2110.159,
+      "end_s": 2120.659,
+      "speaker_id": "spk-D",
+      "text": "Secondly, convening the city's internal CID core team comprised of leadership from DON, the Office of Planning and Community Development, Seattle Department of Transportation, and the mayor's office."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s249",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2122.762,
+      "end_s": 2134.013,
+      "speaker_id": "spk-D",
+      "text": "And I have many examples, but I'll give a couple more. Partnering with the University of Washington's Master of Information Studies program develop a data visualization dashboard for tracking projects and investments in the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s250",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2135.688,
+      "end_s": 2146.285,
+      "speaker_id": "spk-D",
+      "text": "As Jennifer Chow stated, my director, alongside with 2 of my other Don colleagues, physically being in the CID by having regular office hours in the community several times a month to be accessible and truly embedded in our work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s251",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2147.908,
+      "end_s": 2163.951,
+      "speaker_id": "spk-D",
+      "text": "In 2024, at the request of the CID Vision Advisory Group, Don has coordinated meetings with leadership from the Department of Neighborhoods, Office of Planning of Community Developments, Office of Housing, Seattle Parks and Recreation, Seattle Department of Construction and Inspections, and Seattle Department of Transportation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s252",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2164.624,
+      "end_s": 2173.983,
+      "speaker_id": "spk-D",
+      "text": "The purpose of meeting with department directors and the Seattle Division Advisory Group is to provide an update to city directors on the work of the coalition and the needs for partnership in Seattle."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s253",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2174.303,
+      "end_s": 2191.654,
+      "speaker_id": "spk-D",
+      "text": "The OPCD will continue to help steward and build a city-community-city partnership by connecting the 60-member coalition of CID stakeholders to other city departments, staff, and agencies that will play a role in actualizing this community's 10-year vision and implementation plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s254",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2195.422,
+      "end_s": 2207.118,
+      "speaker_id": "spk-D",
+      "text": "My last slide before I pass it on to Director Chow. Last but not least, I actually want to share with you some key priorities of the CID implementation plan, and this includes public safety."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s255",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2207.782,
+      "end_s": 2228.132,
+      "speaker_id": "spk-D",
+      "text": "Enhancing in-language public safety support is needed in the CID. A call to action in regard to public safety includes implementing technology-based solutions like multilingual servicing apps and websites which guide users through the reporting process, aided with visual and visual aids and translation, making reporting more accessible for residents"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s256",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2228.356,
+      "end_s": 2234.317,
+      "speaker_id": "spk-D",
+      "text": "with limited literacy skills. Coordination and support for building repairs with a focus on unreinforced masonry."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s257",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2234.873,
+      "end_s": 2249.744,
+      "speaker_id": "spk-D",
+      "text": "One call to action in this implementation plan includes conducting regular meetings with community stakeholders, historic preservation groups, and building owners to ensure ongoing needs, share best practices, and coordinate these efforts on historic building rehabilitation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s258",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2252.03,
+      "end_s": 2260.852,
+      "speaker_id": "spk-D",
+      "text": "A local business needs assessment. The Chinatown International District is comprised of incredibly 260 small businesses, many of them which are legacy businesses."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s259",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2261.352,
+      "end_s": 2272.405,
+      "speaker_id": "spk-D",
+      "text": "that have anchored the neighborhood for decades. A call to action includes the creation of a special parking strategy for event days to mitigate the impact of stadium events on local parking availability."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s260",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2272.903,
+      "end_s": 2280.759,
+      "speaker_id": "spk-D",
+      "text": "This could include partnerships with regional transit agencies, dedicated shuttle services, services, and support from the Washington State Public Stadium Authority."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s261",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2281.9,
+      "end_s": 2288.037,
+      "speaker_id": "spk-D",
+      "text": "Thank you again. I'm honored to serve as the city representative for this CID Vision Advisory Group."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s262",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2288.586,
+      "end_s": 2299.687,
+      "speaker_id": "spk-D",
+      "text": "and this community-led visioning model, which provides the city an opportunity to potentially understand how to work in other communities and neighborhoods across our city as one Seattle. And I'll pass it on to Director Chow."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s263",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2301.207,
+      "end_s": 2310.786,
+      "speaker_id": "spk-A",
+      "text": "Thank you, Soka. I know that that was a lot to take. We will be following up to share handouts of the CID implementation plan to the council members."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s264",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2310.851,
+      "end_s": 2319.914,
+      "speaker_id": "spk-A",
+      "text": "So Council Chair Rivera, we'll hand it to you and you can give it to the committee. But I hope that we'll have more opportunities to unpack in the future."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s265",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2320.366,
+      "end_s": 2327.919,
+      "speaker_id": "spk-A",
+      "text": "But thank you, Soka, for sharing that breadth of information and how we have been working with the community in their community-led vision."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s266",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2329.479,
+      "end_s": 2334.812,
+      "speaker_id": "spk-A",
+      "text": "As you can see from this slide, there are over a dozen city projects intersecting with the CID neighborhood."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s267",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2335.668,
+      "end_s": 2346.516,
+      "speaker_id": "spk-A",
+      "text": "All of these projects impact the CID, recognizing large projects like Sound Transit, Ballard Link Extension, and the FIFA World Cup 2026 will have huge impacts on the neighborhood."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s268",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2347.41,
+      "end_s": 2352.392,
+      "speaker_id": "spk-A",
+      "text": "This requires the city to strengthen coordination to avoid unintended impacts on the community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s269",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2353.023,
+      "end_s": 2362.042,
+      "speaker_id": "spk-A",
+      "text": "We must learn from history and continue to deepen our partnership with the CID Visioning Advisory Group in order to support the livelihood and vitalization of the neighborhood for generations to come."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s270",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2364.61,
+      "end_s": 2370.669,
+      "speaker_id": "spk-A",
+      "text": "These city departments are an essential partner in ensuring the CID is centered in the planning and investments of neighborhood-identified priorities that intersect."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s271",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2372.456,
+      "end_s": 2379.281,
+      "speaker_id": "spk-A",
+      "text": "with city projects. Department directors will continue to meet with the CID Visioning Advisory Group for relationship building and strategic coordination."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s272",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2380.14,
+      "end_s": 2386.674,
+      "speaker_id": "spk-A",
+      "text": "And as Soka mentioned, there were a few departments that already met with the CID Visioning Advisory Group last year, and there will be more to come this year."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s273",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2389.733,
+      "end_s": 2394.47,
+      "speaker_id": "spk-A",
+      "text": "So in closing, we want to highlight CID priorities for 2025 and 2026."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s274",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2395.392,
+      "end_s": 2407.234,
+      "speaker_id": "spk-A",
+      "text": "We are committed to bringing the CID Neighborhood Implementation Plan to life. We will continue to work with our city departments and external partners to ensure their projects align with the CID Visioning Advisory Group's implementation plan."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s275",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2408.068,
+      "end_s": 2421.175,
+      "speaker_id": "spk-A",
+      "text": "The CID Visioning Advisory Group has reached an exciting milestone. They have solidified their governance structure, which includes expanding the community coalition to increase community capacity and engage with city departments as a strategic partner."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s276",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2422.507,
+      "end_s": 2435.087,
+      "speaker_id": "spk-A",
+      "text": "In my role as the Director of the Department of Neighborhoods, I work closely with my colleagues at the director level to share awareness and invite collaboration with the CID Visioning Advisory Group for coordination and alignment with the city's priorities and community's needs."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s277",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2436.243,
+      "end_s": 2440.497,
+      "speaker_id": "spk-A",
+      "text": "We are deeply grateful for the trusted partnership with the CID Visioning Advisory Group."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s278",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2441.139,
+      "end_s": 2453.467,
+      "speaker_id": "spk-A",
+      "text": "It takes a village, and investing in the Chinatown International District and the community's 10-year vision and beyond will require regional partnerships and investments by the state, federal, local agencies, and philanthropy."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s279",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2454.784,
+      "end_s": 2460.065,
+      "speaker_id": "spk-A",
+      "text": "Thank you again, Council Chair Rivera, for the opportunity to share about the progress of our community capacity work in the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s280",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2460.562,
+      "end_s": 2466.835,
+      "speaker_id": "spk-A",
+      "text": "We look forward to coming back to this committee to provide future updates along with community members of the CID Vision Advisory Group."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s281",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2468.103,
+      "end_s": 2473.173,
+      "speaker_id": "spk-B",
+      "text": "Thank you, Director Chow, and thank you, um, SOCA, again for being here and giving this update."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s282",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2473.221,
+      "end_s": 2480.152,
+      "speaker_id": "spk-B",
+      "text": "We know that there are definitely public safety, uh, as a priority need."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s283",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2480.28,
+      "end_s": 2485.206,
+      "speaker_id": "spk-B",
+      "text": "There are other needs as well in the CID and Little Saigon, including Little Saigon."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s284",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2485.254,
+      "end_s": 2491.124,
+      "speaker_id": "spk-B",
+      "text": "So Really appreciate your work. Soka, you've been working for 10 years."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s285",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2491.237,
+      "end_s": 2499.815,
+      "speaker_id": "spk-B",
+      "text": "I didn't realize that long. So, really appreciate all the time that you've put into community and how important it is to give focus to the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s286",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2500.429,
+      "end_s": 2506.141,
+      "speaker_id": "spk-B",
+      "text": "And like I said, in particular, all the things that are happening in Little Saigon as well."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s287",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2506.692,
+      "end_s": 2512.558,
+      "speaker_id": "spk-B",
+      "text": "So, colleagues, do you have any questions for Director Chau or Soka?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s288",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2513.187,
+      "end_s": 2524.9,
+      "speaker_id": "spk-B",
+      "text": "Let's see. Doesn't look like there are any questions."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s289",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2526.907,
+      "end_s": 2529.098,
+      "speaker_id": "spk-B",
+      "text": "Oh, Councilmember Solomon."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s290",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2530.226,
+      "end_s": 2537.506,
+      "speaker_id": "spk-H",
+      "text": "Thank you very much, Madam Chair. Thank you for your presentation on what you're doing in Chinatown International District, Little Saigon."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s291",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2538.772,
+      "end_s": 2559.122,
+      "speaker_id": "spk-H",
+      "text": "I want to acknowledge that, you know, there are a few points that you brought out, like the full-depth safety plan, and want to acknowledge the work of the Seattle Police Department folks, Barbara Biondo and Monica Lee, that are working with community to replicate the place-based strategies"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s292",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2559.154,
+      "end_s": 2574.139,
+      "speaker_id": "spk-H",
+      "text": "that took hold in Rainier Beach in this particular area, because One of the things we found with Marina Beach is when it's community-driven, it's actually sustainable, as opposed to when it's law enforcement or city-directed."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s293",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2575.94,
+      "end_s": 2595.533,
+      "speaker_id": "spk-H",
+      "text": "Along those lines, you mentioned partnerships with— and for full transparency, I'm going to be meeting with the West Precinct folks tomorrow to talk about what kind of support my office can provide for efforts in the CID and Little Saigon because it's my district."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s294",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2597.87,
+      "end_s": 2602.401,
+      "speaker_id": "spk-H",
+      "text": "I know I've met with LEAD. I have yet to meet with REACH."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s295",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2602.561,
+      "end_s": 2609.008,
+      "speaker_id": "spk-H",
+      "text": "But is REACH also one of our partners that's doing work in that area as well through Evergreen Treatment Services?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s296",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2610.505,
+      "end_s": 2617.105,
+      "speaker_id": "spk-D",
+      "text": "I believe so. But I can confirm with you we have staff who are directly connected to that, that work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s297",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2618.056,
+      "end_s": 2625.817,
+      "speaker_id": "spk-H",
+      "text": "Okay, cool. And then looking at the visioning advisory group membership, long impressive list of folks."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s298",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2627.238,
+      "end_s": 2647.24,
+      "speaker_id": "spk-H",
+      "text": "But again, thinking about, you know, our 12th and Weller, 12th and King area, realizing that Seattle Indian Health Board and Seattle Indian Center, you know, have properties there and You know, the navigation center being owned or having been owned,"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s299",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2649.448,
+      "end_s": 2654.432,
+      "speaker_id": "spk-H",
+      "text": "you know, by one of the organizations serving the Native communities."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s300",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2655.357,
+      "end_s": 2666.825,
+      "speaker_id": "spk-H",
+      "text": "So I'm wondering if they've been able to be in partnership with this group as we're reimagining or moving forward with public safety efforts in the area."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s301",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2671.259,
+      "end_s": 2685.027,
+      "speaker_id": "spk-A",
+      "text": "Thank you for that question, Councilmember Solomon. I think as the CID Visioning Advisory Group has now reached a milestone of their governance structure and as they're expanding their coalition, I think that is something that they are considering."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s302",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2686.086,
+      "end_s": 2692.136,
+      "speaker_id": "spk-A",
+      "text": "And so I think that's something that we should come back with an update to see how that expansion works and how they would be connected. But—"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s303",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2692.601,
+      "end_s": 2708.331,
+      "speaker_id": "spk-H",
+      "text": "Yeah, I'm just looking at all the players who are in the area, including seeing something about Parks Department closing off Huamei Park because it's not being used for its intended uses."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s304",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2709.237,
+      "end_s": 2713.349,
+      "speaker_id": "spk-H",
+      "text": "And I think one of the things we talked about the other day was how we do some park activation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s305",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2715.19,
+      "end_s": 2719.69,
+      "speaker_id": "spk-H",
+      "text": "You know, maybe getting with the Seattle Kung Fu Club to do tai chi classes in the park."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s306",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2720.08,
+      "end_s": 2720.405,
+      "speaker_id": "spk-F",
+      "text": "I don't know."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s307",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2722.309,
+      "end_s": 2738.848,
+      "speaker_id": "spk-H",
+      "text": "You know, trying to think out of the box of how we can do some positive space activation. innovation, you know, in that area, as well as making sure that all the different players and all the different parties that have skin in the game in the area are, you know, actively participating."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s308",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2738.896,
+      "end_s": 2747.191,
+      "speaker_id": "spk-H",
+      "text": "And that's one of the things that sounds like there's a lot of that already going on in terms of, you know, that coordination and facilitation."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s309",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2748.206,
+      "end_s": 2748.387,
+      "speaker_id": "spk-E",
+      "text": "Yeah."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s310",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2748.436,
+      "end_s": 2750.468,
+      "speaker_id": "spk-H",
+      "text": "And I want to lend my efforts to that as well."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s311",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2753,
+      "end_s": 2773.383,
+      "speaker_id": "spk-D",
+      "text": "Thank you for these questions. I'm happy to just report out that Friends of Little Saigon, so Quyen Pham, Executive Director of that organization, has been directly involved in this Seattle Asian Advisory Group for the past number of years as well and is planning to give a formal presentation on this FADAP effort to the group."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s312",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2774.425,
+      "end_s": 2774.57,
+      "speaker_id": "spk-E",
+      "text": "Got it."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s313",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2774.762,
+      "end_s": 2782.031,
+      "speaker_id": "spk-D",
+      "text": "So that's just an example of the internal coordination on a community level that is, that's happening so everyone's on the same page and can support each other in alignment."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s314",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2782.546,
+      "end_s": 2794.025,
+      "speaker_id": "spk-H",
+      "text": "Okay, great. Uh, final thing I'll point out is that, uh, you already noticed on your, um, projects intersecting with the CAD, uh, you do have the World Cup on there, 2026."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s315",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2794.315,
+      "end_s": 2810.058,
+      "speaker_id": "spk-H",
+      "text": "Great. Uh, but let's not forget we have the Club Cup coming up this year, and, um, you know, it's no secret that, uh, The CID did not benefit from when, you know, All-Star Game was here, right?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s316",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2811.341,
+      "end_s": 2824.822,
+      "speaker_id": "spk-H",
+      "text": "And that probably fell on the city. So I would just encourage us to make sure that we don't forget the CID for the Club Cup that's coming up this year and not just focus on the World Cup next year. So."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s317",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2825.383,
+      "end_s": 2841.189,
+      "speaker_id": "spk-A",
+      "text": "Thank you, Councilmember Solomon. Definitely the World Club Cup is on our radar and we are already in the works with coordinating with community and making sure that they will be involved in the planning process as we are planning it out, and we appreciate your offer and will reach out for your support. Okay, great."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s318",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2841.448,
+      "end_s": 2841.739,
+      "speaker_id": "spk-H",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s319",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2850.679,
+      "end_s": 2851.868,
+      "speaker_id": "spk-B",
+      "text": "Vice Chair Rink."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s320",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2852.655,
+      "end_s": 2853.153,
+      "speaker_id": "spk-H",
+      "text": "Wonderful."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s321",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2854.664,
+      "end_s": 2871.029,
+      "speaker_id": "spk-E",
+      "text": "Thank you, Chair Rivera, and thank you both for today's presentation. I wanted to take us back actually to the beginning of your presentation and just state again for the record that The CID is one of America's most— 11 most endangered historic places."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s322",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2871.944,
+      "end_s": 2878.3,
+      "speaker_id": "spk-E",
+      "text": "And just really letting that sink in, because I also think we don't necessarily talk about what we mean when we say endangered."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s323",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2879.729,
+      "end_s": 2884.705,
+      "speaker_id": "spk-E",
+      "text": "We're not just talking about public safety challenges. We're talking about cultural erasure and displacement."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s324",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2885.909,
+      "end_s": 2892.426,
+      "speaker_id": "spk-E",
+      "text": "And so making sure that community is leading the way and the city is supporting in community-driven efforts."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s325",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2892.491,
+      "end_s": 2892.635,
+      "speaker_id": "spk-F",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s326",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2893.116,
+      "end_s": 2902.885,
+      "speaker_id": "spk-E",
+      "text": "And community-based ownership of spaces in the CID is so important to make sure we are actually addressing and making sure that the CID continues to be the thriving community that it is in so many ways."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s327",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2903.478,
+      "end_s": 2917.449,
+      "speaker_id": "spk-E",
+      "text": "And I really want to applaud the efforts of the Department of Neighborhoods to be really leading in that fashion by having this CID Visioning Advisory Group that is really paving the way forward on how— what is the future of the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s328",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2917.577,
+      "end_s": 2929.84,
+      "speaker_id": "spk-E",
+      "text": "I just really want to name that and applaud that work and also note that the council, we up here need to be doing the work to make sure that we are supporting the investments that will allow for the CID to continue to thrive."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s329",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2930.097,
+      "end_s": 2934.994,
+      "speaker_id": "spk-E",
+      "text": "And we're taking steps to make sure we're preventing displacement wherever possible."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s330",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2935.556,
+      "end_s": 2946.073,
+      "speaker_id": "spk-E",
+      "text": "And I was really excited to join you all for the FODEP event. I feel like that was an event of seeing this really community-driven solutions work happening in real time."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s331",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2946.426,
+      "end_s": 2950.764,
+      "speaker_id": "spk-E",
+      "text": "It was It was a packed room, and I know Councilmember Solomon's staff were there as well."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s332",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2950.828,
+      "end_s": 2965.77,
+      "speaker_id": "spk-E",
+      "text": "It was a really incredible event bringing together different stakeholders across the Little Saigon neighborhood to make sure that we are actually hearing all perspectives and really being action-oriented and focused on what are we going to do next."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s333",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2966.637,
+      "end_s": 2970.766,
+      "speaker_id": "spk-E",
+      "text": "And to that end, I just wanted to note that event. It was amazing."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s334",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2970.815,
+      "end_s": 2984.49,
+      "speaker_id": "spk-E",
+      "text": "I'm really excited and would love to continue to hear, like, next And looking across some of the current city projects intersecting with the CID, I'm really glad that Councilmember Solomon brought up FIFA."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s335",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2984.49,
+      "end_s": 2990.41,
+      "speaker_id": "spk-E",
+      "text": "And I know it's been really front of mind for me looking at what happened in the MLB All-Star Game."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s336",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2990.41,
+      "end_s": 2997.61,
+      "speaker_id": "spk-E",
+      "text": "And I know in a lot of the discussions I've had with partners, there's still a lot of feelings and concern that we could be heading that way."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s337",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 2997.61,
+      "end_s": 3003.61,
+      "speaker_id": "spk-E",
+      "text": "So I wonder, for the record, what are some of the things that you've heard about MLB All-Stars and what happened there, and how can we mitigate that when we're looking ahead to FIFA? Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s338",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3008.33,
+      "end_s": 3013.378,
+      "speaker_id": "spk-A",
+      "text": "Great question, Councilmember Moringa. Thank you so much for your comment and acknowledgment of the community-led work."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s339",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3014.756,
+      "end_s": 3020.942,
+      "speaker_id": "spk-A",
+      "text": "I also agree that at FODEP, seeing the community organize that was amazing because we really did attend as a guest."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s340",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3022.144,
+      "end_s": 3030.989,
+      "speaker_id": "spk-A",
+      "text": "So it was great to be in community. With that said, I would say that a lot— there was a lot of factors, but I think that we are much more well prepared."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s341",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3031.566,
+      "end_s": 3039.933,
+      "speaker_id": "spk-A",
+      "text": "This time around, more internally coordinated. The mayor's office has hired a World Cup director, Kylie Rolfe, in the mayor's office."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s342",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3039.997,
+      "end_s": 3048.989,
+      "speaker_id": "spk-A",
+      "text": "And so now we have subcommittees that are more internally coordinated. The Department of Neighborhoods is leading the community activation committee with the other departments."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s343",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3049.053,
+      "end_s": 3067.34,
+      "speaker_id": "spk-A",
+      "text": "So that's one. And we are also in the permitting committee just to make sure that, again, our historic districts are brought in and want to support the livelihood of the historic districts and making sure they're they're able to invite folks in and do what we want to do in alignment with compliance and what needs to be done for the community, right?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s344",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3067.42,
+      "end_s": 3072.816,
+      "speaker_id": "spk-A",
+      "text": "Again, as we talked about preserving their cultural architecture."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s345",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3072.896,
+      "end_s": 3078.981,
+      "speaker_id": "spk-A",
+      "text": "So with that, I say we're more— we have more planning that's ahead of us, that we have a little bit more runway."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s346",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3079.543,
+      "end_s": 3084.28,
+      "speaker_id": "spk-A",
+      "text": "There still needs a lot to be done. It definitely— we don't want to take it for granted thinking we got it."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s347",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3085.323,
+      "end_s": 3090.469,
+      "speaker_id": "spk-A",
+      "text": "We have to learn a lot from the community. We don't need them to repeat their harm or what did not work well."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s348",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3090.613,
+      "end_s": 3107.413,
+      "speaker_id": "spk-A",
+      "text": "So we're very clear about what didn't work, about making sure that we point to the CID and to the other neighborhoods, but really to the CID to make sure that they are benefiting and figuring out what benefit— how do they identify what benefits them as folks come into the city and to engage and to patron their neighborhood?"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s349",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3107.846,
+      "end_s": 3117.107,
+      "speaker_id": "spk-A",
+      "text": "Because they are also residents that live there, and is there a cultural home? But they also want to invite, you know, folks into their community by making sure that it's safe and that it's welcomed."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s350",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3120.333,
+      "end_s": 3132.82,
+      "speaker_id": "spk-E",
+      "text": "Thank you for that. Thank you in so many ways. And I'm glad that that work is happening and certainly want to make sure that we're lending our support wherever possible to make sure that there is a real benefit, that community is benefiting from all of these new guests coming into our city."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s351",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3133.64,
+      "end_s": 3143.246,
+      "speaker_id": "spk-E",
+      "text": "And with that, I also want to just name that, you know, so much of our discussions, especially lately as it relates to the CID, tend to focus on public safety."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s352",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3143.294,
+      "end_s": 3147.359,
+      "speaker_id": "spk-E",
+      "text": "And I will never negate the public safety challenges that, that are going on."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s353",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3147.488,
+      "end_s": 3152.357,
+      "speaker_id": "spk-E",
+      "text": "And this council certainly is trying to focus its attention on addressing those in partnership with community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s354",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3153.096,
+      "end_s": 3162.191,
+      "speaker_id": "spk-E",
+      "text": "And it can't be the only thing that we talk about when it comes to the CID. We want our community to know that the CID is a vibrant community that is also a fun place to go."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s355",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3162.977,
+      "end_s": 3168.034,
+      "speaker_id": "spk-E",
+      "text": "And to eat and enjoy amazing establishments like Ma'am's Books, which I have to name."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s356",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3168.131,
+      "end_s": 3175.917,
+      "speaker_id": "spk-E",
+      "text": "I mean, this is— we are home to the only independent Asian American bookstore in Seattle, or I believe in the Pacific Northwest."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s357",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3176.559,
+      "end_s": 3182.996,
+      "speaker_id": "spk-E",
+      "text": "So special shout out to one of our panelists, Soka, for really holding that down for our community."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s358",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3183.125,
+      "end_s": 3197.864,
+      "speaker_id": "spk-E",
+      "text": "But there's amazing places to go in the CID, and I hope that we can continue to use, you know, our platforms up here here to be really telling community that this is a place to go and connect and see again all the vibrance that Seattle has to offer."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s359",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3198.91,
+      "end_s": 3204.98,
+      "speaker_id": "spk-E",
+      "text": "So I thank you again for your presentation. My office wants to be supportive in all of this work where possible."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s360",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3205.561,
+      "end_s": 3214.998,
+      "speaker_id": "spk-E",
+      "text": "And again, just thank you for the approach that you've taken in working with community and uplifting their voice and empowering them. Thank you, Chair."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s361",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3215.192,
+      "end_s": 3215.352,
+      "speaker_id": "spk-D",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s362",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3215.673,
+      "end_s": 3216.171,
+      "speaker_id": "spk-G",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s363",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3217.022,
+      "end_s": 3228.885,
+      "speaker_id": "spk-B",
+      "text": "Um, colleagues, I don't see any other hands up. I will thank again Department of Neighborhoods for coming and presenting and for the work that is happening in the CID."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s364",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3229.864,
+      "end_s": 3250.156,
+      "speaker_id": "spk-B",
+      "text": "I will say that, uh, colleagues, I have a special place in my heart for the Department of Neighborhoods because I started my career really doing outreach work, and I see the Department of Neighborhoods is our outreach arm of the city, and it is our direct, um, uh, window into community"
+    },
+    {
+      "id": "seattle-len-2025-03-13-s365",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3250.413,
+      "end_s": 3259.036,
+      "speaker_id": "spk-B",
+      "text": "and partnership with community, which is so important. And bringing back the voice of community to the city is so important."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s366",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3259.1,
+      "end_s": 3267.899,
+      "speaker_id": "spk-B",
+      "text": "And so today we're talking about the CID, but the Department of Neighborhoods, um, laises with community across the city."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s367",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3268.396,
+      "end_s": 3274.109,
+      "speaker_id": "spk-B",
+      "text": "And it is really a department that is very engaged under the leadership of Director Chow."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s368",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3275.216,
+      "end_s": 3293.219,
+      "speaker_id": "spk-B",
+      "text": "I am so proud of the work that you all do to bring, like I said, the voice of community back to the city and to find opportunities for us to be engaged and in community, you know, on an on-hands way, not just sitting from up here."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s369",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3293.38,
+      "end_s": 3295.915,
+      "speaker_id": "spk-B",
+      "text": "So I really appreciate being able to join you at events."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s370",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3295.963,
+      "end_s": 3296.075,
+      "speaker_id": "spk-G",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s371",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3297.424,
+      "end_s": 3302.005,
+      "speaker_id": "spk-B",
+      "text": "et cetera. So really, thank you for all that you do, for all that your team does."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s372",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3302.183,
+      "end_s": 3308.249,
+      "speaker_id": "spk-B",
+      "text": "Thank you for coming here today. Colleagues, thank you for your questions today."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s373",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3310.096,
+      "end_s": 3315.817,
+      "speaker_id": "spk-B",
+      "text": "Are there any other questions or comments for Don? Seeing none."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s374",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3316.722,
+      "end_s": 3321.486,
+      "speaker_id": "spk-B",
+      "text": "Any other questions or comments in general for today? Okay."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s375",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3321.551,
+      "end_s": 3329.504,
+      "speaker_id": "spk-B",
+      "text": "Seeing no further questions, this concludes the March 13th, 2025 meeting of the Libraries Education and Neighborhoods Committee."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s376",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3329.938,
+      "end_s": 3335.606,
+      "speaker_id": "spk-B",
+      "text": "Our next committee meeting is scheduled for Thursday, March 27th, 2025, at 9:30 AM."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s377",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3336.234,
+      "end_s": 3344.501,
+      "speaker_id": "spk-B",
+      "text": "If there's no further business, this meeting will adjourn. Hearing no further business, it's 10:27 AM, and this meeting is adjourned."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s378",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3346.575,
+      "end_s": 3347.341,
+      "speaker_id": "spk-A",
+      "text": "Thank you."
+    },
+    {
+      "id": "seattle-len-2025-03-13-s379",
+      "meeting_id": "seattle-len-2025-03-13",
+      "start_s": 3347.574,
+      "end_s": 3347.757,
+      "speaker_id": "spk-H",
+      "text": "Thank you."
+    }
+  ],
+  "chapters": [],
+  "summaries": {},
+  "action_items": []
+}

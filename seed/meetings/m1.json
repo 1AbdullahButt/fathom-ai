@@ -1,0 +1,90 @@
+{
+  "meeting": {
+    "id": "m1",
+    "title": "Weekly product sync",
+    "date": "2026-10-19",
+    "duration_s": 100,
+    "media_url": null,
+    "speakers": [
+      {
+        "id": "sara",
+        "name": "Sara"
+      },
+      {
+        "id": "omar",
+        "name": "Omar"
+      }
+    ],
+    "status": "ready",
+    "source": "seed"
+  },
+  "segments": [
+    {
+      "id": "m1-s1",
+      "meeting_id": "m1",
+      "start_s": 0,
+      "end_s": 12,
+      "speaker_id": "sara",
+      "text": "Okay, let's start. Two things today: the onboarding drop-off and the release date."
+    },
+    {
+      "id": "m1-s2",
+      "meeting_id": "m1",
+      "start_s": 12,
+      "end_s": 25,
+      "speaker_id": "omar",
+      "text": "Drop-off is mostly at the phone verification step. About 40 percent leave there."
+    },
+    {
+      "id": "m1-s3",
+      "meeting_id": "m1",
+      "start_s": 25,
+      "end_s": 38,
+      "speaker_id": "sara",
+      "text": "That's a lot. Omar, can you look at whether the SMS code is arriving late? Please have a finding by Thursday."
+    },
+    {
+      "id": "m1-s4",
+      "meeting_id": "m1",
+      "start_s": 38,
+      "end_s": 50,
+      "speaker_id": "omar",
+      "text": "Sure, I'll check the provider logs by Thursday."
+    },
+    {
+      "id": "m1-s5",
+      "meeting_id": "m1",
+      "start_s": 50,
+      "end_s": 65,
+      "speaker_id": "sara",
+      "text": "On the release, marketing wants the 15th, but I think the 22nd is safer."
+    },
+    {
+      "id": "m1-s6",
+      "meeting_id": "m1",
+      "start_s": 65,
+      "end_s": 78,
+      "speaker_id": "omar",
+      "text": "I agree with the 22nd, QA needs the extra week."
+    },
+    {
+      "id": "m1-s7",
+      "meeting_id": "m1",
+      "start_s": 78,
+      "end_s": 90,
+      "speaker_id": "sara",
+      "text": "Fine, we go with the 22nd. I'll tell marketing today."
+    },
+    {
+      "id": "m1-s8",
+      "meeting_id": "m1",
+      "start_s": 90,
+      "end_s": 100,
+      "speaker_id": "omar",
+      "text": "One more thing, we should probably think about dark mode at some point."
+    }
+  ],
+  "chapters": [],
+  "summaries": {},
+  "action_items": []
+}

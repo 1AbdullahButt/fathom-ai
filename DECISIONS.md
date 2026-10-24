@@ -49,6 +49,23 @@ Format: what the reference (Fathom) does / what we do / why.
 - **e2e step advisory until P0-7.** The locked smoke test drives upload, summary and transcript
   seek, which only exist after P0-7. Until then the CI e2e step runs with continue-on-error so
   P0 PRs can merge on `npm run check`; the P0-7 PR must remove continue-on-error.
+
+## Data layer (P0-3)
+- **Seed bundled via generated static imports.** `scripts/build-seed.ts` writes
+  `seed/meetings/*.json` plus `seed/index.ts` that imports them, so `next build` bundles the
+  seeded meetings into the server code (no fs paths to trace on Vercel). Seed media is copied
+  to `public/media/` and served as static files. The SPEC fixtures (m1, m2) are seeded as
+  transcript-only meetings with their own speaker ids.
+- **Overrides of seeded data live in Supabase.** Fathom edits its own records. Seeded JSON is
+  read-only, so summaries/action items saved for a seed meeting id (template cache, human
+  edits) are stored as user rows and layered over the seed on read. Highlights and clips use
+  a plain-text meeting_id (no FK) so they work on seeded meetings too.
+- **Anon RLS, no deletes.** No auth, so the publishable key can read everything, insert, and
+  update only status/result columns (column grants). Nothing can be deleted through the API;
+  uploads can only be inserted as `processing`, segments only while their meeting is processing.
+- **Upload rate limit stored as a hashed client key** (`upload_log.ip_hash`), never a raw IP,
+  because the table is publicly readable.
+
 - **Action items have no done checkbox (yet).** The design kit's ActionItem has a checkbox; our
   ActionItem data has no done state and PLAN.md does not ask for one, so the P0-2 restyle keeps
   the locked props and leaves the checkbox out. Human-edited text gets the serif/pencil styling
