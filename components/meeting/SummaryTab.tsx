@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { Segment, Speaker, Summary, Template } from "@/lib/types";
 import { sendEdit } from "@/lib/edits";
-import { TEMPLATE_LABELS, TEMPLATES } from "@/lib/templates";
+import { GENERATIONS_PER_HOUR, TEMPLATE_LABELS, TEMPLATES } from "@/lib/templates";
 import { Button } from "@/components/ui/Button";
 import { Select } from "@/components/ui/Select";
 import { Skeleton } from "@/components/ui/Skeleton";
@@ -22,7 +22,23 @@ export interface SummaryTabProps {
   activeId?: string;
 }
 
-type Status = "loading" | { error: string };
+type Reason = "busy" | "limit" | "failed";
+type Status = "loading" | { error: string; reason?: Reason; retryAt?: string };
+
+const ERROR_TITLES: Record<Reason | "other", string> = {
+  limit: "Summary limit reached",
+  busy: "The summary service is busy",
+  failed: "We couldn’t write this summary",
+  other: "We couldn’t write this summary",
+};
+
+/** "Try again at 3:42 PM (in 12 min)." in the viewer's time zone. */
+function retryLine(iso: string): string {
+  const at = new Date(iso);
+  if (Number.isNaN(at.getTime())) return "";
+  const min = Math.max(1, Math.round((at.getTime() - Date.now()) / 60_000));
+  return `Try again at ${at.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} (in ${min} min).`;
+}
 
 const OPTIONS = TEMPLATES.map((t) => ({ value: t, label: TEMPLATE_LABELS[t] }));
 
@@ -40,14 +56,20 @@ export function SummaryTab({ meetingId, initial, editable = false, segments, spe
     setStatus((s) => ({ ...s, [t]: "loading" }));
     try {
       const res = await fetch(`/api/meetings/${encodeURIComponent(meetingId)}/summary?template=${t}`, { method: "POST" });
-      const body = (await res.json().catch(() => ({}))) as { summary?: Summary; error?: string };
-      if (!res.ok || !body.summary) throw new Error(body.error || "Writing this summary failed.");
+      const body = (await res.json().catch(() => ({}))) as { summary?: Summary; error?: string; reason?: Reason; retry_at?: string };
+      if (!res.ok || !body.summary) {
+        const reason = body.reason ?? (res.status === 429 ? "limit" : res.status === 503 ? "busy" : undefined);
+        const error = reason === "limit" && body.retry_at
+          ? `You can write ${GENERATIONS_PER_HOUR} new template summaries an hour. ${retryLine(body.retry_at)}`
+          : body.error || "Writing this summary failed. Try again.";
+        setStatus((s) => ({ ...s, [t]: { error, reason, retryAt: body.retry_at } }));
+        return;
+      }
       const summary = body.summary;
       setCache((c) => ({ ...c, [t]: summary }));
       setStatus((s) => ({ ...s, [t]: undefined }));
-    } catch (e) {
-      const msg = e instanceof Error && e.message !== "Failed to fetch" ? e.message : "We couldn’t reach the server.";
-      setStatus((s) => ({ ...s, [t]: { error: msg } }));
+    } catch {
+      setStatus((s) => ({ ...s, [t]: { error: "We couldn’t reach the server. Check your connection and try again.", reason: "busy" } }));
     }
   };
 
@@ -112,12 +134,15 @@ export function SummaryTab({ meetingId, initial, editable = false, segments, spe
       <StateBlock
         compact
         kind="error"
-        title="We couldn’t write this summary"
+        title={ERROR_TITLES[st.reason ?? "other"]}
         body={st.error}
         actions={
-          <Button size="sm" variant="primary" icon="refresh-cw" onClick={() => void load(template)}>
-            Try again
-          </Button>
+          // At the hourly limit a retry fails the same way until retry_at, so no button.
+          st.reason === "limit" ? undefined : (
+            <Button size="sm" variant="primary" icon="refresh-cw" onClick={() => void load(template)}>
+              Try again
+            </Button>
+          )
         }
       />
     );

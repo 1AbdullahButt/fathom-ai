@@ -4,6 +4,8 @@ import { formatTimestamp } from "./time";
 
 export const MAX_NOTE_CHARS = 500;
 export const MAX_TITLE_CHARS = 120;
+/** Longest clip (the database enforces the same bound, 0005_highlights_clips.sql). */
+export const MAX_CLIP_S = 600;
 /** Media duration and transcript end can differ by a little; allow this much past the end. */
 const END_SLACK_S = 1;
 

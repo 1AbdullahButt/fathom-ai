@@ -55,3 +55,6 @@ const FOCUS: Record<Template, string> = {
 export function templateFocus(template: Template): string {
   return FOCUS[template];
 }
+
+/** On-demand template summaries one client may generate per hour (cost guard). */
+export const GENERATIONS_PER_HOUR = 10;

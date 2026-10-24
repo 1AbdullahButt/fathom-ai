@@ -110,6 +110,26 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const wide = useMediaQuery("(min-width: 1200px)");
   const phone = useMediaQuery("(max-width: 759px)");
   const [highlights, setHighlights] = useState<Highlight[]>(() => bundle.highlights ?? []);
+  /** The server couldn't read saved highlights (seeded meetings, bounded read): don't claim "none". */
+  const [highlightsFailed, setHighlightsFailed] = useState(!!bundle.highlights_unavailable);
+  const [highlightsRetrying, setHighlightsRetrying] = useState(false);
+  const retryHighlights = useCallback(async () => {
+    setHighlightsRetrying(true);
+    try {
+      const res = await fetch(`/api/meetings/${encodeURIComponent(meeting.id)}`, { cache: "no-store" });
+      const data = (await res.json().catch(() => ({}))) as Partial<MeetingBundle>;
+      if (res.ok && !data.highlights_unavailable && Array.isArray(data.highlights)) {
+        const loaded = data.highlights;
+        // Keep any highlight saved on this page meanwhile (the newest row per range wins).
+        setHighlights((list) => list.reduce(mergeHighlight, loaded));
+        setHighlightsFailed(false);
+      }
+    } catch {
+      // Still unavailable: the error state stays with its Try again button.
+    } finally {
+      setHighlightsRetrying(false);
+    }
+  }, [meeting.id]);
   const [toast, setToast] = useState<ToastState | null>(null);
   const [clipDialog, setClipDialog] = useState<{ start_s: number; end_s: number } | null>(null);
   const paneRef = useRef<HTMLDivElement>(null);
@@ -506,6 +526,9 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
           onSeek={jump}
           activeId={active?.id}
           highlights={highlights}
+          highlightsFailed={highlightsFailed}
+          highlightsRetrying={highlightsRetrying}
+          onRetryHighlights={retryHighlights}
           activeHighlights={activeHighlights}
           onSaveNote={saveNote}
           onClip={meeting.status === "ready" ? clipHighlight : undefined}
@@ -743,6 +766,9 @@ const SidePanel = memo(function SidePanel({
   onSeek,
   activeId,
   highlights,
+  highlightsFailed,
+  highlightsRetrying,
+  onRetryHighlights,
   activeHighlights,
   onSaveNote,
   onClip,
@@ -760,6 +786,10 @@ const SidePanel = memo(function SidePanel({
   onSeek(s: number): void;
   activeId: string | undefined;
   highlights: Highlight[];
+  /** Saved highlights couldn't be read: show an error with Try again, never "No highlights yet". */
+  highlightsFailed: boolean;
+  highlightsRetrying: boolean;
+  onRetryHighlights(): void;
   /** Space-separated ids of the highlights playing now. */
   activeHighlights: string;
   onSaveNote(h: Highlight, note: string): Promise<boolean>;
@@ -826,6 +856,19 @@ const SidePanel = memo(function SidePanel({
             Clip from {formatTimestamp(nowSecond)}
           </Button>
         ) : null}
+        {highlightsFailed ? (
+          <StateBlock
+            compact
+            kind="error"
+            title="Couldn’t load highlights. Try again"
+            body="Saved highlights for this meeting didn’t load in time. They are still stored."
+            actions={
+              <Button size="sm" variant="primary" icon="refresh-cw" loading={highlightsRetrying} onClick={onRetryHighlights}>
+                Try again
+              </Button>
+            }
+          />
+        ) : null}
         {highlights.length ? (
           <>
             <p className={hl.hint}>
@@ -844,7 +887,7 @@ const SidePanel = memo(function SidePanel({
               />
             ))}
           </>
-        ) : (
+        ) : highlightsFailed ? null : (
           <StateBlock
             compact
             kind="empty"

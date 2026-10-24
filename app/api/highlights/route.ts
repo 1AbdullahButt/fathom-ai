@@ -4,7 +4,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { countRateEventsSince, createHighlight, getMeeting, logRateEvent, type MeetingBundle } from "@/lib/data";
-import { checkRange, MAX_NOTE_CHARS, meetingLength, plainText, rangeInput } from "@/lib/ranges";
+import { checkRange, clipRange, MAX_NOTE_CHARS, meetingLength, plainText, rangeInput } from "@/lib/ranges";
 import { clientIp, hashIp } from "@/lib/uploads";
 
 export const dynamic = "force-dynamic";
@@ -37,8 +37,12 @@ export async function POST(req: Request) {
   if (!bundle) return fail(404, "This meeting doesn’t exist.");
   if (bundle.meeting.status !== "ready") return fail(409, "This meeting is still processing.");
 
-  const range = checkRange(parsed.data.start_s, parsed.data.end_s, meetingLength(bundle.meeting.duration_s, bundle.segments));
-  if (!range.ok) return fail(400, range.error);
+  const length = meetingLength(bundle.meeting.duration_s, bundle.segments);
+  const checked = checkRange(parsed.data.start_s, parsed.data.end_s, length);
+  if (!checked.ok) return fail(400, checked.error);
+  // The database needs end > start (0005); a zero-length range (H at 0:00) becomes 1 s.
+  const range = checked.end_s > checked.start_s ? checked : clipRange(checked.start_s, checked.end_s, length);
+  if (range.end_s <= range.start_s) return fail(400, "The range must end after it starts.");
 
   const ipHash = hashIp(clientIp(req.headers));
   try {

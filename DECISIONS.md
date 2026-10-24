@@ -314,6 +314,22 @@ Format: what the reference (Fathom) does / what we do / why.
   owner/due save as null and render "not stated". Changing the date drops the spoken phrase
   ("by Thursday"), which would no longer match it. Enter saves, Shift+Enter is a new line, Esc
   cancels. 60 edits per client per hour.
+## SEC-2 Highlights/clips rules + P1 QA minors
+- **Clips are capped at 10 minutes, in the app and the database.** Reference clips have no cap we
+  know of. A public clip page of an hour would be the whole meeting under a share link; 600 s
+  covers any "moment". A highlight-to-clip over 10 minutes gets "Clips can be up to 10 minutes long."
+- **Zero-length highlights become 1 s.** The database now needs end > start; pressing H at 0:00
+  made a 0 s range, which is widened (same rule as clips) instead of failing.
+- **"Couldn't load highlights. Try again" instead of a false empty state.** Seeded meetings read
+  user data with a 1.5 s bound; when the highlights read fails the tab now says so with a Try
+  again button (re-reads the meeting) rather than "No highlights yet". Each overlay read is now
+  independent, so a slow highlights read no longer drops summary/action-item edits too.
+- **Summary errors name the reason.** "Summary limit reached" (our 10/hour per client; says the
+  local time a slot frees up, no Try again button), "The summary service is busy" (the AI
+  provider is rate-limited on every model, or our database is unreachable; retry in a minute),
+  "We couldn't write this summary" (the model's answer failed our quote checks or errored).
+  The retry time is found by counting the client's generations in shrinking windows (the log
+  is countable, not readable), to the minute.
 - **Key rotation done (human) and production redeployed without new code.** After the rotation,
   production was rebuilt with `vercel redeploy` of the last verified deployment (main 6725d46)
   rather than deploying main, so P2 code still waits for P2 QA. An unexplained CLI production
