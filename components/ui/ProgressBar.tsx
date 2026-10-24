@@ -1,0 +1,37 @@
+export interface ProgressBarProps {
+  /** 0–100. */
+  value?: number;
+  tone?: "accent" | "warn" | "danger";
+  height?: number;
+  label?: string;
+  indeterminate?: boolean;
+}
+
+export function ProgressBar({ value = 0, tone = "accent", height = 4, label, indeterminate = false }: ProgressBarProps) {
+  const c = tone === "danger" ? "var(--danger)" : tone === "warn" ? "var(--warn-mark)" : "var(--accent)";
+  const clamped = Math.max(0, Math.min(100, value));
+  return (
+    <span
+      role="progressbar"
+      aria-valuenow={indeterminate ? undefined : Math.round(clamped)}
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-label={label}
+      style={{ display: "block", width: "100%", height, borderRadius: 999, background: "var(--paper-200)", overflow: "hidden" }}
+    >
+      <span
+        style={{
+          display: "block",
+          height: "100%",
+          width: indeterminate ? "35%" : `${clamped}%`,
+          background: c,
+          borderRadius: 999,
+          transition: "width var(--dur-3) var(--ease-out)",
+          animation: indeterminate ? "sotto-pulse 1.4s var(--ease-in-out) infinite" : "none",
+        }}
+      />
+    </span>
+  );
+}
+
+export default ProgressBar;

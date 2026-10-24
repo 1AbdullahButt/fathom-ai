@@ -49,3 +49,7 @@ Format: what the reference (Fathom) does / what we do / why.
 - **e2e step advisory until P0-7.** The locked smoke test drives upload, summary and transcript
   seek, which only exist after P0-7. Until then the CI e2e step runs with continue-on-error so
   P0 PRs can merge on `npm run check`; the P0-7 PR must remove continue-on-error.
+- **Action items have no done checkbox (yet).** The design kit's ActionItem has a checkbox; our
+  ActionItem data has no done state and PLAN.md does not ask for one, so the P0-2 restyle keeps
+  the locked props and leaves the checkbox out. Human-edited text gets the serif/pencil styling
+  but no editor-name chip, because SummaryPoint/ActionItem carry no editor name.
