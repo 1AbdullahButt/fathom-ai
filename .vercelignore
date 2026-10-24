@@ -1,0 +1,12 @@
+# The Vercel CLI does not read .gitignore. Keep secrets and large local files out of uploads.
+.env
+.env.*
+seed/raw/
+.agent-logs/
+qa/
+research/
+playwright-report/
+test-results/
+QA_REPORT.md
+.loop/
+.codex/
