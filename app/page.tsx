@@ -1,31 +1,47 @@
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { MeetingRow } from "@/components/meeting/MeetingRow";
+import { AppShell } from "@/components/shell/AppShell";
 import { StateBlock } from "@/components/ui/StateBlock";
+import { RecordButton } from "@/components/upload/RecordButton";
+import { UploadButton } from "@/components/upload/UploadButton";
+import { listMeetings } from "@/lib/data";
+import styles from "./page.module.css";
 
-// Placeholder until P0-4 builds the meetings list.
-export default function Home() {
+// Uploads change the list, so never serve a prerendered copy.
+export const dynamic = "force-dynamic";
+
+export default async function MeetingsPage() {
+  // Newest first; the sort is stable, so same-day uploads stay ahead of seeded meetings.
+  const meetings = [...(await listMeetings())].sort((a, b) => b.date.localeCompare(a.date));
+
   return (
-    <main style={{ maxWidth: 920, margin: "0 auto", padding: "var(--space-10) var(--space-9)" }}>
-      <header style={{ display: "flex", alignItems: "center", gap: "var(--space-5)", flexWrap: "wrap" }}>
-        <h1 style={{ margin: 0, font: "var(--type-display)", color: "var(--text-1)", flex: 1 }}>Meetings</h1>
-        <Button variant="primary" icon="upload" disabled>
-          Upload
-        </Button>
-        <Button variant="primary" icon="mic" disabled>
-          Record
-        </Button>
-      </header>
-      <p style={{ margin: "var(--space-4) 0 var(--space-9)", color: "var(--text-muted)" }}>
-        Meeting notes without a bot. Timestamps read like <span style={{ font: "var(--type-time)" }}>1:02:18</span>.{" "}
-        <Badge tone="accent" size="sm">
-          Preview
-        </Badge>
-      </p>
-      <StateBlock
-        kind="empty"
-        title="Meetings list coming soon"
-        body="No bot joins the call. Upload a recording you already have and we'll transcribe it."
-      />
-    </main>
+    <AppShell>
+      <main className={styles.main}>
+        <div className={styles.header}>
+          <div>
+            <h1 className={styles.title}>Meetings</h1>
+            <p className={styles.subtitle}>Uploaded recordings, never with a bot in the call.</p>
+          </div>
+          <div className={styles.actions}>
+            <UploadButton />
+            <RecordButton />
+          </div>
+        </div>
+        {meetings.length ? (
+          <ul className={styles.list}>
+            {meetings.map((m) => (
+              <li key={m.id}>
+                <MeetingRow meeting={m} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <StateBlock
+            kind="empty"
+            title="No meetings yet"
+            body="Upload a recording you already have and we’ll transcribe it. No bot ever joins your meetings."
+          />
+        )}
+      </main>
+    </AppShell>
   );
 }

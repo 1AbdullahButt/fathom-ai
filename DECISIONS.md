@@ -70,3 +70,16 @@ Format: what the reference (Fathom) does / what we do / why.
   ActionItem data has no done state and PLAN.md does not ask for one, so the P0-2 restyle keeps
   the locked props and leaves the checkbox out. Human-edited text gets the serif/pencil styling
   but no editor-name chip, because SummaryPoint/ActionItem carry no editor name.
+
+## Meetings list (P0-4)
+- **Upload sits before Record in the button pair.** The kit puts Record first; Record is a stub
+  here and Upload is the working path, so it leads. Both stay equal-weight primary buttons.
+- **Seeded meetings carry a "Sample" badge** where the kit shows a Recorded/Uploaded source badge.
+  We have no recorded meetings; seeded ones are public sample recordings, so we say so.
+- **No date-group headers, search box or filter yet.** The kit groups rows under Today /
+  Yesterday / This week with search + All/Recorded/Uploaded. Seed dates are years apart, so
+  groups would be one row each; search is P1-2; there is nothing "Recorded" to filter.
+- **Sidebar has only "Meetings" and no user block.** The kit shows Clips, Settings and a signed-in
+  user. There is no auth and no clips library, so those would be dead links.
+- **Processing and error rows are still links** for now (the kit makes processing rows
+  unclickable). P0-7 owns the live processing states and can change this.
