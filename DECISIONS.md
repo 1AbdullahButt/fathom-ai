@@ -237,6 +237,26 @@ Format: what the reference (Fathom) does / what we do / why.
   (same pattern as summary generations). Notes are plain text, up to 500 characters, control
   characters stripped, always rendered as React text.
 
+## P1-4 Clips
+- **Clip page header links to the full meeting, not a sign-up.** Kit ClipPage has "Try Sotto
+  free"; there are no accounts, so the right-hand link is "Full meeting" (`/m/<id>?t=<start>`), and
+  the footer says "Recorded with Fathom AI. No bot joins the call." plus the same link.
+- **No author line** ("shared by …"): no accounts. Meta is "From <meeting> · <date> · 0:12–0:38 of 1:40".
+- **The clip page only receives the clip's segments**, not the whole transcript, so a public link
+  exposes just that range's words. The full meeting is still public via its own link (demo workspace).
+- **Range enforcement is client-side** on the meeting's media file: playback starts at `start_s`,
+  pauses at `end_s` (media time updates arrive ~4 times a second, so it can run up to ~0.25 s
+  past the end before stopping), and the scrubber, ±10 s and transcript clicks are clamped to the
+  range. We do not cut a separate media file per clip (no server-side media processing).
+- **"Clip this moment" is now ±15 s** (PLAN), not the kit's −10 s/+35 s. The dialog keeps the
+  kit's optional title; a highlight's Clip button uses its note as the title (else "Clip at m:ss").
+  Ranges shorter than 1 s are widened to 1 s.
+- **Clipboard fallback.** If the browser refuses clipboard access, the toast says "Clip created"
+  and shows the URL instead of "Link copied". Both toasts have "Open".
+- **Not-found status.** `/c/<unknown>` renders the not-found state; with the route's
+  `loading.tsx` streaming, Next.js sends it with HTTP 200 + `noindex` (same as `/m/<unknown>`).
+- **Limits.** 30 clips per client per hour (`upload_log`, `clip:` prefix); titles plain text,
+  up to 120 characters.
 ## Process
 - **Deployed main before P1 QA, once.** SEC-1's database migration went live before its code,
   which broke production uploads (old code needed the revoked grants). Deploying main restored

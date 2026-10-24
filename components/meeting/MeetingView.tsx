@@ -14,8 +14,10 @@ import { Icon } from "@/components/ui/Icon";
 import { StateBlock } from "@/components/ui/StateBlock";
 import { Tabs } from "@/components/ui/Tabs";
 import { Toast } from "@/components/ui/Toast";
+import { clipRange, segmentsInRange } from "@/lib/ranges";
 import { ActionItem } from "./ActionItem";
-import { HighlightCard, segmentsInRange } from "./HighlightCard";
+import { ClipButton, ClipDialog } from "./ClipDialog";
+import { HighlightCard } from "./HighlightCard";
 import { formatMeetingDate } from "./MeetingRow";
 import { NoteForm } from "./NoteForm";
 import { PlayerControls } from "./PlayerControls";
@@ -35,9 +37,28 @@ const EPS = 0.05;
 /** H during playback highlights this many seconds back from now. */
 const H_BACK_S = 15;
 
+/** "Clip this moment" takes this many seconds either side of now. */
+const CLIP_AROUND_S = 15;
+
 type ToastState =
-  | { kind: "message"; tone: "success" | "error" | "info"; title: string; body?: string; note?: Highlight }
+  | {
+      kind: "message";
+      tone: "success" | "error" | "info" | "link";
+      title: string;
+      body?: string;
+      action?: { label: string; run(): void };
+    }
   | { kind: "note"; highlight: Highlight };
+
+/** Copy text to the clipboard; false when the browser refuses (no permission, insecure origin). */
+async function copyText(text: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 /** Merge a saved highlight into the list: a row with the same range is replaced (newest note wins). */
 function mergeHighlight(list: Highlight[], h: Highlight): Highlight[] {
@@ -78,6 +99,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const [phoneTab, setPhoneTab] = useState<PhoneTab>("transcript");
   const [highlights, setHighlights] = useState<Highlight[]>(() => bundle.highlights ?? []);
   const [toast, setToast] = useState<ToastState | null>(null);
+  const [clipDialog, setClipDialog] = useState<{ start_s: number; end_s: number } | null>(null);
   const paneRef = useRef<HTMLDivElement>(null);
   const timeRef = useRef(time);
   useEffect(() => {
@@ -123,7 +145,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   // Toasts close after 4 s (errors and "Add note" 8 s); the note form stays until saved or cancelled.
   useEffect(() => {
     if (!toast || toast.kind === "note") return;
-    const t = window.setTimeout(() => setToast(null), toast.tone === "error" || toast.note ? 8000 : 4000);
+    const t = window.setTimeout(() => setToast(null), toast.tone === "error" || toast.action ? 8000 : 4000);
     return () => window.clearTimeout(t);
   }, [toast]);
 
@@ -171,6 +193,45 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
     [saveHighlight],
   );
 
+  /** POST /api/clips, then copy /c/<id>. Resolves true when the clip was created. */
+  const makeClip = useCallback(
+    async (start: number, end: number, title: string): Promise<boolean> => {
+      const r = clipRange(start, end, duration);
+      try {
+        const res = await fetch("/api/clips", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ meeting_id: meeting.id, start_s: r.start_s, end_s: r.end_s, title }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { id?: string; error?: string };
+        if (!res.ok || !data.id) {
+          setToast({ kind: "message", tone: "error", title: "Clip not created", body: data.error ?? "Try again in a moment." });
+          return false;
+        }
+        const url = `${window.location.origin}/c/${data.id}`;
+        const copied = await copyText(url);
+        setToast({
+          kind: "message",
+          tone: "link",
+          title: copied ? "Link copied" : "Clip created",
+          body: copied ? `Anyone with the link can play ${rangeLabel(r)}.` : url,
+          action: { label: "Open", run: () => window.open(url, "_blank", "noopener") },
+        });
+        return true;
+      } catch {
+        setToast({ kind: "message", tone: "error", title: "Clip not created", body: "Check your connection and try again." });
+        return false;
+      }
+    },
+    [meeting.id, duration],
+  );
+
+  const openClipDialog = useCallback(() => {
+    const t = timeRef.current;
+    setClipDialog(clipRange(t - CLIP_AROUND_S, t + CLIP_AROUND_S, duration));
+  }, [duration]);
+  const clipHighlight = useCallback((h: Highlight) => makeClip(h.start_s, h.end_s, h.note), [makeClip]);
+
   // H during playback: highlight the last 15 s; the toast offers "Add note".
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -181,7 +242,14 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
       const end = Math.round(timeRef.current * 1000) / 1000;
       const start = Math.max(0, end - H_BACK_S);
       void saveHighlight(start, end, "").then((h) => {
-        if (h) setToast({ kind: "message", tone: "success", title: `Highlight saved · ${rangeLabel(h)}`, note: h });
+        if (h) {
+          setToast({
+            kind: "message",
+            tone: "success",
+            title: `Highlight saved · ${rangeLabel(h)}`,
+            action: { label: "Add note", run: () => setToast({ kind: "note", highlight: h }) },
+          });
+        }
       });
     };
     window.addEventListener("keydown", onKey);
@@ -327,8 +395,22 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
           highlights={highlights}
           activeHighlights={activeHighlights}
           onSaveNote={saveNote}
+          onClip={meeting.status === "ready" ? clipHighlight : undefined}
+          onClipMoment={meeting.status === "ready" ? openClipDialog : undefined}
+          nowSecond={Math.floor(time)}
         />
       </div>
+
+      {clipDialog ? (
+        <ClipDialog
+          range={clipDialog}
+          onClose={() => setClipDialog(null)}
+          onCreate={async (title) => {
+            const ok = await makeClip(clipDialog.start_s, clipDialog.end_s, title);
+            if (ok) setClipDialog(null);
+          }}
+        />
+      ) : null}
 
       {toast ? (
         <div className={hl.toastSlot}>
@@ -347,8 +429,8 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
                 tone={toast.tone}
                 title={toast.title}
                 body={toast.body}
-                actionLabel={toast.note ? "Add note" : undefined}
-                onAction={toast.note ? () => setToast({ kind: "note", highlight: toast.note! }) : undefined}
+                actionLabel={toast.action?.label}
+                onAction={toast.action?.run}
                 onClose={() => setToast(null)}
               />
             </div>
@@ -378,7 +460,7 @@ export function activeAt(segments: { start_s: number }[], t: number): number {
 
 // ---------------------------------------------------------------- stage
 
-function Stage({
+export function Stage({
   speaker,
   color,
   caption,
@@ -511,6 +593,9 @@ const SidePanel = memo(function SidePanel({
   highlights,
   activeHighlights,
   onSaveNote,
+  onClip,
+  onClipMoment,
+  nowSecond,
 }: {
   bundle: MeetingBundle;
   segments: MeetingBundle["segments"];
@@ -522,6 +607,12 @@ const SidePanel = memo(function SidePanel({
   /** Space-separated ids of the highlights playing now. */
   activeHighlights: string;
   onSaveNote(h: Highlight, note: string): Promise<boolean>;
+  /** Make a public clip of a highlight and copy its link. */
+  onClip?(h: Highlight): Promise<boolean>;
+  /** Open the "Clip this moment" dialog (now ±15 s). */
+  onClipMoment?(): void;
+  /** Playback time in whole seconds (for the "Clip from m:ss" label). */
+  nowSecond: number;
 }) {
   const speakers = bundle.meeting.speakers;
   const summary = bundle.summaries.general;
@@ -566,31 +657,41 @@ const SidePanel = memo(function SidePanel({
     );
   } else {
     const playingNow = new Set(activeHighlights.split(" "));
-    content = highlights.length ? (
+    content = (
       <div className={hl.list}>
-        <p className={hl.hint}>
-          Select transcript text, or press <kbd className={hl.kbd}>H</kbd> while it plays, to save a moment.
-        </p>
-        {highlights.map((h) => (
-          <HighlightCard
-            key={h.id}
-            highlight={h}
-            segments={segments}
-            speakers={speakers}
-            onPlay={onSeek}
-            onSaveNote={(n) => onSaveNote(h, n)}
-            active={playingNow.has(h.id)}
+        {onClipMoment ? (
+          <Button icon="scissors" onClick={onClipMoment}>
+            Clip from {formatTimestamp(nowSecond)}
+          </Button>
+        ) : null}
+        {highlights.length ? (
+          <>
+            <p className={hl.hint}>
+              Select transcript text, or press <kbd className={hl.kbd}>H</kbd> while it plays, to save a moment.
+            </p>
+            {highlights.map((h) => (
+              <HighlightCard
+                key={h.id}
+                highlight={h}
+                segments={segments}
+                speakers={speakers}
+                onPlay={onSeek}
+                onSaveNote={(n) => onSaveNote(h, n)}
+                active={playingNow.has(h.id)}
+                actions={onClip ? <ClipButton onClip={() => onClip(h)} /> : null}
+              />
+            ))}
+          </>
+        ) : (
+          <StateBlock
+            compact
+            kind="empty"
+            icon="bookmark"
+            title="No highlights yet"
+            body="Select transcript text, or press H while it plays, to save a moment. Each highlight can become a public clip."
           />
-        ))}
+        )}
       </div>
-    ) : (
-      <StateBlock
-        compact
-        kind="empty"
-        icon="bookmark"
-        title="No highlights yet"
-        body="Select transcript text, or press H while it plays, to save a moment with a note."
-      />
     );
   }
 

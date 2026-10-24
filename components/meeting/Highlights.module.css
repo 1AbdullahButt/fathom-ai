@@ -176,7 +176,7 @@
   left: 16px;
   right: 16px;
   bottom: 24px;
-  z-index: 60;
+  z-index: 110;
   display: flex;
   justify-content: center;
   pointer-events: none;

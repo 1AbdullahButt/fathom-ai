@@ -1,5 +1,6 @@
 // Validation for user-made time ranges (highlights, clips). Pure, no I/O.
 import { z } from "zod";
+import { formatTimestamp } from "./time";
 
 export const MAX_NOTE_CHARS = 500;
 export const MAX_TITLE_CHARS = 120;
@@ -36,4 +37,26 @@ export function checkRange(start_s: number, end_s: number, duration: number, str
 /** Duration used to bound ranges: the longer of the stored duration and the transcript end. */
 export function meetingLength(duration_s: number, segments: { end_s: number }[]): number {
   return segments.reduce((m, seg) => Math.max(m, seg.end_s), duration_s);
+}
+
+/** Default clip title when none is given. */
+export function clipTitle(start_s: number): string {
+  return `Clip at ${formatTimestamp(start_s)}`;
+}
+
+/** Shortest clip; shorter ranges (a 0-length highlight) are widened to this, inside the meeting. */
+export const MIN_CLIP_S = 1;
+
+/** A clip range from [start, end]: at least MIN_CLIP_S long and within [0, duration]. */
+export function clipRange(start_s: number, end_s: number, duration: number): { start_s: number; end_s: number } {
+  let s = Math.max(0, start_s);
+  let e = Math.min(duration, Math.max(end_s, s + MIN_CLIP_S));
+  if (e - s < MIN_CLIP_S) s = Math.max(0, e - MIN_CLIP_S);
+  e = Math.max(e, s + Math.min(MIN_CLIP_S, duration));
+  return { start_s: s, end_s: e };
+}
+
+/** Segments that overlap [start, end] (a zero-length range picks the line playing at that moment). */
+export function segmentsInRange<T extends { start_s: number; end_s: number }>(segments: T[], start: number, end: number): T[] {
+  return segments.filter((s) => (end > start ? s.start_s < end && s.end_s > start : s.start_s <= start && s.end_s >= start));
 }
