@@ -103,8 +103,8 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 - [x] P0-7 Upload pipeline: `/api/uploads` signed URL -> Storage, `/api/meetings/[id]/process` -> AssemblyAI (speaker labels) -> segments -> extract -> ready. Progress + error states, retry. Cost guard: max 60 min, 3 uploads/hour/IP. TRANSCRIBE_MOCK for e2e.
 
 ### P1 (deploy after)
-- [ ] P1-1 Template switch (General / Sales call / 1:1 & Standup): `lib/templates.ts`; seeded meetings precomputed, uploads generated on demand and cached; switching back is instant.
-- [ ] P1-2 Search across meetings: `lib/search.ts`, `/search` page + list search box; result opens `/m/[id]?t=<start_s>` and seeks.
+- [x] P1-1 Template switch (General / Sales call / 1:1 & Standup): `lib/templates.ts`; seeded meetings precomputed, uploads generated on demand and cached; switching back is instant.
+- [x] P1-2 Search across meetings: `lib/search.ts`, `/search` page + list search box; result opens `/m/[id]?t=<start_s>` and seeks.
 - [ ] P1-3 Highlights: select transcript text -> "Highlight" or press H during playback (last 15 s); note; Highlights tab; `POST /api/highlights`.
 - [ ] P1-4 Clips: highlight or range -> `POST /api/clips` -> `/c/[id]` plays only that range with its transcript, signed out; copy link.
 
