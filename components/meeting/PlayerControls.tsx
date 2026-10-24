@@ -2,7 +2,7 @@
 
 import { useRef, useState, type PointerEvent } from "react";
 import { IconButton } from "@/components/ui/IconButton";
-import { formatTimestamp } from "@/lib/time";
+import { formatDuration, formatTimestamp } from "@/lib/time";
 
 export interface PlayerControlsProps {
   playing: boolean;
@@ -47,7 +47,7 @@ export function PlayerControls({ playing, current, duration, onToggle, onSeek, r
         aria-valuemin={0}
         aria-valuemax={Math.round(d)}
         aria-valuenow={Math.round(current)}
-        aria-valuetext={`${formatTimestamp(current)} of ${formatTimestamp(d)}`}
+        aria-valuetext={`${formatTimestamp(current)} of ${formatDuration(d)}`}
         tabIndex={0}
         onPointerDown={(e) => {
           dragging.current = true;
@@ -124,7 +124,7 @@ export function PlayerControls({ playing, current, duration, onToggle, onSeek, r
           }}
         >
           {formatTimestamp(current)}
-          <span style={{ color: "var(--text-on-player-muted)" }}> / {formatTimestamp(d)}</span>
+          <span style={{ color: "var(--text-on-player-muted)" }}> / {formatDuration(d)}</span>
         </span>
         <span style={{ flex: 1 }} />
         {onRate ? (

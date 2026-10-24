@@ -124,7 +124,7 @@ export function AskBox() {
                           }}
                           speaker={{ id: "", name: src.speaker }}
                           color={color}
-                          onSeek={(s) => router.push(`/m/${encodeURIComponent(src.meeting_id)}?t=${Math.floor(s)}`)}
+                          onSeek={(s) => router.push(`/m/${encodeURIComponent(src.meeting_id)}?t=${s}`)}
                         />
                       </li>
                     );

@@ -3,7 +3,7 @@
 import { memo, useMemo, useState, type ReactNode } from "react";
 import type { Highlight, Segment, Speaker } from "@/lib/types";
 import { segmentsInRange } from "@/lib/ranges";
-import { formatTimestamp } from "@/lib/time";
+import { formatDuration, formatTimestamp } from "@/lib/time";
 import { Icon } from "@/components/ui/Icon";
 import { IconButton } from "@/components/ui/IconButton";
 import { NoteForm } from "./NoteForm";
@@ -41,7 +41,7 @@ function HighlightCardImpl({ highlight, segments, speakers, onPlay, onSaveNote, 
           <Icon name="play" size={11} strokeWidth={2.25} />
           {range}
         </button>
-        <span className={styles.len}>{formatTimestamp(Math.max(1, Math.round(end_s - start_s)))}</span>
+        <span className={styles.len}>{formatDuration(Math.max(1, end_s - start_s))}</span>
         <span style={{ flex: 1 }} />
         {onSaveNote && !editing ? (
           <IconButton icon="pencil" size="sm" label={note ? "Edit note" : "Add note"} onClick={() => setEditing(true)} />

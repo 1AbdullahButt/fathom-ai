@@ -15,3 +15,20 @@ export function formatDueDate(iso: string): string {
   const dayMonth = d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
   return `${weekday} ${dayMonth}`;
 }
+
+/**
+ * A length (meeting, clip, highlight): the one rule for every total shown in the app.
+ * Floors to the whole second, like the player clock, so a 3354.3 s file and its 3355 s
+ * record can never disagree by rounding direction.
+ */
+export function formatDuration(s: number): string {
+  return formatTimestamp(Math.floor(s));
+}
+
+/**
+ * The total the meeting page shows: the stored meeting length, unless the loaded media's own
+ * duration is more than 1 s away from it (then the media is the truth for the scrubber).
+ */
+export function shownTotal(meetingLength: number, mediaDuration: number): number {
+  return mediaDuration > 0 && Math.abs(mediaDuration - meetingLength) > 1 ? mediaDuration : meetingLength;
+}
