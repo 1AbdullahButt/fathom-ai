@@ -91,7 +91,7 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 ## Tasks
 
 ### P0 (deploy after)
-- [ ] P0-1 Make `npm run check` green against the locked tests: `lib/types.ts`, `lib/validate.ts`,
+- [x] P0-1 Make `npm run check` green against the locked tests: `lib/types.ts`, `lib/validate.ts`,
   `lib/time.ts`, `lib/search.ts` (pure, full), `components/meeting/{ActionItem,SummaryPoint,QuoteChip,NotStated,ConfidenceFlag}.tsx`
   (functional, minimal styling; P0-6 styles them), and typed `lib/extract.ts` / `lib/ask.ts` with the
   contract signatures that throw "not implemented" (only `npm run eval` calls them; filled in P0-6 / P2-4).
