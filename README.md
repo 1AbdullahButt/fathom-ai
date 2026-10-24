@@ -15,6 +15,11 @@ meeting with chapters, a speaker filter, talk time and map-reduce summaries.
 The recording bot is **stubbed on purpose**: Record explains that no bot joins the call, and upload is
 the working capture path. See [DECISIONS.md](DECISIONS.md) for every difference from Fathom and why.
 
+**Fathom hands-on research:** before building, I used Fathom on a real call. What it did well, where
+it fell short (bot friction, missing owners, summary vs action list mismatch, unsourced Ask answers)
+and how this rebuild responds: [research/FATHOM-FINDINGS.md](research/FATHOM-FINDINGS.md), with
+screenshots in [research/](research/).
+
 ## What works
 - Meetings list (seeded, no login), upload of audio/video up to 60 min with progress and error states
 - Meeting page: player, transcript following playback, click-to-seek, `?t=` deep links
