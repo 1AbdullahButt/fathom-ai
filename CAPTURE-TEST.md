@@ -108,3 +108,61 @@ The first `PROMPT` entry of each session records the model as
 `unknown (first turn of session; see response)`. When `UserPromptSubmit` fires on a
 session's first turn, the transcript holds no assistant message yet to read the model
 from. The `RESPONSE` entry right after it, and every later entry, records the actual model.
+
+## Correction: response de-duplication removed
+
+**What the old behaviour did.** Until this fix, `scripts/agent-capture.cjs` rewrote the whole
+log file on every hook call. Two things in that rewrite broke the 8x rule "never edit or
+delete an entry":
+
+1. **Response de-duplication.** The project's Stop hook (`gate-stop.sh`) refuses to stop
+   until checks and QA pass, so a turn continues and `Stop` fires again for the same prompt.
+   The script then cut off the previous `RESPONSE` entry for that prompt and wrote only the
+   newest one. Earlier final responses of re-run turns were removed from the log.
+2. **Header updates.** The front-matter fields `total_exchanges` and `last_prompt_time` (and
+   `model` when it changed) were rewritten in place on every prompt.
+
+**Affected commits** (from `git log --numstat --format="%h %ad %s" --date=iso -- .agent-logs`;
+all in `.agent-logs/2026-10-24_10-40-37_ff0a4fbf-679c-4405-93b1-216d828e6478.md`).
+
+Commits where entry text was removed (responses replaced), deleted lines in total:
+
+| Commit | Date | Lines deleted |
+|---|---|---|
+| 7d4e7dd | 2026-10-24 20:42 | 1368 |
+| 2b0856d | 2026-10-24 20:54 | 117 |
+| c5b4109 | 2026-10-24 22:11 | 130 |
+| 02068dd | 2026-10-24 23:57 | 126 |
+| 46f7987 | 2026-10-25 00:31 | 66 |
+| 9cce0b1 | 2026-10-25 00:40 | 162 |
+
+Commits where only header fields were rewritten (2 lines each: `total_exchanges`,
+`last_prompt_time`): db5fb65, c4ec75d, 3bda905, 8fc4f46, 14c5fff, 70cdd96, 4418efc, 5d9d24b,
+9d18bd6, 3a609b9, e86ca3c. The commit below also carries one last header rewrite made by
+the old script when this correction's own prompt was captured.
+
+**Nothing is lost from git history.** Every committed version of the log is preserved. To see
+what a commit removed, or read the file as it was before it:
+
+```bash
+git show 7d4e7dd -- .agent-logs/
+git show 7d4e7dd^:".agent-logs/2026-10-24_10-40-37_ff0a4fbf-679c-4405-93b1-216d828e6478.md"
+git log -p -- .agent-logs/
+```
+
+Responses that were replaced between two commits (written and overwritten before either
+commit) never reached git and cannot be recovered. Existing log content was not edited or
+restored as part of this correction.
+
+**Append-only from the commit "Make agent capture append-only; document earlier de-dup".**
+From that commit on, the header is written once when a session's log file is created and
+every `PROMPT`/`RESPONSE` entry is appended (`fs.appendFileSync`); no existing line is
+rewritten or removed. When the stop gate re-runs a turn, a new `RESPONSE` entry with the same
+`num` is appended with `note: stop-gate re-run`, and the earlier one stays. Entry numbers come
+from counting the `PROMPT` entries already in the file. Trade-off: the header's
+`total_exchanges`, `last_prompt_time` and `model` now describe the session's start; each
+entry carries its own timestamp and model.
+
+Dry run (scratch folder, one prompt, two `Stop` events): the file after the first `Stop` was
+an exact prefix of the file after the second (195 bytes appended), and both `RESPONSE`
+entries for `num=1` were present, the second marked `note: stop-gate re-run`.

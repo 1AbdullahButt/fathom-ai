@@ -7,6 +7,11 @@
 //
 // Must never break the session: all errors are swallowed and written to stderr only,
 // and nothing is printed to stdout (UserPromptSubmit stdout is injected into context).
+//
+// Append-only (8x rule: never edit or delete an entry). The header is written once when the
+// log file is created; every later PROMPT/RESPONSE entry is appended. Existing lines are never
+// rewritten or removed. If the Stop hook fires again for the same prompt (the stop gate made
+// the turn continue), a new RESPONSE entry is appended and marked "stop-gate re-run".
 
 const fs = require("fs");
 const path = require("path");
@@ -95,24 +100,23 @@ function newLogFile(sessionId, iso) {
   return path.join(logDir, `${stamp}_${sessionId}.md`);
 }
 
-function parseLog(text) {
-  const m = text.match(/^---\n([\s\S]*?)\n---\n/);
-  const meta = {};
-  if (m) for (const line of m[1].split("\n")) {
-    const i = line.indexOf(":");
-    if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim();
-  }
-  return { meta, body: m ? text.slice(m[0].length) : text };
-}
-
 function header(meta) {
   const keys = ["session_id", "date", "author", "model", "tool", "project", "total_exchanges", "first_prompt_time", "last_prompt_time"];
   return "---\n" + keys.map(k => `${k}: ${meta[k] ?? ""}`).join("\n") + "\n---\n";
 }
 
-function entry(type, num, sessionId, timestamp, model, text) {
+// Entries already in the log, read without changing the file.
+function countEntries(text, type, num) {
+  const re = num === undefined
+    ? new RegExp(`^\\[LOG_ENTRY type=${type} num=\\d+ `, "gm")
+    : new RegExp(`^\\[LOG_ENTRY type=${type} num=${num} `, "gm");
+  return (text.match(re) || []).length;
+}
+
+function entry(type, num, sessionId, timestamp, model, text, note) {
   return `\n[LOG_ENTRY type=${type} num=${num} session=${sessionId.slice(0, 8)}]\n` +
-    `timestamp: ${timestamp}\nmodel: ${model}\n\n${text.replace(/\s+$/, "")}\n\n`;
+    `timestamp: ${timestamp}\nmodel: ${model}\n` + (note ? `note: ${note}\n` : "") +
+    `\n${text.replace(/\s+$/, "")}\n\n`;
 }
 
 async function main() {
@@ -124,23 +128,21 @@ async function main() {
     const now = new Date().toISOString();
     const model = lastModel(readTranscript(input.transcript_path)) || "unknown (first turn of session; see response)";
     let file = findLogFile(sessionId);
-    let meta, body;
-    if (file) {
-      ({ meta, body } = parseLog(fs.readFileSync(file, "utf8")));
-    } else {
+    if (!file) {
+      // New session: write the header once. It is never rewritten afterwards, so its
+      // total_exchanges / last_prompt_time / model describe the session's start; per-entry
+      // timestamps and models are in the entries themselves.
       file = newLogFile(sessionId, now);
       const project = path.basename(projectDir).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       const who = author();
-      meta = { session_id: sessionId, date: now.slice(0, 10), author: who, model, tool: "claude-code", project,
-        total_exchanges: 0, first_prompt_time: now, last_prompt_time: now };
-      body = `\n# Session Log - ${now.slice(0, 10)}\n\nSession: \`${sessionId.slice(0, 8)}\` | Project: \`${project}\` | Author: \`${who}\`\n\n---\n`;
+      const meta = { session_id: sessionId, date: now.slice(0, 10), author: who, model, tool: "claude-code", project,
+        total_exchanges: 1, first_prompt_time: now, last_prompt_time: now };
+      fs.writeFileSync(file, header(meta) +
+        `\n# Session Log - ${now.slice(0, 10)}\n\nSession: \`${sessionId.slice(0, 8)}\` | Project: \`${project}\` | Author: \`${who}\`\n\n---\n`,
+        { flag: "wx" });
     }
-    const num = Number(meta.total_exchanges || 0) + 1;
-    meta.total_exchanges = num;
-    meta.last_prompt_time = now;
-    if (!meta.model || meta.model.startsWith("unknown")) meta.model = model;
-    body += entry("PROMPT", num, sessionId, now, model, String(input.prompt ?? ""));
-    fs.writeFileSync(file, header(meta) + body);
+    const num = countEntries(fs.readFileSync(file, "utf8"), "PROMPT") + 1;
+    fs.appendFileSync(file, entry("PROMPT", num, sessionId, now, model, String(input.prompt ?? "")));
     return;
   }
 
@@ -153,19 +155,14 @@ async function main() {
     }
     const file = findLogFile(sessionId);
     if (!file) return; // no prompt captured for this session (e.g. hook installed mid-session)
-    const { meta, body: rawBody } = parseLog(fs.readFileSync(file, "utf8"));
-    const num = Number(meta.total_exchanges || 0);
-    let body = rawBody;
+    const text = fs.readFileSync(file, "utf8");
+    const num = countEntries(text, "PROMPT");
     // A Stop hook that refuses to stop (gate-stop.sh) makes the turn continue and Stop fire
-    // again; keep only the latest final response for this prompt rather than duplicates.
-    const marker = `[LOG_ENTRY type=RESPONSE num=${num} `;
-    const at = body.lastIndexOf("\n" + marker);
-    if (at !== -1) body = body.slice(0, at);
+    // again. Earlier responses for this prompt stay as they are; the new one is appended.
+    const rerun = countEntries(text, "RESPONSE", num) > 0;
     const model = (resp && resp.model) || lastModel(readTranscript(input.transcript_path)) || "unknown";
-    if (meta.model !== model) meta.model = model;
-    body += entry("RESPONSE", num, sessionId, resp ? resp.timestamp : new Date().toISOString(), model,
-      resp ? resp.text : "(no text response captured for this turn)");
-    fs.writeFileSync(file, header(meta) + body);
+    fs.appendFileSync(file, entry("RESPONSE", num, sessionId, resp ? resp.timestamp : new Date().toISOString(), model,
+      resp ? resp.text : "(no text response captured for this turn)", rerun ? "stop-gate re-run" : undefined));
   }
 }
 
