@@ -2,6 +2,7 @@
 
 import { memo, useMemo, useState, type ReactNode } from "react";
 import type { Highlight, Segment, Speaker } from "@/lib/types";
+import { segmentsInRange } from "@/lib/ranges";
 import { formatTimestamp } from "@/lib/time";
 import { Icon } from "@/components/ui/Icon";
 import { IconButton } from "@/components/ui/IconButton";
@@ -21,11 +22,6 @@ export interface HighlightCardProps {
   active?: boolean;
   /** Extra actions in the header row (the Clip button, P1-4). */
   actions?: ReactNode;
-}
-
-/** Segments that overlap [start, end] (a zero-length range picks the line playing at that moment). */
-export function segmentsInRange(segments: Segment[], start: number, end: number): Segment[] {
-  return segments.filter((s) => (end > start ? s.start_s < end && s.end_s > start : s.start_s <= start && s.end_s >= start));
 }
 
 /** Saved highlight: play range, note, the words said in the range. */

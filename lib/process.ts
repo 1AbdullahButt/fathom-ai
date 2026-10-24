@@ -3,7 +3,7 @@
 import { getMeeting, saveActionItems, saveSegments, saveSummary, updateMeeting } from "./data";
 import { extract } from "./extract";
 import { transcribe, TranscribeError } from "./transcribe";
-import { MAX_DURATION_S, uploadExists } from "./uploads";
+import { MAX_DURATION_S, isOwnMediaUrl, uploadExists } from "./uploads";
 import type { Segment } from "./types";
 
 /** Meetings being processed by this server instance (stops a double click starting two runs). */
@@ -40,7 +40,7 @@ export async function processMeeting(id: string, deadline = Date.now() + 285_000
     let segments: Segment[] = bundle.segments;
     let speakers = meeting.speakers;
     if (!segments.length) {
-      if (!meeting.media_url || !(await uploadExists(id, meeting.media_url))) {
+      if (!meeting.media_url || !isOwnMediaUrl(id, meeting.media_url) || !(await uploadExists(id, meeting.media_url))) {
         throw new StepError("The file didn’t finish uploading, so there was nothing to transcribe.");
       }
       let t;

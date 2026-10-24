@@ -105,8 +105,8 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 ### P1 (deploy after)
 - [x] P1-1 Template switch (General / Sales call / 1:1 & Standup): `lib/templates.ts`; seeded meetings precomputed, uploads generated on demand and cached; switching back is instant.
 - [x] P1-2 Search across meetings: `lib/search.ts`, `/search` page + list search box; result opens `/m/[id]?t=<start_s>` and seeks.
-- [ ] P1-3 Highlights: select transcript text -> "Highlight" or press H during playback (last 15 s); note; Highlights tab; `POST /api/highlights`.
-- [ ] P1-4 Clips: highlight or range -> `POST /api/clips` -> `/c/[id]` plays only that range with its transcript, signed out; copy link.
+- [x] P1-3 Highlights: select transcript text -> "Highlight" or press H during playback (last 15 s); note; Highlights tab; `POST /api/highlights`.
+- [x] P1-4 Clips: highlight or range -> `POST /api/clips` -> `/c/[id]` plays only that range with its transcript, signed out; copy link.
 
 ### P2 (deploy after)
 - [ ] P2-1 Map-reduce summary: `lib/chunk.ts` (~10 min chunks), summarise chunks then merge, evidence ids preserved; used for meetings > 15 min.
@@ -115,7 +115,7 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 - [ ] P2-4 Ask across meetings (minimal, needed by the locked "budget" eval): `lib/ask.ts`, answer only from cited segments, else "not found in meetings". Box on `/search`.
 
 ### Security (human-requested; before the final QA)
-- [ ] SEC-1 Security pass, fixes + SECURITY.md (checked / fixed / known limits) + DECISIONS.md entry:
+- [x] SEC-1 Security pass, fixes + SECURITY.md (checked / fixed / known limits) + DECISIONS.md entry:
   1. Scan repo, full git history and .agent-logs/ for secrets; rotate-and-redact anything found.
   2. Confirm no Supabase service-role key exists in code/env/client bundles (we use only the
      publishable key; check `.next/static` after build for any secret-looking strings).
