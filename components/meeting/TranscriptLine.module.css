@@ -7,9 +7,6 @@
   max-width: 760px;
   cursor: pointer;
   transition: background var(--dur-2) var(--ease-out);
-  /* Long transcripts: let the browser skip layout/paint for off-screen lines. */
-  content-visibility: auto;
-  contain-intrinsic-size: auto 64px;
 }
 
 .line:hover {
@@ -18,7 +15,6 @@
 
 .continued {
   padding-top: 2px;
-  contain-intrinsic-size: auto 34px;
 }
 
 .active,

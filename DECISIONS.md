@@ -150,3 +150,16 @@ Format: what the reference (Fathom) does / what we do / why.
   because AssemblyAI reports no percentage.
 - **Memory mode stores uploaded bytes in process memory** behind `PUT/GET /api/uploads/[id]/file`
   (with Range support so the player can seek). Enough for e2e/CI; real files go to Supabase Storage.
+- **`?t=` link autoplay.** Reference / design §5: the search jump "seeks and plays". We seek, place
+  the line a quarter from the top, and call play() on load. Browsers block autoplay with sound
+  without a prior gesture (fresh tab, shared link), so then the page stays paused at that moment
+  with the line in view and one tap on Play starts it. No muted-autoplay workaround: a silent
+  playing clip is more confusing than a paused one.
+- **Avatar initials are letters only.** A one- or two-letter parenthetical is the speaker label
+  ("Team member, name not stated (B)" -> "B", keeping B/C/D distinct); other parentheticals and
+  text after a comma are descriptions and are dropped ("Eileen (marketing)" -> "E").
+- **Transcript lines no longer use `content-visibility: auto`.** Its estimated sizes made jumps
+  land thousands of px off (QA findings 1-2). With all 379 Seattle lines laid out, 60 s of
+  playback had 0 long tasks; the one 69 ms long task is page load.
+- **Seeded pages bound their Supabase reads to 1.5 s** (override reads and the uploads in the list),
+  with postgrest retries off for those reads; on timeout they show seed-only data.
