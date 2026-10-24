@@ -113,6 +113,14 @@ Format: what the reference (Fathom) does / what we do / why.
 - **Template select and the AI/human legend are not in the Summary tab yet** (P1-1 / P2-3).
 - **Tab counts are hidden from the tab's accessible name** (`aria-hidden` on the count) so the tab
   is named exactly "Action items", as the locked e2e test expects.
+- **Groq model chain instead of one model.** Reference: one hosted model, no visible quota.
+  We: `lib/llm.ts` tries `GROQ_MODELS` in order (default `openai/gpt-oss-120b`,
+  `qwen/qwen3.8-27b`, `openai/gpt-oss-20b`). A 429 with retry-after > 20 s or a daily-cap message
+  moves to the next model at once; a short 429 waits and retries the same model once. A model that
+  rejects JSON mode gets a plain "JSON only" prompt and its reply is parsed. Why: Groq free-tier
+  limits are per model, and seed generation used up gpt-oss-120b's 200k tokens/day, so uploads and
+  evals failed for hours. Output quality on the fallbacks may be a bit lower; M1/M2 evals pass on them.
+
 
 ## Upload pipeline (P0-7)
 - **Uploaded speakers are named "Speaker A", "Speaker B", ...** AssemblyAI diarizes but does not
