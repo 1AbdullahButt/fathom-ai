@@ -1,0 +1,106 @@
+.line {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 12px 6px;
+  border-radius: var(--radius-sm);
+  max-width: 760px;
+  cursor: pointer;
+  transition: background var(--dur-2) var(--ease-out);
+  /* Long transcripts: let the browser skip layout/paint for off-screen lines. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 64px;
+}
+
+.line:hover {
+  background: var(--paper-100);
+}
+
+.continued {
+  padding-top: 2px;
+  contain-intrinsic-size: auto 34px;
+}
+
+.active,
+.active:hover {
+  background: var(--surface-selected);
+}
+
+.tsCell {
+  padding-top: 20px;
+  text-align: right;
+}
+
+.continued .tsCell {
+  padding-top: 3px;
+}
+
+.ts {
+  font: 400 12px/1 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  padding: 3px 5px;
+  margin: 0 -5px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ts:hover,
+.ts:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.active .ts {
+  color: var(--accent);
+}
+
+.speaker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+  font: 600 13px/1.4 var(--font-sans);
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Repeated speaker name: kept for screen readers and text search, hidden visually (design). */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.text {
+  margin: 0;
+  font: 400 15px/1.65 var(--font-sans);
+  color: var(--ink-800);
+  text-wrap: pretty;
+}
+
+.active .text {
+  color: var(--ink-900);
+}
+
+@media (max-width: 759px) {
+  .line {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 10px;
+    padding: 10px 8px 6px;
+  }
+  .continued {
+    padding-top: 2px;
+  }
+}
