@@ -16,6 +16,8 @@ export interface TranscriptProps {
   onFollowChange(follow: boolean): void;
   /** Bumped on every jump (quote click, ?t=) so the active line is re-centred even if unchanged. */
   jumpKey: number;
+  /** Segment ids inside a saved highlight. */
+  markedIds?: ReadonlySet<string>;
 }
 
 /** A new speaker block starts on a speaker change or after a 30 s pause (design kit rule). */
@@ -26,7 +28,7 @@ const SCROLL_KEYS = new Set(["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home
  * The scrolling transcript. Memoised: it re-renders only when the active index (not the clock)
  * changes, and each TranscriptLine is memoised, so a tick touches at most two lines.
  */
-function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFollowChange, jumpKey }: TranscriptProps) {
+function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFollowChange, jumpKey, markedIds }: TranscriptProps) {
   const box = useRef<HTMLDivElement>(null);
   const lastJump = useRef(-1);
 
@@ -138,6 +140,7 @@ function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFol
               color={r.color}
               showSpeaker={r.showSpeaker}
               active={i === activeIndex}
+              marked={markedIds?.has(r.seg.id)}
               onSeek={onSeek}
             />
           ))

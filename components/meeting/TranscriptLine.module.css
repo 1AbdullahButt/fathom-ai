@@ -17,6 +17,11 @@
   padding-top: 2px;
 }
 
+/* Inside a saved highlight (P1-3): amber bar at the left edge of the line. */
+.line[data-marked] {
+  box-shadow: inset 3px 0 0 var(--amber-100);
+}
+
 .active,
 .active:hover {
   background: var(--surface-selected);

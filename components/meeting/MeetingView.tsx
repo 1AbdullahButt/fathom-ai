@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { memo, useCallback, useEffect, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { MeetingBundle } from "@/lib/data";
-import type { Speaker } from "@/lib/types";
+import type { Highlight, Speaker } from "@/lib/types";
 import { formatTimestamp } from "@/lib/time";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { usePlayback } from "@/lib/usePlayback";
@@ -13,20 +13,45 @@ import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { StateBlock } from "@/components/ui/StateBlock";
 import { Tabs } from "@/components/ui/Tabs";
+import { Toast } from "@/components/ui/Toast";
 import { ActionItem } from "./ActionItem";
+import { HighlightCard, segmentsInRange } from "./HighlightCard";
 import { formatMeetingDate } from "./MeetingRow";
+import { NoteForm } from "./NoteForm";
 import { PlayerControls } from "./PlayerControls";
 import { speakerColor } from "./QuoteChip";
+import { SelectionHighlighter } from "./SelectionHighlighter";
 import { SummaryTab } from "./SummaryTab";
 import { Transcript } from "./Transcript";
+import hl from "./Highlights.module.css";
 import styles from "./MeetingView.module.css";
 
 type PanelTab = "summary" | "actions" | "highlights";
-type PhoneTab = "transcript" | "summary" | "actions";
+type PhoneTab = "transcript" | "summary" | "actions" | "highlights";
 
 const VIDEO_EXT = /\.(mp4|mov|webm|m4v)(\?|$)/i;
 /** Seeking to a segment start may land a few ms early (media frame granularity). */
 const EPS = 0.05;
+/** H during playback highlights this many seconds back from now. */
+const H_BACK_S = 15;
+
+type ToastState =
+  | { kind: "message"; tone: "success" | "error" | "info"; title: string; body?: string; note?: Highlight }
+  | { kind: "note"; highlight: Highlight };
+
+/** Merge a saved highlight into the list: a row with the same range is replaced (newest note wins). */
+function mergeHighlight(list: Highlight[], h: Highlight): Highlight[] {
+  const rest = list.filter((x) => x.start_s !== h.start_s || x.end_s !== h.end_s);
+  return [...rest, h].sort((a, b) => a.start_s - b.start_s || a.created_at.localeCompare(b.created_at));
+}
+
+function isTyping(t: EventTarget | null): boolean {
+  const el = t as HTMLElement | null;
+  if (!el || !el.tagName) return false;
+  return el.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(el.tagName);
+}
+
+const rangeLabel = (h: { start_s: number; end_s: number }) => `${formatTimestamp(h.start_s)}–${formatTimestamp(h.end_s)}`;
 
 export interface MeetingViewProps {
   bundle: MeetingBundle;
@@ -51,6 +76,13 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const [jumpKey, setJumpKey] = useState(0);
   const [tab, setTab] = useState<PanelTab>("summary");
   const [phoneTab, setPhoneTab] = useState<PhoneTab>("transcript");
+  const [highlights, setHighlights] = useState<Highlight[]>(() => bundle.highlights ?? []);
+  const [toast, setToast] = useState<ToastState | null>(null);
+  const paneRef = useRef<HTMLDivElement>(null);
+  const timeRef = useRef(time);
+  useEffect(() => {
+    timeRef.current = time;
+  }, [time]);
 
   // `?t=` (search jump): the clock already starts at t and the transcript places that line on
   // mount; also start playing. If the browser blocks autoplay, play() fails quietly and the
@@ -87,6 +119,87 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
     },
     [seek, play],
   );
+
+  // Toasts close after 4 s (errors and "Add note" 8 s); the note form stays until saved or cancelled.
+  useEffect(() => {
+    if (!toast || toast.kind === "note") return;
+    const t = window.setTimeout(() => setToast(null), toast.tone === "error" || toast.note ? 8000 : 4000);
+    return () => window.clearTimeout(t);
+  }, [toast]);
+
+  /** POST /api/highlights; the same range again replaces its note. Resolves the saved row or null. */
+  const saveHighlight = useCallback(
+    async (start_s: number, end_s: number, note: string): Promise<Highlight | null> => {
+      try {
+        const res = await fetch("/api/highlights", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ meeting_id: meeting.id, start_s, end_s, note }),
+        });
+        const data = (await res.json().catch(() => ({}))) as { highlight?: Highlight; error?: string };
+        if (!res.ok || !data.highlight) {
+          setToast({ kind: "message", tone: "error", title: "Highlight not saved", body: data.error ?? "Try again in a moment." });
+          return null;
+        }
+        const saved = data.highlight;
+        setHighlights((list) => mergeHighlight(list, saved));
+        return saved;
+      } catch {
+        setToast({ kind: "message", tone: "error", title: "Highlight not saved", body: "Check your connection and try again." });
+        return null;
+      }
+    },
+    [meeting.id],
+  );
+
+  /** Selection popover: save with its note, confirm with a toast. */
+  const saveSelection = useCallback(
+    async (start_s: number, end_s: number, note: string) => {
+      const h = await saveHighlight(start_s, end_s, note);
+      if (h) setToast({ kind: "message", tone: "success", title: `Highlight saved · ${rangeLabel(h)}` });
+      return !!h;
+    },
+    [saveHighlight],
+  );
+
+  const saveNote = useCallback(
+    async (h: Highlight, note: string) => {
+      const saved = await saveHighlight(h.start_s, h.end_s, note);
+      if (saved) setToast({ kind: "message", tone: "success", title: "Note saved" });
+      return !!saved;
+    },
+    [saveHighlight],
+  );
+
+  // H during playback: highlight the last 15 s; the toast offers "Add note".
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "h" && e.key !== "H") return;
+      if (e.ctrlKey || e.metaKey || e.altKey || e.repeat || isTyping(e.target)) return;
+      if (!playing || meeting.status !== "ready") return;
+      e.preventDefault();
+      const end = Math.round(timeRef.current * 1000) / 1000;
+      const start = Math.max(0, end - H_BACK_S);
+      void saveHighlight(start, end, "").then((h) => {
+        if (h) setToast({ kind: "message", tone: "success", title: `Highlight saved · ${rangeLabel(h)}`, note: h });
+      });
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [playing, meeting.status, saveHighlight]);
+
+  /** Transcript lines inside any saved highlight. */
+  const markedIds = useMemo(() => {
+    const ids = new Set<string>();
+    for (const h of highlights) for (const s of segmentsInRange(segments, h.start_s, h.end_s)) ids.add(s.id);
+    return ids;
+  }, [highlights, segments]);
+
+  /** Highlights playing now, as a stable string so the memoised panel re-renders only on change. */
+  const activeHighlights = highlights
+    .filter((h) => time >= h.start_s && time < Math.max(h.end_s, h.start_s + 0.5))
+    .map((h) => h.id)
+    .join(" ");
 
   const onPhoneTab = (id: string) => {
     const next = id as PhoneTab;
@@ -184,11 +297,12 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
                 { id: "transcript", label: "Transcript" },
                 { id: "summary", label: "Summary" },
                 { id: "actions", label: "Actions" },
+                { id: "highlights", label: "Highlights" },
               ]}
             />
           </div>
 
-          <div className={styles.transcriptPane}>
+          <div ref={paneRef} className={styles.transcriptPane}>
             <Transcript
               segments={segments}
               speakers={speakers}
@@ -197,12 +311,50 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
               follow={follow}
               onFollowChange={setFollow}
               jumpKey={jumpKey}
+              markedIds={markedIds}
             />
+            {meeting.status === "ready" ? <SelectionHighlighter container={paneRef} segments={segments} onSave={saveSelection} /> : null}
           </div>
         </section>
 
-        <SidePanel bundle={bundle} segments={segments} tab={tab} onTab={setTab} onSeek={jump} activeId={active?.id} />
+        <SidePanel
+          bundle={bundle}
+          segments={segments}
+          tab={tab}
+          onTab={setTab}
+          onSeek={jump}
+          activeId={active?.id}
+          highlights={highlights}
+          activeHighlights={activeHighlights}
+          onSaveNote={saveNote}
+        />
       </div>
+
+      {toast ? (
+        <div className={hl.toastSlot}>
+          {toast.kind === "note" ? (
+            <div className={hl.popoverCard} role="dialog" aria-label="Add note">
+              <NoteForm
+                label={`Note for ${rangeLabel(toast.highlight)}`}
+                submitLabel="Save note"
+                onCancel={() => setToast(null)}
+                onSave={(n) => saveNote(toast.highlight, n)}
+              />
+            </div>
+          ) : (
+            <div>
+              <Toast
+                tone={toast.tone}
+                title={toast.title}
+                body={toast.body}
+                actionLabel={toast.note ? "Add note" : undefined}
+                onAction={toast.note ? () => setToast({ kind: "note", highlight: toast.note! }) : undefined}
+                onClose={() => setToast(null)}
+              />
+            </div>
+          )}
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -356,6 +508,9 @@ const SidePanel = memo(function SidePanel({
   onTab,
   onSeek,
   activeId,
+  highlights,
+  activeHighlights,
+  onSaveNote,
 }: {
   bundle: MeetingBundle;
   segments: MeetingBundle["segments"];
@@ -363,6 +518,10 @@ const SidePanel = memo(function SidePanel({
   onTab(t: PanelTab): void;
   onSeek(s: number): void;
   activeId: string | undefined;
+  highlights: Highlight[];
+  /** Space-separated ids of the highlights playing now. */
+  activeHighlights: string;
+  onSaveNote(h: Highlight, note: string): Promise<boolean>;
 }) {
   const speakers = bundle.meeting.speakers;
   const summary = bundle.summaries.general;
@@ -406,13 +565,31 @@ const SidePanel = memo(function SidePanel({
       />
     );
   } else {
-    content = (
+    const playingNow = new Set(activeHighlights.split(" "));
+    content = highlights.length ? (
+      <div className={hl.list}>
+        <p className={hl.hint}>
+          Select transcript text, or press <kbd className={hl.kbd}>H</kbd> while it plays, to save a moment.
+        </p>
+        {highlights.map((h) => (
+          <HighlightCard
+            key={h.id}
+            highlight={h}
+            segments={segments}
+            speakers={speakers}
+            onPlay={onSeek}
+            onSaveNote={(n) => onSaveNote(h, n)}
+            active={playingNow.has(h.id)}
+          />
+        ))}
+      </div>
+    ) : (
       <StateBlock
         compact
         kind="empty"
         icon="bookmark"
         title="No highlights yet"
-        body="Clip a moment while you listen. Each clip gets a public link that plays just that range."
+        body="Select transcript text, or press H while it plays, to save a moment with a note."
       />
     );
   }
@@ -427,7 +604,7 @@ const SidePanel = memo(function SidePanel({
           tabs={[
             { id: "summary", label: "Summary" },
             { id: "actions", label: "Action items", count: items.length || undefined },
-            { id: "highlights", label: "Highlights" },
+            { id: "highlights", label: "Highlights", count: highlights.length || undefined },
           ]}
         />
       </div>

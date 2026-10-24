@@ -14,10 +14,12 @@ export interface TranscriptLineProps {
   color?: string;
   /** False for consecutive lines from the same speaker: the name is hidden visually. */
   showSpeaker?: boolean;
+  /** Inside a saved highlight: a subtle amber bar on the line. */
+  marked?: boolean;
 }
 
 /** One utterance: timestamp, speaker, text. Clicking the line (or its timestamp) seeks to its start. */
-function TranscriptLineImpl({ segment, speaker, active, onSeek, color = "var(--ink-600)", showSpeaker = true }: TranscriptLineProps) {
+function TranscriptLineImpl({ segment, speaker, active, onSeek, color = "var(--ink-600)", showSpeaker = true, marked = false }: TranscriptLineProps) {
   const ts = formatTimestamp(segment.start_s);
   const name = speaker?.name ?? "Unknown speaker";
   const onLineClick = (e: MouseEvent) => {
@@ -29,6 +31,7 @@ function TranscriptLineImpl({ segment, speaker, active, onSeek, color = "var(--i
   return (
     <div
       data-segment-id={segment.id}
+      data-marked={marked || undefined}
       aria-current={active ? "true" : undefined}
       className={`${styles.line} ${showSpeaker ? "" : styles.continued} ${active ? styles.active : ""}`}
       onClick={onLineClick}
@@ -55,7 +58,10 @@ function TranscriptLineImpl({ segment, speaker, active, onSeek, color = "var(--i
         ) : (
           <span className={styles.srOnly}>{name}</span>
         )}
-        <p className={styles.text}>{segment.text}</p>
+        <p className={styles.text}>
+          {marked ? <span className={styles.srOnly}>Highlighted: </span> : null}
+          {segment.text}
+        </p>
       </div>
     </div>
   );

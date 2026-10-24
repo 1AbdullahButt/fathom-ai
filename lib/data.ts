@@ -15,6 +15,8 @@ export interface MeetingBundle {
   chapters: Chapter[];
   summaries: Partial<Record<Template, Summary>>;
   action_items: ActionItem[];
+  /** Saved highlights, by start time (latest note per range, see listHighlights). */
+  highlights: Highlight[];
   /** Last processing error for uploads with status "error". */
   error: string | null;
 }
@@ -327,9 +329,15 @@ export async function getMeeting(id: string): Promise<MeetingBundle | null> {
   if (seed) {
     let summaries = { ...seed.summaries };
     let actionItems = seed.action_items;
+    let highlights: Highlight[] = [];
     try {
       const fast = store({ fast: true });
-      const [userSummaries, userActions] = await Promise.all([fast.getSummaries(id), fast.getActionItems(id)]);
+      const [userSummaries, userActions, userHighlights] = await Promise.all([
+        fast.getSummaries(id),
+        fast.getActionItems(id),
+        fast.listHighlights(id),
+      ]);
+      highlights = latestPerRange(userHighlights);
       for (const s of userSummaries) summaries = { ...summaries, [s.template]: s };
       if (userActions.length) {
         const override = new Map(userActions.map((a) => [a.id, a]));
@@ -341,17 +349,30 @@ export async function getMeeting(id: string): Promise<MeetingBundle | null> {
     } catch (err) {
       console.error(`getMeeting(${id}): user overrides unavailable`, err);
     }
-    return { meeting: seed.meeting, segments: seed.segments, chapters: seed.chapters, summaries, action_items: actionItems, error: null };
+    return { meeting: seed.meeting, segments: seed.segments, chapters: seed.chapters, summaries, action_items: actionItems, highlights, error: null };
   }
 
   const s = store();
   const m = await s.getMeeting(id);
   if (!m) return null;
-  const [segments, summaryRows, actionItems] = await Promise.all([s.getSegments(id), s.getSummaries(id), s.getActionItems(id)]);
+  const [segments, summaryRows, actionItems, highlightRows] = await Promise.all([
+    s.getSegments(id),
+    s.getSummaries(id),
+    s.getActionItems(id),
+    s.listHighlights(id),
+  ]);
   const summaries: Partial<Record<Template, Summary>> = {};
   for (const row of summaryRows) summaries[row.template] = row;
   segments.sort((a, b) => a.start_s - b.start_s);
-  return { meeting: stripUser(m), segments, chapters: [], summaries, action_items: actionItems, error: m.error ?? null };
+  return {
+    meeting: stripUser(m),
+    segments,
+    chapters: [],
+    summaries,
+    action_items: actionItems,
+    highlights: latestPerRange(highlightRows),
+    error: m.error ?? null,
+  };
 }
 
 /** All ready meetings with their segments (search / ask corpus). */
@@ -429,8 +450,22 @@ export async function updateActionItem(meetingId: string, id: string, patch: Act
 
 // ---------------------------------------------------------------- highlights + clips
 
+/**
+ * Highlights are append-only (no update grant), so adding a note to a saved highlight inserts a
+ * new row with the same range. On read the newest row per (start_s, end_s) wins. DECISIONS.md.
+ */
+export function latestPerRange(rows: Highlight[]): Highlight[] {
+  const byRange = new Map<string, Highlight>();
+  for (const h of rows) {
+    const key = `${h.start_s}:${h.end_s}`;
+    const prev = byRange.get(key);
+    if (!prev || h.created_at >= prev.created_at) byRange.set(key, h);
+  }
+  return [...byRange.values()].sort((a, b) => a.start_s - b.start_s || a.created_at.localeCompare(b.created_at));
+}
+
 export async function listHighlights(meetingId: string): Promise<Highlight[]> {
-  return store().listHighlights(meetingId);
+  return latestPerRange(await store().listHighlights(meetingId));
 }
 
 export async function createHighlight(input: Omit<Highlight, "id" | "created_at">): Promise<Highlight> {
@@ -465,6 +500,17 @@ export async function logUpload(ipHash: string, meetingId: string | null): Promi
 // separately without a new table (DECISIONS.md: template switch cost guard).
 
 const genKey = (ipHash: string) => `gen:${ipHash}`;
+
+/** Per-client limits for highlight and clip creation, in the same shared log under their own prefix. */
+export type RateKind = "hl" | "clip";
+
+export async function countRateEventsSince(kind: RateKind, ipHash: string, sinceIso: string): Promise<number> {
+  return store().countUploadsSince(`${kind}:${ipHash}`, sinceIso);
+}
+
+export async function logRateEvent(kind: RateKind, ipHash: string, meetingId: string): Promise<void> {
+  await store().logUpload(`${kind}:${ipHash}`, meetingId);
+}
 
 /** Number of on-demand summary generations logged for this (hashed) client since `sinceIso`. */
 export async function countGenerationsSince(ipHash: string, sinceIso: string): Promise<number> {
