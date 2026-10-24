@@ -97,9 +97,9 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
   contract signatures that throw "not implemented" (only `npm run eval` calls them; filled in P0-6 / P2-4).
 - [x] P0-2 Design foundation: port design/ tokens + styles to `app/globals.css`, fonts via next/font, `components/ui/*` primitives used by screens (Button, IconButton, Icon, Badge, Tabs, SegmentedControl, Spinner, Skeleton, StateBlock, ProgressBar, Dialog, Toast).
 - [x] P0-3 Data layer + seed loader: `lib/data.ts` (memory + Supabase), `lib/seed.ts` reading `seed/meetings/*.json`; Supabase schema migration `supabase/migrations/0001_init.sql` with RLS.
-- [ ] P0-4 Meetings list `/`: seeded rows (title, date, duration, speakers), Upload + Record equal primary buttons (Record opens a "coming soon / no bot" dialog — stub).
-- [ ] P0-5 Meeting page `/m/[id]`: media player, transcript with speaker names + timestamps, active line follows playback (auto-scroll, pausable), click line to seek. Virtualise or window the transcript so 1h stays responsive.
-- [ ] P0-6 Summary + action items panel: `components/meeting/{SummaryPoint,ActionItem,QuoteChip,NotStated,ConfidenceFlag}.tsx`, quote inline, click seeks. `lib/llm.ts`, `lib/extract.ts` (with LLM_MOCK).
+- [x] P0-4 Meetings list `/`: seeded rows (title, date, duration, speakers), Upload + Record equal primary buttons (Record opens a "coming soon / no bot" dialog — stub).
+- [x] P0-5 Meeting page `/m/[id]`: media player, transcript with speaker names + timestamps, active line follows playback (auto-scroll, pausable), click line to seek. Virtualise or window the transcript so 1h stays responsive.
+- [x] P0-6 Summary + action items panel: `components/meeting/{SummaryPoint,ActionItem,QuoteChip,NotStated,ConfidenceFlag}.tsx`, quote inline, click seeks. `lib/llm.ts`, `lib/extract.ts` (with LLM_MOCK).
 - [ ] P0-7 Upload pipeline: `/api/uploads` signed URL -> Storage, `/api/meetings/[id]/process` -> AssemblyAI (speaker labels) -> segments -> extract -> ready. Progress + error states, retry. Cost guard: max 60 min, 3 uploads/hour/IP. TRANSCRIBE_MOCK for e2e.
 
 ### P1 (deploy after)

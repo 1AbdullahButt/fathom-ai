@@ -71,6 +71,12 @@ Format: what the reference (Fathom) does / what we do / why.
   the locked props and leaves the checkbox out. Human-edited text gets the serif/pencil styling
   but no editor-name chip, because SummaryPoint/ActionItem carry no editor name.
 
+## Where the AI got it wrong (kept for the walkthrough)
+- Seattle seed, action item "Confirm REACH partnership staff involvement": the model set owner
+  "Sokha Danh", high confidence, but the cited quote is Councilmember Solomon asking a question;
+  no one committed. Corrected by hand to owner null / low confidence and marked edited_by_human,
+  which is exactly the case the trust layer (quote shown inline) is meant to expose.
+
 ## Meetings list (P0-4)
 - **Upload sits before Record in the button pair.** The kit puts Record first; Record is a stub
   here and Upload is the working path, so it leads. Both stay equal-weight primary buttons.

@@ -1613,6 +1613,131 @@
     }
   ],
   "chapters": [],
-  "summaries": {},
-  "action_items": []
+  "summaries": {
+    "general": {
+      "meeting_id": "ami-es2002a",
+      "template": "general",
+      "points": [
+        {
+          "text": "The team outlined the project brief: designing a new remote control in three stages, targeting a €25 selling price, ≤ €12.50 production cost, and €50 million revenue.",
+          "evidence": [
+            "ami-es2002a-s20",
+            "ami-es2002a-s70",
+            "ami-es2002a-s71",
+            "ami-es2002a-s72"
+          ]
+        },
+        {
+          "text": "Uncertainties were raised about the production cost figure ($1,250) and whether the €25 price is wholesale or retail, indicating these details need clarification.",
+          "evidence": [
+            "ami-es2002a-s76",
+            "ami-es2002a-s78",
+            "ami-es2002a-s79",
+            "ami-es2002a-s80",
+            "ami-es2002a-s81"
+          ]
+        },
+        {
+          "text": "Potential international design challenges such as regional zones, frequency standards, and varied keypad symbols were identified and will require further investigation.",
+          "evidence": [
+            "ami-es2002a-s85",
+            "ami-es2002a-s86",
+            "ami-es2002a-s87",
+            "ami-es2002a-s89",
+            "ami-es2002a-s91"
+          ]
+        },
+        {
+          "text": "The team agreed that the remote control should primarily aim to combine control of multiple devices such as TV, satellite, VCR, and others.",
+          "evidence": [
+            "ami-es2002a-s124",
+            "ami-es2002a-s125",
+            "ami-es2002a-s126",
+            "ami-es2002a-s123"
+          ]
+        },
+        {
+          "text": "Production cost was identified as the main factor limiting how many features can be included in the remote control.",
+          "evidence": [
+            "ami-es2002a-s170",
+            "ami-es2002a-s172",
+            "ami-es2002a-s174",
+            "ami-es2002a-s176"
+          ]
+        },
+        {
+          "text": "The next phase is the functional design stage, with each discipline assigned to work on its area and to receive instructions by email.",
+          "evidence": [
+            "ami-es2002a-s158",
+            "ami-es2002a-s159",
+            "ami-es2002a-s160",
+            "ami-es2002a-s163"
+          ]
+        },
+        {
+          "text": "Laura said she has to do a design project next semester, which she sees as good training.",
+          "evidence": [
+            "ami-es2002a-s189"
+          ]
+        },
+        {
+          "text": "They listed possible courses for the next semester, including USDP, lighting, computer design, operating systems, ADS, computer security, and computer architecture.",
+          "evidence": [
+            "ami-es2002a-s191",
+            "ami-es2002a-s193",
+            "ami-es2002a-s194"
+          ]
+        },
+        {
+          "text": "They decided not to take databases and privacy courses.",
+          "evidence": [
+            "ami-es2002a-s195",
+            "ami-es2002a-s197",
+            "ami-es2002a-s198"
+          ]
+        }
+      ]
+    }
+  },
+  "action_items": [
+    {
+      "id": "ami-es2002a-a1",
+      "meeting_id": "ami-es2002a",
+      "task": "Develop the working design of the remote control",
+      "owner": null,
+      "due": null,
+      "due_phrase": null,
+      "confidence": "low",
+      "evidence": [
+        "ami-es2002a-s158"
+      ],
+      "edited_by_human": false
+    },
+    {
+      "id": "ami-es2002a-a2",
+      "meeting_id": "ami-es2002a",
+      "task": "Define the user interface and technical functions for the remote control",
+      "owner": null,
+      "due": null,
+      "due_phrase": null,
+      "confidence": "low",
+      "evidence": [
+        "ami-es2002a-s159"
+      ],
+      "edited_by_human": false
+    },
+    {
+      "id": "ami-es2002a-a3",
+      "meeting_id": "ami-es2002a",
+      "task": "Outline the marketing requirements and unique selling points for the remote control",
+      "owner": null,
+      "due": null,
+      "due_phrase": null,
+      "confidence": "low",
+      "evidence": [
+        "ami-es2002a-s160"
+      ],
+      "edited_by_human": false
+    }
+  ]
 }
