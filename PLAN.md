@@ -109,10 +109,10 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 - [x] P1-4 Clips: highlight or range -> `POST /api/clips` -> `/c/[id]` plays only that range with its transcript, signed out; copy link.
 
 ### P2 (deploy after)
-- [ ] P2-1 Map-reduce summary: `lib/chunk.ts` (~10 min chunks), summarise chunks then merge, evidence ids preserved; used for meetings > 15 min.
-- [ ] P2-2 Chapters + speaker filter + talk time: `lib/talktime.ts`, `components/meeting/{ChapterItem,TalkTimeBar}.tsx`, left column per design.
-- [ ] P2-3 Inline edits marked human-written (summary points + action items), `components/meeting/HumanEdit.tsx`, persisted.
-- [ ] P2-4 Ask across meetings (minimal, needed by the locked "budget" eval): `lib/ask.ts`, answer only from cited segments, else "not found in meetings". Box on `/search`.
+- [x] P2-1 Map-reduce summary: `lib/chunk.ts` (~10 min chunks), summarise chunks then merge, evidence ids preserved; used for meetings > 15 min.
+- [x] P2-2 Chapters + speaker filter + talk time: `lib/talktime.ts`, `components/meeting/{ChapterItem,TalkTimeBar}.tsx`, left column per design.
+- [x] P2-3 Inline edits marked human-written (summary points + action items), `components/meeting/HumanEdit.tsx`, persisted.
+- [x] P2-4 Ask across meetings (minimal, needed by the locked "budget" eval): `lib/ask.ts`, answer only from cited segments, else "not found in meetings". Box on `/search`.
 
 ### Security (human-requested; before the final QA)
 - [x] SEC-1 Security pass, fixes + SECURITY.md (checked / fixed / known limits) + DECISIONS.md entry:

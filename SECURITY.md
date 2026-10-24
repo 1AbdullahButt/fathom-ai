@@ -11,20 +11,17 @@ the follow-up SEC-2 pass (branch `sec-2`, migration 0005), below.
 
 ## Action needed by the human
 
-1. **Rotate `GROQ_API_KEY` and `ASSEMBLYAI_API_KEY`.** The Vercel CLI does not read `.gitignore`,
-   so the first two deployments uploaded `.env` into the deployment source (visible to Vercel
-   team members, not public). Fixed by `.vercelignore`; both deployments were removed. The keys
-   must still be treated as exposed:
-   - Groq console: create a new key, revoke the old one.
-   - AssemblyAI dashboard: rotate the API key.
-   - `npx vercel env rm GROQ_API_KEY production` then `npx vercel env add GROQ_API_KEY production`
-     (same for `ASSEMBLYAI_API_KEY`), update local `.env`, redeploy.
+1. **DONE 2026-10-24: rotated `GROQ_API_KEY` and `ASSEMBLYAI_API_KEY`.** The Vercel CLI does not
+   read `.gitignore`, so the first two deployments uploaded `.env` into the deployment source
+   (visible to Vercel team members, not public). Fixed by `.vercelignore` (excludes `.env` and
+   `.env.*`); both deployments were removed. The human rotated both keys, updated `.env` and the
+   Vercel production env vars. Production was then redeployed (`vercel redeploy` of the verified
+   build) and checked: a 15 s upload on the live site was transcribed (AssemblyAI) and summarised
+   (Groq) with status ready; both new keys also return HTTP 200 locally. The key prefixes quoted
+   in the scan table below belong to the revoked keys.
 2. Optional: set `UPLOAD_SALT` (random 32+ chars) in Vercel production. Without it the IP-hash
-   salt is derived from the AssemblyAI key, so rotating that key resets rate-limit windows once.
-3. Merge and deploy `sec-1` promptly: migration `0002_security` is already applied to the live
-   database, and the currently deployed code still uses `upsert` (needs update grants that were
-   revoked) and reads `upload_log` directly. Until the new code is live, uploads, processing and
-   new template summaries fail on production; seeded meetings and saved summaries still load.
+   salt is derived from the AssemblyAI key, so the rotation reset rate-limit windows once.
+3. DONE: `sec-1` merged and deployed, so the live code matches migration `0002_security`.
 
 ## What was checked
 
@@ -136,6 +133,8 @@ No delete is possible for anon/authenticated on any table or on storage.
 - **Storage checks the declared Content-Type, not the bytes.** A non-media file labelled
   `audio/mpeg` can be stored; it is served from `supabase.co` with that audio type (not as HTML),
   and transcription fails on it, so it is not an XSS vector.
+- **Highlights/clips** inserts are still `with check (true)` / `(public)` from 0001; review with
+  the highlights/clips work.
 - **Edits are anonymous and last-writer-wins.** Anyone can edit any summary point or action
   item of a ready meeting (public demo); direct PostgREST inserts skip the 60/h limit. Older
   edits stay in `summary_edits` (history), nothing is deleted. Seed lengths in

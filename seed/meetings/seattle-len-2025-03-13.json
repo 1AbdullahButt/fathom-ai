@@ -3243,6 +3243,201 @@
           ]
         }
       ]
+    },
+    "sales": {
+      "meeting_id": "seattle-len-2025-03-13",
+      "template": "sales",
+      "points": [
+        {
+          "text": "Decision process: The committee voted unanimously (4-0) to recommend the reappointment of Carmen Bendixen to the Seattle Public Library Board of Trustees.",
+          "evidence": [
+            "seattle-len-2025-03-13-s39",
+            "seattle-len-2025-03-13-s66",
+            "seattle-len-2025-03-13-s67"
+          ]
+        },
+        {
+          "text": "Next step: The recommendation to confirm Carmen Bendixen's appointment will be sent to the full City Council committee on Tuesday, March 18th.",
+          "evidence": [
+            "seattle-len-2025-03-13-s67"
+          ]
+        },
+        {
+          "text": "Decision process: The committee voted unanimously (4-0) to confirm the second-term appointments of Evan Smith and Linda Thompson Black to the Levy Oversight Committee.",
+          "evidence": [
+            "seattle-len-2025-03-13-s114",
+            "seattle-len-2025-03-13-s115"
+          ]
+        },
+        {
+          "text": "Next step: The Department of Neighborhoods will present an update on community capacity building, including the Downtown Activation Team's restoration actions and the 'We Deliver Care' outreach program, starting on March 13, 2025.",
+          "evidence": [
+            "seattle-len-2025-03-13-s118",
+            "seattle-len-2025-03-13-s144"
+          ]
+        },
+        {
+          "text": "Pain point: The Chinatown International District has suffered historic underinvestment, faces pressures to preserve legacy businesses, maintain housing for longtime residents and elders, address safety concerns for vulnerable members, and is at risk from large-scale projects like Sound Transit and the 2026 FIFA World Cup, with concerns about displacement similar to past events.",
+          "evidence": [
+            "seattle-len-2025-03-13-s135",
+            "seattle-len-2025-03-13-s136",
+            "seattle-len-2025-03-13-s187",
+            "seattle-len-2025-03-13-s189",
+            "seattle-len-2025-03-13-s193",
+            "seattle-len-2025-03-13-s267",
+            "seattle-len-2025-03-13-s268",
+            "seattle-len-2025-03-13-s329",
+            "seattle-len-2025-03-13-s336",
+            "seattle-len-2025-03-13-s337"
+          ]
+        },
+        {
+          "text": "Requirement: The CID Vision Advisory Group requires a community-led visioning process and strategic plan that ensures self-determination, inclusive engagement, preservation of cultural history, and includes accountability measures such as clear timelines, milestones, regular reporting, and community feedback loops.",
+          "evidence": [
+            "seattle-len-2025-03-13-s180",
+            "seattle-len-2025-03-13-s191",
+            "seattle-len-2025-03-13-s195",
+            "seattle-len-2025-03-13-s223",
+            "seattle-len-2025-03-13-s224",
+            "seattle-len-2025-03-13-s225"
+          ]
+        },
+        {
+          "text": "Next step: The CID Vision Advisory Group is currently in Phase 4 of its visioning work, creating the neighborhood strategic plan through three subphases.",
+          "evidence": [
+            "seattle-len-2025-03-13-s197",
+            "seattle-len-2025-03-13-s209"
+          ]
+        },
+        {
+          "text": "Pain point: The CID community has experienced historic negative impacts from infrastructure, sports and entertainment, social agency placements, transportation, and development projects, which the city aims to reconcile through this investment.",
+          "evidence": [
+            "seattle-len-2025-03-13-s230"
+          ]
+        },
+        {
+          "text": "Next step: The city will continue partnering with the CID Vision Advisory Group, connecting the 60-member coalition to other city departments to actualize the 10-year vision, and the Department of Neighborhoods will share handouts of the implementation plan with council members and seek support from Councilmember Mark Solomon regarding the upcoming Club Cup.",
+          "evidence": [
+            "seattle-len-2025-03-13-s253",
+            "seattle-len-2025-03-13-s263",
+            "seattle-len-2025-03-13-s317"
+          ]
+        },
+        {
+          "text": "Requirement: The city must ensure that all intersecting city projects align with the CID Vision Advisory Group's implementation plan and that the Department of Neighborhoods leads the community activation and permitting committees to preserve historic districts and leverage FIFA World Cup visitors.",
+          "evidence": [
+            "seattle-len-2025-03-13-s274",
+            "seattle-len-2025-03-13-s324",
+            "seattle-len-2025-03-13-s342",
+            "seattle-len-2025-03-13-s343",
+            "seattle-len-2025-03-13-s348"
+          ]
+        },
+        {
+          "text": "Next step: The committee adjourned with the next meeting scheduled for Thursday, March 27th, 2025, at 9:30 AM.",
+          "evidence": [
+            "seattle-len-2025-03-13-s376",
+            "seattle-len-2025-03-13-s377"
+          ]
+        }
+      ]
+    },
+    "one_on_one": {
+      "meeting_id": "seattle-len-2025-03-13",
+      "template": "one_on_one",
+      "points": [
+        {
+          "text": "Maritza Rivera: opened the meeting, adopted the agenda, and moved to items of business.",
+          "evidence": [
+            "seattle-len-2025-03-13-s2",
+            "seattle-len-2025-03-13-s13",
+            "seattle-len-2025-03-13-s38"
+          ]
+        },
+        {
+          "text": "Jennifer Chao: voted in favor of confirming Carmen Bendixen's appointment.",
+          "evidence": [
+            "seattle-len-2025-03-13-s59"
+          ]
+        },
+        {
+          "text": "Sokha Danh: expressed honor at being considered for reappointment to the Families Education Preschool and Promise Levy Oversight Committee.",
+          "evidence": [
+            "seattle-len-2025-03-13-s80",
+            "seattle-len-2025-03-13-s81"
+          ]
+        },
+        {
+          "text": "Maritza Rivera: reported that the committee voted 4-0 to confirm the second-term appointments of Evan Smith and Linda Thompson Black to the Levy Oversight Committee, with the recommendation scheduled to be sent to the full City Council on March 18th.",
+          "evidence": [
+            "seattle-len-2025-03-13-s102",
+            "seattle-len-2025-03-13-s114",
+            "seattle-len-2025-03-13-s115"
+          ]
+        },
+        {
+          "text": "Jennifer Chao: stated that the Department of Neighborhoods is supporting the 'We Deliver Care' initiative beginning March 13th in the Chinatown International District, with emphasis on the Little Saigon neighborhood.",
+          "evidence": [
+            "seattle-len-2025-03-13-s144"
+          ]
+        },
+        {
+          "text": "Jennifer Chao: announced that the Department of Neighborhoods has funded a community safety coordinator position in the CID in partnership with the CID Public Safety Council and the CID Business Improvement Area following the murder of Donnie Chin.",
+          "evidence": [
+            "seattle-len-2025-03-13-s152"
+          ]
+        },
+        {
+          "text": "Jennifer Chao: reported progress on the FODEP plan, including CPTED strategies and a 10-light upgrade, and described the ISRD board's role in reviewing all uses in the district.",
+          "evidence": [
+            "seattle-len-2025-03-13-s158",
+            "seattle-len-2025-03-13-s159",
+            "seattle-len-2025-03-13-s160",
+            "seattle-len-2025-03-13-s162",
+            "seattle-len-2025-03-13-s163"
+          ]
+        },
+        {
+          "text": "Sokha Danh: described his 10-year involvement in the Chinatown International District, the formation of the CID Vision Advisory Group, and the four phases of its community engagement and planning work, noting Phase 3 deliverables included a community survey with 600 responses and a 10-year strategic plan, while Phase 4 focuses on accountability measures.",
+          "evidence": [
+            "seattle-len-2025-03-13-s170",
+            "seattle-len-2025-03-13-s176",
+            "seattle-len-2025-03-13-s196",
+            "seattle-len-2025-03-13-s212",
+            "seattle-len-2025-03-13-s221",
+            "seattle-len-2025-03-13-s223"
+          ]
+        },
+        {
+          "text": "Maritza Rivera: requested that the 16 members of the CID Vision Advisory Group be read into the record to recognize their contributions.",
+          "evidence": [
+            "seattle-len-2025-03-13-s231",
+            "seattle-len-2025-03-13-s236"
+          ]
+        },
+        {
+          "text": "Sokha Danh: outlined key implementation priorities including multilingual public safety apps, historic building rehabilitation coordination, and a special parking strategy for stadium event days.",
+          "evidence": [
+            "seattle-len-2025-03-13-s255",
+            "seattle-len-2025-03-13-s257",
+            "seattle-len-2025-03-13-s259"
+          ]
+        },
+        {
+          "text": "Jennifer Chao: stated that the Department of Neighborhoods will follow up by sharing handouts of the CID implementation plan with council members and is coordinating with the CID Visioning Advisory Group to ensure city projects align with community priorities.",
+          "evidence": [
+            "seattle-len-2025-03-13-s263",
+            "seattle-len-2025-03-13-s274"
+          ]
+        },
+        {
+          "text": "Mark Solomon: stated that he will meet with the West Precinct tomorrow to discuss support for CID and Little Saigon efforts and is considering how to involve Native community organizations in the CID Visioning Advisory Group's expansion.",
+          "evidence": [
+            "seattle-len-2025-03-13-s293",
+            "seattle-len-2025-03-13-s300"
+          ]
+        }
+      ]
     }
   },
   "action_items": [

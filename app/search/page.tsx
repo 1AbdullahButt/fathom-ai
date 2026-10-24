@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { formatMeetingDate } from "@/components/meeting/MeetingRow";
+import { AskBox } from "@/components/search/AskBox";
 import { markMatch } from "@/components/search/markMatch";
 import { SearchBox } from "@/components/search/SearchBox";
 import { AppShell } from "@/components/shell/AppShell";
@@ -40,6 +41,7 @@ export default async function SearchPage({ searchParams }: Props) {
       <main className={styles.main}>
         <h1 className={styles.title}>Search</h1>
         <SearchBox key={q} defaultValue={q} size="lg" autoFocus={!q} />
+        <AskBox />
         {q ? <Results q={q} /> : <p className={styles.hint}>Search every word said in every meeting.</p>}
       </main>
     </AppShell>
