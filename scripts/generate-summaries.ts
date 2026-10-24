@@ -1,16 +1,20 @@
-// Fill the "general" summary + action items for seeded meetings (PLAN.md P0-6).
-// For each seed/meetings/<id>.json without summaries.general: run lib/extract on the transcript
-// and write summaries.general and action_items (ids "<meeting>-a<n>", edited_by_human false).
+// Precompute summaries for seeded meetings (PLAN.md P0-6, P1-1).
+// For each seed/meetings/<id>.json missing the requested template: run lib/extract on the
+// transcript and write summaries.<template>. The general run also writes action_items (ids
+// "<meeting>-a<n>", edited_by_human false); other templates keep the general action items.
 // Meetings longer than one call's comfortable size are chunked (~10 min), extracted per chunk,
 // and merged here (concat + dedupe). P2-1 moves chunking into lib/chunk.ts.
-// Usage: npx tsx scripts/generate-summaries.ts [--force] [meeting-id ...]
+// A failed meeting/template is reported and skipped; the rest still run (and are saved).
+// Usage: npx tsx scripts/generate-summaries.ts [--force] [--template general|sales|one_on_one|all] [meeting-id ...]
+//        (--template defaults to general; "one-on-one" and "1on1" also work)
 import "dotenv/config";
 import fs from "node:fs";
 import path from "node:path";
 import { extract } from "../lib/extract";
 import type { ExtractedActionItem } from "../lib/validate";
 import type { SeedMeetingFile } from "../lib/seed";
-import type { ActionItem, Segment, SummaryPoint } from "../lib/types";
+import type { ActionItem, Segment, SummaryPoint, Template } from "../lib/types";
+import { isTemplate, TEMPLATES } from "../lib/templates";
 
 const DIR = path.resolve(__dirname, "..", "seed", "meetings");
 const CHUNK_S = 600;
@@ -57,7 +61,7 @@ function dedupeItems(items: ExtractedActionItem[]): ExtractedActionItem[] {
   return [...byKey.values()];
 }
 
-async function generate(f: SeedMeetingFile) {
+async function generate(f: SeedMeetingFile, template: Template) {
   const { meeting, segments } = f;
   const parts = meeting.duration_s > SINGLE_CALL_MAX_S ? chunk(segments) : [segments];
   // About 3 points per 10-minute chunk, never more than MAX_POINTS in total.
@@ -66,8 +70,8 @@ async function generate(f: SeedMeetingFile) {
   const items: ExtractedActionItem[] = [];
   let dropped = 0;
   for (const [i, part] of parts.entries()) {
-    const r = await extract(part, meeting.speakers, meeting.date, "general", parts.length > 1 ? { maxPoints: perChunk } : {});
-    if (!r.ok) throw new Error(`${meeting.id} chunk ${i + 1}/${parts.length}: ${r.error}`);
+    const r = await extract(part, meeting.speakers, meeting.date, template, parts.length > 1 ? { maxPoints: perChunk } : {});
+    if (!r.ok) throw new Error(`${meeting.id} ${template} chunk ${i + 1}/${parts.length}: ${r.error}`);
     points.push(...r.summary);
     items.push(...r.actionItems);
     dropped += r.dropped;
@@ -83,27 +87,53 @@ async function generate(f: SeedMeetingFile) {
   return { summary, actionItems, dropped };
 }
 
+function parseTemplates(args: string[]): Template[] {
+  const i = args.indexOf("--template");
+  if (i < 0) return ["general"];
+  const v = (args[i + 1] ?? "").toLowerCase().replace(/-/g, "_");
+  if (v === "all") return [...TEMPLATES];
+  const t = v === "1on1" ? "one_on_one" : v;
+  if (!isTemplate(t)) throw new Error(`--template must be general, sales, one_on_one or all (got "${args[i + 1] ?? ""}")`);
+  return [t];
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const force = args.includes("--force");
-  const only = args.filter((a) => !a.startsWith("--"));
+  const templates = parseTemplates(args);
+  const ti = args.indexOf("--template");
+  const only = args.filter((a, i) => !a.startsWith("--") && !(ti >= 0 && i === ti + 1));
   const files = fs.readdirSync(DIR).filter((n) => n.endsWith(".json")).sort();
-  for (const name of files) {
-    const file = path.join(DIR, name);
-    const f = JSON.parse(fs.readFileSync(file, "utf8")) as SeedMeetingFile;
-    if (only.length && !only.includes(f.meeting.id)) continue;
-    if (f.summaries?.general && !force) {
-      console.log(`${f.meeting.id}: has a general summary, skipped`);
-      continue;
+  const failed: string[] = [];
+  for (const template of templates) {
+    for (const name of files) {
+      const file = path.join(DIR, name);
+      const f = JSON.parse(fs.readFileSync(file, "utf8")) as SeedMeetingFile;
+      if (only.length && !only.includes(f.meeting.id)) continue;
+      if (f.summaries?.[template] && !force) {
+        console.log(`${f.meeting.id}: has a ${template} summary, skipped`);
+        continue;
+      }
+      const t = Date.now();
+      let out;
+      try {
+        out = await generate(f, template);
+      } catch (e) {
+        console.error(`${f.meeting.id} ${template}: FAILED: ${e instanceof Error ? e.message : e}`);
+        failed.push(`${f.meeting.id}/${template}`);
+        continue;
+      }
+      const { summary, actionItems, dropped } = out;
+      f.summaries = { ...f.summaries, [template]: { meeting_id: f.meeting.id, template, points: summary } };
+      if (template === "general") f.action_items = actionItems;
+      fs.writeFileSync(file, JSON.stringify(f, null, 2) + "\n");
+      const items = template === "general" ? `, ${actionItems.length} action items` : "";
+      console.log(`${f.meeting.id} ${template}: ${summary.length} points${items}, ${dropped} dropped (${Math.round((Date.now() - t) / 1000)}s)`);
     }
-    const t = Date.now();
-    const { summary, actionItems, dropped } = await generate(f);
-    f.summaries = { ...f.summaries, general: { meeting_id: f.meeting.id, template: "general", points: summary } };
-    f.action_items = actionItems;
-    fs.writeFileSync(file, JSON.stringify(f, null, 2) + "\n");
-    console.log(
-      `${f.meeting.id}: ${summary.length} points, ${actionItems.length} action items, ${dropped} dropped (${Math.round((Date.now() - t) / 1000)}s)`,
-    );
+  }
+  if (failed.length) {
+    console.error(`Not generated (left to on-demand generation): ${failed.join(", ")}`);
+    process.exitCode = 1;
   }
 }
 

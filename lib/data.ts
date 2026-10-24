@@ -430,3 +430,18 @@ export async function countUploadsSince(ipHash: string, sinceIso: string): Promi
 export async function logUpload(ipHash: string, meetingId: string | null): Promise<void> {
   await store().logUpload(ipHash, meetingId);
 }
+
+// ---------------------------------------------------------------- summary generation rate limit
+// Shares the upload_log table under a prefixed key, so generations and uploads are counted
+// separately without a new table (DECISIONS.md: template switch cost guard).
+
+const genKey = (ipHash: string) => `gen:${ipHash}`;
+
+/** Number of on-demand summary generations logged for this (hashed) client since `sinceIso`. */
+export async function countGenerationsSince(ipHash: string, sinceIso: string): Promise<number> {
+  return store().countUploadsSince(genKey(ipHash), sinceIso);
+}
+
+export async function logGeneration(ipHash: string, meetingId: string): Promise<void> {
+  await store().logUpload(genKey(ipHash), meetingId);
+}

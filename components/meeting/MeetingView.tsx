@@ -16,7 +16,7 @@ import { ActionItem } from "./ActionItem";
 import { formatMeetingDate } from "./MeetingRow";
 import { PlayerControls } from "./PlayerControls";
 import { speakerColor } from "./QuoteChip";
-import { SummaryPoint } from "./SummaryPoint";
+import { SummaryTab } from "./SummaryTab";
 import { Transcript } from "./Transcript";
 import styles from "./MeetingView.module.css";
 
@@ -338,28 +338,14 @@ const SidePanel = memo(function SidePanel({
 }) {
   const speakers = bundle.meeting.speakers;
   const summary = bundle.summaries.general;
-  const points = summary?.points ?? [];
   const items = bundle.action_items;
   const generated = !!summary || items.length > 0;
   const labels: Record<PanelTab, string> = { summary: "Summary", actions: "Action items", highlights: "Highlights" };
 
   let content;
   if (tab === "summary") {
-    content = points.length ? (
-      <div style={{ paddingTop: 8 }}>
-        {points.map((p, i) => (
-          <SummaryPoint key={i} point={p} segments={segments} speakers={speakers} onSeek={onSeek} />
-        ))}
-      </div>
-    ) : (
-      <StateBlock
-        compact
-        kind="empty"
-        icon="file-text"
-        title="Summary not generated yet"
-        body="The summary for this meeting hasn’t been written yet. The transcript is ready to read and play."
-      />
-    );
+    // Rendered below and kept mounted, so its per-meeting template cache survives tab switches.
+    content = null;
   } else if (tab === "actions") {
     const toCheck = items.filter((a) => a.confidence === "low").length;
     const missing = items.filter((a) => !a.owner || !a.due).length;
@@ -418,6 +404,9 @@ const SidePanel = memo(function SidePanel({
         />
       </div>
       <div role="tabpanel" aria-label={labels[tab]} className={styles.panelBody}>
+        <div hidden={tab !== "summary"}>
+          <SummaryTab meetingId={bundle.meeting.id} initial={bundle.summaries} segments={segments} speakers={speakers} onSeek={onSeek} />
+        </div>
         {content}
       </div>
     </aside>
