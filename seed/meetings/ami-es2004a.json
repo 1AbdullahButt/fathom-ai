@@ -1300,7 +1300,28 @@
       "text": "I think so, yeah."
     }
   ],
-  "chapters": [],
+  "chapters": [
+    {
+      "meeting_id": "ami-es2004a",
+      "title": "Project introduction and agenda",
+      "start_s": 0
+    },
+    {
+      "meeting_id": "ami-es2004a",
+      "title": "Drawing favorite animals",
+      "start_s": 170.56
+    },
+    {
+      "meeting_id": "ami-es2004a",
+      "title": "Finance and market overview",
+      "start_s": 564.305
+    },
+    {
+      "meeting_id": "ami-es2004a",
+      "title": "Remote control design ideas",
+      "start_s": 669.766
+    }
+  ],
   "summaries": {
     "general": {
       "meeting_id": "ami-es2004a",

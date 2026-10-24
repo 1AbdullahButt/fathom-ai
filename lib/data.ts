@@ -44,6 +44,9 @@ interface Store {
   updateMeeting(id: string, patch: MeetingPatch): Promise<void>;
   getSegments(meetingId: string): Promise<Segment[]>;
   insertSegments(segments: Segment[]): Promise<void>;
+  getChapters(meetingId: string): Promise<Chapter[]>;
+  /** Insert-only (while the meeting is processing). */
+  insertChapters(chapters: Chapter[]): Promise<void>;
   getSummaries(meetingId: string): Promise<Summary[]>;
   /** Write-once: keeps an existing (meeting, template) row. */
   insertSummary(s: Summary): Promise<void>;
@@ -64,6 +67,7 @@ interface Store {
 interface MemoryState {
   meetings: Map<string, UserMeeting>;
   segments: Map<string, Segment[]>;
+  chapters: Map<string, Chapter[]>;
   summaries: Map<string, Summary>;
   actions: Map<string, ActionItem>;
   highlights: Highlight[];
@@ -77,6 +81,7 @@ function memoryStore(): Store {
   const fresh: MemoryState = {
     meetings: new Map(),
     segments: new Map(),
+    chapters: new Map(),
     summaries: new Map(),
     actions: new Map(),
     highlights: [],
@@ -84,6 +89,7 @@ function memoryStore(): Store {
     uploads: [],
   };
   const s = (g.__fathomMemory ??= fresh);
+  s.chapters ??= new Map(); // state created before chapters existed (dev hot reload)
   const copy = <T>(v: T): T => structuredClone(v);
   return {
     async listMeetings() {
@@ -110,6 +116,16 @@ function memoryStore(): Store {
         const list = s.segments.get(seg.meeting_id) ?? [];
         list.push(copy(seg));
         s.segments.set(seg.meeting_id, list);
+      }
+    },
+    async getChapters(meetingId) {
+      return copy(s.chapters.get(meetingId) ?? []);
+    },
+    async insertChapters(chapters) {
+      for (const c of chapters) {
+        const list = s.chapters.get(c.meeting_id) ?? [];
+        list.push(copy(c));
+        s.chapters.set(c.meeting_id, list);
       }
     },
     async getSummaries(meetingId) {
@@ -191,6 +207,15 @@ function supabaseStore(db: SupabaseClient): Store {
       for (let i = 0; i < segments.length; i += 500) {
         must(await db.from("segments").insert(segments.slice(i, i + 500)), "insert segments");
       }
+    },
+    async getChapters(meetingId) {
+      const res = await db.from("chapters").select("meeting_id, title, start_s").eq("meeting_id", meetingId).order("position");
+      return must(res, "get chapters") as Chapter[];
+    },
+    async insertChapters(chapters) {
+      if (!chapters.length) return;
+      const rows = chapters.map((c, position) => ({ meeting_id: c.meeting_id, position, title: c.title, start_s: c.start_s }));
+      must(await db.from("chapters").insert(rows), "insert chapters");
     },
     async getSummaries(meetingId) {
       const res = await db.from("summaries").select("meeting_id, template, points").eq("meeting_id", meetingId);
@@ -358,8 +383,9 @@ export async function getMeeting(id: string): Promise<MeetingBundle | null> {
   const s = store();
   const m = await s.getMeeting(id);
   if (!m) return null;
-  const [segments, summaryRows, actionItems, highlightRows] = await Promise.all([
+  const [segments, chapters, summaryRows, actionItems, highlightRows] = await Promise.all([
     s.getSegments(id),
+    s.getChapters(id),
     s.getSummaries(id),
     s.getActionItems(id),
     s.listHighlights(id),
@@ -370,7 +396,7 @@ export async function getMeeting(id: string): Promise<MeetingBundle | null> {
   return {
     meeting: stripUser(m),
     segments,
-    chapters: [],
+    chapters: chapters.sort((a, b) => a.start_s - b.start_s),
     summaries,
     action_items: actionItems,
     highlights: latestPerRange(highlightRows),
@@ -415,6 +441,12 @@ export async function saveSegments(meetingId: string, segments: Omit<Segment, "m
   const rows = segments.map((seg) => ({ ...seg, meeting_id: meetingId }));
   await store().insertSegments(rows);
   return rows;
+}
+
+/** Save chapters for an uploaded meeting (while it is processing; RLS allows inserts only then). */
+export async function saveChapters(meetingId: string, chapters: Omit<Chapter, "meeting_id">[]): Promise<void> {
+  if (isSeedId(meetingId)) throw new Error("seeded meetings are read-only");
+  await store().insertChapters(chapters.map((c) => ({ meeting_id: meetingId, title: c.title, start_s: c.start_s })));
 }
 
 // ---------------------------------------------------------------- summaries + action items

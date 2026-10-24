@@ -263,3 +263,24 @@ Format: what the reference (Fathom) does / what we do / why.
   them but also shipped P1-1..P1-3 ahead of their QA round (all had passed CI + e2e). Chosen
   because broken uploads on the live link were worse than additive, CI-tested features. P1 QA
   runs next on the deployed commit.
+## P2-2 Chapters, speaker filter, talk time
+- **Chapters from one call over a compact transcript.** Reference (Fathom) shows AI chapters.
+  We make one LLM call per meeting; for long meetings the transcript is grouped into ~25 s
+  blocks with short speaker labels and cut to fit Groq's ~7k input-tokens-per-minute cap.
+  Model start times are never trusted: snapped to the nearest real segment start, invalid or
+  duplicate entries dropped, first chapter forced to 0:00, count capped (2–4 for 15 min, 4–10
+  for an hour). Seeded chapters are precomputed by `scripts/generate-chapters.ts`.
+- **No chapters under 5 minutes.** Reference splits any recording; for a 1–2 minute call a
+  chapter list adds nothing, so m1/m2 show "No chapters for this meeting" and no model call is
+  made.
+- **Upload chapters are optional.** Generated after the notes; a failure (or under a minute
+  left before the pipeline deadline) leaves the meeting ready without chapters, not in error.
+  Stored in a new `chapters` table (0003), insert-only while the meeting is processing.
+- **Talk time = sum of segment lengths.** Silences and gaps count for nobody, so the total is
+  a bit under the recording length (Seattle: 49:43 of talk in 55:55). Under a minute shows
+  seconds ("45s") instead of "0m".
+- **Speaker filter hides other speakers' lines** (as the design kit does) rather than dimming;
+  timestamps stay, every shown line names its speaker, playback continues, and follow tracks
+  the last shown line at or before the playing one. Below 1200px the toolbar's segmented
+  control (Transcript / Chapters / Speakers) replaces the left column, on phones inside the
+  Transcript tab; a chapter tap on a phone returns to the transcript.

@@ -3076,7 +3076,43 @@
       "text": "Thank you."
     }
   ],
-  "chapters": [],
+  "chapters": [
+    {
+      "meeting_id": "seattle-len-2025-03-13",
+      "title": "Meeting opening and roll call",
+      "start_s": 0
+    },
+    {
+      "meeting_id": "seattle-len-2025-03-13",
+      "title": "Public comment on community capacity",
+      "start_s": 81.695
+    },
+    {
+      "meeting_id": "seattle-len-2025-03-13",
+      "title": "Confirmation of board appointments",
+      "start_s": 253.437
+    },
+    {
+      "meeting_id": "seattle-len-2025-03-13",
+      "title": "Department of Neighborhoods update",
+      "start_s": 861.707
+    },
+    {
+      "meeting_id": "seattle-len-2025-03-13",
+      "title": "CID Visioning Advisory Group work",
+      "start_s": 1319.66
+    },
+    {
+      "meeting_id": "seattle-len-2025-03-13",
+      "title": "Councilmember questions and discussion",
+      "start_s": 2526.907
+    },
+    {
+      "meeting_id": "seattle-len-2025-03-13",
+      "title": "Closing remarks and adjournment",
+      "start_s": 3259.1
+    }
+  ],
   "summaries": {
     "general": {
       "meeting_id": "seattle-len-2025-03-13",

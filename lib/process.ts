@@ -1,10 +1,11 @@
 // Upload processing pipeline: file -> transcript segments -> summary + action items -> ready.
 // Any failure marks the meeting "error" with a plain-words reason (shown in the list with Retry).
-import { getMeeting, saveActionItems, saveSegments, saveSummary, updateMeeting } from "./data";
+import { generateChapters } from "./chapters";
+import { getMeeting, saveActionItems, saveChapters, saveSegments, saveSummary, updateMeeting } from "./data";
 import { extract } from "./extract";
 import { transcribe, TranscribeError } from "./transcribe";
 import { MAX_DURATION_S, isOwnMediaUrl, uploadExists } from "./uploads";
-import type { Segment } from "./types";
+import type { Segment, Speaker } from "./types";
 
 /** Meetings being processed by this server instance (stops a double click starting two runs). */
 function inFlight(): Set<string> {
@@ -68,11 +69,22 @@ export async function processMeeting(id: string, deadline = Date.now() + 285_000
 
     await saveSummary({ meeting_id: id, template: "general", points: result.summary });
     await saveActionItems(id, result.actionItems);
+    // Chapters are optional: a failure (or too little time left) leaves the meeting without them, not in error.
+    if (!bundle.chapters.length && Date.now() < deadline - 60_000) await addChapters(id, segments, speakers, meeting.duration_s);
     await updateMeeting(id, { status: "ready", error: null });
   } catch (e) {
     if (e instanceof StepError) await fail(id, e.message, e.cause ?? e);
     else await fail(id, "Something went wrong on our side while processing this recording.", e);
   } finally {
     inFlight().delete(id);
+  }
+}
+
+/** Generate and save chapters; logs and gives up on any failure. */
+async function addChapters(id: string, segments: Segment[], speakers: Speaker[], duration_s: number): Promise<void> {
+  try {
+    await saveChapters(id, await generateChapters(id, segments, speakers, duration_s));
+  } catch (e) {
+    console.error(`process ${id}: chapters skipped`, e instanceof Error ? e.message : e);
   }
 }

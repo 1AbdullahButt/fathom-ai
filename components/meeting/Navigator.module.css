@@ -1,0 +1,145 @@
+/* ChapterItem + TalkTimeBar (design/components/meeting/{ChapterItem,TalkTimeBar}.jsx). */
+
+.chapter {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+}
+
+.chapter:hover {
+  background: var(--surface-hover);
+}
+
+.chapter[aria-current] {
+  background: var(--surface-selected);
+}
+
+.chapter:focus-visible,
+.speaker:focus-visible {
+  outline: none;
+  box-shadow: var(--ring-focus);
+}
+
+.chapterIndex {
+  font: 500 11px/1 var(--font-mono);
+  color: var(--text-disabled);
+}
+
+.chapter[aria-current] .chapterIndex {
+  color: var(--accent);
+}
+
+.chapterTitle {
+  font: 500 13.5px/1.35 var(--font-sans);
+  color: var(--text-1);
+  text-wrap: pretty;
+}
+
+.chapter[aria-current] .chapterTitle {
+  font-weight: 600;
+  color: var(--tide-700);
+}
+
+.time {
+  font: 400 12px/1 var(--font-mono);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.progress {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--tide-100);
+}
+
+.progressFill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.speaker {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 72px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    opacity var(--dur-2),
+    background var(--dur-1);
+}
+
+.speaker:hover {
+  background: var(--surface-hover);
+}
+
+.speaker[aria-pressed="true"] {
+  border-color: var(--line-2);
+  background: var(--surface-card);
+  box-shadow: var(--shadow-1);
+}
+
+.speaker[data-dimmed] {
+  opacity: 0.45;
+}
+
+.speakerBody {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.speakerName {
+  font: 500 13px/1.2 var(--font-sans);
+  color: var(--text-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track {
+  display: block;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--paper-150);
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+}
+
+.speakerTime {
+  text-align: right;
+  font: 400 12px/1.2 var(--font-mono);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.share {
+  color: var(--text-disabled);
+}

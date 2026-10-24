@@ -1052,7 +1052,23 @@
       "text": "Yes."
     }
   ],
-  "chapters": [],
+  "chapters": [
+    {
+      "meeting_id": "ami-is1009a",
+      "title": "Team introductions and project overview",
+      "start_s": 0
+    },
+    {
+      "meeting_id": "ami-is1009a",
+      "title": "Remote control design ideas",
+      "start_s": 605.826
+    },
+    {
+      "meeting_id": "ami-is1009a",
+      "title": "Assignments for next meeting",
+      "start_s": 679.696
+    }
+  ],
   "summaries": {
     "general": {
       "meeting_id": "ami-is1009a",

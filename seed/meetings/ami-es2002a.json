@@ -1612,7 +1612,23 @@
       "text": "No, we're not doing that. Have a go? I don't know. I mean, I don't really know how it was supposed to go. Yeah. I wasn't expecting the 5 minutes."
     }
   ],
-  "chapters": [],
+  "chapters": [
+    {
+      "meeting_id": "ami-es2002a",
+      "title": "Kickoff and introductions",
+      "start_s": 0
+    },
+    {
+      "meeting_id": "ami-es2002a",
+      "title": "Favorite animal drawings",
+      "start_s": 154.568
+    },
+    {
+      "meeting_id": "ami-es2002a",
+      "title": "Project finance and design",
+      "start_s": 460.264
+    }
+  ],
   "summaries": {
     "general": {
       "meeting_id": "ami-es2002a",

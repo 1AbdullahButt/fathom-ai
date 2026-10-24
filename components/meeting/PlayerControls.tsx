@@ -13,10 +13,12 @@ export interface PlayerControlsProps {
   rate?: number;
   onRate?(): void;
   compact?: boolean;
+  /** Chapter starts: a small tick on the scrubber for each chapter after the first. */
+  chapters?: { start_s: number; title: string }[];
 }
 
 /** Night-surface scrubber + transport (back 10 s, play/pause, forward 10 s, speed). */
-export function PlayerControls({ playing, current, duration, onToggle, onSeek, rate = 1, onRate, compact = false }: PlayerControlsProps) {
+export function PlayerControls({ playing, current, duration, onToggle, onSeek, rate = 1, onRate, compact = false, chapters = [] }: PlayerControlsProps) {
   const bar = useRef<HTMLDivElement>(null);
   const [hover, setHover] = useState<number | null>(null);
   const dragging = useRef(false);
@@ -69,6 +71,14 @@ export function PlayerControls({ playing, current, duration, onToggle, onSeek, r
       >
         <div style={{ position: "absolute", left: 0, right: 0, height: 4, borderRadius: 2, background: "var(--night-700)" }} />
         <div style={{ position: "absolute", left: 0, width: pct(current), height: 4, borderRadius: 2, background: "var(--tide-200)" }} />
+        {chapters.slice(1).map((c) => (
+          <div
+            key={c.start_s}
+            title={c.title}
+            aria-hidden="true"
+            style={{ position: "absolute", left: pct(c.start_s), width: 2, height: 8, marginLeft: -1, background: "var(--surface-player)" }}
+          />
+        ))}
         {hover != null ? (
           <div
             style={{
