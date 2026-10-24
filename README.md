@@ -1,60 +1,91 @@
-# Agent loop kit
+# Fathom AI
 
-Drop these files into an empty repo. Claude Code then plans, designs, writes locked tests,
-builds, runs QA, and fixes failures in a loop until QA passes.
+A rebuild of [Fathom](https://fathom.video)'s meeting notes, without the meeting bot. Upload a recording
+(or open a seeded one) and get a speaker-labelled transcript synced to playback, summaries in three
+templates, action items, highlights, shareable clips, search and Ask across meetings.
 
-## How the loop works
+**Live:** https://fathom-ai-tau.vercel.app (no sign-in; public demo workspace)
+
+The headline decision is a **trust layer**: every summary point and action item shows the transcript
+quote it came from, and clicking it plays that moment. Items without evidence are dropped, owners
+and dates are never invented ("not stated"), low-confidence items are flagged, and human edits
+are styled differently from AI text. It is built for the hard case: a 56-minute, 8-speaker council
+meeting with chapters, a speaker filter, talk time and map-reduce summaries.
+
+The recording bot is **stubbed on purpose**: Record explains that no bot joins the call, and upload is
+the working capture path. See [DECISIONS.md](DECISIONS.md) for every difference from Fathom and why.
+
+## What works
+- Meetings list (seeded, no login), upload of audio/video up to 60 min with progress and error states
+- Meeting page: player, transcript following playback, click-to-seek, `?t=` deep links
+- Summary (General / Sales call / 1:1 / Standup) and action items with inline quotes that seek
+- Search across meetings, Ask across meetings with citations ("not found in meetings" when unsupported)
+- Highlights (select text or press H), public clip links `/c/<id>` that play only that range
+- Chapters, speaker filter, talk time; inline edits marked as human-written
+
+Known gaps are listed in [STATUS.md](STATUS.md).
+
+## Stack
+Next.js 16 (App Router) + TypeScript, Supabase (Postgres + Storage, publishable key + RLS, no auth),
+AssemblyAI (transcription with speaker labels), Groq (summaries, action items, chapters, Ask; with a
+fallback across three models), Vercel. Design system: Sotto (imported from Claude Design into
+[design/](design/)). Security review: [SECURITY.md](SECURITY.md).
+
+## Run it locally
+Requires Node 22+.
+
+```bash
+npm ci
 ```
-/build (orchestrator, you start it)
-  -> tester    writes locked tests + fixtures from SPEC.md (once)
-  -> designer  writes design/ (uses a design MCP if connected)
-  -> builder   does one PLAN.md task, runs `npm run check`, commits
-  -> qa        uses the running app, screenshots, evals -> QA_REPORT.md PASS/FAIL
-       FAIL -> findings go back to builder (and designer for visual issues) -> qa again
-  Stop hook: Claude cannot finish until checks pass AND QA passed the current commit.
-             Caps at 8 rounds, then writes BLOCKED.md instead of looping forever.
-  PreToolUse hook: blocks any edit to tests/ or SPEC.md, so it can't cheat.
+
+Create `.env` (never committed; also excluded from Vercel uploads by `.vercelignore`):
+
+```
+GROQ_API_KEY=...
+ASSEMBLYAI_API_KEY=...
 ```
 
-## Files
-- CLAUDE.md: rules every agent follows
-- SPEC.md: what to build (edit this after using the live reference, BEFORE starting)
-- .claude/settings.json: permissions + hook wiring
-- .claude/hooks/protect-tests.sh: locks tests/ and SPEC.md
-- .claude/hooks/gate-stop.sh: the "don't stop until green" gate
-- .claude/agents/: designer, tester, builder, qa
-- .claude/commands/build.md: the orchestrator (`/build`)
-- .github/workflows/ci.yml: CI gate on every PR (check = types, lint, tests, build)
-- SUBMISSION.md: the five things to hand in, plus timing
+and `.env.local` with the Supabase project values (or omit them to run with an in-memory store):
 
-## Setup (before pressing Start on the assignment)
-1. Create the repo and copy these files in. `chmod +x .claude/hooks/*.sh`
-2. Scaffold the app so `npm run check`, `npm run eval`, `npm run dev` exist. Suggested:
-   Next.js + TypeScript, Vitest, Playwright. `check` = `tsc --noEmit && eslint . && vitest run && next build`.
-3. `.env` with GROQ_API_KEY (and whichever LLM key you use). Add `.env` to .gitignore.
-4. Connect tools in Claude Code and confirm with `/mcp`:
-   - Browser for QA: `claude mcp add playwright npx @playwright/mcp@latest`
-   - Design: add the claude_design MCP, then authenticate:
-       claude mcp add --transport http claude_design https://api.anthropic.com/v1/design/mcp
-       then run /design-login inside Claude Code
-     (Check the exact add command in the hand-off prompt Claude Design gives you.)
-     Flow: design the screens in Claude Design -> copy its hand-off prompt (it includes the
-     project link) -> paste into Claude Code -> the designer agent imports it into design/.
-     Not the same as DesignSync, which only syncs design-system files.
-5. Edit SPEC.md to match the live reference. Run `/agents` to confirm the four agents load.
-6. Record the two fixture meetings as audio into tests/audio/ (for demo and QA).
+```
+NEXT_PUBLIC_SUPABASE_URL=https://<ref>.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_...
+```
 
-## Running it
-- Start: `/build`
-- Pause and take over: `mkdir -p .loop && touch .loop/pause` (remove it to resume gating)
-- Watch: STATUS.md and QA_REPORT.md
-- Session logs: handled by the 8x agent capture setup into .agent-logs/ (do it first).
-  If that setup also writes .claude/settings.json, MERGE its hooks with ours, don't replace either.
-  Before each push, scan for keys: grep -rEn 'gsk_|sk-|sk-ant-|ghp_|AIza' .agent-logs/ ; if anything
-  shows up, rotate that key and redact it before committing.
+```bash
+npm run dev
+```
 
-## Things to check yourself (these are not guaranteed)
-- Hook and settings syntax changes between Claude Code versions. If a hook doesn't fire,
-  run `/hooks` to see what loaded, and check the hooks page in the Claude Code docs.
-- Agents may deploy to your Vercel project after each priority level passes QA. They must ask before spending money or force-pushing.
-- Read what the agents write. You have to explain every decision in the 5-minute walkthrough.
+The app runs at http://localhost:3000. Database schema and policies: `supabase/migrations/`.
+
+Other commands:
+- `npm run check`: typecheck, lint, unit/component tests, production build (CI gate)
+- `npm run test:e2e`: Playwright smoke test with mocked transcription and LLM
+- `npm run eval`: live model evals on the spec fixtures (costs Groq tokens)
+
+Seed pipeline (run once; outputs are committed so deploys never call the APIs):
+`scripts/transcribe-seed.ts` (AssemblyAI) → `scripts/split-seed.ts` (sentence segments) →
+`scripts/build-seed.ts` → `scripts/generate-summaries.ts` and `scripts/generate-chapters.ts` (Groq).
+
+## Seed data sources
+Full details, URLs and caveats: [seed/SOURCES.md](seed/SOURCES.md).
+
+- **Seattle City Council, Libraries, Education & Neighborhoods Committee, 13 March 2025** (55:54,
+  8 diarized speakers). Recorded by Seattle Channel. Public record; the Seattle Municipal Archives
+  state that City-created moving images do not require permission for use.
+  *Courtesy of the Seattle Municipal Archives, #16839, Series 3902-01.*
+  Source: https://archives.seattle.gov/digital-collections/index.php/Detail/objects/278254
+- **AMI Meeting Corpus** meetings ES2002a, ES2004a, IS1009a (14–21 min, 4 speakers each).
+  AMI Meeting Corpus, AMI Consortium, licensed CC BY 4.0
+  (https://groups.inf.ed.ac.uk/ami/corpus/). Modified: converted to mono 48 kbps MP3.
+- **Two short spec fixture meetings** ("Weekly product sync", "Customer call: Ayesha"),
+  transcript-only, written for the locked tests in SPEC.md.
+
+Speaker names come from roll call and self-introductions; where a recording never names a
+speaker, the app says "name not stated" rather than inventing one.
+
+## How it was built
+An agent loop in Claude Code: an orchestrator delegating to tester (locked tests first), designer,
+builder (one PLAN.md task per PR, CI-gated) and QA (runs the app, screenshots, evals). Prompts and
+responses are captured in [.agent-logs/](.agent-logs/). How the loop works: [docs/AGENT_LOOP.md](docs/AGENT_LOOP.md).
+Plan: [PLAN.md](PLAN.md). Spec: [SPEC.md](SPEC.md).

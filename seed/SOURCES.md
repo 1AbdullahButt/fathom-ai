@@ -1,4 +1,4 @@
-# Seed recordings: sources and reuse basis (DRAFT)
+# Seed recordings: sources and reuse basis
 
 All originals were downloaded into `seed/raw/<name>/` (gitignored). The demo files in
 `seed/media/` were made with ffmpeg: audio only, mono, 44.1 kHz, 48 kbps MP3.
