@@ -133,8 +133,9 @@ No delete is possible for anon/authenticated on any table or on storage.
 - **Storage checks the declared Content-Type, not the bytes.** A non-media file labelled
   `audio/mpeg` can be stored; it is served from `supabase.co` with that audio type (not as HTML),
   and transcription fails on it, so it is not an XSS vector.
-- **Highlights/clips** inserts are still `with check (true)` / `(public)` from 0001; review with
-  the highlights/clips work.
+- **Highlights/clips** inserts are checked by 0005 (see SEC-2 above: existing meeting, sane range,
+  10-minute clip cap, bounded note and title, server-set `created_at`). Rows stay anonymous and
+  undeletable through the app's role, like the other user data.
 - **Edits are anonymous and last-writer-wins.** Anyone can edit any summary point or action
   item of a ready meeting (public demo); direct PostgREST inserts skip the 60/h limit. Older
   edits stay in `summary_edits` (history), nothing is deleted. Seed lengths in

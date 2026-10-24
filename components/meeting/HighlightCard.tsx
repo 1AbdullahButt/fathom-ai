@@ -41,7 +41,7 @@ function HighlightCardImpl({ highlight, segments, speakers, onPlay, onSaveNote, 
           <Icon name="play" size={11} strokeWidth={2.25} />
           {range}
         </button>
-        <span className={styles.len}>{Math.max(1, Math.round(end_s - start_s))}s</span>
+        <span className={styles.len}>{formatTimestamp(Math.max(1, Math.round(end_s - start_s)))}</span>
         <span style={{ flex: 1 }} />
         {onSaveNote && !editing ? (
           <IconButton icon="pencil" size="sm" label={note ? "Edit note" : "Add note"} onClick={() => setEditing(true)} />
