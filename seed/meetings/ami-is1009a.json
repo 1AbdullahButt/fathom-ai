@@ -1053,6 +1053,63 @@
     }
   ],
   "chapters": [],
-  "summaries": {},
-  "action_items": []
+  "summaries": {
+    "general": {
+      "meeting_id": "ami-is1009a",
+      "template": "general",
+      "points": [
+        {
+          "text": "The team agreed to design a new remote control that must be original, trendy, user‑friendly, compact and multifunctional, capable of controlling TV and other household devices.",
+          "evidence": [
+            "ami-is1009a-s25",
+            "ami-is1009a-s26",
+            "ami-is1009a-s69",
+            "ami-is1009a-s71",
+            "ami-is1009a-s72"
+          ]
+        },
+        {
+          "text": "The design process will be split into functional, conceptual and detailed phases, each done individually before group discussion.",
+          "evidence": [
+            "ami-is1009a-s29",
+            "ami-is1009a-s30",
+            "ami-is1009a-s31",
+            "ami-is1009a-s32",
+            "ami-is1009a-s33"
+          ]
+        },
+        {
+          "text": "Budget constraints were set: selling price €25, target profit €50 million, and production cost must stay below €12.50 per unit.",
+          "evidence": [
+            "ami-is1009a-s58",
+            "ami-is1009a-s59",
+            "ami-is1009a-s62"
+          ]
+        },
+        {
+          "text": "The next meeting is scheduled for about 30 minutes later, where participants will present their individual work and a working design.",
+          "evidence": [
+            "ami-is1009a-s105",
+            "ami-is1009a-s125"
+          ]
+        }
+      ]
+    }
+  },
+  "action_items": [
+    {
+      "id": "ami-is1009a-a1",
+      "meeting_id": "ami-is1009a",
+      "task": "Try the whiteboard and see how it works",
+      "owner": "Eileen",
+      "due": null,
+      "due_phrase": null,
+      "confidence": "high",
+      "evidence": [
+        "ami-is1009a-s37",
+        "ami-is1009a-s38"
+      ],
+      "edited_by_human": false
+    }
+  ]
 }

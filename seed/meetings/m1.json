@@ -85,6 +85,62 @@
     }
   ],
   "chapters": [],
-  "summaries": {},
-  "action_items": []
+  "summaries": {
+    "general": {
+      "meeting_id": "m1",
+      "template": "general",
+      "points": [
+        {
+          "text": "About 40% of users drop off at the phone verification step of onboarding.",
+          "evidence": [
+            "m1-s2"
+          ]
+        },
+        {
+          "text": "The team set the product release date for the 22nd and Sara will inform marketing today.",
+          "evidence": [
+            "m1-s5",
+            "m1-s6",
+            "m1-s7"
+          ]
+        },
+        {
+          "text": "Omar will check provider logs for delayed SMS codes and provide findings by Thursday.",
+          "evidence": [
+            "m1-s3",
+            "m1-s4"
+          ]
+        }
+      ]
+    }
+  },
+  "action_items": [
+    {
+      "id": "m1-a1",
+      "meeting_id": "m1",
+      "task": "Check provider logs for delayed SMS codes and provide findings by Thursday",
+      "owner": "Omar",
+      "due": "2026-10-22",
+      "due_phrase": "by Thursday",
+      "confidence": "high",
+      "evidence": [
+        "m1-s3",
+        "m1-s4"
+      ],
+      "edited_by_human": false
+    },
+    {
+      "id": "m1-a2",
+      "meeting_id": "m1",
+      "task": "Tell marketing the release date today",
+      "owner": "Sara",
+      "due": "2026-10-19",
+      "due_phrase": "today",
+      "confidence": "high",
+      "evidence": [
+        "m1-s7"
+      ],
+      "edited_by_human": false
+    }
+  ]
 }

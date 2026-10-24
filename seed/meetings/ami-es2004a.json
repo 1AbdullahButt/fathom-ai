@@ -1301,6 +1301,98 @@
     }
   ],
   "chapters": [],
-  "summaries": {},
-  "action_items": []
+  "summaries": {
+    "general": {
+      "meeting_id": "ami-es2004a",
+      "template": "general",
+      "points": [
+        {
+          "text": "The team defined the product as an original, trendy remote control that is user‑friendly for everyone from grandchildren to grandparents, and noted the meeting is limited to 25 minutes.",
+          "evidence": [
+            "ami-es2004a-s12",
+            "ami-es2004a-s13",
+            "ami-es2004a-s14",
+            "ami-es2004a-s15",
+            "ami-es2004a-s16",
+            "ami-es2004a-s17"
+          ]
+        },
+        {
+          "text": "They set a selling price of €25, estimated it to be about £17 based on a 1.4 conversion rate, and observed comparable market products cost around £20.",
+          "evidence": [
+            "ami-es2004a-s71",
+            "ami-es2004a-s73",
+            "ami-es2004a-s74",
+            "ami-es2004a-s78"
+          ]
+        },
+        {
+          "text": "Sarah said she would add the pricing discussion to the shared folder for future reference.",
+          "evidence": [
+            "ami-es2004a-s76",
+            "ami-es2004a-s77"
+          ]
+        },
+        {
+          "text": "The remote control must be low‑cost, with production cost £12.50 and a target profit of £15 per unit, aiming at an international, all‑age consumer market rather than business users.",
+          "evidence": [
+            "ami-es2004a-s81",
+            "ami-es2004a-s83",
+            "ami-es2004a-s86",
+            "ami-es2004a-s90",
+            "ami-es2004a-s92",
+            "ami-es2004a-s87",
+            "ami-es2004a-s88",
+            "ami-es2004a-s89"
+          ]
+        },
+        {
+          "text": "The team discussed simplifying the interface by reducing button count, possibly adding an LCD menu and a large‑print button for older users, while keeping the device lightweight plastic to stay within budget.",
+          "evidence": [
+            "ami-es2004a-s104",
+            "ami-es2004a-s105",
+            "ami-es2004a-s106",
+            "ami-es2004a-s108",
+            "ami-es2004a-s109",
+            "ami-es2004a-s110",
+            "ami-es2004a-s111",
+            "ami-es2004a-s112",
+            "ami-es2004a-s131",
+            "ami-es2004a-s135",
+            "ami-es2004a-s139",
+            "ami-es2004a-s140",
+            "ami-es2004a-s141",
+            "ami-es2004a-s152",
+            "ami-es2004a-s154"
+          ]
+        },
+        {
+          "text": "After the discussion, participants will work individually for the next half hour and reconvene, with Sarah preparing a PowerPoint presentation for the follow‑up.",
+          "evidence": [
+            "ami-es2004a-s140",
+            "ami-es2004a-s141",
+            "ami-es2004a-s143",
+            "ami-es2004a-s157",
+            "ami-es2004a-s158",
+            "ami-es2004a-s159"
+          ]
+        }
+      ]
+    }
+  },
+  "action_items": [
+    {
+      "id": "ami-es2004a-a1",
+      "meeting_id": "ami-es2004a",
+      "task": "Create PowerPoint presentation",
+      "owner": "Sarah",
+      "due": null,
+      "due_phrase": null,
+      "confidence": "high",
+      "evidence": [
+        "ami-es2004a-s143"
+      ],
+      "edited_by_human": false
+    }
+  ]
 }
