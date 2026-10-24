@@ -1697,6 +1697,139 @@
           ]
         }
       ]
+    },
+    "sales": {
+      "meeting_id": "ami-es2002a",
+      "template": "sales",
+      "points": [
+        {
+          "text": "Requirement: The project brief specifies designing a new remote control that is original, trendy, and user-friendly, with a target selling price of €25 and a production cost limit of €12.50.",
+          "evidence": [
+            "ami-es2002a-s19",
+            "ami-es2002a-s71",
+            "ami-es2002a-s72"
+          ]
+        },
+        {
+          "text": "Objection: Andrew raised concerns that international sales require accounting for regional differences in DVD zones, frequencies, keypad symbols, and price sensitivity across different markets.",
+          "evidence": [
+            "ami-es2002a-s85",
+            "ami-es2002a-s87",
+            "ami-es2002a-s89",
+            "ami-es2002a-s95",
+            "ami-es2002a-s96"
+          ]
+        },
+        {
+          "text": "Decision process: The team will follow a three-stage design process involving individual work followed by meetings to review progress.",
+          "evidence": [
+            "ami-es2002a-s20",
+            "ami-es2002a-s24"
+          ]
+        },
+        {
+          "text": "Pain point: Remote controls are small, often lost, and multiple remotes clutter the home.",
+          "evidence": [
+            "ami-es2002a-s136",
+            "ami-es2002a-s138",
+            "ami-es2002a-s140",
+            "ami-es2002a-s149"
+          ]
+        },
+        {
+          "text": "Requirement: The new remote should combine multiple device controls and include extra functionalities like lighting control or note‑taking.",
+          "evidence": [
+            "ami-es2002a-s123",
+            "ami-es2002a-s124",
+            "ami-es2002a-s125",
+            "ami-es2002a-s129",
+            "ami-es2002a-s130",
+            "ami-es2002a-s131"
+          ]
+        },
+        {
+          "text": "Next step: David will work on the working design, Greg on UI, Andrew on marketing, and the team will reconvene in 30 minutes.",
+          "evidence": [
+            "ami-es2002a-s158",
+            "ami-es2002a-s159",
+            "ami-es2002a-s160",
+            "ami-es2002a-s161",
+            "ami-es2002a-s163",
+            "ami-es2002a-s157"
+          ]
+        }
+      ]
+    },
+    "one_on_one": {
+      "meeting_id": "ami-es2002a",
+      "template": "one_on_one",
+      "points": [
+        {
+          "text": "Laura: gave project brief, finance details, and outlined project stages.",
+          "evidence": [
+            "ami-es2002a-s10",
+            "ami-es2002a-s24",
+            "ami-es2002a-s70",
+            "ami-es2002a-s71",
+            "ami-es2002a-s72"
+          ]
+        },
+        {
+          "text": "David: received the project announcement.",
+          "evidence": [
+            "ami-es2002a-s13",
+            "ami-es2002a-s22"
+          ]
+        },
+        {
+          "text": "Andrew: introduced himself as marketing expert and will draw a beagle.",
+          "evidence": [
+            "ami-es2002a-s15",
+            "ami-es2002a-s26",
+            "ami-es2002a-s31"
+          ]
+        },
+        {
+          "text": "Andrew: proposed that the remote control should combine multiple device functions and include unique selling points like lighting control or notes, while noting that production cost is a key constraint.",
+          "evidence": [
+            "ami-es2002a-s123",
+            "ami-es2002a-s127",
+            "ami-es2002a-s129",
+            "ami-es2002a-s166",
+            "ami-es2002a-s170"
+          ]
+        },
+        {
+          "text": "David: identified that users frequently lose remote controls and suggested that finding them is a major pain point to address in the design.",
+          "evidence": [
+            "ami-es2002a-s136",
+            "ami-es2002a-s138",
+            "ami-es2002a-s140"
+          ]
+        },
+        {
+          "text": "Laura: assigned specific work streams for the next 30 minutes, with David focusing on working design, Greg on technical functions, and Andrew on requirements, and confirmed the next meeting is in 30 minutes.",
+          "evidence": [
+            "ami-es2002a-s157",
+            "ami-es2002a-s158",
+            "ami-es2002a-s159",
+            "ami-es2002a-s160"
+          ]
+        },
+        {
+          "text": "Laura: has a design project next semester and is not doing databases and privacy.",
+          "evidence": [
+            "ami-es2002a-s189",
+            "ami-es2002a-s198"
+          ]
+        },
+        {
+          "text": "David: is taking databases and privacy.",
+          "evidence": [
+            "ami-es2002a-s197"
+          ]
+        }
+      ]
     }
   },
   "action_items": [

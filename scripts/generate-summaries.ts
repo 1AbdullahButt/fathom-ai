@@ -5,8 +5,9 @@
 // Meetings longer than one call's comfortable size are chunked (~10 min), extracted per chunk,
 // and merged here (concat + dedupe). P2-1 moves chunking into lib/chunk.ts.
 // A failed meeting/template is reported and skipped; the rest still run (and are saved).
-// Usage: npx tsx scripts/generate-summaries.ts [--force] [--template general|sales|one_on_one|all] [meeting-id ...]
-//        (--template defaults to general; "one-on-one" and "1on1" also work)
+// Usage: npx tsx scripts/generate-summaries.ts [--force] [--template general|sales|one_on_one|all] [--pause <s>] [meeting-id ...]
+//        (--template defaults to general; "one-on-one" and "1on1" also work; --pause waits
+//        between chunk calls of a long meeting, for per-minute provider limits)
 import "dotenv/config";
 import fs from "node:fs";
 import path from "node:path";
@@ -61,7 +62,7 @@ function dedupeItems(items: ExtractedActionItem[]): ExtractedActionItem[] {
   return [...byKey.values()];
 }
 
-async function generate(f: SeedMeetingFile, template: Template) {
+async function generate(f: SeedMeetingFile, template: Template, pauseS = 0) {
   const { meeting, segments } = f;
   const parts = meeting.duration_s > SINGLE_CALL_MAX_S ? chunk(segments) : [segments];
   // About 3 points per 10-minute chunk, never more than MAX_POINTS in total.
@@ -70,6 +71,7 @@ async function generate(f: SeedMeetingFile, template: Template) {
   const items: ExtractedActionItem[] = [];
   let dropped = 0;
   for (const [i, part] of parts.entries()) {
+    if (i > 0 && pauseS > 0) await new Promise((r) => setTimeout(r, pauseS * 1000));
     const r = await extract(part, meeting.speakers, meeting.date, template, parts.length > 1 ? { maxPoints: perChunk } : {});
     if (!r.ok) throw new Error(`${meeting.id} ${template} chunk ${i + 1}/${parts.length}: ${r.error}`);
     points.push(...r.summary);
@@ -101,8 +103,10 @@ async function main() {
   const args = process.argv.slice(2);
   const force = args.includes("--force");
   const templates = parseTemplates(args);
-  const ti = args.indexOf("--template");
-  const only = args.filter((a, i) => !a.startsWith("--") && !(ti >= 0 && i === ti + 1));
+  const pi = args.indexOf("--pause");
+  const pauseS = pi >= 0 ? Number(args[pi + 1]) || 0 : 0;
+  const valueAt = new Set([args.indexOf("--template"), pi].filter((i) => i >= 0).map((i) => i + 1));
+  const only = args.filter((a, i) => !a.startsWith("--") && !valueAt.has(i));
   const files = fs.readdirSync(DIR).filter((n) => n.endsWith(".json")).sort();
   const failed: string[] = [];
   for (const template of templates) {
@@ -117,7 +121,7 @@ async function main() {
       const t = Date.now();
       let out;
       try {
-        out = await generate(f, template);
+        out = await generate(f, template, pauseS);
       } catch (e) {
         console.error(`${f.meeting.id} ${template}: FAILED: ${e instanceof Error ? e.message : e}`);
         failed.push(`${f.meeting.id}/${template}`);
