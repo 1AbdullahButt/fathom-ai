@@ -1,0 +1,60 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-app);
+}
+
+.topBar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--line-1);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-1);
+  font: 500 14px/1 var(--font-sans);
+  text-decoration: none;
+}
+
+.back:hover {
+  background: var(--surface-hover);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 14px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: var(--text-on-accent);
+  font: 600 14px/1 var(--font-sans);
+  text-decoration: none;
+}
+
+.primary:hover {
+  background: var(--accent-hover);
+}
+
+.back:focus-visible,
+.primary:focus-visible {
+  outline: none;
+  box-shadow: var(--ring-focus);
+}

@@ -50,6 +50,7 @@ export function Tabs({ tabs, value, onChange, fill = false, size = "md", label }
             {t.label}
             {t.count != null ? (
               <span
+                aria-hidden="true"
                 style={{
                   font: "500 11.5px/1 var(--font-sans)",
                   padding: "3px 6px",
