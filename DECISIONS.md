@@ -172,3 +172,29 @@ Format: what the reference (Fathom) does / what we do / why.
   hash, so the two limits never mix. A double click is de-duplicated in-process.
 - **The client caches every summary it has seen for the page's lifetime**, and the Summary tab stays
   mounted (hidden) while another tab is open, so switching back is instant (A4).
+
+- **`?t=` link autoplay.** Reference / design §5: the search jump "seeks and plays". We seek, place
+  the line a quarter from the top, and call play() on load. Browsers block autoplay with sound
+  without a prior gesture (fresh tab, shared link), so then the page stays paused at that moment
+  with the line in view and one tap on Play starts it. No muted-autoplay workaround: a silent
+  playing clip is more confusing than a paused one.
+- **Avatar initials are letters only.** A one- or two-letter parenthetical is the speaker label
+  ("Team member, name not stated (B)" -> "B", keeping B/C/D distinct); other parentheticals and
+  text after a comma are descriptions and are dropped ("Eileen (marketing)" -> "E").
+- **Transcript lines no longer use `content-visibility: auto`.** Its estimated sizes made jumps
+  land thousands of px off (QA findings 1-2). With all 379 Seattle lines laid out, 60 s of
+  playback had 0 long tasks; the one 69 ms long task is page load.
+- **Seeded pages bound their Supabase reads to 1.5 s** (override reads and the uploads in the list),
+  with postgrest retries off for those reads; on timeout they show seed-only data.
+- **Long quote lists collapse only above 3 quotes** (design/review-p0.md §2 says "first 2, then
+  +N more"). A point or action item with 4+ quotes shows the first 2 and a "+N more quotes" /
+  "Show fewer" toggle; 1-3 quotes all show, because a "+1 more" toggle saves less than it costs
+  and the short fixtures' quote buttons stay visible. When playback reaches a hidden quote the
+  list opens by itself (and stays open until closed); the playing quote's chip is highlighted.
+- **Stage play button is a dark scrim, not 14% white** (review §5 says `rgba(255,255,255,.14)`).
+  Over the light avatar tint, 14% white and a white icon were invisible; we use a 55% dark scrim
+  with a 14% white ring. It is decorative (aria-hidden): the Play control in the bar is the
+  accessible one, and a click on the stage does the same thing.
+- **Caption clamp on an inner span.** The review's clamp on the padded caption box let the top of
+  a third line show in the bottom padding in Chrome; the box keeps padding and the inner span
+  clamps to exactly 2 lines with an ellipsis. Phone avatar on the stage is 44px (desktop stays 72).

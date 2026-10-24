@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import type { MeetingBundle } from "@/lib/data";
 import type { Speaker } from "@/lib/types";
 import { formatTimestamp } from "@/lib/time";
+import { useMediaQuery } from "@/lib/useMediaQuery";
 import { usePlayback } from "@/lib/usePlayback";
 import { Avatar } from "@/components/ui/Avatar";
 import { Badge } from "@/components/ui/Badge";
@@ -51,9 +52,20 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const [tab, setTab] = useState<PanelTab>("summary");
   const [phoneTab, setPhoneTab] = useState<PhoneTab>("transcript");
 
+  // `?t=` (search jump): the clock already starts at t and the transcript places that line on
+  // mount; also start playing. If the browser blocks autoplay, play() fails quietly and the
+  // page stays paused with the line in view.
+  useEffect(() => {
+    if (initialTime > 0) play();
+    // Once, on load.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const activeIndex = useMemo(() => activeAt(segments, time), [segments, time]);
   const active = activeIndex >= 0 ? segments[activeIndex] : undefined;
-  const activeSpeaker = active ? speakers.find((s) => s.id === active.speaker_id) : undefined;
+  // Before the first line starts, the stage shows the first speaker and line (no dark empty block).
+  const staged = active ?? segments[0];
+  const stagedSpeaker = staged ? speakers.find((s) => s.id === staged.speaker_id) : undefined;
 
   /** Transcript line / scrubber: seek without changing play state, follow again. */
   const seekOnly = useCallback(
@@ -135,10 +147,11 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
                   <audio key={mediaKey} ref={attachMedia} src={mediaUrl} preload="metadata" onError={() => setMediaFailed(true)} hidden />
                 ) : null}
                 <Stage
-                  speaker={activeSpeaker}
-                  color={speakerColor(speakers, activeSpeaker?.id)}
-                  caption={active?.text}
+                  speaker={stagedSpeaker}
+                  color={speakerColor(speakers, stagedSpeaker?.id)}
+                  caption={staged?.text}
                   playing={playing}
+                  atStart={time <= EPS}
                   onToggle={toggle}
                   label={mediaUrl ? "Audio · speaker view" : "Transcript only · speaker view"}
                   failed={mediaFailed}
@@ -188,7 +201,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
           </div>
         </section>
 
-        <SidePanel bundle={bundle} segments={segments} tab={tab} onTab={setTab} onSeek={jump} />
+        <SidePanel bundle={bundle} segments={segments} tab={tab} onTab={setTab} onSeek={jump} activeId={active?.id} />
       </div>
     </div>
   );
@@ -218,6 +231,7 @@ function Stage({
   color,
   caption,
   playing,
+  atStart,
   onToggle,
   label,
   failed,
@@ -227,11 +241,13 @@ function Stage({
   color: string;
   caption: string | undefined;
   playing: boolean;
+  atStart: boolean;
   onToggle(): void;
   label: string;
   failed: boolean;
   onRetry(): void;
 }) {
+  const phone = useMediaQuery("(max-width: 759px)");
   if (failed) {
     return (
       <div className={styles.stage} style={{ cursor: "default" }}>
@@ -262,14 +278,24 @@ function Stage({
           <Avatar
             name={speaker.name}
             color={color}
-            size={72}
+            size={phone ? 44 : 72}
             speaking={playing}
             style={{ boxShadow: playing ? `0 0 0 3px var(--night-950), 0 0 0 5px ${color}` : "none" }}
           />
           <span>{speaker.name}</span>
+          {!playing && atStart ? (
+            // Same action as the stage click and the Play control; that control is the accessible one.
+            <span className={styles.stagePlay} aria-hidden="true">
+              <Icon name="play" size={22} />
+            </span>
+          ) : null}
         </div>
       ) : null}
-      {caption ? <div className={styles.caption}>{caption}</div> : null}
+      {caption ? (
+        <div className={styles.caption} title={caption}>
+          <span className={styles.captionText}>{caption}</span>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -329,12 +355,14 @@ const SidePanel = memo(function SidePanel({
   tab,
   onTab,
   onSeek,
+  activeId,
 }: {
   bundle: MeetingBundle;
   segments: MeetingBundle["segments"];
   tab: PanelTab;
   onTab(t: PanelTab): void;
   onSeek(s: number): void;
+  activeId: string | undefined;
 }) {
   const speakers = bundle.meeting.speakers;
   const summary = bundle.summaries.general;
@@ -356,7 +384,7 @@ const SidePanel = memo(function SidePanel({
         </p>
         {items.map((a) => (
           <div key={a.id} className={styles.actionRow}>
-            <ActionItem item={a} segments={segments} speakers={speakers} onSeek={onSeek} />
+            <ActionItem item={a} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
           </div>
         ))}
       </>
@@ -405,7 +433,7 @@ const SidePanel = memo(function SidePanel({
       </div>
       <div role="tabpanel" aria-label={labels[tab]} className={styles.panelBody}>
         <div hidden={tab !== "summary"}>
-          <SummaryTab meetingId={bundle.meeting.id} initial={bundle.summaries} segments={segments} speakers={speakers} onSeek={onSeek} />
+          <SummaryTab meetingId={bundle.meeting.id} initial={bundle.summaries} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
         </div>
         {content}
       </div>

@@ -16,6 +16,7 @@ export interface SummaryTabProps {
   segments: Segment[];
   speakers: Speaker[];
   onSeek(s: number): void;
+  activeId?: string;
 }
 
 type Status = "loading" | { error: string };
@@ -27,7 +28,7 @@ const OPTIONS = TEMPLATES.map((t) => ({ value: t, label: TEMPLATE_LABELS[t] }));
  * meeting in memory for the life of the page: a template seen once swaps back instantly.
  * A template with no saved summary is generated once by POST /api/meetings/[id]/summary.
  */
-export function SummaryTab({ meetingId, initial, segments, speakers, onSeek }: SummaryTabProps) {
+export function SummaryTab({ meetingId, initial, segments, speakers, onSeek, activeId }: SummaryTabProps) {
   const [template, setTemplate] = useState<Template>("general");
   const [cache, setCache] = useState<Partial<Record<Template, Summary>>>(initial);
   const [status, setStatus] = useState<Partial<Record<Template, Status>>>({});
@@ -63,7 +64,7 @@ export function SummaryTab({ meetingId, initial, segments, speakers, onSeek }: S
     body = points.length ? (
       <div style={{ paddingTop: 8 }}>
         {points.map((p, i) => (
-          <SummaryPoint key={i} point={p} segments={segments} speakers={speakers} onSeek={onSeek} />
+          <SummaryPoint key={i} point={p} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
         ))}
       </div>
     ) : (

@@ -156,7 +156,11 @@ function must<T>(res: { data: T; error: { message: string } | null }, what: stri
 }
 
 function supabaseStore(db: SupabaseClient): Store {
-  const toAction = ({ position: _position, ...r }: ActionItem & { position?: number }): ActionItem => ({ ...r, evidence: r.evidence ?? [] });
+  const toAction = (row: ActionItem & { position?: number }): ActionItem => {
+    const r: ActionItem & { position?: number } = { ...row, evidence: row.evidence ?? [] };
+    delete r.position;
+    return r;
+  };
   const toClip = (r: Clip): Clip => ({ ...r, public: true });
   return {
     async listMeetings() {
@@ -236,7 +240,22 @@ function supabaseStore(db: SupabaseClient): Store {
 
 // ---------------------------------------------------------------- selection
 
-let cached: { key: string; store: Store; kind: "memory" | "supabase" } | null = null;
+/**
+ * Reads of user overrides for seeded pages give up after this long, so a slow or unreachable
+ * Supabase never holds up the seeded meetings (they fall back to seed-only).
+ */
+export const SEED_OVERRIDE_TIMEOUT_MS = 1500;
+
+let cached: { key: string; store: Store; fast: Store; kind: "memory" | "supabase" } | null = null;
+
+/** fetch for supabase-js that aborts after `ms` (on top of any caller signal). */
+function fetchWithTimeout(ms: number): typeof fetch {
+  return (input, init) => {
+    const timeout = AbortSignal.timeout(ms);
+    const signal = init?.signal ? AbortSignal.any([init.signal, timeout]) : timeout;
+    return fetch(input, { ...init, signal });
+  };
+}
 
 /** "memory" when DATA_SOURCE=memory or Supabase env is missing; otherwise "supabase". */
 export function dataSource(): "memory" | "supabase" {
@@ -246,20 +265,29 @@ export function dataSource(): "memory" | "supabase" {
   return "supabase";
 }
 
-function store(): Store {
+/** The store. `fast`: reads abort after SEED_OVERRIDE_TIMEOUT_MS (used where seeds must not wait). */
+function store(opts: { fast?: boolean } = {}): Store {
   const kind = dataSource();
   const key = `${kind}|${process.env.NEXT_PUBLIC_SUPABASE_URL ?? ""}`;
-  if (cached?.key === key) return cached.store;
-  const s =
-    kind === "memory"
-      ? memoryStore()
-      : supabaseStore(
-          createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!, {
-            auth: { persistSession: false, autoRefreshToken: false },
-          }),
-        );
-  cached = { key, store: s, kind };
-  return s;
+  if (cached?.key !== key) {
+    let s: Store;
+    let fast: Store;
+    if (kind === "memory") {
+      s = fast = memoryStore();
+    } else {
+      const client = (f?: typeof fetch) =>
+        createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!, {
+          auth: { persistSession: false, autoRefreshToken: false },
+          // postgrest-js retries failed GETs with 1+2+4 s backoff (and counts our timeout as a
+          // network error), so the fast client turns retries off to keep the bound real.
+          ...(f ? { global: { fetch: f }, db: { retry: false } } : {}),
+        });
+      s = supabaseStore(client());
+      fast = supabaseStore(client(fetchWithTimeout(SEED_OVERRIDE_TIMEOUT_MS)));
+    }
+    cached = { key, store: s, fast, kind };
+  }
+  return opts.fast ? cached.fast : cached.store;
 }
 
 function stripUser(m: UserMeeting): Meeting {
@@ -286,7 +314,7 @@ export async function listMeetings(): Promise<Meeting[]> {
   const seeded = seedMeetings().map((f) => f.meeting);
   let uploaded: Meeting[] = [];
   try {
-    uploaded = (await store().listMeetings()).map(stripUser);
+    uploaded = (await store({ fast: true }).listMeetings()).map(stripUser);
   } catch (err) {
     // Seeded meetings must still list if Supabase is paused or unreachable.
     console.error("listMeetings: user data unavailable", err);
@@ -300,7 +328,8 @@ export async function getMeeting(id: string): Promise<MeetingBundle | null> {
     let summaries = { ...seed.summaries };
     let actionItems = seed.action_items;
     try {
-      const [userSummaries, userActions] = await Promise.all([store().getSummaries(id), store().getActionItems(id)]);
+      const fast = store({ fast: true });
+      const [userSummaries, userActions] = await Promise.all([fast.getSummaries(id), fast.getActionItems(id)]);
       for (const s of userSummaries) summaries = { ...summaries, [s.template]: s };
       if (userActions.length) {
         const override = new Map(userActions.map((a) => [a.id, a]));
