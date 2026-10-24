@@ -1,0 +1,20 @@
+:root{
+--font-sans:"Instrument Sans",ui-sans-serif,system-ui,sans-serif;
+--font-serif:"Newsreader",Georgia,serif;
+--font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-15:15px;--fs-16:16px;--fs-17:17px;--fs-20:20px;--fs-24:24px;--fs-30:30px;--fs-40:40px;
+--lh-tight:1.2;/* @kind font */--lh-snug:1.35;/* @kind font */--lh-body:1.55;/* @kind font */--lh-read:1.65;/* @kind font */
+--fw-regular:400;/* @kind font */--fw-medium:500;/* @kind font */--fw-semibold:600;/* @kind font */
+--tracking-caps:0.06em;/* @kind font */--tracking-tight:-0.01em;/* @kind font */
+/* Semantic */
+--type-display:var(--fw-regular) var(--fs-30)/var(--lh-tight) var(--font-serif);
+--type-title:var(--fw-semibold) var(--fs-20)/var(--lh-snug) var(--font-sans);
+--type-heading:var(--fw-semibold) var(--fs-15)/var(--lh-snug) var(--font-sans);
+--type-body:var(--fw-regular) var(--fs-14)/var(--lh-body) var(--font-sans);
+--type-read:var(--fw-regular) var(--fs-15)/var(--lh-read) var(--font-sans);
+--type-human:var(--fw-regular) var(--fs-16)/var(--lh-body) var(--font-serif);
+--type-label:var(--fw-medium) var(--fs-13)/var(--lh-snug) var(--font-sans);
+--type-caption:var(--fw-regular) var(--fs-12)/var(--lh-snug) var(--font-sans);
+--type-overline:var(--fw-semibold) var(--fs-11)/var(--lh-snug) var(--font-sans);
+--type-time:var(--fw-regular) var(--fs-12)/var(--lh-snug) var(--font-mono);
+}

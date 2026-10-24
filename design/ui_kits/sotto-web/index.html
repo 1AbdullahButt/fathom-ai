@@ -1,0 +1,56 @@
+<!-- @dsCard group="Sotto web app" viewport="1440x900" name="Web app — interactive" subtitle="Meetings list → meeting page → public clip; demo states bar at bottom" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sotto — web app kit</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="data.js"></script>
+</head><body>
+<div id="root"></div>
+<script type="text/babel" src="Shell.jsx"></script>
+<script type="text/babel" src="MeetingsList.jsx"></script>
+<script type="text/babel" src="MeetingPanel.jsx"></script>
+<script type="text/babel" src="MeetingPage.jsx"></script>
+<script type="text/babel" src="ClipPage.jsx"></script>
+<script type="text/babel">
+(() => {
+const { useState, useEffect, useRef } = React;
+const { Toast } = window.SottoDesignSystem_5b0428;
+const STATES = { list: ['Ready', 'Loading', 'Empty', 'Error'], meeting: ['Ready', 'Loading', 'Processing', 'Empty', 'Error'], clip: ['Ready', 'Loading', 'Not found', 'Error'] };
+const key = s => s.toLowerCase().replace(' ', '');
+function parse() {
+  const h = location.hash.replace(/^#/, '') || '/';
+  const [path, qs] = h.split('?'); const p = new URLSearchParams(qs || '');
+  const seg = path.split('/').filter(Boolean);
+  const screen = seg[0] === 'm' ? 'meeting' : seg[0] === 'c' ? 'clip' : 'list';
+  return { screen, id: seg[1], state: p.get('state') || 'ready', demo: p.get('demo') !== '0' };
+}
+function App() {
+  const [r, setR] = useState(parse());
+  const [clips, setClips] = useState(window.SOTTO_DATA.HIGHLIGHTS);
+  const [toast, setToast] = useState(null);
+  const timer = useRef(null);
+  const vp = window.useViewport();
+  useEffect(() => { const f = () => setR(parse()); window.addEventListener('hashchange', f); return () => window.removeEventListener('hashchange', f); }, []);
+  const go = h => { location.hash = h; };
+  const showToast = (title, tone = 'success', actionLabel, onAction) => { clearTimeout(timer.current); setToast({ title, tone, actionLabel, onAction, k: Date.now() }); timer.current = setTimeout(() => setToast(null), 4000); };
+  const setState = label => { const base = location.hash.split('?')[0] || '#/'; go(base + '?state=' + key(label)); };
+  const st = r.state === 'notfound' ? 'notFound' : r.state;
+  const cur = STATES[r.screen].find(s => key(s) === r.state) || 'Ready';
+  return <div style={{ display: 'flex', minHeight: '100vh' }}>
+    {r.screen === 'list' && vp !== 'phone' ? <window.Sidebar go={go} toast={m => showToast(m, 'info')} /> : null}
+    {r.screen === 'list' ? <window.MeetingsList key={'l' + st} state={st} go={go} toast={showToast} vp={vp} /> : null}
+    {r.screen === 'meeting' ? <window.MeetingPage key={'m' + st} state={st} go={go} toast={showToast} vp={vp} clips={clips} setClips={setClips} /> : null}
+    {r.screen === 'clip' ? <window.ClipPage key={'c' + r.id + st} id={r.id} state={st} clips={clips} toast={showToast} vp={vp} /> : null}
+    {toast ? <div style={{ position: 'fixed', left: 0, right: 0, bottom: r.demo ? 72 : 20, display: 'flex', justifyContent: 'center', zIndex: 120, padding: '0 12px', pointerEvents: 'none' }}><div style={{ pointerEvents: 'auto', width: '100%', maxWidth: 380 }}>
+      <Toast key={toast.k} tone={toast.tone} title={toast.title} actionLabel={toast.actionLabel} onAction={() => { toast.onAction && toast.onAction(); setToast(null); }} onClose={() => setToast(null)} />
+    </div></div> : null}
+    {r.demo ? <window.DemoBar states={STATES[r.screen]} value={cur} onChange={setState} /> : null}
+  </div>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+})();
+</script>
+</body></html>
