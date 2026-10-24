@@ -1,0 +1,50 @@
+{
+  "meeting_id": "m2",
+  "meeting_date": "2026-10-20",
+  "summary": [
+    {
+      "text": "The verification step was hard; it needed repeated tries.",
+      "evidence": [
+        "m2-s2"
+      ]
+    },
+    {
+      "text": "The customer wants to export reports to Excel.",
+      "evidence": [
+        "m2-s3"
+      ]
+    },
+    {
+      "text": "The pricing page is unclear about what is included.",
+      "evidence": [
+        "m2-s5"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "task": "Send Ayesha the export roadmap",
+      "owner": "Sara",
+      "due": null,
+      "due_phrase": null,
+      "confidence": "high",
+      "evidence": [
+        "m2-s4"
+      ]
+    },
+    {
+      "task": "Review pricing page clarity",
+      "owner": null,
+      "due": null,
+      "due_phrase": null,
+      "confidence": "low",
+      "evidence": [
+        "m2-s5",
+        "m2-s6"
+      ]
+    }
+  ],
+  "mustNotInclude": [
+    "dark mode"
+  ]
+}

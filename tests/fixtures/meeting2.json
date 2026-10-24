@@ -1,0 +1,71 @@
+{
+  "meeting": {
+    "id": "m2",
+    "title": "Customer call: Ayesha",
+    "date": "2026-10-20",
+    "duration_s": 80,
+    "media_url": null,
+    "speakers": [
+      {
+        "id": "sara",
+        "name": "Sara"
+      },
+      {
+        "id": "ayesha",
+        "name": "Ayesha"
+      }
+    ],
+    "status": "ready",
+    "source": "seed"
+  },
+  "segments": [
+    {
+      "id": "m2-s1",
+      "meeting_id": "m2",
+      "start_s": 0,
+      "end_s": 10,
+      "speaker_id": "sara",
+      "text": "Thanks for joining, Ayesha. How has onboarding been for your team?"
+    },
+    {
+      "id": "m2-s2",
+      "meeting_id": "m2",
+      "start_s": 10,
+      "end_s": 28,
+      "speaker_id": "ayesha",
+      "text": "Honestly, confusing. The verification step took three tries for two of my people."
+    },
+    {
+      "id": "m2-s3",
+      "meeting_id": "m2",
+      "start_s": 28,
+      "end_s": 40,
+      "speaker_id": "ayesha",
+      "text": "Also, we really need a way to export reports to Excel."
+    },
+    {
+      "id": "m2-s4",
+      "meeting_id": "m2",
+      "start_s": 40,
+      "end_s": 55,
+      "speaker_id": "sara",
+      "text": "Understood. I'll send you the roadmap for exports."
+    },
+    {
+      "id": "m2-s5",
+      "meeting_id": "m2",
+      "start_s": 55,
+      "end_s": 70,
+      "speaker_id": "ayesha",
+      "text": "And someone should look at the pricing page, it's unclear what's included."
+    },
+    {
+      "id": "m2-s6",
+      "meeting_id": "m2",
+      "start_s": 70,
+      "end_s": 80,
+      "speaker_id": "sara",
+      "text": "Good point."
+    }
+  ]
+}

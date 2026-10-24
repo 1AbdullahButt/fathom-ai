@@ -1,0 +1,46 @@
+{
+  "meeting_id": "m1",
+  "meeting_date": "2026-10-19",
+  "summary": [
+    {
+      "text": "Onboarding drop-off is concentrated at phone verification (~40%).",
+      "evidence": [
+        "m1-s2"
+      ]
+    },
+    {
+      "text": "Release date moved to the 22nd to give QA an extra week.",
+      "evidence": [
+        "m1-s5",
+        "m1-s6",
+        "m1-s7"
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "task": "Check SMS provider logs for delayed codes",
+      "owner": "Omar",
+      "due": "2026-10-22",
+      "due_phrase": "by Thursday",
+      "confidence": "high",
+      "evidence": [
+        "m1-s3",
+        "m1-s4"
+      ]
+    },
+    {
+      "task": "Tell marketing the release is the 22nd",
+      "owner": "Sara",
+      "due": "2026-10-19",
+      "due_phrase": "today",
+      "confidence": "high",
+      "evidence": [
+        "m1-s7"
+      ]
+    }
+  ],
+  "mustNotInclude": [
+    "dark mode"
+  ]
+}
