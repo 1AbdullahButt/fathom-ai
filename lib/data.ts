@@ -537,14 +537,14 @@ export async function logUpload(ipHash: string, meetingId: string | null): Promi
 const genKey = (ipHash: string) => `gen:${ipHash}`;
 const procKey = (ipHash: string) => `proc:${ipHash}`;
 
-/** Per-client limits for highlight and clip creation, in the same shared log under their own prefix. */
-export type RateKind = "hl" | "clip";
+/** Per-client limits for highlight, clip and ask requests, in the same shared log under their own prefix. */
+export type RateKind = "hl" | "clip" | "ask";
 
 export async function countRateEventsSince(kind: RateKind, ipHash: string, sinceIso: string): Promise<number> {
   return store().countUploadsSince(`${kind}:${ipHash}`, sinceIso);
 }
 
-export async function logRateEvent(kind: RateKind, ipHash: string, meetingId: string): Promise<void> {
+export async function logRateEvent(kind: RateKind, ipHash: string, meetingId: string | null): Promise<void> {
   await store().logUpload(`${kind}:${ipHash}`, meetingId);
 }
 

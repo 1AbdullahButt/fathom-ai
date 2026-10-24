@@ -284,3 +284,17 @@ Format: what the reference (Fathom) does / what we do / why.
   the last shown line at or before the playing one. Below 1200px the toolbar's segmented
   control (Transcript / Chapters / Speakers) replaces the left column, on phones inside the
   Transcript tab; a chapter tap on a phone returns to the transcript.
+
+## P2-4 Ask across meetings
+- **Retrieval decides whether the model is asked at all.** Reference: Fathom's "Ask Fathom"
+  answers from all meeting content with an LLM. We: keyword overlap (stopwords removed, light
+  stemming, IDF weighting, speaker names count) picks up to 25 lines (best 12 + neighbours);
+  no overlapping line means "not found in meetings" with no LLM call. Why: evidence-only
+  answers, zero cost for unanswerable questions, and the locked "budget" eval is deterministic
+  on the fixture corpus. Cost: paraphrased questions with no shared words get "not found".
+- **Every sentence must cite a line from the given set.** Sentences without a valid citation
+  are dropped; if none remain the answer is the sentinel. Answers capped at 120 words.
+- **Ask box always visible above search results on /search** (no separate tab or toggle):
+  one card with an input, per-sentence quote chips (meeting title above each chip) that open
+  `/m/<id>?t=<start_s>`, a plain "Not found in your meetings" state, Skeleton while loading.
+  Limit: 20 questions per IP per hour (shared rate log, prefix `ask:`), 300 characters each.
