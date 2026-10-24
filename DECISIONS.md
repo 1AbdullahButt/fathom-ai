@@ -381,3 +381,26 @@ Format: what the reference (Fathom) does / what we do / why.
   summary edits made by agents during QA. The seeded meetings are bundled JSON and were not touched.
   Kept on purpose: upload_log (rate-limit hashes) and the 6 test audio files in Storage, which the
   owner will remove from the dashboard.
+- **Ask answers are post-filtered in code (`lib/askFilter.ts`), not just prompted.** Reference
+  (Fathom Ask) returns free text. Ours: after the LLM call every claim must cite a retrieved line,
+  near-duplicates (Jaccard >= 0.6 on stemmed content words, or contained in an earlier claim)
+  collapse into the first with merged citations, a claim backed only by hedged suggestion lines
+  ("should probably", "at some point", "maybe"...) is dropped for commitment questions and
+  whenever it says "committed/promised", and at most 3 sentences are kept; nothing left gives
+  exactly "not found in meetings". Why: production once answered "What did Omar commit to?" with
+  ~10 repeats including dark mode, which the m1 fixture says is not a commitment.
+- **The Ask filter's unit test lives in `lib/askFilter.test.ts`, not in the locked suite.** The
+  locked test folder may not be edited (CLAUDE.md) and the human asked for this deterministic
+  test; `vitest.config.ts` now also includes `lib/**/*.test.ts`, so it runs in `npm run check`.
+- **Unknown clip and meeting links return a real HTTP 404, at the cost of route skeletons.**
+  The root `app/loading.tsx` plus `app/m/[id]/loading.tsx` and `app/c/[id]/loading.tsx` wrapped
+  the pages in Suspense, so a 200 shell streamed before `notFound()` ran. The home list skeleton
+  now lives in the `app/(home)` route group (scoped to `/` only); the clip and meeting skeletons
+  are removed, so opening a meeting keeps the previous page until the new one is ready. Why: a
+  deleted shared clip link must say 404 to crawlers and link previews, not 200.
+- **Leaving a meeting stops its audio, and `?t=` no longer autoplays (supersedes "`?t=` link
+  autoplay" above).** Design §5 says the search jump "seeks and plays"; SPEC A5 only asks that it
+  jumps. `usePlayback` pauses the media element and the simulated clock on unmount or when the
+  meeting id changes, and MeetingView no longer calls play() for `?t=`: after an in-app click
+  the browser allows autoplay, so meeting b started talking right after leaving meeting a. Now
+  any meeting opens paused at `t` with the line in view; one tap on Play starts it (human ask).

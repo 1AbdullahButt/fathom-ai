@@ -24,8 +24,10 @@ const TICK_MS = 250;
  * One playback clock for the meeting page. With a media element attached it mirrors the element
  * (timeupdate / play / pause); without one (transcript-only meetings, or media that failed to load)
  * it runs a simulated wall clock so play, seek and the active transcript line still work.
+ * Playback always stops on unmount or when `sourceKey` (the meeting id) changes, so opening
+ * another meeting, with or without ?t=, starts paused.
  */
-export function usePlayback(duration: number, initialTime = 0): Playback {
+export function usePlayback(duration: number, initialTime = 0, sourceKey?: string): Playback {
   const [time, setTime] = useState(() => clamp(initialTime, duration));
   const [playing, setPlaying] = useState(false);
   const [rate, setRate] = useState(1);
@@ -90,9 +92,21 @@ export function usePlayback(duration: number, initialTime = 0): Playback {
       media.removeEventListener("ended", onPause);
       media.removeEventListener("ratechange", onRate);
       media.removeEventListener("loadedmetadata", onMeta);
+      // Detached or unmounted (navigating to another meeting): stop the sound. A detached element
+      // is not guaranteed to pause by itself, and its pause event would no longer reach us.
+      pendingPlay.current = false;
+      media.pause();
       setPlaying(false);
     };
   }, [hasMedia, attached]);
+
+  // Another meeting in the same view (sourceKey changed) never inherits the old one's playback.
+  useEffect(() => {
+    return () => {
+      pendingPlay.current = false;
+      setPlaying(false);
+    };
+  }, [sourceKey]);
 
   // Simulated clock when there is no media element.
   useEffect(() => {
