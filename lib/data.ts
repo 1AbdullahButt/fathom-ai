@@ -22,7 +22,8 @@ export interface MeetingBundle {
 export type NewMeeting = Pick<Meeting, "title" | "date"> &
   Partial<Pick<Meeting, "id" | "duration_s" | "media_url" | "speakers">>;
 
-export type MeetingPatch = Partial<Pick<Meeting, "title" | "status" | "duration_s" | "speakers" | "media_url">> & {
+/** The fields the pipeline changes (and the only ones the DB grants update on, 0002_security.sql). */
+export type MeetingPatch = Partial<Pick<Meeting, "status" | "duration_s" | "speakers" | "media_url">> & {
   error?: string | null;
 };
 
@@ -42,9 +43,11 @@ interface Store {
   getSegments(meetingId: string): Promise<Segment[]>;
   insertSegments(segments: Segment[]): Promise<void>;
   getSummaries(meetingId: string): Promise<Summary[]>;
-  upsertSummary(s: Summary): Promise<void>;
+  /** Write-once: keeps an existing (meeting, template) row. */
+  insertSummary(s: Summary): Promise<void>;
   getActionItems(meetingId: string): Promise<ActionItem[]>;
-  upsertActionItems(items: ActionItem[]): Promise<void>;
+  /** Insert-only: keeps rows whose id already exists. */
+  insertActionItems(items: ActionItem[]): Promise<void>;
   updateActionItem(id: string, patch: ActionItemPatch): Promise<ActionItem | null>;
   listHighlights(meetingId: string): Promise<Highlight[]>;
   insertHighlight(h: Highlight): Promise<void>;
@@ -110,14 +113,15 @@ function memoryStore(): Store {
     async getSummaries(meetingId) {
       return copy([...s.summaries.values()].filter((x) => x.meeting_id === meetingId));
     },
-    async upsertSummary(sum) {
-      s.summaries.set(`${sum.meeting_id}:${sum.template}`, copy(sum));
+    async insertSummary(sum) {
+      const key = `${sum.meeting_id}:${sum.template}`;
+      if (!s.summaries.has(key)) s.summaries.set(key, copy(sum));
     },
     async getActionItems(meetingId) {
       return copy([...s.actions.values()].filter((a) => a.meeting_id === meetingId));
     },
-    async upsertActionItems(items) {
-      for (const a of items) s.actions.set(a.id, copy(a));
+    async insertActionItems(items) {
+      for (const a of items) if (!s.actions.has(a.id)) s.actions.set(a.id, copy(a));
     },
     async updateActionItem(id, patch) {
       const a = s.actions.get(id);
@@ -190,18 +194,20 @@ function supabaseStore(db: SupabaseClient): Store {
       const res = await db.from("summaries").select("meeting_id, template, points").eq("meeting_id", meetingId);
       return must(res, "get summaries") as Summary[];
     },
-    async upsertSummary(sum) {
+    async insertSummary(sum) {
       const row = { meeting_id: sum.meeting_id, template: sum.template, points: sum.points, updated_at: new Date().toISOString() };
-      must(await db.from("summaries").upsert(row, { onConflict: "meeting_id,template" }), "save summary");
+      // ON CONFLICT DO NOTHING: needs only the insert grant (summaries are write-once, SECURITY.md).
+      must(await db.from("summaries").upsert(row, { onConflict: "meeting_id,template", ignoreDuplicates: true }), "save summary");
     },
     async getActionItems(meetingId) {
       const res = await db.from("action_items").select("*").eq("meeting_id", meetingId).order("position");
       return (must(res, "get action items") as ActionItem[]).map(toAction);
     },
-    async upsertActionItems(items) {
+    async insertActionItems(items) {
       if (!items.length) return;
       const rows = items.map((a, position) => ({ ...a, position }));
-      must(await db.from("action_items").upsert(rows, { onConflict: "id" }), "save action items");
+      // ON CONFLICT DO NOTHING: only the human-editable columns are updatable (SECURITY.md).
+      must(await db.from("action_items").upsert(rows, { onConflict: "id", ignoreDuplicates: true }), "save action items");
     },
     async updateActionItem(id, patch) {
       const res = await db.from("action_items").update(patch).eq("id", id).select("*").maybeSingle();
@@ -224,13 +230,10 @@ function supabaseStore(db: SupabaseClient): Store {
       must(await db.from("clips").insert(c), "insert clip");
     },
     async countUploadsSince(ipHash, sinceIso) {
-      const res = await db
-        .from("upload_log")
-        .select("id", { count: "exact", head: true })
-        .eq("ip_hash", ipHash)
-        .gte("created_at", sinceIso);
+      // upload_log is not readable by the publishable key; a security-definer function counts.
+      const res = await db.rpc("count_upload_log", { p_ip_hash: ipHash, p_since: sinceIso });
       if (res.error) throw new Error(`count uploads: ${res.error.message}`);
-      return res.count ?? 0;
+      return typeof res.data === "number" ? res.data : 0;
     },
     async logUpload(ipHash, meetingId) {
       must(await db.from("upload_log").insert({ ip_hash: ipHash, meeting_id: meetingId }), "log upload");
@@ -395,9 +398,9 @@ export async function saveSegments(meetingId: string, segments: Omit<Segment, "m
 
 // ---------------------------------------------------------------- summaries + action items
 
-/** Create or replace the summary for one template (works for seeded meetings too, as an override). */
+/** Save the summary for one template, once (works for seeded meetings too, as an override). An existing row is kept. */
 export async function saveSummary(summary: Summary): Promise<void> {
-  await store().upsertSummary(summary);
+  await store().insertSummary(summary);
 }
 
 /** Save extracted action items; ids are generated when missing. */
@@ -411,7 +414,7 @@ export async function saveActionItems(
     meeting_id: meetingId,
     edited_by_human: a.edited_by_human ?? false,
   }));
-  await store().upsertActionItems(rows);
+  await store().insertActionItems(rows);
   return rows;
 }
 
@@ -423,7 +426,7 @@ export async function updateActionItem(meetingId: string, id: string, patch: Act
   const seeded = seedMeeting(meetingId)?.action_items.find((a) => a.id === id);
   if (!seeded) return null;
   const next = { ...seeded, ...patch };
-  await s.upsertActionItems([next]);
+  await s.insertActionItems([next]);
   return next;
 }
 
@@ -465,6 +468,7 @@ export async function logUpload(ipHash: string, meetingId: string | null): Promi
 // separately without a new table (DECISIONS.md: template switch cost guard).
 
 const genKey = (ipHash: string) => `gen:${ipHash}`;
+const procKey = (ipHash: string) => `proc:${ipHash}`;
 
 /** Number of on-demand summary generations logged for this (hashed) client since `sinceIso`. */
 export async function countGenerationsSince(ipHash: string, sinceIso: string): Promise<number> {
@@ -473,4 +477,15 @@ export async function countGenerationsSince(ipHash: string, sinceIso: string): P
 
 export async function logGeneration(ipHash: string, meetingId: string): Promise<void> {
   await store().logUpload(genKey(ipHash), meetingId);
+}
+
+// ---------------------------------------------------------------- processing start rate limit
+// Same table and scheme, prefixed "proc:": each paid pipeline start (first run or Retry).
+
+export async function countProcessStartsSince(ipHash: string, sinceIso: string): Promise<number> {
+  return store().countUploadsSince(procKey(ipHash), sinceIso);
+}
+
+export async function logProcessStart(ipHash: string, meetingId: string): Promise<void> {
+  await store().logUpload(procKey(ipHash), meetingId);
 }
