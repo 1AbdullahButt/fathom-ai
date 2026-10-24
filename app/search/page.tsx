@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { formatMeetingDate } from "@/components/meeting/MeetingRow";
+import { NavLink } from "@/components/nav/NavProgress";
 import { AskBox } from "@/components/search/AskBox";
 import { markMatch } from "@/components/search/markMatch";
 import { SearchBox } from "@/components/search/SearchBox";
@@ -105,10 +106,10 @@ async function Results({ q }: { q: string }) {
       </p>
       {[...groups.values()].map((g) => (
         <div key={g.meeting.id} className={styles.group}>
-          <Link href={`/m/${g.meeting.id}`} className={styles.meeting}>
+          <NavLink href={`/m/${g.meeting.id}`} className={styles.meeting}>
             <span className={styles.meetingTitle}>{markMatch(g.meeting.title, q)}</span>
             <span className={styles.meetingDate}>{formatMeetingDate(g.meeting.date)}</span>
-          </Link>
+          </NavLink>
           {g.lines.length > 0 ? (
             <ul className={styles.lines}>
               {g.lines.map(({ hit, segment }) => {
@@ -117,14 +118,14 @@ async function Results({ q }: { q: string }) {
                 const color = idx >= 0 ? `var(--spk-${(idx % 8) + 1})` : "var(--ink-600)";
                 return (
                   <li key={hit.segment_id}>
-                    <Link href={`/m/${g.meeting.id}?t=${hit.start_s}`} className={styles.line}>
+                    <NavLink href={`/m/${g.meeting.id}?t=${hit.start_s}`} className={styles.line}>
                       <span className={styles.ts}>{formatTimestamp(hit.start_s)}</span>
                       <span className={styles.speaker} style={{ color }}>
                         <span className={styles.dot} style={{ background: color }} aria-hidden="true" />
                         {name}
                       </span>
                       <span className={styles.snippet}>{markMatch(hit.snippet, q)}</span>
-                    </Link>
+                    </NavLink>
                   </li>
                 );
               })}

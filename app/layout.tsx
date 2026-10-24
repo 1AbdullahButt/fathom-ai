@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { IBM_Plex_Mono, Instrument_Sans, Newsreader } from "next/font/google";
+import { NavProgressProvider } from "@/components/nav/NavProgress";
 import "./globals.css";
 
 // Sotto fonts (design/FONTS.md): each feeds a token in app/globals.css.
@@ -33,7 +34,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${instrumentSans.variable} ${newsreader.variable} ${plexMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NavProgressProvider>{children}</NavProgressProvider>
+      </body>
     </html>
   );
 }

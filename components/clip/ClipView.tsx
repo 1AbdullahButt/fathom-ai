@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { NavLink } from "@/components/nav/NavProgress";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Clip, Meeting, Segment } from "@/lib/types";
 import { formatDuration, formatTimestamp } from "@/lib/time";
@@ -180,7 +181,7 @@ export function ClipView({ clip, meeting, segments, meetingLength }: ClipViewPro
 
         <p className={styles.footer}>
           Recorded with Fathom AI. No bot joins the call.{" "}
-          <Link href={`/m/${encodeURIComponent(meeting.id)}?t=${start}`}>Open the full meeting</Link>
+          <NavLink href={`/m/${encodeURIComponent(meeting.id)}?t=${start}`}>Open the full meeting</NavLink>
         </p>
       </main>
 
@@ -203,10 +204,10 @@ export function ClipHeader({ meetingHref }: { meetingHref?: string }) {
         Fathom AI
       </Link>
       {meetingHref ? (
-        <Link href={meetingHref} className={styles.headerLink}>
+        <NavLink href={meetingHref} className={styles.headerLink}>
           Full meeting
           <Icon name="arrow-up-right" size={15} />
-        </Link>
+        </NavLink>
       ) : (
         <Link href="/" className={styles.headerLink}>
           All meetings

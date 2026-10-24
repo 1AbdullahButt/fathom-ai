@@ -28,6 +28,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+/* Pending navigation: spinner over the tile icon, body dimmed (no layout shift). */
+.tilePending {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  background: var(--paper-150);
+}
+
+.tilePending[data-pending="true"] {
+  display: inline-flex;
+}
+
+.row[aria-busy="true"] .body,
+.row[aria-busy="true"] .stack {
+  opacity: 0.55;
+  transition: opacity var(--dur-2) var(--ease-out);
 }
 
 .tileError {

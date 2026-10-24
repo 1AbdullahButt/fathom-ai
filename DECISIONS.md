@@ -404,3 +404,13 @@ Format: what the reference (Fathom) does / what we do / why.
   meeting id changes, and MeetingView no longer calls play() for `?t=`: after an in-app click
   the browser allows autoplay, so meeting b started talking right after leaving meeting a. Now
   any meeting opens paused at `t` with the line in view; one tap on Play starts it (human ask).
+- **Opening a meeting shows a client-side pending bar instead of a route skeleton.** The
+  reference shows a loading state as soon as a meeting is clicked; our /m and /c routes have no
+  `loading.tsx` (real 404s, above), so the old page used to sit there silently. Now a 3px tide
+  bar creeps across the top (static under reduced motion), a polite "Loading meeting…" status is
+  announced, the clicked link gets `aria-busy`, and a list row dims with a spinner over its
+  tile. It is built on `useLinkStatus()` from next/link inside real `<Link>`s (so modified
+  clicks and new tabs never start it) and, for the Ask quote chips (buttons), on a
+  `useTransition` + `router.push` in `NavProgressProvider` (app/layout.tsx). It clears when the
+  pathname/search params change or on popstate. Why: feedback on slow networks without giving
+  up the HTTP 404s; no Suspense boundary wraps the meeting or clip pages.
