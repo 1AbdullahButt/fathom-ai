@@ -15,6 +15,7 @@ export default function MeetingNotFound() {
       <main className={styles.main}>
         <StateBlock
           kind="notFound"
+          titleAsHeading
           title="This meeting doesn’t exist"
           body="The link may be wrong, or the meeting was never uploaded here."
           actions={

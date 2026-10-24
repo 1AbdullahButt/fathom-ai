@@ -20,12 +20,15 @@ export interface StateBlockProps {
   actions?: ReactNode;
   compact?: boolean;
   loading?: boolean;
+  /** Render the title as the page's <h1> (full-page states such as 404s). */
+  titleAsHeading?: boolean;
 }
 
 /** Centered empty / error / not-found / processing message with optional actions. */
-export function StateBlock({ kind = "empty", icon, title, body, actions, compact = false, loading = false }: StateBlockProps) {
+export function StateBlock({ kind = "empty", icon, title, body, actions, compact = false, loading = false, titleAsHeading = false }: StateBlockProps) {
   const [ic, bg, fg] = KINDS[kind];
   const d = compact ? 36 : 48;
+  const titleStyle = { font: `600 ${compact ? 14 : 16}px/1.35 var(--font-sans)`, color: "var(--text-1)", textWrap: "balance" } as const;
   return (
     <div
       role={kind === "error" || kind === "offline" ? "alert" : undefined}
@@ -46,7 +49,11 @@ export function StateBlock({ kind = "empty", icon, title, body, actions, compact
         {loading ? <Spinner size={compact ? 18 : 22} /> : <Icon name={icon || ic} size={compact ? 18 : 22} />}
       </span>
       {title ? (
-        <div style={{ font: `600 ${compact ? 14 : 16}px/1.35 var(--font-sans)`, color: "var(--text-1)", textWrap: "balance" }}>{title}</div>
+        titleAsHeading ? (
+          <h1 style={{ margin: 0, ...titleStyle }}>{title}</h1>
+        ) : (
+          <div style={titleStyle}>{title}</div>
+        )
       ) : null}
       {body ? (
         <div style={{ font: `400 ${compact ? 13 : 14}px/1.55 var(--font-sans)`, color: "var(--text-muted)", textWrap: "pretty" }}>{body}</div>

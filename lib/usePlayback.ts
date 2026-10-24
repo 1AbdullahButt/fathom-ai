@@ -56,6 +56,8 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
   const pendingSeek = useRef<number | null>(initialTime > 0 ? initialTime : null);
   /** play() asked for before metadata: started after the pending seek, so it never plays from 0 first. */
   const pendingPlay = useRef(false);
+  /** Buffering controls from the media effect, so play()/pause() can drive them before any media event fires. */
+  const bufferCtl = useRef<{ start(): void; stop(): void } | null>(null);
 
   const attachMedia = useCallback((node: HTMLMediaElement | null) => {
     if (el.current === node) return;
@@ -79,7 +81,10 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
       }
       if (pendingPlay.current) {
         pendingPlay.current = false;
-        media.play().catch(() => setPlaying(false));
+        media.play().catch(() => {
+          setPlaying(false);
+          stopBuffering();
+        });
       }
     };
     // Buffering: raw state from the element's network events, shown only after BUFFER_SHOW_MS.
@@ -93,6 +98,7 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
       bufferTimer = undefined;
       setBuffering(false);
     };
+    bufferCtl.current = { start: startBuffering, stop: stopBuffering };
     const onStalled = () => {
       if (!media.paused || media.seeking) startBuffering();
     };
@@ -129,6 +135,7 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
     return () => {
       for (const [type, fn] of bufferEvents) media.removeEventListener(type, fn);
       stopBuffering();
+      bufferCtl.current = null;
       media.removeEventListener("timeupdate", onTime);
       media.removeEventListener("seeked", onTime);
       media.removeEventListener("play", onPlay);
@@ -188,7 +195,9 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
     if (timeRef.current >= totalRef.current) seek(0);
     const media = el.current;
     if (media && media.readyState < 1) {
+      // No waiting/seeking event fires for a play queued before metadata, so show buffering here.
       pendingPlay.current = true;
+      bufferCtl.current?.start();
     } else if (media) {
       media.play().catch(() => setPlaying(false));
     } else {
@@ -197,6 +206,8 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
   }, [seek]);
 
   const pause = useCallback(() => {
+    // A paused element fires no pause event, so a cancelled pending play clears buffering here.
+    if (pendingPlay.current) bufferCtl.current?.stop();
     pendingPlay.current = false;
     if (el.current) el.current.pause();
     else setPlaying(false);

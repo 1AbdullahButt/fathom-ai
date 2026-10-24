@@ -149,7 +149,16 @@ export function PlayerControls({ playing, current, duration, onToggle, onSeek, r
         {/* Always mounted so screen readers pick up the text change politely. */}
         <span
           aria-live="polite"
-          style={{ marginLeft: 8, font: "var(--type-caption)", color: "var(--text-on-player-muted)", whiteSpace: "nowrap" }}
+          style={{
+            marginLeft: 8,
+            flex: "0 1 auto",
+            minWidth: 0,
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            font: "var(--type-caption)",
+            color: "var(--text-on-player-muted)",
+            whiteSpace: "nowrap",
+          }}
         >
           {buffering ? "Loading audio…" : ""}
         </span>
@@ -162,6 +171,7 @@ export function PlayerControls({ playing, current, duration, onToggle, onSeek, r
             style={{
               height: 28,
               minWidth: 40,
+              flexShrink: 0,
               padding: "0 8px",
               border: 0,
               borderRadius: "var(--radius-sm)",
