@@ -21,6 +21,8 @@ export interface MeetingBundle {
   highlights: Highlight[];
   /** Seeded meetings: the highlights read failed or timed out, so `highlights` is not known to be empty. */
   highlights_unavailable?: boolean;
+  /** Seeded meetings: the summary-edit or action-item overlay read failed, so human edits may be missing. */
+  edits_unavailable?: boolean;
   /** Last processing error for uploads with status "error". */
   error: string | null;
 }
@@ -43,6 +45,8 @@ interface UserMeeting extends Meeting {
 /** Storage backend for user-created data. Implemented in memory and on Supabase. */
 interface Store {
   listMeetings(): Promise<UserMeeting[]>;
+  /** Ready uploads with all their segments, in one bulk query set (search / ask corpus). */
+  listReadyCorpus(): Promise<{ meeting: UserMeeting; segments: Segment[] }[]>;
   getMeeting(id: string): Promise<UserMeeting | null>;
   insertMeeting(m: UserMeeting): Promise<void>;
   updateMeeting(id: string, patch: MeetingPatch): Promise<void>;
@@ -104,6 +108,12 @@ function memoryStore(): Store {
   return {
     async listMeetings() {
       return copy([...s.meetings.values()]);
+    },
+    async listReadyCorpus() {
+      return [...s.meetings.values()]
+        .filter((m) => m.status === "ready")
+        .sort((a, b) => b.created_at.localeCompare(a.created_at))
+        .map((m) => ({ meeting: copy(m), segments: copy(s.segments.get(m.id) ?? []) }));
     },
     async getMeeting(id) {
       const m = s.meetings.get(id);
@@ -204,6 +214,31 @@ function supabaseStore(db: SupabaseClient): Store {
     async listMeetings() {
       const res = await db.from("meetings").select("*").order("created_at", { ascending: false });
       return must(res, "list meetings") as UserMeeting[];
+    },
+    async listReadyCorpus() {
+      const res = await db.from("meetings").select("*").eq("status", "ready").order("created_at", { ascending: false });
+      const meetings = must(res, "list ready meetings") as UserMeeting[];
+      if (!meetings.length) return [];
+      // All their segments in bulk, paged (PostgREST caps rows per response).
+      const ids = meetings.map((m) => m.id);
+      const segments: Segment[] = [];
+      const PAGE = 1000;
+      for (let from = 0; ; from += PAGE) {
+        const page = await db
+          .from("segments")
+          .select("*")
+          .in("meeting_id", ids)
+          .order("meeting_id")
+          .order("start_s")
+          .order("id")
+          .range(from, from + PAGE - 1);
+        const rows = must(page, "list corpus segments") as Segment[];
+        segments.push(...rows);
+        if (rows.length < PAGE) break;
+      }
+      const byMeeting = new Map<string, Segment[]>(ids.map((id) => [id, []]));
+      for (const seg of segments) byMeeting.get(seg.meeting_id)?.push(seg);
+      return meetings.map((meeting) => ({ meeting, segments: byMeeting.get(meeting.id)! }));
     },
     async getMeeting(id) {
       const res = await db.from("meetings").select("*").eq("id", id).maybeSingle();
@@ -427,6 +462,7 @@ async function loadMeeting(id: string, withEdits: boolean): Promise<MeetingBundl
       action_items: actionItems,
       highlights,
       ...(highlightsUnavailable ? { highlights_unavailable: true } : {}),
+      ...(userActions.status === "rejected" || edits.status === "rejected" ? { edits_unavailable: true } : {}),
       error: null,
     };
   }
@@ -457,11 +493,55 @@ async function loadMeeting(id: string, withEdits: boolean): Promise<MeetingBundl
   };
 }
 
-/** All ready meetings with their segments (search / ask corpus). */
-export async function listCorpus(): Promise<{ meeting: Meeting; segments: Segment[] }[]> {
-  const meetings = (await listMeetings()).filter((m) => m.status === "ready");
-  const bundles = await Promise.all(meetings.map((m) => getMeeting(m.id)));
-  return bundles.filter((b): b is MeetingBundle => b !== null).map((b) => ({ meeting: b.meeting, segments: b.segments }));
+/** The whole uploaded part of the corpus may take this long before search / ask go seed-only. */
+export const CORPUS_UPLOADS_TIMEOUT_MS = 1800;
+/** A loaded uploaded part is reused for this long, a failed load for the shorter time (Supabase mode only). */
+const CORPUS_CACHE_MS = 30_000;
+const CORPUS_FAILED_CACHE_MS = 5_000;
+
+type CorpusEntry = { meeting: Meeting; segments: Segment[] };
+let corpusCache: { key: string; until: number; uploads: CorpusEntry[] } | null = null;
+
+/**
+ * All ready meetings with their segments (search / ask corpus): uploads first, then seeds.
+ * Seeded meetings always come from the bundle with no network. Uploaded meetings come from one
+ * bulk query set on the fast store (1.5 s per request, no retries, CORPUS_UPLOADS_TIMEOUT_MS in
+ * all); on any failure or timeout the corpus is seed-only, so search and ask still answer.
+ */
+export async function listCorpus(): Promise<CorpusEntry[]> {
+  const seeded = seedMeetings()
+    .filter((f) => f.meeting.status === "ready")
+    .map((f) => ({ meeting: f.meeting, segments: f.segments }));
+  return [...(await corpusUploads()), ...seeded];
+}
+
+async function corpusUploads(): Promise<CorpusEntry[]> {
+  const kind = dataSource();
+  const key = `${kind}|${process.env.NEXT_PUBLIC_SUPABASE_URL ?? ""}`;
+  // Memory-mode reads are instant and must show a new upload at once (tests, e2e): no cache.
+  const useCache = kind === "supabase";
+  if (useCache && corpusCache?.key === key && Date.now() < corpusCache.until) return corpusCache.uploads;
+  let uploads: CorpusEntry[] = [];
+  let ok = false;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    const rows = await Promise.race([
+      store({ fast: true }).listReadyCorpus(),
+      new Promise<never>((_, reject) => {
+        timer = setTimeout(() => reject(new Error(`timed out after ${CORPUS_UPLOADS_TIMEOUT_MS} ms`)), CORPUS_UPLOADS_TIMEOUT_MS);
+      }),
+    ]);
+    uploads = rows
+      .filter((r) => !isSeedId(r.meeting.id))
+      .map((r) => ({ meeting: stripUser(r.meeting), segments: [...r.segments].sort((a, b) => a.start_s - b.start_s) }));
+    ok = true;
+  } catch (err) {
+    console.error("listCorpus: uploaded meetings unavailable, using seeded meetings only:", err instanceof Error ? err.message : err);
+  } finally {
+    clearTimeout(timer);
+  }
+  if (useCache) corpusCache = { key, until: Date.now() + (ok ? CORPUS_CACHE_MS : CORPUS_FAILED_CACHE_MS), uploads };
+  return uploads;
 }
 
 /** Create an uploaded meeting in "processing" state. */
@@ -621,12 +701,13 @@ const procKey = (ipHash: string) => `proc:${ipHash}`;
 /** Per-client limits for highlight, clip, edit and ask requests, in the same shared log under their own prefix. */
 export type RateKind = "hl" | "clip" | "edit" | "ask";
 
-export async function countRateEventsSince(kind: RateKind, ipHash: string, sinceIso: string): Promise<number> {
-  return store().countUploadsSince(`${kind}:${ipHash}`, sinceIso);
+/** `fast`: the request aborts after SEED_OVERRIDE_TIMEOUT_MS (callers that must not wait on Supabase). */
+export async function countRateEventsSince(kind: RateKind, ipHash: string, sinceIso: string, opts: { fast?: boolean } = {}): Promise<number> {
+  return store(opts).countUploadsSince(`${kind}:${ipHash}`, sinceIso);
 }
 
-export async function logRateEvent(kind: RateKind, ipHash: string, meetingId: string | null): Promise<void> {
-  await store().logUpload(`${kind}:${ipHash}`, meetingId);
+export async function logRateEvent(kind: RateKind, ipHash: string, meetingId: string | null, opts: { fast?: boolean } = {}): Promise<void> {
+  await store(opts).logUpload(`${kind}:${ipHash}`, meetingId);
 }
 
 /** Number of on-demand summary generations logged for this (hashed) client since `sinceIso`. */

@@ -47,18 +47,30 @@ export async function POST(req: Request) {
   if (question.length > MAX_QUESTION_CHARS) return fail(400, `Questions can be up to ${MAX_QUESTION_CHARS} characters.`);
 
   const ipHash = hashIp(clientIp(req.headers));
-  let corpus: Awaited<ReturnType<typeof listCorpus>>;
-  try {
-    const since = new Date(Date.now() - 3600_000).toISOString();
-    if ((await countRateEventsSince("ask", ipHash, since)) >= ASKS_PER_HOUR) {
-      return fail(429, "You’ve asked a lot of questions in the last hour. Try again later.");
+  // The rate limit and the uploaded part of the corpus are bounded reads on the fast store (no
+  // retries, 1.5 s), run in parallel. If Supabase is slow or down, Ask still answers from the
+  // seeded meetings: the limit fails open (logged, DECISIONS.md) and listCorpus returns seeds only.
+  const since = new Date(Date.now() - 3600_000).toISOString();
+  const [limit, corpusResult] = await Promise.allSettled([
+    countRateEventsSince("ask", ipHash, since, { fast: true }),
+    listCorpus(),
+  ]);
+  const why = (r: PromiseRejectedResult) => (r.reason instanceof Error ? r.reason.message : r.reason);
+  if (limit.status === "fulfilled") {
+    if (limit.value >= ASKS_PER_HOUR) return fail(429, "You’ve asked a lot of questions in the last hour. Try again later.");
+    try {
+      await logRateEvent("ask", ipHash, null, { fast: true });
+    } catch (e) {
+      console.error("ask: rate log failed:", e instanceof Error ? e.message : e);
     }
-    await logRateEvent("ask", ipHash, null);
-    corpus = await listCorpus();
-  } catch (e) {
-    console.error("ask: load failed", e instanceof Error ? e.message : e);
+  } else {
+    console.error("ask: rate limit unavailable, allowing the question:", why(limit));
+  }
+  if (corpusResult.status === "rejected") {
+    console.error("ask: load failed", why(corpusResult));
     return fail(503, "Ask isn’t working right now. Try again in a moment.");
   }
+  const corpus = corpusResult.value;
 
   try {
     const result = await ask(question, corpus);

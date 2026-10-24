@@ -108,7 +108,6 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   /** Speaker filter: ids whose lines the transcript shows (empty: everyone). */
   const [onlySpeakers, setOnlySpeakers] = useState<string[]>([]);
   const wide = useMediaQuery("(min-width: 1200px)");
-  const phone = useMediaQuery("(max-width: 759px)");
   const [highlights, setHighlights] = useState<Highlight[]>(() => bundle.highlights ?? []);
   /** The server couldn't read saved highlights (seeded meetings, bounded read): don't claim "none". */
   const [highlightsFailed, setHighlightsFailed] = useState(!!bundle.highlights_unavailable);
@@ -325,12 +324,14 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const seekChapter = useCallback(
     (s: number) => {
       seekOnly(s);
-      if (phone) {
+      // Below 1200 (phone and mid) the chapter list replaces the transcript: go back to the
+      // lines so the jumped-to line is in view. Wide shows both side by side.
+      if (!wide) {
         setNavMode("lines");
         setJumpKey((k) => k + 1);
       }
     },
-    [seekOnly, phone],
+    [seekOnly, wide],
   );
   const view: NavMode = wide ? "lines" : navMode;
   const chapterList = <ChapterList chapters={bundle.chapters} time={time} duration={duration} onSeek={seekChapter} />;
@@ -915,6 +916,11 @@ const SidePanel = memo(function SidePanel({
         />
       </div>
       <div role="tabpanel" aria-label={labels[tab]} className={styles.panelBody}>
+        {bundle.edits_unavailable && tab !== "highlights" ? (
+          <p className={styles.panelMeta} role="status">
+            Edits couldn’t load, so this shows the notes as generated. Reload to try again.
+          </p>
+        ) : null}
         <div hidden={tab !== "summary"}>
           <SummaryTab meetingId={bundle.meeting.id} editable={bundle.meeting.status === "ready"} initial={bundle.summaries} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
         </div>

@@ -6,6 +6,7 @@ import { MAX_EDIT_CHARS } from "@/lib/edits";
 import { Button } from "@/components/ui/Button";
 import { IconButton } from "@/components/ui/IconButton";
 import { HumanEdit } from "./HumanEdit";
+import { useSaveGuard } from "./useSaveGuard";
 import { EvidenceQuotes } from "./QuoteChip";
 import styles from "./Edits.module.css";
 
@@ -83,6 +84,7 @@ function TextForm({
 }) {
   const [text, setText] = useState(initial);
   const [saving, setSaving] = useState(false);
+  useSaveGuard(saving);
   const [error, setError] = useState<string | null>(null);
   const over = text.length > MAX_EDIT_CHARS;
   const empty = !text.trim();
@@ -135,7 +137,7 @@ function TextForm({
           Cancel
         </Button>
         <Button size="sm" variant="primary" type="submit" loading={saving} disabled={over || empty}>
-          Save
+          {saving ? "Saving…" : "Save"}
         </Button>
       </div>
     </form>

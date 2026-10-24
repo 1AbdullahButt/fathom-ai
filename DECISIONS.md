@@ -110,7 +110,9 @@ Format: what the reference (Fathom) does / what we do / why.
 - **Phone tabs are Transcript / Summary / Actions** (the kit adds Clips; clips are P1-4).
 - **Quote chips are not marked "active" while their segment plays.** That needs the clock in the
   side panel (a re-render per tick); the transcript line highlight shows the same thing.
-- **Template select and the AI/human legend are not in the Summary tab yet** (P1-1 / P2-3).
+- **The Summary tab has the template select (P1-1) and the AI/human legend (P2-3).** The
+  legend shows two of the design's three items; "Check the quote" is left out (the quote chips
+  themselves say it).
 - **Tab counts are hidden from the tab's accessible name** (`aria-hidden` on the count) so the tab
   is named exactly "Action items", as the locked e2e test expects.
 - **Groq model chain instead of one model.** Reference: one hosted model, no visible quota.
@@ -334,3 +336,34 @@ Format: what the reference (Fathom) does / what we do / why.
   production was rebuilt with `vercel redeploy` of the last verified deployment (main 6725d46)
   rather than deploying main, so P2 code still waits for P2 QA. An unexplained CLI production
   deployment (no git metadata) had appeared just before; the redeploy replaced it on the alias.
+## P2 QA fixes
+- **Search and Ask answer from the seeded meetings when Supabase is slow or down.** Reference:
+  one always-available backend. We: the corpus is the seeded meetings from the bundle (no network)
+  plus the uploads read in one bulk query set (ready meetings + all their segments) on the 1.5 s
+  no-retry client, 1.8 s in all. On any failure or timeout search and Ask use the seeds alone and
+  the server logs it. The uploaded part is reused for 30 s (5 s after a failure), so a meeting
+  that just finished can take up to 30 s to show in search. Search does not say results are
+  partial; the seeded meetings are the demo's content.
+- **The Ask rate limit fails open when Supabase is unreachable.** The 20/hour per-client count
+  is read with the same 1.5 s bound; if it fails the question is answered (and logged) rather than
+  refused, since the limit lives in the database that is down. The LLM providers' own limits still
+  cap cost.
+- **Ask answers from lines that discuss the topic, not only lines that answer it outright.**
+  Retrieval now adds up to three neighbouring lines either side of each keyword hit (40 lines max),
+  and the prompt says to report what the lines say about the topic (figures, limits, decisions),
+  keeping "not found in meetings" for when no line says anything about it. "What was the budget?"
+  now cites ami-is1009a 6:27 ("production cost should not exceed... €12.50"). A question with no
+  keyword hit still gets the sentinel without an LLM call (the locked eval).
+- **Chapter tap below 1200 px returns to the transcript.** At 1024 the chapter list replaces the
+  transcript, like the phone; a tap now seeks and switches back to Transcript with the line in
+  view, so mid and phone behave the same. Wide shows both side by side and is unchanged.
+- **The low-confidence flag shows no reason.** The design's flag can carry a reason; the
+  extraction returns only "high"/"low" confidence, with no reason field, so the flag says "Low
+  confidence" and the evidence quotes are the explanation. Adding a reason means a schema and
+  prompt change (IDEAS.md).
+- **Dates and lengths:** a due date renders as "Mon 2 Nov" (after the spoken phrase when there is
+  one: "by Thursday (Thu 22 Oct)"); highlight length uses m:ss like the clip badge ("10:55").
+- **Edits in flight and missing edits are visible.** While an edit saves, the button says
+  "Saving…" and a reload or tab close asks first. If a seeded meeting's edit overlay (summary
+  edits or action items) didn't load in time, the panel says "Edits couldn't load" instead of
+  silently showing the AI text.

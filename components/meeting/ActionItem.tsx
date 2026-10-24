@@ -3,11 +3,13 @@
 import { useState, type FormEvent, type KeyboardEvent } from "react";
 import type { ActionItem as ActionItemData, Segment, Speaker } from "@/lib/types";
 import { MAX_EDIT_CHARS, MAX_OWNER_CHARS } from "@/lib/edits";
+import { formatDueDate } from "@/lib/time";
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { IconButton } from "@/components/ui/IconButton";
 import { HumanEdit } from "./HumanEdit";
+import { useSaveGuard } from "./useSaveGuard";
 import styles from "./Edits.module.css";
 import { ConfidenceFlag } from "./ConfidenceFlag";
 import { NotStated } from "./NotStated";
@@ -44,7 +46,7 @@ const metaChip = {
 
 export function ActionItem({ item, segments, speakers, onSeek, activeId, onSave }: ActionItemProps) {
   const [editing, setEditing] = useState(false);
-  const due = item.due ? (item.due_phrase ? `${item.due_phrase} (${item.due})` : item.due) : item.due_phrase;
+  const due = item.due ? (item.due_phrase ? `${item.due_phrase} (${formatDueDate(item.due)})` : formatDueDate(item.due)) : item.due_phrase;
   const ownerSpeaker = item.owner ? speakers.find((s) => s.name === item.owner) : undefined;
   const ownerColor = ownerSpeaker ? speakerColor(speakers, ownerSpeaker.id) : undefined;
   return (
@@ -124,6 +126,7 @@ function ItemForm({
   const [owner, setOwner] = useState(item.owner ?? "");
   const [due, setDue] = useState(item.due ?? "");
   const [saving, setSaving] = useState(false);
+  useSaveGuard(saving);
   const [error, setError] = useState<string | null>(null);
   const over = task.length > MAX_EDIT_CHARS;
   const empty = !task.trim();
@@ -193,7 +196,7 @@ function ItemForm({
           Cancel
         </Button>
         <Button size="sm" variant="primary" type="submit" loading={saving} disabled={over || empty}>
-          Save
+          {saving ? "Saving…" : "Save"}
         </Button>
       </div>
     </form>

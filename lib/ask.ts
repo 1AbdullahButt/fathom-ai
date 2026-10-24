@@ -29,7 +29,7 @@ type Corpus = { meeting: Meeting; segments: Segment[] }[];
 
 export const MAX_QUESTION_CHARS = 300;
 const MAX_ANSWER_WORDS = 120;
-const MAX_CONTEXT_SEGMENTS = 25;
+const MAX_CONTEXT_SEGMENTS = 40;
 const TOP_HITS = 12;
 const MAX_SEGMENT_CHARS = 600;
 
@@ -77,9 +77,13 @@ export interface Candidate {
   score: number;
 }
 
+/** Neighbour offsets added around each hit, nearest first (a figure is often a line or two away). */
+const NEIGHBOUR_OFFSETS = [-1, 1, -2, 2, -3, 3];
+
 /**
- * Segments that share content terms with the question, best first, plus their immediate
- * neighbours for context (a reply often needs the line before it). The speaker's name counts as
+ * Segments that share content terms with the question, best first, plus up to three lines either
+ * side for context (a reply often needs the line before it, and "remember the budget" often
+ * follows the line that states the figure). The speaker's name counts as
  * part of the segment, so "What did Omar say" finds Omar's lines. Empty when nothing matches.
  */
 export function retrieve(question: string, corpus: Corpus, limit = MAX_CONTEXT_SEGMENTS): Candidate[] {
@@ -110,11 +114,12 @@ export function retrieve(question: string, corpus: Corpus, limit = MAX_CONTEXT_S
 
   const chosen = new Set<(typeof rows)[number]>(hits);
   const byPos = new Map(rows.map((r) => [`${r.group}:${r.index}`, r]));
-  for (const h of hits) {
-    if (chosen.size >= limit) break;
-    for (const d of [-1, 1]) {
+  // Nearest neighbours of every hit first, then wider ones, so every hit gets some context.
+  for (const d of NEIGHBOUR_OFFSETS) {
+    for (const h of hits) {
+      if (chosen.size >= limit) break;
       const n = byPos.get(`${h.group}:${h.index + d}`);
-      if (n && chosen.size < limit) chosen.add(n);
+      if (n) chosen.add(n);
     }
   }
   return [...chosen]
@@ -149,7 +154,9 @@ Each line starts with its id in square brackets.
 Rules:
 - Use only what the lines say. No outside knowledge, no guesses, no inference beyond the words.
 - Every claim must cite the id(s) of the line(s) that directly support it.
-- If the lines do not answer the question, set "found" to false and return no claims. A line that only shares a word with the question is not an answer.
+- Lines next to each other in the same meeting are consecutive: read them together as context.
+- If the lines discuss what the question asks about, answer with what they say about it (figures, limits, decisions, who said what), citing those lines, even when they answer only part of the question.
+- Set "found" to false and return no claims only when no line says anything about it. A line that uses the same word in an unrelated sense is not an answer.
 - At most 4 short claims, ${MAX_ANSWER_WORDS} words in total. Plain sentences, no markdown.
 Return JSON: {"found": true|false, "claims": [{"text": "one sentence", "citations": ["<line id>", ...]}]}`;
 
