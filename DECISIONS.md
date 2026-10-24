@@ -236,3 +236,10 @@ Format: what the reference (Fathom) does / what we do / why.
 - **Limits.** 30 highlights per client per hour, counted in `upload_log` under an `hl:` prefix
   (same pattern as summary generations). Notes are plain text, up to 500 characters, control
   characters stripped, always rendered as React text.
+
+## Process
+- **Deployed main before P1 QA, once.** SEC-1's database migration went live before its code,
+  which broke production uploads (old code needed the revoked grants). Deploying main restored
+  them but also shipped P1-1..P1-3 ahead of their QA round (all had passed CI + e2e). Chosen
+  because broken uploads on the live link were worse than additive, CI-tested features. P1 QA
+  runs next on the deployed commit.
