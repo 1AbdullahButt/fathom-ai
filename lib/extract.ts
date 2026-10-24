@@ -1,14 +1,26 @@
 // Summary + action-item extraction (PLAN.md contract). One LLM call in strict JSON,
 // validated against the segment ids; retried once with the validation error on ok:false.
+// Meetings over 15 minutes go map-reduce (P2-1): extract per ~10-minute chunk, then one merge
+// call that groups chunk points by number, so merged evidence is built in code, not by the model.
+import { chunkSegments } from "./chunk";
 import { completeJSON, LlmJsonError, mockExtraction, type ChatMessage } from "./llm";
 import { templateFocus } from "./templates";
 import { formatTimestamp } from "./time";
 import type { Segment, Speaker, Template } from "./types";
-import { validateExtraction, type ValidationResult } from "./validate";
+import { validateExtraction, type ExtractedActionItem, type ValidationResult } from "./validate";
 
 export interface ExtractOptions {
-  /** Override the summary length target (used when a long meeting is extracted in chunks). */
+  /** Override the summary length target. */
   maxPoints?: number;
+  /** Long meetings only: wait this long between LLM calls (per-minute provider limits). */
+  pauseMs?: number;
+  /** Long meetings only: progress lines (one per chunk, one for the merge). */
+  onProgress?: (line: string) => void;
+}
+
+interface Part {
+  index: number;
+  total: number;
 }
 
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -56,6 +68,7 @@ function buildMessages(
   meetingDate: string,
   template: Template,
   maxPoints: number,
+  part?: Part,
 ): ChatMessage[] {
   const byId = new Map(speakers.map((s) => [s.id, s]));
   const weekday = WEEKDAYS[parseDate(meetingDate).getUTCDay()];
@@ -75,7 +88,7 @@ Return ONLY a JSON object of this exact shape:
  "action_items":[{"task":string,"owner":string|null,"due":"YYYY-MM-DD"|null,"due_phrase":string|null,"confidence":"high"|"low","evidence":[segment ids]}]}
 
 Evidence rules:
-- Every summary point and every action item cites the ids (like "${segments[0]?.id ?? "x-s1"}") of the transcript lines that support it. Use only ids that appear in the transcript, copied exactly. Cite every line needed to support it (the request AND the acceptance, the proposal AND the decision), and nothing unrelated.
+- Every summary point and every action item cites the ids (like "${segments[0]?.id ?? "x-s1"}") of the transcript lines that support it. Use only ids that appear in the transcript, copied exactly. Cite only the 1-3 lines that directly state the point (for a decision: the proposal AND the decision; for an action item: the request AND the acceptance). Never cite lines that are merely on the same topic, background, or procedure around it.
 
 Summary rules:
 - ${templateFocus(template)}
@@ -94,7 +107,12 @@ Action item rules:
 - confidence: "high" when there is a clear owner and an explicit commitment; otherwise "low".
 - Use null (not "", "unknown" or "TBD") for anything not stated.`;
 
-  const user = `Meeting date: ${meetingDate} (${weekday})
+  const partNote = part
+    ? `This is part ${part.index + 1} of ${part.total} of a longer meeting; summarise only this part.
+
+`
+    : "";
+  const user = `${partNote}Meeting date: ${meetingDate} (${weekday})
 
 Calendar:
 ${calendar(meetingDate)}
@@ -148,19 +166,17 @@ function groundOwners(r: ValidationResult, segments: Segment[], speakers: Speake
   };
 }
 
-/**
- * One LLM call (strict JSON), validate, retry once on ok:false.
- * Relative dates resolve against meetingDate.
- */
-export async function extract(
+/** One LLM call (strict JSON), validate, retry once on ok:false. */
+async function extractOnce(
   segments: Segment[],
   speakers: Speaker[],
   meetingDate: string,
   template: Template,
   opts: ExtractOptions = {},
+  part?: Part,
 ): Promise<ValidationResult> {
   const ids = segments.map((s) => s.id);
-  const messages = buildMessages(segments, speakers, meetingDate, template, opts.maxPoints ?? summaryTarget(segments));
+  const messages = buildMessages(segments, speakers, meetingDate, template, opts.maxPoints ?? summaryTarget(segments), part);
   const mock = () => mockExtraction(ids);
 
   let last: ValidationResult = { ok: false, error: "no attempt made" };
@@ -190,4 +206,210 @@ export async function extract(
     if (attempt === 0) console.warn(`extract: retrying after invalid output: ${last.error}`);
   }
   return last;
+}
+
+/** Above this span one call risks provider token limits and long-context sloppiness. */
+const SINGLE_CALL_MAX_S = 15 * 60;
+const CHUNK_S = 600;
+
+const span = (segments: Segment[]) =>
+  segments.length ? segments[segments.length - 1].end_s - segments[0].start_s : 0;
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+const STOP = new Set(["the", "a", "an", "to", "of", "for", "and", "or", "on", "in", "with", "about", "at", "by", "from"]);
+const words = (t: string) =>
+  new Set(
+    t
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      .filter((w) => w && !STOP.has(w)),
+  );
+
+/** Token overlap (Jaccard) of two task sentences, ignoring filler words. */
+function similarity(a: string, b: string): number {
+  const x = words(a);
+  const y = words(b);
+  if (!x.size || !y.size) return 0;
+  let both = 0;
+  for (const w of x) if (y.has(w)) both++;
+  return both / (x.size + y.size - both);
+}
+
+function sortIds(ids: string[], order: Map<string, number>): string[] {
+  return [...new Set(ids)].sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));
+}
+
+/** Same owner and a similar task = the same item seen in two chunks: keep one, union evidence. */
+function dedupeActionItems(items: ExtractedActionItem[], order: Map<string, number>): ExtractedActionItem[] {
+  const out: ExtractedActionItem[] = [];
+  for (const a of items) {
+    const prev = out.find(
+      (p) => (p.owner ?? "").toLowerCase() === (a.owner ?? "").toLowerCase() && similarity(p.task, a.task) >= 0.5,
+    );
+    if (!prev) {
+      out.push({ ...a, evidence: [...a.evidence] });
+      continue;
+    }
+    prev.evidence = sortIds([...prev.evidence, ...a.evidence], order);
+    if (!prev.due && a.due) {
+      prev.due = a.due;
+      prev.due_phrase = a.due_phrase;
+    }
+    if (a.confidence === "high" && prev.owner) prev.confidence = "high";
+  }
+  return out;
+}
+
+interface ChunkPoint {
+  text: string;
+  evidence: string[];
+  start_s: number;
+}
+
+type Point = { text: string; evidence: string[] };
+
+function reduceMessages(points: ChunkPoint[], template: Template, target: number): ChatMessage[] {
+  const system = `You merge the per-part summary points of one long meeting into its final summary.
+Return ONLY a JSON object: {"summary":[{"text":string,"merged":[point numbers]}]}
+
+Rules:
+- ${templateFocus(template)}
+- Write at most ${target} points (fewer is fine). Combine points that say the same thing or are steps of the same topic or decision; drop minor points if there are too many.
+- "merged" lists the numbers of the input points each final point is built from (at least one). Use only numbers from the list. Do not use a point in two final points.
+- The text of a final point may only state what its merged input points say. Do not add facts.
+- Order the final points chronologically (by when their earliest merged point happened).`;
+  const user = `Input points ([number] (m:ss) text):
+${points.map((p, i) => `[${i}] (${formatTimestamp(p.start_s)}) ${p.text}`).join("\n")}`;
+  return [
+    { role: "system", content: system },
+    { role: "user", content: user },
+  ];
+}
+
+/** Map the reduce output back to evidence ids (union of merged points), in meeting order. */
+function buildMerged(
+  raw: unknown,
+  points: ChunkPoint[],
+  order: Map<string, number>,
+): { ok: true; points: Point[] } | { ok: false; error: string } {
+  const list = (raw as { summary?: unknown } | null)?.summary;
+  if (!Array.isArray(list) || list.length === 0) return { ok: false, error: '"summary" must be a non-empty array' };
+  const used = new Set<number>();
+  const out: (Point & { first: number })[] = [];
+  for (const [i, p] of list.entries()) {
+    const { text, merged } = (p ?? {}) as { text?: unknown; merged?: unknown };
+    if (typeof text !== "string" || !text.trim()) return { ok: false, error: `summary.${i}.text must be a string` };
+    if (!Array.isArray(merged) || merged.length === 0) return { ok: false, error: `summary.${i}.merged must list point numbers` };
+    const idx = merged.map(Number).filter((n) => Number.isInteger(n) && n >= 0 && n < points.length && !used.has(n));
+    if (!idx.length) return { ok: false, error: `summary.${i}.merged has no valid unused point numbers (0-${points.length - 1})` };
+    idx.forEach((n) => used.add(n));
+    const evidence = sortIds(
+      idx.flatMap((n) => points[n].evidence),
+      order,
+    );
+    out.push({ text: text.trim(), evidence, first: order.get(evidence[0]) ?? 0 });
+  }
+  out.sort((a, b) => a.first - b.first);
+  return { ok: true, points: out.map(({ text, evidence }) => ({ text, evidence })) };
+}
+
+/** Reduce fallback: keep chunk points in order, evenly thinned to the target. */
+function thin(points: ChunkPoint[], target: number): Point[] {
+  const pick =
+    points.length <= target
+      ? points
+      : Array.from({ length: target }, (_, i) => points[Math.floor((i * points.length) / target)]);
+  return pick.map(({ text, evidence }) => ({ text, evidence }));
+}
+
+async function mergePoints(points: ChunkPoint[], template: Template, target: number, order: Map<string, number>): Promise<Point[] | null> {
+  const messages = reduceMessages(points, template, target);
+  const mock = () => ({ summary: points.slice(0, target).map((p, i) => ({ text: p.text, merged: [i] })) });
+  let error = "";
+  let lastContent = "";
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const convo =
+      attempt === 0
+        ? messages
+        : [
+            ...messages,
+            { role: "assistant" as const, content: lastContent },
+            { role: "user" as const, content: `That output was rejected: ${error}. Return the corrected JSON object.` },
+          ];
+    try {
+      const raw = await completeJSON({ messages: convo, mock });
+      lastContent = JSON.stringify(raw);
+      const b = buildMerged(raw, points, order);
+      if (b.ok) return b.points.slice(0, target);
+      error = b.error;
+    } catch (e) {
+      if (!(e instanceof LlmJsonError)) throw e;
+      lastContent = e.content.slice(0, 4000);
+      error = e.message;
+    }
+  }
+  console.warn(`extract: merge step failed (${error}); keeping chunk points`);
+  return null;
+}
+
+async function extractLong(
+  segments: Segment[],
+  speakers: Speaker[],
+  meetingDate: string,
+  template: Template,
+  opts: ExtractOptions,
+): Promise<ValidationResult> {
+  const ids = segments.map((s) => s.id);
+  const order = new Map(ids.map((id, i) => [id, i]));
+  const startOf = new Map(segments.map((s) => [s.id, s.start_s]));
+  const chunks = chunkSegments(segments, CHUNK_S);
+  const log = opts.onProgress ?? (() => {});
+  const pause = () => (opts.pauseMs ? sleep(opts.pauseMs) : Promise.resolve());
+
+  // Map: sequential calls (rate limits), each grounded in its own chunk's segment ids only.
+  const points: ChunkPoint[] = [];
+  const items: ExtractedActionItem[] = [];
+  let dropped = 0;
+  for (const [i, chunk] of chunks.entries()) {
+    if (i > 0) await pause();
+    const r = await extractOnce(chunk, speakers, meetingDate, template, { maxPoints: summaryTarget(chunk) }, { index: i, total: chunks.length });
+    if (!r.ok) return { ok: false, error: `chunk ${i + 1}/${chunks.length}: ${r.error}` };
+    for (const p of r.summary) {
+      const evidence = sortIds(p.evidence, order);
+      points.push({ text: p.text, evidence, start_s: startOf.get(evidence[0]) ?? 0 });
+    }
+    items.push(...r.actionItems);
+    dropped += r.dropped;
+    log(`chunk ${i + 1}/${chunks.length}: ${r.summary.length} points, ${r.actionItems.length} items`);
+  }
+  points.sort((a, b) => a.start_s - b.start_s);
+
+  // Reduce: one call groups chunk points by number; the evidence union is built in code.
+  const target = summaryTarget(segments);
+  let summary: Point[] = [];
+  if (points.length) {
+    await pause();
+    const merged = await mergePoints(points, template, target, order);
+    summary = merged ?? thin(points, target);
+    log(`merge: ${points.length} chunk points -> ${summary.length}${merged ? "" : " (fallback)"}`);
+  }
+
+  const v = validateExtraction({ summary, action_items: dedupeActionItems(items, order) }, ids);
+  return v.ok ? { ...v, dropped: v.dropped + dropped } : v;
+}
+
+/**
+ * Summary + action items for a meeting. Up to 15 minutes: one call. Longer: map-reduce over
+ * ~10-minute chunks (lib/chunk.ts). Relative dates resolve against meetingDate.
+ */
+export async function extract(
+  segments: Segment[],
+  speakers: Speaker[],
+  meetingDate: string,
+  template: Template,
+  opts: ExtractOptions = {},
+): Promise<ValidationResult> {
+  if (span(segments) > SINGLE_CALL_MAX_S) return extractLong(segments, speakers, meetingDate, template, opts);
+  return extractOnce(segments, speakers, meetingDate, template, opts);
 }
