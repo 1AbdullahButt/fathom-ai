@@ -18,6 +18,7 @@ export function Spinner({ size = 18, color = "var(--accent)", label }: SpinnerPr
       stroke={color}
       strokeWidth="2"
       strokeLinecap="round"
+      className="sotto-spinner"
       style={{ animation: "sotto-spin .9s linear infinite", flexShrink: 0, display: "block" }}
     >
       <path d="M21 12a9 9 0 1 1-6.219-8.56" />

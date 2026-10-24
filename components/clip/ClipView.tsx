@@ -43,7 +43,7 @@ export function ClipView({ clip, meeting, segments, meetingLength }: ClipViewPro
   const mediaUrl = mediaFailed ? null : meeting.media_url;
   const isVideo = !!mediaUrl && VIDEO_EXT.test(mediaUrl);
 
-  const { time, playing, seek, pause, play: playRaw, rate, cycleRate, attachMedia } = usePlayback(meetingLength, start);
+  const { time, playing, buffering, seek, pause, play: playRaw, rate, cycleRate, attachMedia } = usePlayback(meetingLength, start);
   const [toast, setToast] = useState<{ tone: "link" | "error"; title: string } | null>(null);
 
   // Never play outside the range: stop at the end.
@@ -110,7 +110,7 @@ export function ClipView({ clip, meeting, segments, meetingLength }: ClipViewPro
 
         <div className={styles.player}>
           {mediaUrl && isVideo ? (
-            <div className={meetingStyles.stage} style={{ cursor: "default" }}>
+            <div className={`${meetingStyles.stage} ${buffering ? meetingStyles.buffering : ""}`} style={{ cursor: "default" }}>
               <video
                 key={mediaKey}
                 ref={attachMedia}
@@ -132,6 +132,7 @@ export function ClipView({ clip, meeting, segments, meetingLength }: ClipViewPro
                 color={speakerColor(speakers, stagedSpeaker?.id)}
                 caption={staged?.text}
                 playing={playing}
+                buffering={buffering}
                 atStart={current <= EPS}
                 onToggle={toggle}
                 label={mediaUrl ? "Clip · audio" : "Clip · transcript only"}
@@ -151,6 +152,7 @@ export function ClipView({ clip, meeting, segments, meetingLength }: ClipViewPro
             onSeek={seekInClip}
             rate={rate}
             onRate={cycleRate}
+            buffering={buffering}
           />
         </div>
 

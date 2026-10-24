@@ -414,3 +414,16 @@ Format: what the reference (Fathom) does / what we do / why.
   `useTransition` + `router.push` in `NavProgressProvider` (app/layout.tsx). It clears when the
   pathname/search params change or on popstate. Why: feedback on slow networks without giving
   up the HTTP 404s; no Suspense boundary wraps the meeting or clip pages.
+- **The player shows a debounced buffering state instead of re-encoding the audio.** QA saw
+  ~8 s stalls after far seeks. Diagnosis: production audio supports HTTP range requests (206,
+  `Accept-Ranges: bytes`, ~0.3 s for any far range from the CDN) and the Seattle MP3 is CBR
+  48 kbps with a LAME "Info" header (not VBR/Xing), so seeking is byte-accurate and no
+  re-encode is needed; in a real browser on production 8 far seeks via transcript lines
+  resumed in 0.54–0.63 s. The 8 s stalls appeared only in headless Chromium with scripted
+  `currentTime` jumps. For genuinely slow networks `usePlayback` now exposes `buffering`
+  (media `waiting`/`seeking`, and `stalled` while playing or seeking; cleared on `playing`,
+  `canplay` when not paused, a landed seek, `pause`, `ended`, `error`), shown only after
+  250 ms so normal seeks don't flicker; the simulated clock is never buffering. While shown,
+  a tide spinner rings the Play/Pause button (`aria-busy`, same accessible name), a polite
+  "Loading audio…" caption sits after the time, and the speaker-view stage dims to 60%, on
+  both the meeting and clip players. Spinners are static under reduced motion.

@@ -2,6 +2,7 @@
 
 import { useRef, useState, type PointerEvent } from "react";
 import { IconButton } from "@/components/ui/IconButton";
+import { Spinner } from "@/components/ui/Spinner";
 import { formatDuration, formatTimestamp } from "@/lib/time";
 
 export interface PlayerControlsProps {
@@ -15,10 +16,12 @@ export interface PlayerControlsProps {
   compact?: boolean;
   /** Chapter starts: a small tick on the scrubber for each chapter after the first. */
   chapters?: { start_s: number; title: string }[];
+  /** Media is waiting for data: a spinner rings the play button and "Loading audio…" is announced. */
+  buffering?: boolean;
 }
 
 /** Night-surface scrubber + transport (back 10 s, play/pause, forward 10 s, speed). */
-export function PlayerControls({ playing, current, duration, onToggle, onSeek, rate = 1, onRate, compact = false, chapters = [] }: PlayerControlsProps) {
+export function PlayerControls({ playing, current, duration, onToggle, onSeek, rate = 1, onRate, compact = false, chapters = [], buffering = false }: PlayerControlsProps) {
   const bar = useRef<HTMLDivElement>(null);
   const [hover, setHover] = useState<number | null>(null);
   const dragging = useRef(false);
@@ -112,7 +115,24 @@ export function PlayerControls({ playing, current, duration, onToggle, onSeek, r
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: compact ? 2 : 6 }}>
         <IconButton icon="rotate-ccw" label="Back 10 seconds" variant="player" size="sm" onClick={() => onSeek(Math.max(0, current - 10))} />
-        <IconButton icon={playing ? "pause" : "play"} label={playing ? "Pause" : "Play"} variant="playerPrimary" size="md" onClick={onToggle} />
+        <span style={{ position: "relative", display: "inline-flex" }}>
+          <IconButton
+            icon={playing ? "pause" : "play"}
+            label={playing ? "Pause" : "Play"}
+            variant="playerPrimary"
+            size="md"
+            onClick={onToggle}
+            aria-busy={buffering || undefined}
+          />
+          {buffering ? (
+            <span
+              aria-hidden="true"
+              style={{ position: "absolute", inset: -4, pointerEvents: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
+            >
+              <Spinner size={44} color="var(--tide-200)" />
+            </span>
+          ) : null}
+        </span>
         <IconButton icon="rotate-cw" label="Forward 10 seconds" variant="player" size="sm" onClick={() => onSeek(Math.min(d, current + 10))} />
         <span
           style={{
@@ -125,6 +145,13 @@ export function PlayerControls({ playing, current, duration, onToggle, onSeek, r
         >
           {formatTimestamp(current)}
           <span style={{ color: "var(--text-on-player-muted)" }}> / {formatDuration(d)}</span>
+        </span>
+        {/* Always mounted so screen readers pick up the text change politely. */}
+        <span
+          aria-live="polite"
+          style={{ marginLeft: 8, font: "var(--type-caption)", color: "var(--text-on-player-muted)", whiteSpace: "nowrap" }}
+        >
+          {buffering ? "Loading audio…" : ""}
         </span>
         <span style={{ flex: 1 }} />
         {onRate ? (
