@@ -12,6 +12,8 @@ export interface ActionItemProps {
   segments: Segment[];
   speakers: Speaker[];
   onSeek(s: number): void;
+  /** Id of the segment playing now: its chip is highlighted and kept visible. */
+  activeId?: string;
 }
 
 const metaChip = {
@@ -22,7 +24,7 @@ const metaChip = {
   color: "var(--ink-700)",
 } as const;
 
-export function ActionItem({ item, segments, speakers, onSeek }: ActionItemProps) {
+export function ActionItem({ item, segments, speakers, onSeek, activeId }: ActionItemProps) {
   const due = item.due
     ? item.due_phrase
       ? `${item.due_phrase} (${item.due})`
@@ -74,7 +76,7 @@ export function ActionItem({ item, segments, speakers, onSeek }: ActionItemProps
         </span>
         <ConfidenceFlag confidence={item.confidence} />
       </p>
-      <EvidenceQuotes evidence={item.evidence} segments={segments} speakers={speakers} onSeek={onSeek} />
+      <EvidenceQuotes evidence={item.evidence} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
     </div>
   );
 }
