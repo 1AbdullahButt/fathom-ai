@@ -9,6 +9,11 @@ export interface Playback {
   playing: boolean;
   rate: number;
   duration: number;
+  /**
+   * The media element is waiting for data while playing or seeking, and has been for at least
+   * BUFFER_SHOW_MS (fast seeks that resume quickly never show it). Always false on the simulated clock.
+   */
+  buffering: boolean;
   seek(s: number): void;
   play(): void;
   pause(): void;
@@ -19,6 +24,8 @@ export interface Playback {
 }
 
 const TICK_MS = 250;
+/** Show buffering only if it lasts this long, so a normal seek (~0.5 s resume) mostly doesn't flicker. */
+export const BUFFER_SHOW_MS = 250;
 
 /**
  * One playback clock for the meeting page. With a media element attached it mirrors the element
@@ -32,6 +39,7 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
   const [playing, setPlaying] = useState(false);
   const [rate, setRate] = useState(1);
   const [mediaDuration, setMediaDuration] = useState(0);
+  const [buffering, setBuffering] = useState(false);
   /** The attached element lives in a ref (it is mutated: currentTime, playbackRate); `attached` re-runs effects. */
   const el = useRef<HTMLMediaElement | null>(null);
   const [attached, setAttached] = useState(0);
@@ -74,6 +82,40 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
         media.play().catch(() => setPlaying(false));
       }
     };
+    // Buffering: raw state from the element's network events, shown only after BUFFER_SHOW_MS.
+    let bufferTimer: number | undefined;
+    const startBuffering = () => {
+      if (bufferTimer !== undefined) return;
+      bufferTimer = window.setTimeout(() => setBuffering(true), BUFFER_SHOW_MS);
+    };
+    const stopBuffering = () => {
+      if (bufferTimer !== undefined) window.clearTimeout(bufferTimer);
+      bufferTimer = undefined;
+      setBuffering(false);
+    };
+    const onStalled = () => {
+      if (!media.paused || media.seeking) startBuffering();
+    };
+    const onCanPlay = () => {
+      if (!media.paused) stopBuffering();
+    };
+    const onSeeked = () => {
+      // A paused seek is done once it lands; a playing one waits for `playing` unless data is already there.
+      if (media.paused || media.readyState >= 3) stopBuffering();
+    };
+    const bufferEvents: [string, () => void][] = [
+      ["waiting", startBuffering],
+      ["seeking", startBuffering],
+      ["stalled", onStalled],
+      ["playing", stopBuffering],
+      ["canplay", onCanPlay],
+      ["canplaythrough", onCanPlay],
+      ["seeked", onSeeked],
+      ["pause", stopBuffering],
+      ["ended", stopBuffering],
+      ["error", stopBuffering],
+    ];
+    for (const [type, fn] of bufferEvents) media.addEventListener(type, fn);
     media.addEventListener("timeupdate", onTime);
     media.addEventListener("seeked", onTime);
     media.addEventListener("play", onPlay);
@@ -85,6 +127,8 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
     else if (timeRef.current > 0) pendingSeek.current = timeRef.current;
     if (!media.paused) onPlay();
     return () => {
+      for (const [type, fn] of bufferEvents) media.removeEventListener(type, fn);
+      stopBuffering();
       media.removeEventListener("timeupdate", onTime);
       media.removeEventListener("seeked", onTime);
       media.removeEventListener("play", onPlay);
@@ -170,7 +214,7 @@ export function usePlayback(duration: number, initialTime = 0, sourceKey?: strin
     setRate(next);
   }, [rate]);
 
-  return { time, playing, rate, duration: total, seek, play, pause, toggle, cycleRate, attachMedia };
+  return { time, playing, rate, duration: total, buffering: hasMedia && buffering, seek, play, pause, toggle, cycleRate, attachMedia };
 }
 
 function clamp(s: number, max: number): number {

@@ -98,7 +98,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const mediaUrl = mediaFailed ? null : meeting.media_url;
   const isVideo = !!mediaUrl && VIDEO_EXT.test(mediaUrl);
 
-  const { time, playing, rate, duration: total, seek, play, toggle, cycleRate, attachMedia } = usePlayback(duration, initialTime, bundle.meeting.id);
+  const { time, playing, rate, duration: total, buffering, seek, play, toggle, cycleRate, attachMedia } = usePlayback(duration, initialTime, bundle.meeting.id);
 
   const [follow, setFollow] = useState(true);
   const [jumpKey, setJumpKey] = useState(0);
@@ -400,7 +400,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
         <section className={styles.centre} aria-label="Recording and transcript">
           <div className={styles.player}>
             {mediaUrl && isVideo ? (
-              <div className={styles.stage} style={{ cursor: "default" }}>
+              <div className={`${styles.stage} ${buffering ? styles.buffering : ""}`} style={{ cursor: "default" }}>
                 <video
                   key={mediaKey}
                   ref={attachMedia}
@@ -422,6 +422,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
                   color={speakerColor(speakers, stagedSpeaker?.id)}
                   caption={staged?.text}
                   playing={playing}
+                  buffering={buffering}
                   atStart={time <= EPS}
                   onToggle={toggle}
                   label={mediaUrl ? "Audio · speaker view" : "Transcript only · speaker view"}
@@ -442,6 +443,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
               rate={rate}
               onRate={cycleRate}
               chapters={bundle.chapters}
+              buffering={buffering}
             />
           </div>
 
@@ -599,6 +601,7 @@ export function Stage({
   color,
   caption,
   playing,
+  buffering = false,
   atStart,
   onToggle,
   label,
@@ -609,6 +612,8 @@ export function Stage({
   color: string;
   caption: string | undefined;
   playing: boolean;
+  /** Media is waiting for data: the stage dims slightly. */
+  buffering?: boolean;
   atStart: boolean;
   onToggle(): void;
   label: string;
@@ -629,7 +634,7 @@ export function Stage({
     );
   }
   return (
-    <div className={styles.stage} onClick={onToggle}>
+    <div className={`${styles.stage} ${buffering ? styles.buffering : ""}`} onClick={onToggle}>
       <span className={styles.stageBadge}>
         <Badge tone="dark" size="sm" icon="audio-lines">
           {label}
