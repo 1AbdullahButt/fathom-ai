@@ -8,9 +8,11 @@ export interface SummaryPointProps {
   segments: Segment[];
   speakers: Speaker[];
   onSeek(s: number): void;
+  /** Id of the segment playing now: its chip is highlighted and kept visible. */
+  activeId?: string;
 }
 
-export function SummaryPoint({ point, segments, speakers, onSeek }: SummaryPointProps) {
+export function SummaryPoint({ point, segments, speakers, onSeek, activeId }: SummaryPointProps) {
   const human = point.edited_by_human === true;
   return (
     <div
@@ -40,7 +42,7 @@ export function SummaryPoint({ point, segments, speakers, onSeek }: SummaryPoint
         >
           {point.text}
         </p>
-        <EvidenceQuotes evidence={point.evidence} segments={segments} speakers={speakers} onSeek={onSeek} />
+        <EvidenceQuotes evidence={point.evidence} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
       </div>
     </div>
   );

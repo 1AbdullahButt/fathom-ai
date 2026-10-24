@@ -227,6 +227,7 @@
 }
 
 .stageSpeaker {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -242,8 +243,6 @@
   bottom: 18px;
   transform: translateX(-50%);
   width: min(86%, 640px);
-  max-height: 4.5em;
-  overflow: hidden;
   text-align: center;
   padding: 8px 14px;
   border-radius: 6px;
@@ -251,6 +250,39 @@
   color: #fff;
   font: 400 15px/1.45 var(--font-sans);
   text-wrap: balance;
+}
+
+/* Two lines, then an ellipsis; the full line stays in the transcript (review-p0 §3). The clamp
+   sits on an inner span so the overflow clip is exactly 2 lines, not 2 lines + the box padding. */
+.captionText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(2 * 1.45em);
+}
+
+/* Paused at 0:00: a play affordance centred over the avatar (review-p0 §5). */
+.stagePlay {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px;
+  /* The review's rgba(255,255,255,.14) vanishes over the light avatar tint: dark scrim, 14% white ring. */
+  background: rgba(14, 13, 11, 0.55);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
+  color: #fff;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
 }
 
 .mediaError {
@@ -349,11 +381,15 @@
     height: 200px;
   }
   .stageSpeaker {
-    gap: 8px;
-    font-size: 13px;
+    gap: var(--space-2);
+    font-size: 12px;
+    margin-top: -40px;
+  }
+  .stagePlay {
+    top: 22px;
   }
   .caption {
-    bottom: 10px;
+    bottom: 8px;
     padding: 6px 10px;
     font-size: 13px;
   }

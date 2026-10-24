@@ -60,7 +60,8 @@ export function MeetingRow({ meeting, upload }: { meeting: Meeting; upload?: Row
               <span className={styles.duration}>{formatTimestamp(duration_s)}</span>
             </>
           ) : null}
-          {source === "upload" ? (
+          {/* Source badge only once ready, so "Uploaded" never sits next to "Uploading" (review-p0 §6). */}
+          {!ready ? null : source === "upload" ? (
             <Badge size="sm" tone="outline" icon="upload">
               Uploaded
             </Badge>
