@@ -205,6 +205,16 @@ Format: what the reference (Fathom) does / what we do / why.
 - **Caption clamp on an inner span.** The review's clamp on the padded caption box let the top of
   a third line show in the bottom padding in Chrome; the box keeps padding and the inner span
   clamps to exactly 2 lines with an ellipsis. Phone avatar on the stage is 44px (desktop stays 72).
+- **Security model for the no-auth demo (SEC-1, SECURITY.md).** Fathom has accounts, per-user
+  workspaces and auth-gated sharing. We have no auth and no service-role key: the server uses the
+  public publishable key, so RLS is written as "what may any anonymous caller do" and limited to
+  the writes current code paths make. Summaries are write-once (insert ON CONFLICT DO NOTHING) so a
+  saved summary can't be overwritten; action items allow updates only of the human-editable
+  fields; ready meetings are frozen; media_url must point at the upload's own bucket folder;
+  upload_log is unreadable (counted through a security-definer function, an accepted advisor
+  warning); paid pipeline starts are rate-limited per IP (6/h). Why: a demo with a public key
+  can't stop anonymous writes, only bound them and their cost. P2-3 (inline edits) must add a
+  points-only summary update path when it lands.
 
 ## P1-3 Highlights
 - **Highlights are append-only; a note edit re-posts the same range.** Reference: a highlight's

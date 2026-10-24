@@ -9,6 +9,8 @@ import { dataSource } from "./data";
 export const MAX_UPLOAD_BYTES = 200 * 1024 * 1024;
 export const MAX_DURATION_S = 60 * 60;
 export const UPLOADS_PER_HOUR = 3;
+/** Paid pipeline starts (first run + Retry) per client per hour (SECURITY.md). */
+export const PROCESS_STARTS_PER_HOUR = 6;
 export const BUCKET = "uploads";
 
 /** Must match the bucket's allowed_mime_types (supabase/migrations/0001_init.sql). */
@@ -105,6 +107,19 @@ export function putMemoryFile(meetingId: string, bytes: Buffer): "ok" | "unknown
 export function getMemoryFile(meetingId: string): { bytes: Buffer; type: string } | null {
   const f = memoryFiles().get(meetingId);
   return f?.bytes ? { bytes: f.bytes, type: f.type } : null;
+}
+
+/**
+ * Whether `url` is this upload's own file: our bucket folder in Supabase mode, the local file
+ * route in memory mode. The pipeline only fetches/transcribes such URLs, so a meeting row
+ * written directly through the public API can't point the server or AssemblyAI elsewhere.
+ */
+export function isOwnMediaUrl(meetingId: string, url: string): boolean {
+  if (dataSource() === "memory") return url.startsWith(`/api/uploads/${meetingId}/file`);
+  const base = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/+$/, "");
+  if (!base) return false;
+  const prefix = `${base}/storage/v1/object/public/${BUCKET}/${meetingId}/`;
+  return url.startsWith(prefix) && /^[A-Za-z0-9_-]+\.[a-z0-9]{1,5}$/.test(url.slice(prefix.length));
 }
 
 /** Whether the uploaded file has arrived (checked before paying for transcription). */
