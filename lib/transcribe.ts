@@ -5,6 +5,7 @@
 // TRANSCRIBE_MOCK=1 returns the locked fixture meeting1's transcript re-keyed to the meeting id.
 import fixture from "../tests/fixtures/meeting1.json";
 import type { Segment, Speaker } from "./types";
+import { MAX_DURATION_S } from "./uploads";
 
 export interface Transcript {
   segments: Omit<Segment, "meeting_id">[];
@@ -143,7 +144,9 @@ export async function transcribe(meetingId: string, mediaUrl: string, deadline =
 
   let t = await aai("/transcript", {
     method: "POST",
-    body: JSON.stringify({ audio_url: mediaUrl, speaker_labels: true, punctuate: true, format_text: true }),
+    // audio_end_at: never transcribe past the 60-minute cap (bounds cost if the client lied
+    // about duration; the pipeline still rejects over-long files afterwards).
+    body: JSON.stringify({ audio_url: mediaUrl, speaker_labels: true, punctuate: true, format_text: true, audio_end_at: (MAX_DURATION_S + 5) * 1000 }),
   });
   while (t.status === "queued" || t.status === "processing") {
     if (Date.now() + POLL_MS > deadline) throw new TranscribeError("Transcription took longer than this demo allows.");
