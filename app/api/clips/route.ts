@@ -3,7 +3,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { countRateEventsSince, createClip, getMeeting, logRateEvent, type MeetingBundle } from "@/lib/data";
-import { checkRange, clipTitle, MAX_TITLE_CHARS, meetingLength, plainText, rangeInput } from "@/lib/ranges";
+import { checkRange, clipTitle, MAX_CLIP_S, MAX_TITLE_CHARS, meetingLength, plainText, rangeInput } from "@/lib/ranges";
 import { clientIp, hashIp } from "@/lib/uploads";
 
 export const dynamic = "force-dynamic";
@@ -38,6 +38,7 @@ export async function POST(req: Request) {
 
   const range = checkRange(parsed.data.start_s, parsed.data.end_s, meetingLength(bundle.meeting.duration_s, bundle.segments), true);
   if (!range.ok) return fail(400, range.error);
+  if (range.end_s - range.start_s > MAX_CLIP_S) return fail(400, `Clips can be up to ${MAX_CLIP_S / 60} minutes long.`);
 
   const ipHash = hashIp(clientIp(req.headers));
   try {

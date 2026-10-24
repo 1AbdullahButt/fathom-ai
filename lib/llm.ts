@@ -28,7 +28,8 @@ export class LlmJsonError extends Error {
   }
 }
 
-class RateLimitedError extends Error {}
+/** Every model in the chain is rate-limited (provider busy). Callers report it as "busy". */
+export class RateLimitedError extends Error {}
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 // Groq rate limits (including the free tier's daily token cap) are per model, so we try an

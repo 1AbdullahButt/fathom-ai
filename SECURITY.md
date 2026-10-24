@@ -6,8 +6,8 @@ Supabase project `pcljaqoohcjtezjhupzp`, reached only from the server with the *
 key. That key and the project URL are public by design, so anyone can call PostgREST/Storage
 with exactly the rights the server has. The database rules are therefore the real boundary.
 
-Pass done 2026-10-24 on branch `sec-1`. Highlights/clips (built in parallel) were not reviewed
-here; they need a follow-up pass.
+Pass done 2026-10-24 on branch `sec-1`. Highlights/clips (built in parallel) were reviewed in
+the follow-up SEC-2 pass (branch `sec-2`, migration 0005), below.
 
 ## Action needed by the human
 
@@ -43,6 +43,21 @@ here; they need a follow-up pass.
 | Error leaks | read every route | Routes return fixed user-facing messages; details go to `console.error` server-side only. No stack traces or env in responses. |
 
 ## What was found and fixed
+
+**SEC-2 (QA follow-up): highlights and clips inserts were still `with check (true)` /
+`(public)` from 0001.** Anyone with the publishable key could write a highlight or clip for a
+meeting that doesn't exist, with end before start, past the end of the meeting, a 2,000-char
+note, an hour-long clip, or a back-dated `created_at`. `supabase/migrations/0005_highlights_clips.sql`
+(applied as `0005_highlights_clips`) replaces both policies: UUID id; the meeting must exist and
+be ready (`public.meeting_length` from 0004: a seeded id or a ready upload); `start_s >= 0`,
+`end_s > start_s`, `end_s <= meeting length + 1 s`; clips at most 600 s long, title 1..200 chars,
+`public`; highlight notes at most 500 chars; `created_at` within 1 minute of `now()`. Update,
+delete and truncate are revoked again (they were never granted). The app matches: zero-length
+highlights are widened to 1 s and clips over 10 minutes are refused with a message.
+Anon probe (`begin; set local role anon; ...; rollback;`): valid seeded and uploaded highlight,
+valid clip and a 600 s clip allowed; unknown meeting, zero-length, past the end, negative start,
+501-char note, 201-char title, 601 s clip, back-/forward-dated rows, non-UUID id, update and
+delete all denied. Advisors: unchanged (only the intended `count_upload_log` WARN).
 
 `supabase/migrations/0004_summary_edits.sql` (P2-3 inline edits) keeps summaries write-once
 instead of granting an update on `points`: a human edit of a summary point is an insert-only row
@@ -121,8 +136,6 @@ No delete is possible for anon/authenticated on any table or on storage.
 - **Storage checks the declared Content-Type, not the bytes.** A non-media file labelled
   `audio/mpeg` can be stored; it is served from `supabase.co` with that audio type (not as HTML),
   and transcription fails on it, so it is not an XSS vector.
-- **Highlights/clips** inserts are still `with check (true)` / `(public)` from 0001; review with
-  the highlights/clips work.
 - **Edits are anonymous and last-writer-wins.** Anyone can edit any summary point or action
   item of a ready meeting (public demo); direct PostgREST inserts skip the 60/h limit. Older
   edits stay in `summary_edits` (history), nothing is deleted. Seed lengths in

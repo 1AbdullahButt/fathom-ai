@@ -19,6 +19,8 @@ export interface MeetingBundle {
   action_items: ActionItem[];
   /** Saved highlights, by start time (latest note per range, see listHighlights). */
   highlights: Highlight[];
+  /** Seeded meetings: the highlights read failed or timed out, so `highlights` is not known to be empty. */
+  highlights_unavailable?: boolean;
   /** Last processing error for uploads with status "error". */
   error: string | null;
 }
@@ -389,28 +391,44 @@ async function loadMeeting(id: string, withEdits: boolean): Promise<MeetingBundl
     let summaries = { ...seed.summaries };
     let actionItems = seed.action_items;
     let highlights: Highlight[] = [];
-    try {
-      const fast = store({ fast: true });
-      const [userSummaries, userActions, userHighlights, edits] = await Promise.all([
-        fast.getSummaries(id),
-        fast.getActionItems(id),
-        fast.listHighlights(id),
-        withEdits ? fast.getSummaryEdits(id) : Promise.resolve([]),
-      ]);
-      highlights = latestPerRange(userHighlights);
-      for (const s of userSummaries) summaries = { ...summaries, [s.template]: s };
-      summaries = applySummaryEdits(summaries, edits);
-      if (userActions.length) {
-        const override = new Map(userActions.map((a) => [a.id, a]));
-        actionItems = [
-          ...seed.action_items.map((a) => override.get(a.id) ?? a),
-          ...userActions.filter((a) => !seed.action_items.some((s) => s.id === a.id)),
-        ];
-      }
-    } catch (err) {
-      console.error(`getMeeting(${id}): user overrides unavailable`, err);
+    let highlightsUnavailable = false;
+    // Each read is bounded and independent: a slow one falls back to seed data on its own, and a
+    // failed highlights read is reported (not shown as "No highlights yet").
+    const fast = store({ fast: true });
+    const [userSummaries, userActions, userHighlights, edits] = await Promise.allSettled([
+      fast.getSummaries(id),
+      fast.getActionItems(id),
+      fast.listHighlights(id),
+      withEdits ? fast.getSummaryEdits(id) : Promise.resolve([]),
+    ]);
+    const unavailable = (what: string, r: PromiseSettledResult<unknown>) => {
+      if (r.status === "rejected") console.error(`getMeeting(${id}): ${what} unavailable`, r.reason);
+    };
+    unavailable("summaries", userSummaries);
+    unavailable("action items", userActions);
+    unavailable("highlights", userHighlights);
+    unavailable("summary edits", edits);
+    if (userHighlights.status === "fulfilled") highlights = latestPerRange(userHighlights.value);
+    else highlightsUnavailable = true;
+    if (userSummaries.status === "fulfilled") for (const s of userSummaries.value) summaries = { ...summaries, [s.template]: s };
+    if (edits.status === "fulfilled") summaries = applySummaryEdits(summaries, edits.value);
+    if (userActions.status === "fulfilled" && userActions.value.length) {
+      const override = new Map(userActions.value.map((a) => [a.id, a]));
+      actionItems = [
+        ...seed.action_items.map((a) => override.get(a.id) ?? a),
+        ...userActions.value.filter((a) => !seed.action_items.some((s) => s.id === a.id)),
+      ];
     }
-    return { meeting: seed.meeting, segments: seed.segments, chapters: seed.chapters, summaries, action_items: actionItems, highlights, error: null };
+    return {
+      meeting: seed.meeting,
+      segments: seed.segments,
+      chapters: seed.chapters,
+      summaries,
+      action_items: actionItems,
+      highlights,
+      ...(highlightsUnavailable ? { highlights_unavailable: true } : {}),
+      error: null,
+    };
   }
 
   const s = store();
@@ -614,6 +632,23 @@ export async function logRateEvent(kind: RateKind, ipHash: string, meetingId: st
 /** Number of on-demand summary generations logged for this (hashed) client since `sinceIso`. */
 export async function countGenerationsSince(ipHash: string, sinceIso: string): Promise<number> {
   return store().countUploadsSince(genKey(ipHash), sinceIso);
+}
+
+/**
+ * When a client that has used `limit` generations in the last hour gets one back: the minute
+ * the oldest of them leaves the window. Binary search over counts (upload_log is not readable,
+ * only countable), so at most 6 count calls; only used on the 429 path.
+ */
+export async function generationRetryAt(ipHash: string, limit: number, now = Date.now()): Promise<Date> {
+  const countFrom = (minutes: number) => countGenerationsSince(ipHash, new Date(now - 3600_000 + minutes * 60_000).toISOString());
+  let lo = 1;
+  let hi = 60;
+  while (lo < hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    if ((await countFrom(mid)) < limit) hi = mid;
+    else lo = mid + 1;
+  }
+  return new Date(now + lo * 60_000);
 }
 
 export async function logGeneration(ipHash: string, meetingId: string): Promise<void> {
