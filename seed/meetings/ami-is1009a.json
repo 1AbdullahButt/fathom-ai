@@ -1094,6 +1094,101 @@
           ]
         }
       ]
+    },
+    "sales": {
+      "meeting_id": "ami-is1009a",
+      "template": "sales",
+      "points": [
+        {
+          "text": "Pain point: Existing remotes are long, not multifunctional, and hard to locate, which hampers user convenience.",
+          "evidence": [
+            "ami-is1009a-s69",
+            "ami-is1009a-s70",
+            "ami-is1009a-s71",
+            "ami-is1009a-s84",
+            "ami-is1009a-s85",
+            "ami-is1009a-s86",
+            "ami-is1009a-s87",
+            "ami-is1009a-s88"
+          ]
+        },
+        {
+          "text": "Requirement: The new remote must be compact, multifunctional, trendy, user‑friendly, and equipped with a sensor that triggers a beep or light when lost.",
+          "evidence": [
+            "ami-is1009a-s69",
+            "ami-is1009a-s70",
+            "ami-is1009a-s71",
+            "ami-is1009a-s84",
+            "ami-is1009a-s85",
+            "ami-is1009a-s86",
+            "ami-is1009a-s87",
+            "ami-is1009a-s88",
+            "ami-is1009a-s92",
+            "ami-is1009a-s93",
+            "ami-is1009a-s94",
+            "ami-is1009a-s95"
+          ]
+        },
+        {
+          "text": "Decision process: The team will reconvene in 30 minutes to review individual work and discuss the working and functional designs.",
+          "evidence": [
+            "ami-is1009a-s104",
+            "ami-is1009a-s105",
+            "ami-is1009a-s106",
+            "ami-is1009a-s110",
+            "ami-is1009a-s111",
+            "ami-is1009a-s112"
+          ]
+        },
+        {
+          "text": "Next step: Each participant will produce a working design (technical functional design) and a functional design to bring to the next meeting.",
+          "evidence": [
+            "ami-is1009a-s110",
+            "ami-is1009a-s111",
+            "ami-is1009a-s112"
+          ]
+        }
+      ]
+    },
+    "one_on_one": {
+      "meeting_id": "ami-is1009a",
+      "template": "one_on_one",
+      "points": [
+        {
+          "text": "Betsy: outlined the project scope for a new remote control that must be original, trendy, and user-friendly, with a selling price of €25 and a production cost under €12.50.",
+          "evidence": [
+            "ami-is1009a-s25",
+            "ami-is1009a-s26",
+            "ami-is1009a-s59",
+            "ami-is1009a-s62"
+          ]
+        },
+        {
+          "text": "Francina: proposed that the remote control be compact and multifunctional, capable of controlling household devices such as air conditioners and heating systems.",
+          "evidence": [
+            "ami-is1009a-s69",
+            "ami-is1009a-s71",
+            "ami-is1009a-s72"
+          ]
+        },
+        {
+          "text": "Eileen: suggested adding a feature where the remote beeps or blinks a light when hidden to help users locate it, and noted that sufficient features are needed to justify the price point.",
+          "evidence": [
+            "ami-is1009a-s84",
+            "ami-is1009a-s87",
+            "ami-is1009a-s116"
+          ]
+        },
+        {
+          "text": "Team: agreed to work individually on functional, conceptual, and detailed designs before reconvening in 30 minutes to discuss the results.",
+          "evidence": [
+            "ami-is1009a-s29",
+            "ami-is1009a-s30",
+            "ami-is1009a-s105",
+            "ami-is1009a-s125"
+          ]
+        }
+      ]
     }
   },
   "action_items": [

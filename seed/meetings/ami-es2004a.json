@@ -1378,6 +1378,129 @@
           ]
         }
       ]
+    },
+    "sales": {
+      "meeting_id": "ami-es2004a",
+      "template": "sales",
+      "points": [
+        {
+          "text": "Pain point: the product's price is considered expensive.",
+          "evidence": [
+            "ami-es2004a-s75"
+          ]
+        },
+        {
+          "text": "Requirement: the remote control must be original, trendy, appealing to a wide market, and user-friendly for all ages.",
+          "evidence": [
+            "ami-es2004a-s13",
+            "ami-es2004a-s14"
+          ]
+        },
+        {
+          "text": "Objection: the team expressed concern that the selling price of €25 (≈£17) is too high.",
+          "evidence": [
+            "ami-es2004a-s71",
+            "ami-es2004a-s75"
+          ]
+        },
+        {
+          "text": "Pain point: Current universal remote controls often lose their programmed signals, requiring users to reprogram them frequently, and complex interfaces with many tiny buttons and unclear symbols make them difficult to use for all age groups.",
+          "evidence": [
+            "ami-es2004a-s95",
+            "ami-es2004a-s104",
+            "ami-es2004a-s105",
+            "ami-es2004a-s116"
+          ]
+        },
+        {
+          "text": "Requirement: The new remote control must be user-friendly for all age groups, including older users, by featuring a simple interface with basic buttons for primary functions and an optional menu system with clear icons for advanced settings, potentially using a small LCD display.",
+          "evidence": [
+            "ami-es2004a-s88",
+            "ami-es2004a-s103",
+            "ami-es2004a-s109",
+            "ami-es2004a-s112",
+            "ami-es2004a-s133"
+          ]
+        },
+        {
+          "text": "Next step: The team will break up to work on individual tasks for half an hour before reconvening to liaise again, with Sarah preparing a PowerPoint presentation.",
+          "evidence": [
+            "ami-es2004a-s140",
+            "ami-es2004a-s141",
+            "ami-es2004a-s143"
+          ]
+        }
+      ]
+    },
+    "one_on_one": {
+      "meeting_id": "ami-es2004a",
+      "template": "one_on_one",
+      "points": [
+        {
+          "text": "Sarah introduced herself, outlined the agenda, described the remote control project, and mentioned a selling price of €25 (~£17).",
+          "evidence": [
+            "ami-es2004a-s9",
+            "ami-es2004a-s10",
+            "ami-es2004a-s11",
+            "ami-es2004a-s12",
+            "ami-es2004a-s13",
+            "ami-es2004a-s14",
+            "ami-es2004a-s71",
+            "ami-es2004a-s72"
+          ]
+        },
+        {
+          "text": "spk-B estimated the euro to pound conversion at about 1.4, implying roughly £17.",
+          "evidence": [
+            "ami-es2004a-s73",
+            "ami-es2004a-s74"
+          ]
+        },
+        {
+          "text": "Team discussed price conversion, market price, and noted that the price could be recorded for later reference.",
+          "evidence": [
+            "ami-es2004a-s76",
+            "ami-es2004a-s77",
+            "ami-es2004a-s78",
+            "ami-es2004a-s79"
+          ]
+        },
+        {
+          "text": "Sarah: outlined the product's financials, noting production costs of £12.50, a profit aim of £15 million in the first year, and an international market range that is user-friendly for all age groups.",
+          "evidence": [
+            "ami-es2004a-s81",
+            "ami-es2004a-s83",
+            "ami-es2004a-s84",
+            "ami-es2004a-s86",
+            "ami-es2004a-s87",
+            "ami-es2004a-s88",
+            "ami-es2004a-s92"
+          ]
+        },
+        {
+          "text": "spk-C: suggested incorporating a mobile-phone-style LCD display with menus and a large-print button for older users, and proposed a flip-top design to save space.",
+          "evidence": [
+            "ami-es2004a-s108",
+            "ami-es2004a-s109",
+            "ami-es2004a-s131",
+            "ami-es2004a-s132",
+            "ami-es2004a-s135"
+          ]
+        },
+        {
+          "text": "spk-D: noted that the company website's tagline 'We put the fashion into electronics' suggests the design should still look good, and suggested using molded plastic to keep costs down while maintaining a smart appearance.",
+          "evidence": [
+            "ami-es2004a-s144",
+            "ami-es2004a-s145",
+            "ami-es2004a-s146",
+            "ami-es2004a-s150",
+            "ami-es2004a-s151",
+            "ami-es2004a-s152",
+            "ami-es2004a-s154",
+            "ami-es2004a-s155"
+          ]
+        }
+      ]
     }
   },
   "action_items": [

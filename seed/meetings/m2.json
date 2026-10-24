@@ -95,6 +95,50 @@
           ]
         }
       ]
+    },
+    "sales": {
+      "meeting_id": "m2",
+      "template": "sales",
+      "points": [
+        {
+          "text": "Pain point: onboarding is confusing, with the verification step requiring three attempts for two team members, causing delays.",
+          "evidence": [
+            "m2-s2"
+          ]
+        },
+        {
+          "text": "Requirement: need a way to export reports to Excel.",
+          "evidence": [
+            "m2-s3"
+          ]
+        },
+        {
+          "text": "Next step: Sara will send the roadmap for exports.",
+          "evidence": [
+            "m2-s4"
+          ]
+        }
+      ]
+    },
+    "one_on_one": {
+      "meeting_id": "m2",
+      "template": "one_on_one",
+      "points": [
+        {
+          "text": "Sara: Will send roadmap for exports.",
+          "evidence": [
+            "m2-s4"
+          ]
+        },
+        {
+          "text": "Ayesha: Reported onboarding confusion, verification step issues, and need for Excel export; also requested review of pricing page.",
+          "evidence": [
+            "m2-s2",
+            "m2-s3",
+            "m2-s5"
+          ]
+        }
+      ]
     }
   },
   "action_items": [

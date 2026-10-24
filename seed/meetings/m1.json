@@ -112,6 +112,55 @@
           ]
         }
       ]
+    },
+    "sales": {
+      "meeting_id": "m1",
+      "template": "sales",
+      "points": [
+        {
+          "text": "Pain point: 40% of users drop off at phone verification step, impacting onboarding.",
+          "evidence": [
+            "m1-s2"
+          ]
+        },
+        {
+          "text": "Decision process: Sara and Omar agreed to set the release date to the 22nd to give QA an extra week, and Sara will inform marketing today.",
+          "evidence": [
+            "m1-s5",
+            "m1-s6",
+            "m1-s7"
+          ]
+        },
+        {
+          "text": "Next step: Omar will check provider logs for SMS code arrival delays and report findings by Thursday.",
+          "evidence": [
+            "m1-s3",
+            "m1-s4"
+          ]
+        }
+      ]
+    },
+    "one_on_one": {
+      "meeting_id": "m1",
+      "template": "one_on_one",
+      "points": [
+        {
+          "text": "Sara: introduced the meeting agenda and decided the release date will be the 22nd, and will inform marketing today.",
+          "evidence": [
+            "m1-s5",
+            "m1-s7"
+          ]
+        },
+        {
+          "text": "Omar: reported that 40% drop off at phone verification, agreed to investigate SMS code arrival and will check provider logs by Thursday, and agreed on the 22nd release date.",
+          "evidence": [
+            "m1-s2",
+            "m1-s3",
+            "m1-s4",
+            "m1-s6"
+          ]
+        }
+      ]
     }
   },
   "action_items": [
