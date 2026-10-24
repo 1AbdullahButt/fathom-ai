@@ -163,3 +163,9 @@ Format: what the reference (Fathom) does / what we do / why.
   playback had 0 long tasks; the one 69 ms long task is page load.
 - **Seeded pages bound their Supabase reads to 1.5 s** (override reads and the uploads in the list),
   with postgrest retries off for those reads; on timeout they show seed-only data.
+- **Search (P1-2) is its own `/search` page; the list header box submits to it.** Reference kit
+  filters the list inline; we follow design/screens.md section 5 so hits can show the matched
+  transcript line and jump to it. Hits are listed in full per meeting (not the kit's 3 per meeting),
+  capped at 50 overall with "Showing first 50", so no match is hidden without saying so.
+  The sidebar gets a "Search" nav item (with the `/` hint) and the phone bar a search icon, instead of
+  a second input box beside the list header's. No-results title is "No meeting mentions “q”".

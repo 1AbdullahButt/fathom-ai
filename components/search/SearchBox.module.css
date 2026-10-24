@@ -1,0 +1,66 @@
+.box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-1);
+  cursor: text;
+  transition:
+    border-color var(--dur-1),
+    box-shadow var(--dur-1);
+}
+
+.box:focus-within {
+  border-color: var(--line-focus);
+  box-shadow: var(--ring-focus);
+}
+
+.lg {
+  height: 44px;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text-1);
+  font: 400 14px/1 var(--font-sans);
+  appearance: none;
+}
+
+.lg .input {
+  font-size: 15px;
+}
+
+.input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.clear {
+  border: 0;
+  background: var(--paper-150);
+  border-radius: 999px;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--ink-600);
+  padding: 0;
+}
+
+.kbd {
+  font: 500 11px/1 var(--font-mono);
+  color: var(--text-muted);
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+  padding: 3px 5px;
+  background: var(--surface-app);
+}

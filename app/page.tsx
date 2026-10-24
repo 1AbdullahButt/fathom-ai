@@ -1,4 +1,5 @@
 import { MeetingList } from "@/components/meeting/MeetingList";
+import { SearchBox } from "@/components/search/SearchBox";
 import { AppShell } from "@/components/shell/AppShell";
 import { RecordButton } from "@/components/upload/RecordButton";
 import { UploadButton } from "@/components/upload/UploadButton";
@@ -26,6 +27,9 @@ export default async function MeetingsPage() {
               <UploadButton />
               <RecordButton />
             </div>
+          </div>
+          <div className={styles.search}>
+            <SearchBox />
           </div>
           <MeetingList meetings={meetings} listClassName={styles.list} />
         </main>

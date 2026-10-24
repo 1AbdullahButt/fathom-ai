@@ -44,6 +44,9 @@
 }
 
 @media (max-width: 760px) {
+  .search {
+    padding: 0 8px;
+  }
   .main {
     padding: 16px 8px 96px;
     gap: 14px;
