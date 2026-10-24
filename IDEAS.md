@@ -4,3 +4,4 @@
   transcript id on the meeting (needs a `transcript_id` column), so transcription is not bound to
   one function's 300 s window. Today a 60-minute file may exceed it (DECISIONS.md, P0-7).
 - Mark uploads stuck in "processing" for > 30 min as failed (e.g. the tab closed mid-upload).
+- Restore AI text for an edited summary point / action item (design HumanEdit; AI text is kept in `summaries` + `summary_edits.ai_text`).

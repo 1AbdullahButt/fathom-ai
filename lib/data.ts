@@ -4,8 +4,10 @@
 //   rate-limit log) lives in Supabase via the publishable key + RLS, or in process memory when
 //   DATA_SOURCE=memory or the Supabase env vars are missing (tests, e2e, CI).
 // Summaries and action items saved for a seeded meeting (template switch cache, human edits)
-// are stored as user data and layered over the seeded ones on read.
+// are stored as user data and layered over the seeded ones on read. Human edits of summary
+// points are append-only rows (summary_edits) layered over any summary (lib/edits.ts).
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import { applySummaryEdits, type SummaryEdit } from "./edits";
 import { isSeedId, seedMeeting, seedMeetings } from "./seed";
 import type { ActionItem, Chapter, Clip, Highlight, Meeting, Segment, Summary, Template } from "./types";
 
@@ -54,6 +56,9 @@ interface Store {
   /** Insert-only: keeps rows whose id already exists. */
   insertActionItems(items: ActionItem[]): Promise<void>;
   updateActionItem(id: string, patch: ActionItemPatch): Promise<ActionItem | null>;
+  getSummaryEdits(meetingId: string): Promise<SummaryEdit[]>;
+  /** Append-only. */
+  insertSummaryEdit(e: SummaryEdit): Promise<void>;
   listHighlights(meetingId: string): Promise<Highlight[]>;
   insertHighlight(h: Highlight): Promise<void>;
   getClip(id: string): Promise<Clip | null>;
@@ -70,6 +75,7 @@ interface MemoryState {
   chapters: Map<string, Chapter[]>;
   summaries: Map<string, Summary>;
   actions: Map<string, ActionItem>;
+  summaryEdits: SummaryEdit[];
   highlights: Highlight[];
   clips: Map<string, Clip>;
   uploads: { ip_hash: string; meeting_id: string | null; created_at: string }[];
@@ -84,12 +90,14 @@ function memoryStore(): Store {
     chapters: new Map(),
     summaries: new Map(),
     actions: new Map(),
+    summaryEdits: [],
     highlights: [],
     clips: new Map(),
     uploads: [],
   };
   const s = (g.__fathomMemory ??= fresh);
   s.chapters ??= new Map(); // state created before chapters existed (dev hot reload)
+  s.summaryEdits ??= [];
   const copy = <T>(v: T): T => structuredClone(v);
   return {
     async listMeetings() {
@@ -147,6 +155,12 @@ function memoryStore(): Store {
       const next = { ...a, ...copy(patch) };
       s.actions.set(id, next);
       return copy(next);
+    },
+    async getSummaryEdits(meetingId) {
+      return copy(s.summaryEdits.filter((e) => e.meeting_id === meetingId));
+    },
+    async insertSummaryEdit(e) {
+      s.summaryEdits.push(copy(e));
     },
     async listHighlights(meetingId) {
       return copy(s.highlights.filter((h) => h.meeting_id === meetingId));
@@ -240,6 +254,18 @@ function supabaseStore(db: SupabaseClient): Store {
       const res = await db.from("action_items").update(patch).eq("id", id).select("*").maybeSingle();
       const row = must(res, "update action item") as ActionItem | null;
       return row ? toAction(row) : null;
+    },
+    async getSummaryEdits(meetingId) {
+      const res = await db
+        .from("summary_edits")
+        .select("meeting_id, template, point_index, text, ai_text, created_at")
+        .eq("meeting_id", meetingId)
+        .order("created_at")
+        .limit(5000);
+      return must(res, "get summary edits") as SummaryEdit[];
+    },
+    async insertSummaryEdit(e) {
+      must(await db.from("summary_edits").insert(e), "insert summary edit");
     },
     async listHighlights(meetingId) {
       const res = await db.from("highlights").select("*").eq("meeting_id", meetingId).order("start_s");
@@ -353,6 +379,11 @@ export async function listMeetings(): Promise<Meeting[]> {
 }
 
 export async function getMeeting(id: string): Promise<MeetingBundle | null> {
+  return loadMeeting(id, true);
+}
+
+/** `withEdits`: layer human summary edits over the summaries (false: the AI text as saved). */
+async function loadMeeting(id: string, withEdits: boolean): Promise<MeetingBundle | null> {
   const seed = seedMeeting(id);
   if (seed) {
     let summaries = { ...seed.summaries };
@@ -360,13 +391,15 @@ export async function getMeeting(id: string): Promise<MeetingBundle | null> {
     let highlights: Highlight[] = [];
     try {
       const fast = store({ fast: true });
-      const [userSummaries, userActions, userHighlights] = await Promise.all([
+      const [userSummaries, userActions, userHighlights, edits] = await Promise.all([
         fast.getSummaries(id),
         fast.getActionItems(id),
         fast.listHighlights(id),
+        withEdits ? fast.getSummaryEdits(id) : Promise.resolve([]),
       ]);
       highlights = latestPerRange(userHighlights);
       for (const s of userSummaries) summaries = { ...summaries, [s.template]: s };
+      summaries = applySummaryEdits(summaries, edits);
       if (userActions.length) {
         const override = new Map(userActions.map((a) => [a.id, a]));
         actionItems = [
@@ -383,15 +416,17 @@ export async function getMeeting(id: string): Promise<MeetingBundle | null> {
   const s = store();
   const m = await s.getMeeting(id);
   if (!m) return null;
-  const [segments, chapters, summaryRows, actionItems, highlightRows] = await Promise.all([
+  const [segments, chapters, summaryRows, actionItems, highlightRows, edits] = await Promise.all([
     s.getSegments(id),
     s.getChapters(id),
     s.getSummaries(id),
     s.getActionItems(id),
     s.listHighlights(id),
+    withEdits ? s.getSummaryEdits(id) : Promise.resolve([]),
   ]);
-  const summaries: Partial<Record<Template, Summary>> = {};
+  let summaries: Partial<Record<Template, Summary>> = {};
   for (const row of summaryRows) summaries[row.template] = row;
+  summaries = applySummaryEdits(summaries, edits);
   segments.sort((a, b) => a.start_s - b.start_s);
   return {
     meeting: stripUser(m),
@@ -483,6 +518,34 @@ export async function updateActionItem(meetingId: string, id: string, patch: Act
   return next;
 }
 
+export type SummaryEditResult =
+  | { ok: true; summary: Summary }
+  | { ok: false; reason: "not_found" | "not_ready" | "no_point" };
+
+/**
+ * Human edit of one summary point: appends a summary_edits row (the AI summary itself is
+ * write-once) and returns that template's summary with all edits applied. Evidence is untouched.
+ */
+export async function saveSummaryPointEdit(meetingId: string, template: Template, index: number, text: string): Promise<SummaryEditResult> {
+  const raw = await loadMeeting(meetingId, false);
+  if (!raw) return { ok: false, reason: "not_found" };
+  if (raw.meeting.status !== "ready") return { ok: false, reason: "not_ready" };
+  const base = raw.summaries[template];
+  const point = base?.points[index];
+  if (!base || !point) return { ok: false, reason: "no_point" };
+  const s = store();
+  await s.insertSummaryEdit({
+    meeting_id: meetingId,
+    template,
+    point_index: index,
+    text,
+    ai_text: point.text,
+    created_at: new Date().toISOString(),
+  });
+  const edited = applySummaryEdits({ [template]: base }, await s.getSummaryEdits(meetingId));
+  return { ok: true, summary: edited[template]! };
+}
+
 // ---------------------------------------------------------------- highlights + clips
 
 /**
@@ -538,7 +601,7 @@ const genKey = (ipHash: string) => `gen:${ipHash}`;
 const procKey = (ipHash: string) => `proc:${ipHash}`;
 
 /** Per-client limits for highlight and clip creation, in the same shared log under their own prefix. */
-export type RateKind = "hl" | "clip";
+export type RateKind = "hl" | "clip" | "edit";
 
 export async function countRateEventsSince(kind: RateKind, ipHash: string, sinceIso: string): Promise<number> {
   return store().countUploadsSince(`${kind}:${ipHash}`, sinceIso);
