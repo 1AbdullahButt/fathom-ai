@@ -427,3 +427,10 @@ Format: what the reference (Fathom) does / what we do / why.
   a tide spinner rings the Play/Pause button (`aria-busy`, same accessible name), a polite
   "Loading audio…" caption sits after the time, and the speaker-view stage dims to 60%, on
   both the meeting and clip players. Spinners are static under reduced motion.
+- **Play before the audio loads shows the buffering ring; the "Loading audio…" caption may
+  truncate; 404 titles are `<h1>`.** A Play pressed before metadata only queued the play (no
+  `waiting`/`seeking` fires), so the button gave no feedback; now that queued play starts the
+  same 250 ms-debounced buffering, cleared on `playing`, `pause` (or cancelling the queued
+  play) and `error`. At 320–360 px the caption shrinks with an ellipsis (`min-width: 0`) so the
+  speed button never clips; the full text stays in the polite live region. The meeting and clip
+  not-found states render their title as the page `<h1>` (same look) and keep the HTTP 404.

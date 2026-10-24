@@ -10,6 +10,7 @@ export default function ClipNotFound() {
       <main className={styles.centered}>
         <StateBlock
           kind="notFound"
+          titleAsHeading
           title="This clip isn’t available"
           body="The link may have expired, or sharing was turned off. Ask for a new link."
           actions={
