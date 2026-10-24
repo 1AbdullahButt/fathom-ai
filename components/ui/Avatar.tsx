@@ -1,9 +1,20 @@
 import type { CSSProperties } from "react";
 
+/**
+ * Letters only. A one- or two-letter parenthetical is a speaker label ("Team member, name not
+ * stated (B)" -> "B"); other parentheticals and anything after a comma are descriptions
+ * ("Eileen (marketing)" -> "E").
+ */
 export function initials(name = ""): string {
-  const p = name.trim().split(/\s+/);
-  const first = (p[0] ?? "")[0] ?? "";
-  const last = p.length > 1 ? (p[p.length - 1][0] ?? "") : "";
+  const label = /\(\s*([A-Za-z]{1,2})\s*\)/.exec(name);
+  if (label) return label[1].toUpperCase();
+  const base = name.replace(/\([^)]*\)?/g, " ").split(",")[0];
+  const words = base
+    .split(/\s+/)
+    .map((w) => w.replace(/[^\p{L}]/gu, ""))
+    .filter(Boolean);
+  const first = words[0]?.[0] ?? "";
+  const last = words.length > 1 ? (words[words.length - 1][0] ?? "") : "";
   return (first + last).toUpperCase();
 }
 

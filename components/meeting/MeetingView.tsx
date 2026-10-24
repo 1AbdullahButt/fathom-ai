@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { memo, useCallback, useMemo, useState } from "react";
+import { memo, useCallback, useEffect, useMemo, useState } from "react";
 import type { MeetingBundle } from "@/lib/data";
 import type { Speaker } from "@/lib/types";
 import { formatTimestamp } from "@/lib/time";
@@ -50,6 +50,15 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const [jumpKey, setJumpKey] = useState(0);
   const [tab, setTab] = useState<PanelTab>("summary");
   const [phoneTab, setPhoneTab] = useState<PhoneTab>("transcript");
+
+  // `?t=` (search jump): the clock already starts at t and the transcript places that line on
+  // mount; also start playing. If the browser blocks autoplay, play() fails quietly and the
+  // page stays paused with the line in view.
+  useEffect(() => {
+    if (initialTime > 0) play();
+    // Once, on load.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const activeIndex = useMemo(() => activeAt(segments, time), [segments, time]);
   const active = activeIndex >= 0 ? segments[activeIndex] : undefined;

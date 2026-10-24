@@ -44,29 +44,58 @@ function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFol
   }, [segments, speakers]);
 
   // Auto-follow: keep the active line about a quarter from the top.
+  const followRef = useRef(follow);
+  useEffect(() => {
+    followRef.current = follow;
+  }, [follow]);
   useEffect(() => {
     const c = box.current;
     if (!c || activeIndex < 0) return;
     const forced = jumpKey !== lastJump.current;
     if (!follow && !forced) return;
-    const first = lastJump.current === -1;
     lastJump.current = jumpKey;
-    const el = c.querySelector<HTMLElement>(`[data-segment-id="${CSS.escape(segments[activeIndex].id)}"]`);
-    if (!el) return;
+    const id = segments[activeIndex].id;
+    const find = () => c.querySelector<HTMLElement>(`[data-segment-id="${CSS.escape(id)}"]`);
+    /** Line top relative to the scroll box's visible top. */
+    const offset = (el: HTMLElement) => el.getBoundingClientRect().top - c.getBoundingClientRect().top;
+    const target = () => c.clientHeight * 0.25;
     const place = (smooth: boolean) => {
-      const top = el.getBoundingClientRect().top - c.getBoundingClientRect().top + c.scrollTop;
-      const inZone = top >= c.scrollTop + 40 && top <= c.scrollTop + c.clientHeight * 0.6;
-      if (inZone && !forced) return;
-      c.scrollTo({ top: Math.max(0, top - c.clientHeight * 0.25), behavior: smooth ? "smooth" : "auto" });
+      const el = find();
+      if (!el || c.clientHeight === 0) return;
+      c.scrollTo({ top: Math.max(0, c.scrollTop + offset(el) - target()), behavior: smooth ? "smooth" : "auto" });
     };
-    // Off-screen lines use estimated sizes (content-visibility), so a far jump lands instantly and
-    // is corrected on the next frame once the neighbourhood has real layout.
-    const far = Math.abs(el.offsetTop - c.scrollTop) > c.clientHeight * 3;
-    place(!first && !far);
-    if (first || far) {
-      const id = requestAnimationFrame(() => place(false));
-      return () => cancelAnimationFrame(id);
+
+    if (!forced) {
+      const el = find();
+      if (!el) return;
+      const top = offset(el);
+      if (top >= 40 && top <= c.clientHeight * 0.6) return;
+      place(true);
+      return;
     }
+
+    // A jump (quote chip, ?t=). On phones the transcript tab may have only just been shown, and
+    // fonts may still swap in, so place the line after layout settles (two frames), then check it
+    // once more a little later and correct if it drifted.
+    let f1 = 0;
+    let f2 = 0;
+    let cancelled = false;
+    const recheck = () => {
+      if (cancelled || !followRef.current) return;
+      const el = find();
+      if (el && Math.abs(offset(el) - target()) > 24) place(false);
+    };
+    f1 = requestAnimationFrame(() => {
+      f2 = requestAnimationFrame(() => place(false));
+    });
+    const timer = window.setTimeout(recheck, 350);
+    void document.fonts?.ready.then(recheck);
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(f1);
+      cancelAnimationFrame(f2);
+      window.clearTimeout(timer);
+    };
   }, [activeIndex, follow, jumpKey, segments]);
 
   // Any scroll the user starts pauses follow.

@@ -44,6 +44,8 @@ export function usePlayback(duration: number, initialTime = 0): Playback {
   }, [time, total]);
   /** A seek requested before the media knows its length; applied on loadedmetadata. */
   const pendingSeek = useRef<number | null>(initialTime > 0 ? initialTime : null);
+  /** play() asked for before metadata: started after the pending seek, so it never plays from 0 first. */
+  const pendingPlay = useRef(false);
 
   const attachMedia = useCallback((node: HTMLMediaElement | null) => {
     if (el.current === node) return;
@@ -65,6 +67,10 @@ export function usePlayback(duration: number, initialTime = 0): Playback {
         media.currentTime = pendingSeek.current;
         pendingSeek.current = null;
       }
+      if (pendingPlay.current) {
+        pendingPlay.current = false;
+        media.play().catch(() => setPlaying(false));
+      }
     };
     media.addEventListener("timeupdate", onTime);
     media.addEventListener("seeked", onTime);
@@ -75,6 +81,7 @@ export function usePlayback(duration: number, initialTime = 0): Playback {
     media.addEventListener("loadedmetadata", onMeta);
     if (media.readyState >= 1) onMeta();
     else if (timeRef.current > 0) pendingSeek.current = timeRef.current;
+    if (!media.paused) onPlay();
     return () => {
       media.removeEventListener("timeupdate", onTime);
       media.removeEventListener("seeked", onTime);
@@ -122,7 +129,9 @@ export function usePlayback(duration: number, initialTime = 0): Playback {
   const play = useCallback(() => {
     if (timeRef.current >= totalRef.current) seek(0);
     const media = el.current;
-    if (media) {
+    if (media && media.readyState < 1) {
+      pendingPlay.current = true;
+    } else if (media) {
       media.play().catch(() => setPlaying(false));
     } else {
       setPlaying(true);
@@ -130,6 +139,7 @@ export function usePlayback(duration: number, initialTime = 0): Playback {
   }, [seek]);
 
   const pause = useCallback(() => {
+    pendingPlay.current = false;
     if (el.current) el.current.pause();
     else setPlaying(false);
   }, []);
