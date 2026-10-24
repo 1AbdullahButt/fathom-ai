@@ -13,3 +13,6 @@ next-env.d.ts
 playwright-report/
 test-results/
 seed/raw/
+
+.vercel
+.env*
