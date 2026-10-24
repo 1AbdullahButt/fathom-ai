@@ -44,6 +44,10 @@ here; they need a follow-up pass.
 
 ## What was found and fixed
 
+`supabase/migrations/0003_chapters.sql` (P2-2) adds `chapters` under the same rules: public read,
+insert only while the meeting is `processing`, no update or delete (anon probe, rolled back:
+ready-meeting insert, update and delete denied; processing insert allowed).
+
 All DB changes are in `supabase/migrations/0002_security.sql` (applied as migration
 `0002_security`). Verified with an anon-role probe (rolled back): every "denied" below was denied
 and every pipeline write still worked; then a full upload -> process -> ready -> template switch

@@ -12,10 +12,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { StateBlock } from "@/components/ui/StateBlock";
+import { SegmentedControl } from "@/components/ui/SegmentedControl";
 import { Tabs } from "@/components/ui/Tabs";
 import { Toast } from "@/components/ui/Toast";
 import { clipRange, segmentsInRange } from "@/lib/ranges";
+import { talkTime } from "@/lib/talktime";
 import { ActionItem } from "./ActionItem";
+import { ChapterItem } from "./ChapterItem";
 import { ClipButton, ClipDialog } from "./ClipDialog";
 import { HighlightCard } from "./HighlightCard";
 import { formatMeetingDate } from "./MeetingRow";
@@ -24,12 +27,15 @@ import { PlayerControls } from "./PlayerControls";
 import { speakerColor } from "./QuoteChip";
 import { SelectionHighlighter } from "./SelectionHighlighter";
 import { SummaryTab } from "./SummaryTab";
+import { TalkTimeBar } from "./TalkTimeBar";
 import { Transcript } from "./Transcript";
 import hl from "./Highlights.module.css";
 import styles from "./MeetingView.module.css";
 
 type PanelTab = "summary" | "actions" | "highlights";
 type PhoneTab = "transcript" | "summary" | "actions" | "highlights";
+/** Below 1200px the left column is dropped; this switch swaps the centre area instead. */
+type NavMode = "lines" | "chapters" | "speakers";
 
 const VIDEO_EXT = /\.(mp4|mov|webm|m4v)(\?|$)/i;
 /** Seeking to a segment start may land a few ms early (media frame granularity). */
@@ -97,6 +103,11 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   const [jumpKey, setJumpKey] = useState(0);
   const [tab, setTab] = useState<PanelTab>("summary");
   const [phoneTab, setPhoneTab] = useState<PhoneTab>("transcript");
+  const [navMode, setNavMode] = useState<NavMode>("lines");
+  /** Speaker filter: ids whose lines the transcript shows (empty: everyone). */
+  const [onlySpeakers, setOnlySpeakers] = useState<string[]>([]);
+  const wide = useMediaQuery("(min-width: 1200px)");
+  const phone = useMediaQuery("(max-width: 759px)");
   const [highlights, setHighlights] = useState<Highlight[]>(() => bundle.highlights ?? []);
   const [toast, setToast] = useState<ToastState | null>(null);
   const [clipDialog, setClipDialog] = useState<{ start_s: number; end_s: number } | null>(null);
@@ -138,6 +149,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
       setFollow(true);
       setJumpKey((k) => k + 1);
       setPhoneTab("transcript");
+      setNavMode("lines");
     },
     [seek, play],
   );
@@ -269,6 +281,35 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
     .map((h) => h.id)
     .join(" ");
 
+  const talk = useMemo(() => talkTime(segments), [segments]);
+  const toggleSpeaker = useCallback(
+    (id: string) => setOnlySpeakers((sel) => (sel.includes(id) ? sel.filter((x) => x !== id) : [...sel, id])),
+    [],
+  );
+  const clearSpeakers = useCallback(() => setOnlySpeakers([]), []);
+  /** Chapter click: seek without changing play state; on phones go back to the transcript. */
+  const seekChapter = useCallback(
+    (s: number) => {
+      seekOnly(s);
+      if (phone) {
+        setNavMode("lines");
+        setJumpKey((k) => k + 1);
+      }
+    },
+    [seekOnly, phone],
+  );
+  const view: NavMode = wide ? "lines" : navMode;
+  const chapterList = <ChapterList chapters={bundle.chapters} time={time} duration={duration} onSeek={seekChapter} />;
+  const speakerList = (
+    <SpeakerList
+      speakers={speakers}
+      talk={talk}
+      selected={onlySpeakers}
+      onToggle={toggleSpeaker}
+      activeSpeakerId={playing ? active?.speaker_id : undefined}
+    />
+  );
+
   const onPhoneTab = (id: string) => {
     const next = id as PhoneTab;
     setPhoneTab(next);
@@ -305,7 +346,24 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
       </header>
 
       <div className={styles.grid}>
-        <LeftColumn speakers={speakers} chapters={bundle.chapters} activeSpeakerId={active?.speaker_id} onSeek={seekOnly} />
+        {/* Always rendered (CSS hides it below 1200px), so the server render has the wide grid. */}
+        <aside className={styles.left} aria-label="Chapters and speakers">
+          <div>
+            <h2 className={styles.overline}>Chapters</h2>
+            {chapterList}
+          </div>
+          <div>
+            <div className={styles.overlineRow}>
+              <h2 className={styles.overline}>Speakers · talk time</h2>
+              {onlySpeakers.length ? (
+                <Button size="sm" variant="ghost" onClick={clearSpeakers}>
+                  Clear
+                </Button>
+              ) : null}
+            </div>
+            {speakerList}
+          </div>
+        </aside>
 
         <section className={styles.centre} aria-label="Recording and transcript">
           <div className={styles.player}>
@@ -351,6 +409,7 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
               onSeek={seekOnly}
               rate={rate}
               onRate={cycleRate}
+              chapters={bundle.chapters}
             />
           </div>
 
@@ -371,16 +430,54 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
           </div>
 
           <div ref={paneRef} className={styles.transcriptPane}>
-            <Transcript
-              segments={segments}
-              speakers={speakers}
-              activeIndex={activeIndex}
-              onSeek={seekOnly}
-              follow={follow}
-              onFollowChange={setFollow}
-              jumpKey={jumpKey}
-              markedIds={markedIds}
-            />
+            <div className={styles.toolbar} data-filtered={onlySpeakers.length > 0 || undefined}>
+              <span className={styles.navSwitch}>
+                <SegmentedControl
+                  size="sm"
+                  label="Transcript view"
+                  value={navMode}
+                  onChange={(v) => {
+                    setNavMode(v as NavMode);
+                    // Back on the transcript: place the playing line again (it was hidden).
+                    if (v === "lines") setJumpKey((k) => k + 1);
+                  }}
+                  options={[
+                    { value: "lines", label: "Transcript" },
+                    { value: "chapters", label: "Chapters" },
+                    { value: "speakers", label: onlySpeakers.length ? `Speakers · ${onlySpeakers.length}` : "Speakers" },
+                  ]}
+                />
+              </span>
+              {onlySpeakers.length && view !== "chapters" ? (
+                <span className={styles.filterCount}>
+                  {onlySpeakers.length} of {speakers.length} speakers
+                  <Button size="sm" variant="ghost" onClick={clearSpeakers}>
+                    Clear
+                  </Button>
+                </span>
+              ) : null}
+            </div>
+            {view === "chapters" ? (
+              <div className={styles.navPane}>{chapterList}</div>
+            ) : view === "speakers" ? (
+              <div className={styles.navPane}>
+                <p className={styles.navHint}>Talk time. Tap speakers to show only their lines.</p>
+                {speakerList}
+              </div>
+            ) : null}
+            <div className={styles.linesPane} hidden={view !== "lines"}>
+              <Transcript
+                segments={segments}
+                speakers={speakers}
+                activeIndex={activeIndex}
+                onSeek={seekOnly}
+                follow={follow}
+                onFollowChange={setFollow}
+                jumpKey={jumpKey}
+                markedIds={markedIds}
+                onlySpeakers={onlySpeakers}
+              />
+            </div>
             {meeting.status === "ready" ? <SelectionHighlighter container={paneRef} segments={segments} onSave={saveSelection} /> : null}
           </div>
         </section>
@@ -534,50 +631,87 @@ export function Stage({
   );
 }
 
-// ---------------------------------------------------------------- left column (wide only)
+// ---------------------------------------------------------------- chapters + speakers
 
-const LeftColumn = memo(function LeftColumn({
-  speakers,
+/** Index of the chapter playing at `t` (-1 when there are none). */
+function chapterAt(chapters: { start_s: number }[], t: number): number {
+  let i = -1;
+  for (let k = 0; k < chapters.length && chapters[k].start_s <= t + EPS; k++) i = k;
+  return i;
+}
+
+function ChapterList({
   chapters,
-  activeSpeakerId,
+  time,
+  duration,
   onSeek,
 }: {
-  speakers: Speaker[];
   chapters: MeetingBundle["chapters"];
-  activeSpeakerId: string | undefined;
+  time: number;
+  duration: number;
   onSeek(s: number): void;
 }) {
+  if (!chapters.length) return <p className={styles.navEmpty}>No chapters for this meeting. Short recordings aren’t split into chapters.</p>;
+  const ai = chapterAt(chapters, time);
   return (
-    <aside className={styles.left} aria-label="Chapters and speakers">
-      {chapters.length ? (
-        <div>
-          <h2 className={styles.overline}>Chapters</h2>
-          {chapters.map((c) => (
-            <button key={`${c.start_s}-${c.title}`} type="button" className={styles.chapterBtn} onClick={() => onSeek(c.start_s)}>
-              <span className={styles.mono} style={{ fontSize: 12, color: "var(--text-muted)" }}>
-                {formatTimestamp(c.start_s)}
-              </span>
-              <span>{c.title}</span>
-            </button>
-          ))}
-        </div>
-      ) : null}
-      <div>
-        <h2 className={styles.overline}>Speakers</h2>
-        <ul className={styles.speakerList}>
-          {speakers.map((s) => {
-            const speaking = s.id === activeSpeakerId;
-            return (
-              <li key={s.id} className={styles.speakerRow} data-speaking={speaking}>
-                <span className={styles.speakerDot} style={{ background: speakerColor(speakers, s.id) }} />
-                {s.name}
-                {speaking ? <span className={styles.speakingTag}>Speaking</span> : null}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </aside>
+    <div className={styles.navList}>
+      {chapters.map((c, i) => {
+        const end = chapters[i + 1]?.start_s ?? duration;
+        return (
+          <ChapterItem
+            key={`${c.start_s}-${i}`}
+            index={i + 1}
+            title={c.title}
+            seconds={c.start_s}
+            active={i === ai}
+            progress={end > c.start_s ? (time - c.start_s) / (end - c.start_s) : 0}
+            onSeek={onSeek}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+const SpeakerList = memo(function SpeakerList({
+  speakers,
+  talk,
+  selected,
+  onToggle,
+  activeSpeakerId,
+}: {
+  speakers: Speaker[];
+  talk: ReturnType<typeof talkTime>;
+  selected: string[];
+  onToggle(id: string): void;
+  /** Speaker talking now (while playing). */
+  activeSpeakerId: string | undefined;
+}) {
+  const byId = new Map(speakers.map((s) => [s.id, s]));
+  // Everyone, most talk first; speakers who never spoke go last with 0.
+  const rows = [
+    ...talk.filter((t) => byId.has(t.speaker_id)),
+    ...speakers.filter((s) => !talk.some((t) => t.speaker_id === s.id)).map((s) => ({ speaker_id: s.id, seconds: 0, share: 0 })),
+  ];
+  return (
+    <div className={styles.navList} role="group" aria-label="Filter transcript by speaker">
+      {rows.map((t) => {
+        const s = byId.get(t.speaker_id)!;
+        return (
+          <TalkTimeBar
+            key={s.id}
+            name={s.name}
+            color={speakerColor(speakers, s.id)}
+            seconds={t.seconds}
+            share={t.share}
+            selected={selected.includes(s.id)}
+            dimmed={selected.length > 0 && !selected.includes(s.id)}
+            speaking={s.id === activeSpeakerId}
+            onToggle={() => onToggle(s.id)}
+          />
+        );
+      })}
+    </div>
   );
 });
 

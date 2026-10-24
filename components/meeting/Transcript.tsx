@@ -18,6 +18,8 @@ export interface TranscriptProps {
   jumpKey: number;
   /** Segment ids inside a saved highlight. */
   markedIds?: ReadonlySet<string>;
+  /** Speaker filter: only these speakers' lines are shown (timestamps kept). Empty/undefined: everyone. */
+  onlySpeakers?: readonly string[];
 }
 
 /** A new speaker block starts on a speaker change or after a 30 s pause (design kit rule). */
@@ -28,22 +30,36 @@ const SCROLL_KEYS = new Set(["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home
  * The scrolling transcript. Memoised: it re-renders only when the active index (not the clock)
  * changes, and each TranscriptLine is memoised, so a tick touches at most two lines.
  */
-function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFollowChange, jumpKey, markedIds }: TranscriptProps) {
+function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFollowChange, jumpKey, markedIds, onlySpeakers }: TranscriptProps) {
   const box = useRef<HTMLDivElement>(null);
   const lastJump = useRef(-1);
 
+  const filterKey = onlySpeakers?.join(" ") ?? "";
   const rows = useMemo(() => {
     const byId = new Map(speakers.map((s) => [s.id, s]));
-    return segments.map((seg, i) => {
-      const prev = segments[i - 1];
-      return {
+    const only = filterKey ? new Set(filterKey.split(" ")) : null;
+    const out: { seg: Segment; index: number; speaker: Speaker | undefined; color: string; showSpeaker: boolean }[] = [];
+    segments.forEach((seg, index) => {
+      if (only && !only.has(seg.speaker_id)) return;
+      const prev = out.at(-1)?.seg;
+      out.push({
         seg,
+        index,
         speaker: byId.get(seg.speaker_id),
         color: speakerColor(speakers, seg.speaker_id),
-        showSpeaker: !prev || prev.speaker_id !== seg.speaker_id || seg.start_s - prev.end_s > GAP_S,
-      };
+        // Filtered, every line names its speaker (lines from far apart sit next to each other).
+        showSpeaker: !!only || !prev || prev.speaker_id !== seg.speaker_id || seg.start_s - prev.end_s > GAP_S,
+      });
     });
-  }, [segments, speakers]);
+    return out;
+  }, [segments, speakers, filterKey]);
+
+  // Follow target: the active line, or with a filter the last shown line at or before it.
+  let targetId: string | undefined;
+  for (const r of rows) {
+    if (r.index > activeIndex) break;
+    targetId = r.seg.id;
+  }
 
   // Auto-follow: keep the active line about a quarter from the top.
   const followRef = useRef(follow);
@@ -52,11 +68,11 @@ function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFol
   }, [follow]);
   useEffect(() => {
     const c = box.current;
-    if (!c || activeIndex < 0) return;
+    if (!c || !targetId) return;
     const forced = jumpKey !== lastJump.current;
     if (!follow && !forced) return;
     lastJump.current = jumpKey;
-    const id = segments[activeIndex].id;
+    const id = targetId;
     const find = () => c.querySelector<HTMLElement>(`[data-segment-id="${CSS.escape(id)}"]`);
     /** Line top relative to the scroll box's visible top. */
     const offset = (el: HTMLElement) => el.getBoundingClientRect().top - c.getBoundingClientRect().top;
@@ -98,7 +114,7 @@ function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFol
       cancelAnimationFrame(f2);
       window.clearTimeout(timer);
     };
-  }, [activeIndex, follow, jumpKey, segments]);
+  }, [targetId, follow, jumpKey]);
 
   // Any scroll the user starts pauses follow.
   useEffect(() => {
@@ -132,18 +148,20 @@ function TranscriptImpl({ segments, speakers, activeIndex, onSeek, follow, onFol
         style={{ flex: 1, minHeight: 0, overflowY: "auto", padding: "8px 8px 96px", outline: "none" }}
       >
         {rows.length ? (
-          rows.map((r, i) => (
+          rows.map((r) => (
             <TranscriptLine
               key={r.seg.id}
               segment={r.seg}
               speaker={r.speaker}
               color={r.color}
               showSpeaker={r.showSpeaker}
-              active={i === activeIndex}
+              active={r.index === activeIndex}
               marked={markedIds?.has(r.seg.id)}
               onSeek={onSeek}
             />
           ))
+        ) : filterKey && segments.length ? (
+          <StateBlock compact kind="noResults" title="No lines match" body="No lines from the selected speakers." />
         ) : (
           <StateBlock compact kind="empty" icon="file-text" title="No transcript yet" body="Transcript lines appear here once the recording has been transcribed." />
         )}
