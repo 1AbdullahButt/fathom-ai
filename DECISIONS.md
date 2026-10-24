@@ -21,3 +21,17 @@ Format: what the reference (Fathom) does / what we do / why.
 - **Seed:** long meeting = a public-record city council meeting (~1h, 6-8 speakers); short
   meetings = AMI Meeting Corpus (CC BY 4.0). Spec fixtures are seeded transcript-only (no audio).
 - **Deploy:** new Vercel project `fathom-ai` via `npx vercel --prod`; no other project is touched.
+
+## Architecture
+- **Seeded meetings as static JSON, user data in Supabase.** Fathom stores everything in its
+  backend. We ship the seeded meetings (transcripts, summaries for every template, actions,
+  chapters) as JSON in the repo and keep only user-created data in Supabase. Why: free
+  Supabase projects pause after a week idle; the live demo must never show an empty list.
+- **Publishable key + RLS, no service-role key.** Public demo workspace with no auth, so
+  writes go through narrow RLS policies. The cost guard sits on the processing route, which is
+  the only step that spends money.
+- **Ask across meetings moved from stretch into the last P2 task (minimal).** SPEC section 7's
+  locked eval requires "What was the budget?" -> "not found in meetings", so a minimal,
+  evidence-only `lib/ask.ts` is needed for the eval to pass.
+- **Meeting page sizes the transcript for 1h.** The 1-hour meeting has ~1,000+ segments; the
+  transcript is windowed so playback sync stays smooth.
