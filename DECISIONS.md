@@ -198,3 +198,24 @@ Format: what the reference (Fathom) does / what we do / why.
 - **Caption clamp on an inner span.** The review's clamp on the padded caption box let the top of
   a third line show in the bottom padding in Chrome; the box keeps padding and the inner span
   clamps to exactly 2 lines with an ellipsis. Phone avatar on the stage is 44px (desktop stays 72).
+
+## P1-3 Highlights
+- **Highlights are append-only; a note edit re-posts the same range.** Reference: a highlight's
+  note is edited in place. Ours: the schema grants no UPDATE on `highlights` (public demo, no
+  auth), so "Add note" / "Edit note" posts the same `start_s`/`end_s` again and reads keep the
+  newest row per range (`latestPerRange` in lib/data.ts). Why: no migration or wider grant for a
+  one-field edit; the visible behaviour is the same.
+- **Selection -> "Highlight" -> small note form, then save.** The range runs from the first
+  selected line's `start_s` to the last one's `end_s` (whole lines, not the exact words), because
+  playback and clips work on segment times.
+- **H only while playing, last 15 s (clamped at 0).** Design says "at the current line"; the PLAN
+  says last 15 s, which we follow. Its toast stays 8 s (not 4) because it carries "Add note".
+- **HighlightCard shows the note as its title and has no author line.** The kit card has a title
+  and "Clipped by <name>"; there are no accounts, so no author. The quote is the words said in the
+  range (first speaker's name, up to 4 lines).
+- **Highlights tab copy.** The kit's empty text talks about clips; until clips exist the empty
+  state and a hint line say "Select transcript text, or press H while it plays". Phone gets a
+  fourth tab "Highlights" (design calls it "Clips").
+- **Limits.** 30 highlights per client per hour, counted in `upload_log` under an `hl:` prefix
+  (same pattern as summary generations). Notes are plain text, up to 500 characters, control
+  characters stripped, always rendered as React text.
