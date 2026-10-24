@@ -65,3 +65,8 @@ Format: what the reference (Fathom) does / what we do / why.
   uploads can only be inserted as `processing`, segments only while their meeting is processing.
 - **Upload rate limit stored as a hashed client key** (`upload_log.ip_hash`), never a raw IP,
   because the table is publicly readable.
+
+- **Action items have no done checkbox (yet).** The design kit's ActionItem has a checkbox; our
+  ActionItem data has no done state and PLAN.md does not ask for one, so the P0-2 restyle keeps
+  the locked props and leaves the checkbox out. Human-edited text gets the serif/pencil styling
+  but no editor-name chip, because SummaryPoint/ActionItem carry no editor name.
