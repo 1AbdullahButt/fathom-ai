@@ -1,0 +1,1558 @@
+{
+  "slug": "ami-es2004a",
+  "provider": "assemblyai",
+  "transcript_id": "03a77912-7fc6-4f0b-b6ea-16c71128eee4",
+  "duration_s": 1050,
+  "utterances": [
+    {
+      "speaker": "A",
+      "start_s": 6.836,
+      "end_s": 14.536,
+      "text": "Are we— we're not allowed to dim the lights so people can see that a bit better?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 14.536,
+      "end_s": 18.064,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 18.064,
+      "end_s": 23.741,
+      "text": "Okay, that's fine. Am I supposed to be standing up there?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 24.34,
+      "end_s": 52.795,
+      "text": "So we've got both of these clipped on. Is she gonna answer me? Yeah, I've got both of them. Okay. Yes. God, geez, this is gonna fall off. It doesn't let you put it on."
+    },
+    {
+      "speaker": "A",
+      "start_s": 80.55,
+      "end_s": 82.88,
+      "text": "Okay, hello everybody."
+    },
+    {
+      "speaker": "B",
+      "start_s": 82.88,
+      "end_s": 83.43,
+      "text": "Hi."
+    },
+    {
+      "speaker": "A",
+      "start_s": 83.43,
+      "end_s": 276.26,
+      "text": "I'm Sarah, the project manager, and this is our first meeting, surprisingly enough. Okay, this is our agenda. We will do some stuff, get to know each other a bit better, to feel more comfortable with each other. Then we'll go do 2 talk about the project plan, discuss our own ideas and everything. And we've got 25 minutes to do that, as far as I can understand. Now, we're developing a remote control, which you probably already know. We want it to be original, something that people haven't thought of, that's not out in the shops, trendy, Appealing to a wide market, but, you know, not a hunk of metal. And user-friendly, grannies to kids, maybe even pooches should be able to use it. Okay, first is the functional design. This is where we all go off and do our individual work. What needs need to be fulfilled by the product? What effect the product has to have? and how it's actually going to do that. Conceptual design, what we're thinking, how it's going to go, and then the detailed design, how we're actually going to put it into practice and make it work. Okay, right, we're going to practice with the pens and draw our favorite animal on the whiteboard. I'll go first and sum up the characteristics of that animal. So, okay, I'll leave space for everyone else. What's missing? We're running out of blue. Okay. I'm not going to ask you to guess. I'm going to tell you that's supposed to be a tiger. And I see them as majestic. Mm-hmm. independent, and proud. Now, who would like to go next? Me."
+    },
+    {
+      "speaker": "B",
+      "start_s": 276.26,
+      "end_s": 286.383,
+      "text": "Okay. We've got— where did this come from?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 287.733,
+      "end_s": 288.282,
+      "text": "There you go, pal."
+    },
+    {
+      "speaker": "B",
+      "start_s": 288.282,
+      "end_s": 296.124,
+      "text": "Oh, yep, thank you. Maybe you can guess what I'm trying to make."
+    },
+    {
+      "speaker": "C",
+      "start_s": 296.124,
+      "end_s": 307.211,
+      "text": "A kind of dog?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 307.211,
+      "end_s": 315.131,
+      "text": "Yep. It's actually sitting, so—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 315.131,
+      "end_s": 316.231,
+      "text": "Sorry?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 316.231,
+      "end_s": 349.2,
+      "text": "It's sitting, it's not standing. Okay, I see it as one thing, it's very supportive. It's your best friend in your— you can talk to a dog, it can be your best friend. It doesn't discriminate between you based on what you are. Second, it's loyal. And third thing, it's got intuition. Means dogs can sometimes make out between a thief and a person. So basically, these are the 3 unique features I think belong to"
+    },
+    {
+      "speaker": "A",
+      "start_s": 350.263,
+      "end_s": 351.375,
+      "text": "a dog. Okay, thank"
+    },
+    {
+      "speaker": "D",
+      "start_s": 353.985,
+      "end_s": 354.081,
+      "text": "you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 354.081,
+      "end_s": 356.82,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "C",
+      "start_s": 356.82,
+      "end_s": 361.736,
+      "text": "Please leave me a space at the bottom. I'm little. I can't get to the top. I'll be standing on a chair."
+    },
+    {
+      "speaker": "D",
+      "start_s": 361.736,
+      "end_s": 373.807,
+      "text": "Well, since you guys have chosen the ones I wanted to do, Okay. I have to go for something a bit random. Also, my drawing skill isn't that great."
+    },
+    {
+      "speaker": "A",
+      "start_s": 373.807,
+      "end_s": 376.75,
+      "text": "As you can see, the quality of the work today is—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 376.75,
+      "end_s": 378.205,
+      "text": "I think it's outstandingly good."
+    },
+    {
+      "speaker": "D",
+      "start_s": 378.205,
+      "end_s": 397.145,
+      "text": "Okay, now I'm going to have to change what it was originally going to be, because that looks like a beak now. Crocodile? Yeah, it can be a crocodile."
+    },
+    {
+      "speaker": "A",
+      "start_s": 397.29,
+      "end_s": 398.528,
+      "text": "It can be a crocodile."
+    },
+    {
+      "speaker": "D",
+      "start_s": 398.705,
+      "end_s": 405.727,
+      "text": "Well, it was— firstly, it was an attempt at a T-Rex, and then it sort of changed into a pelican, but it can be a crocodile."
+    },
+    {
+      "speaker": "A",
+      "start_s": 420.106,
+      "end_s": 420.886,
+      "text": "That's lovely."
+    },
+    {
+      "speaker": "D",
+      "start_s": 420.886,
+      "end_s": 440.054,
+      "text": "Yeah, and I'll have to think on the spot of things that it is. Scary, strong, yeah, that's about it, I think."
+    },
+    {
+      "speaker": "C",
+      "start_s": 441.668,
+      "end_s": 460.699,
+      "text": "Okay, I'm very impressed with your artistic skills. Mine are dreadful. Oops, this is now coming apart. Let me just put the top in. I hope that clicks in. I'll just— I'll hold it on. Oops, oh dear, what happened there?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 460.699,
+      "end_s": 461.981,
+      "text": "Technical help."
+    },
+    {
+      "speaker": "C",
+      "start_s": 461.981,
+      "end_s": 501.541,
+      "text": "Hopefully that'll stay on. Two-handed version. Okay. Again, this is off the top of my head. I was going to do a big cat too. Oh dear, it doesn't look like what I want it to be. Ah. It's not a vampire bat, honestly. And somewhere there's a body behind. That's my dreadful. That's the worst. Yeah, it's meant to be an eagle."
+    },
+    {
+      "speaker": "D",
+      "start_s": 502.533,
+      "end_s": 502.728,
+      "text": "You"
+    },
+    {
+      "speaker": "C",
+      "start_s": 503.037,
+      "end_s": 518.135,
+      "text": "can tell it's a flying animal. Could have been a seagull. I never thought of a seagull. An eagle. Again, I'm thinking on my feet. Goodness. I suppose they're also independent. I'd put that one down again. Da da."
+    },
+    {
+      "speaker": "D",
+      "start_s": 519.986,
+      "end_s": 520.295,
+      "text": "Um. They"
+    },
+    {
+      "speaker": "C",
+      "start_s": 520.295,
+      "end_s": 524.218,
+      "text": "get a go. Independent, right? Did you say they're good at golf?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 524.218,
+      "end_s": 524.559,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "C",
+      "start_s": 524.559,
+      "end_s": 525.355,
+      "text": "Are they?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 525.355,
+      "end_s": 526.801,
+      "text": "Eagle."
+    },
+    {
+      "speaker": "C",
+      "start_s": 526.801,
+      "end_s": 556.293,
+      "text": "Oh, right. Okay. I'm not good at golf. I'll say they're quite free-spirited, flying around everywhere, doing their own thing. And birds of prey, aren't they? Oh dear. Intrepid. Intrepid. There we go. I hope that pen's going to be okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 558.88,
+      "end_s": 576.63,
+      "text": "Whoops. Okay, that was fun. Right, um, finance-wise, we've got a selling price at €25, which I don't actually know what that is in pounds at all. £25. Any ideas?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 576.63,
+      "end_s": 581.25,
+      "text": "It's about 1.4 or something like that. 1.4 euro would make a pound or something."
+    },
+    {
+      "speaker": "D",
+      "start_s": 581.25,
+      "end_s": 585.95,
+      "text": "Yeah, yeah, something like that. So yeah, about 17 pounds."
+    },
+    {
+      "speaker": "A",
+      "start_s": 585.95,
+      "end_s": 588.05,
+      "text": "Okay, that's expensive."
+    },
+    {
+      "speaker": "C",
+      "start_s": 588.39,
+      "end_s": 591.03,
+      "text": "Should we be making notes of this? We can just refer to this later, can't we?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 591.03,
+      "end_s": 595.27,
+      "text": "I think so. I think I'd be able to pull it up or put it in the shared folder."
+    },
+    {
+      "speaker": "D",
+      "start_s": 595.27,
+      "end_s": 606.306,
+      "text": "Having said that though, if you want to get one of those, the ones on the market at the moment, that's They're about £20 anyway. So, yeah, we had to buy one."
+    },
+    {
+      "speaker": "C",
+      "start_s": 606.306,
+      "end_s": 614.016,
+      "text": "So, I suppose later it depends if we want to undercut the price, or is it going to make our product look like a cheapy, cheapy option?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 614.016,
+      "end_s": 617.954,
+      "text": "Yeah, production costs at £12.50, so"
+    },
+    {
+      "speaker": "B",
+      "start_s": 618.373,
+      "end_s": 619.114,
+      "text": "pretty huge margin."
+    },
+    {
+      "speaker": "A",
+      "start_s": 619.179,
+      "end_s": 629.369,
+      "text": "Half of the selling price is taken up by building it, and profit aim is £15. million euros, which is a—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 629.369,
+      "end_s": 631.087,
+      "text": "In our first year?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 631.087,
+      "end_s": 635.31,
+      "text": "Yes. Yeah, I presume so."
+    },
+    {
+      "speaker": "C",
+      "start_s": 635.31,
+      "end_s": 654.402,
+      "text": "You've got market range international, and you did say earlier it's got to be accessible and usable by sort of all age groups. Just, we're not focusing on business market, any particular thing. It's everyone, user-friendly to everyone. Okay. Big target group."
+    },
+    {
+      "speaker": "A",
+      "start_s": 654.402,
+      "end_s": 661.396,
+      "text": "Yes, yes. I don't think we have to— I don't think it's a case of worrying about different languages and things like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 661.879,
+      "end_s": 662.12,
+      "text": "No."
+    },
+    {
+      "speaker": "A",
+      "start_s": 662.7,
+      "end_s": 700.764,
+      "text": "Making that key point, just that it's going to be in the international market like Australia, America, things like that. Okay. What are your experiences with remote controls? I mean, I've got— we got— we had 3 videos, a TV, and a sort of amp thing all set up. So we got one of the universal remote controls that you program each of your things into, but that kept losing the signals, so we'd have to reprogram it every now and again. I think it was quite a cheapy as well."
+    },
+    {
+      "speaker": "D",
+      "start_s": 700.764,
+      "end_s": 701.427,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 701.427,
+      "end_s": 704.566,
+      "text": "So that might have had something to do with it, but that was quite good, the fact that you You could"
+    },
+    {
+      "speaker": "D",
+      "start_s": 705.369,
+      "end_s": 705.995,
+      "text": "use all the ones"
+    },
+    {
+      "speaker": "A",
+      "start_s": 706.012,
+      "end_s": 708.837,
+      "text": "you have. You didn't have 6 remote controls in front of you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 708.837,
+      "end_s": 710.845,
+      "text": "You want to integrate everything into one, like—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 710.845,
+      "end_s": 734.877,
+      "text": "Yeah. My experience has only been being given the remote control with the object I buy, not doing any tampering with it and programming, using it to program TV videos and things. But basically on/off, volume up and down, channel 1, 2, that basic functions. I don't think I could go any further with it. than that. So I suppose it's got to be something usable by someone like me as well."
+    },
+    {
+      "speaker": "A",
+      "start_s": 734.877,
+      "end_s": 750.745,
+      "text": "Yeah, the main— that's the main stuff anyway. I mean, and you don't want to— I hate, I hate looking at a control and seeing a million tiny little buttons with tiny little words saying what they all do and just sitting there searching for the teletext button."
+    },
+    {
+      "speaker": "C",
+      "start_s": 750.745,
+      "end_s": 755.365,
+      "text": "And symbols that you don't necessarily understand, symbols you're meant to understand that you don't."
+    },
+    {
+      "speaker": "A",
+      "start_s": 757.468,
+      "end_s": 778.54,
+      "text": "When they're— when you've got the main things on the front of it and a section opens up or something to the other functions, when you can do sound or options, kind of recording, things like that inside it, because it doesn't make— when you pick it up, it doesn't make it really complicated to look at. It's obvious what you're doing."
+    },
+    {
+      "speaker": "C",
+      "start_s": 778.54,
+      "end_s": 794.29,
+      "text": "Actually, that just raises a point. I wonder what our design people think, but you know, on a mobile phone You can press a key and it gives you a menu. It's got a menu display. I wonder if incorporating that into the design of a remote control might be useful. So you've got a little LCD display."
+    },
+    {
+      "speaker": "B",
+      "start_s": 794.29,
+      "end_s": 803.427,
+      "text": "Right. I was thinking on the same lines. Instead of having too many buttons and make it complicated for the user, maybe have an LCD display or something like that, like a mobile."
+    },
+    {
+      "speaker": "C",
+      "start_s": 803.427,
+      "end_s": 804.357,
+      "text": "With menus."
+    },
+    {
+      "speaker": "B",
+      "start_s": 804.357,
+      "end_s": 810.849,
+      "text": "With menus. And if it's somewhat similar to what you have on mobile phone, people might find it easier to browse and navigate also."
+    },
+    {
+      "speaker": "C",
+      "start_s": 811.16,
+      "end_s": 812,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 812.388,
+      "end_s": 814.797,
+      "text": "What about the older generation? What about granny and granddads?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 814.797,
+      "end_s": 817.752,
+      "text": "Do you mean to say with less access?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 817.752,
+      "end_s": 823.137,
+      "text": "My granddad can answer his mobile phone, but he couldn't even dream of texting or something like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 823.137,
+      "end_s": 826.923,
+      "text": "Can he program his remote control, or is he basic with that too?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 826.923,
+      "end_s": 829.192,
+      "text": "I don't think they tape things."
+    },
+    {
+      "speaker": "D",
+      "start_s": 829.192,
+      "end_s": 832.968,
+      "text": "My granddad's actually better than me at using teletext, so—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 832.968,
+      "end_s": 844.592,
+      "text": "Right. So that's a problem regardless of any design modifications you come up with. That's going to be a problem anyway with the older generation, perhaps. That's another issue, how we tackle"
+    },
+    {
+      "speaker": "D",
+      "start_s": 844.721,
+      "end_s": 862.02,
+      "text": "that. As long as it's self-intuitive and you can work out what everything's doing. Menus on phones now, they've got all these pictures and stuff, which makes it fairly obvious what you're trying to do."
+    },
+    {
+      "speaker": "A",
+      "start_s": 864.308,
+      "end_s": 864.325,
+      "text": "I"
+    },
+    {
+      "speaker": "D",
+      "start_s": 864.375,
+      "end_s": 865.412,
+      "text": "don't know how."
+    },
+    {
+      "speaker": "A",
+      "start_s": 866.343,
+      "end_s": 885.106,
+      "text": "I don't like the, you know, the new phones that have kind of got a Windows-based running system. I find it really confusing. I kept getting lost in the phone. I did. I've not got a new one, but my friend got a new one. I was trying to do things with it and I just kept getting lost, but that's just me."
+    },
+    {
+      "speaker": "D",
+      "start_s": 885.106,
+      "end_s": 898.604,
+      "text": "Yeah, I don't, I don't know how for €25 or €12.50 how much of a excellent screen you could get. You'd have to keep it down to a black and white LCD thing anyway."
+    },
+    {
+      "speaker": "C",
+      "start_s": 898.604,
+      "end_s": 911.545,
+      "text": "Is it possible that for the older generation you could have an extra button that you press for large print, like you do in large print books? Obviously it displays less on the screen, but as long as they can read it, that's the main thing."
+    },
+    {
+      "speaker": "A",
+      "start_s": 911.545,
+      "end_s": 934.745,
+      "text": "Yeah. What about a dual function in that you've got the basic buttons for your play, volume, program things, and also, and then a menu to go into with obvious pictures, obvious symbols, and that's where you control recording and things like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 934.745,
+      "end_s": 946.977,
+      "text": "The other thing is, just tacking into mobile phone design features again, you could have a flip-top remote control so that when you flip over the top, your screen is, you can have a bigger screen in the They flip over."
+    },
+    {
+      "speaker": "A",
+      "start_s": 946.977,
+      "end_s": 952.579,
+      "text": "I think that's a cost thing. I don't know how much we're going to know about—"
+    },
+    {
+      "speaker": "B",
+      "start_s": 952.579,
+      "end_s": 959.281,
+      "text": "It might save a bit of space. Instead of looking bulky, it might look small. But it might have its cost implications."
+    },
+    {
+      "speaker": "C",
+      "start_s": 959.281,
+      "end_s": 970.978,
+      "text": "And there's no reason we need to make it look as fashionable and stylish as a mobile phone. It can still be lightweight plastic, you know, something that's easily molded and produced. Sorry, I'm treading on your territory, guys."
+    },
+    {
+      "speaker": "A",
+      "start_s": 973.728,
+      "end_s": 984.94,
+      "text": "Right, okay, we've got half an hour before the next meeting, so we're all going to go off and do our individual things. I think that's probably about it, and then we'll come back and liaise again."
+    },
+    {
+      "speaker": "D",
+      "start_s": 984.94,
+      "end_s": 985.944,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 985.944,
+      "end_s": 989.068,
+      "text": "And I get to do another fantastic PowerPoint presentation."
+    },
+    {
+      "speaker": "D",
+      "start_s": 989.068,
+      "end_s": 1009.242,
+      "text": "Just a quick thing about what you were saying about the— it doesn't need to be fashionable. I had a quick look at the company website, and it's like, We put the fashion into electronics. So I think the whole design thing might be quite—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 1009.532,
+      "end_s": 1009.548,
+      "text": "I"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1009.773,
+      "end_s": 1009.918,
+      "text": "mean,"
+    },
+    {
+      "speaker": "C",
+      "start_s": 1010.82,
+      "end_s": 1010.917,
+      "text": "you"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1011.319,
+      "end_s": 1014.109,
+      "text": "can still have plastic and it look quite good."
+    },
+    {
+      "speaker": "C",
+      "start_s": 1014.109,
+      "end_s": 1022.048,
+      "text": "Yeah, I mean, it doesn't have to be— that was my main point. We don't have to use metal. I don't know if using plastic does make it cheaper. I presume it would."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1022.048,
+      "end_s": 1022.34,
+      "text": "Yeah,"
+    },
+    {
+      "speaker": "A",
+      "start_s": 1022.372,
+      "end_s": 1044.166,
+      "text": "it would, probably. I mean, the Sky remote controls and everything, they're kind of molded and look a bit different. And the Tally West remote controls are silver plastic, which looks a bit smarter. So yeah, I guess that's stuff we can think about. Okay, so let's break it up there. Okay. So see you in half an hour."
+    },
+    {
+      "speaker": "C",
+      "start_s": 1044.166,
+      "end_s": 1047.849,
+      "text": "Do we go back to our rooms?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 1047.849,
+      "end_s": 1048.394,
+      "text": "I think so, yeah."
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "A",
+      "start_s": 6.836,
+      "end_s": 14.536,
+      "text": "Are we— we're not allowed to dim the lights so people can see that a bit better?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 17.902,
+      "end_s": 18.064,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 18.953,
+      "end_s": 23.741,
+      "text": "Okay, that's fine. Am I supposed to be standing up there?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 24.34,
+      "end_s": 29.891,
+      "text": "So we've got both of these clipped on. Is she gonna answer me?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 29.987,
+      "end_s": 45.582,
+      "text": "Yeah, I've got both of them. Okay. Yes."
+    },
+    {
+      "speaker": "C",
+      "start_s": 49.382,
+      "end_s": 52.795,
+      "text": "God, geez, this is gonna fall off. It doesn't let you put it on."
+    },
+    {
+      "speaker": "A",
+      "start_s": 80.55,
+      "end_s": 82.88,
+      "text": "Okay, hello everybody."
+    },
+    {
+      "speaker": "B",
+      "start_s": 83.301,
+      "end_s": 83.43,
+      "text": "Hi."
+    },
+    {
+      "speaker": "A",
+      "start_s": 83.948,
+      "end_s": 91.655,
+      "text": "I'm Sarah, the project manager, and this is our first meeting, surprisingly enough."
+    },
+    {
+      "speaker": "A",
+      "start_s": 92.076,
+      "end_s": 101.313,
+      "text": "Okay, this is our agenda. We will do some stuff, get to know each other a bit better, to feel more comfortable with each other."
+    },
+    {
+      "speaker": "A",
+      "start_s": 102.588,
+      "end_s": 109.798,
+      "text": "Then we'll go do 2 talk about the project plan, discuss our own ideas and everything."
+    },
+    {
+      "speaker": "A",
+      "start_s": 112.161,
+      "end_s": 120.752,
+      "text": "And we've got 25 minutes to do that, as far as I can understand. Now, we're developing a remote control, which you probably already know."
+    },
+    {
+      "speaker": "A",
+      "start_s": 122.487,
+      "end_s": 134.839,
+      "text": "We want it to be original, something that people haven't thought of, that's not out in the shops, trendy, Appealing to a wide market, but, you know, not a hunk of metal."
+    },
+    {
+      "speaker": "A",
+      "start_s": 135.629,
+      "end_s": 141.042,
+      "text": "And user-friendly, grannies to kids, maybe even pooches should be able to use it."
+    },
+    {
+      "speaker": "A",
+      "start_s": 144.01,
+      "end_s": 148.893,
+      "text": "Okay, first is the functional design. This is where we all go off and do our individual work."
+    },
+    {
+      "speaker": "A",
+      "start_s": 150.472,
+      "end_s": 155.977,
+      "text": "What needs need to be fulfilled by the product? What effect the product has to have?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 156.729,
+      "end_s": 167.75,
+      "text": "and how it's actually going to do that. Conceptual design, what we're thinking, how it's going to go, and then the detailed design, how we're actually going to put it into practice and make it work."
+    },
+    {
+      "speaker": "A",
+      "start_s": 170.56,
+      "end_s": 178.308,
+      "text": "Okay, right, we're going to practice with the pens and draw our favorite animal on the whiteboard."
+    },
+    {
+      "speaker": "A",
+      "start_s": 178.42,
+      "end_s": 183.258,
+      "text": "I'll go first and sum up the characteristics of that animal."
+    },
+    {
+      "speaker": "A",
+      "start_s": 188.879,
+      "end_s": 211.881,
+      "text": "So, okay, I'll leave space for everyone else. What's"
+    },
+    {
+      "speaker": "A",
+      "start_s": 212.17,
+      "end_s": 243.325,
+      "text": "missing? We're"
+    },
+    {
+      "speaker": "A",
+      "start_s": 243.325,
+      "end_s": 248.853,
+      "text": "running out of blue. Okay. I'm not going to ask you to guess."
+    },
+    {
+      "speaker": "A",
+      "start_s": 248.901,
+      "end_s": 257.232,
+      "text": "I'm going to tell you that's supposed to be a tiger. And I see them as majestic."
+    },
+    {
+      "speaker": "A",
+      "start_s": 257.706,
+      "end_s": 269.09,
+      "text": "Mm-hmm. independent, and proud."
+    },
+    {
+      "speaker": "A",
+      "start_s": 272.418,
+      "end_s": 276.26,
+      "text": "Now, who would like to go next? Me."
+    },
+    {
+      "speaker": "B",
+      "start_s": 276.742,
+      "end_s": 286.383,
+      "text": "Okay. We've got— where did this come from?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 287.733,
+      "end_s": 288.282,
+      "text": "There you go, pal."
+    },
+    {
+      "speaker": "B",
+      "start_s": 289.185,
+      "end_s": 296.124,
+      "text": "Oh, yep, thank you. Maybe you can guess what I'm trying to make."
+    },
+    {
+      "speaker": "C",
+      "start_s": 306.468,
+      "end_s": 307.211,
+      "text": "A kind of dog?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 309.44,
+      "end_s": 315.131,
+      "text": "Yep. It's actually sitting, so—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 315.196,
+      "end_s": 316.231,
+      "text": "Sorry?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 317.072,
+      "end_s": 321.505,
+      "text": "It's sitting, it's not standing. Okay, I see it as one thing, it's very supportive."
+    },
+    {
+      "speaker": "B",
+      "start_s": 324.193,
+      "end_s": 330.614,
+      "text": "It's your best friend in your— you can talk to a dog, it can be your best friend. It doesn't discriminate between you based on what you are."
+    },
+    {
+      "speaker": "B",
+      "start_s": 331.58,
+      "end_s": 337.939,
+      "text": "Second, it's loyal. And third thing, it's got intuition."
+    },
+    {
+      "speaker": "B",
+      "start_s": 340.694,
+      "end_s": 345.479,
+      "text": "Means dogs can sometimes make out between a thief and a person."
+    },
+    {
+      "speaker": "B",
+      "start_s": 345.527,
+      "end_s": 349.2,
+      "text": "So basically, these are the 3 unique features I think belong to"
+    },
+    {
+      "speaker": "A",
+      "start_s": 350.263,
+      "end_s": 351.375,
+      "text": "a dog. Okay, thank"
+    },
+    {
+      "speaker": "D",
+      "start_s": 353.985,
+      "end_s": 354.081,
+      "text": "you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 356.385,
+      "end_s": 356.82,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "C",
+      "start_s": 356.949,
+      "end_s": 361.736,
+      "text": "Please leave me a space at the bottom. I'm little. I can't get to the top. I'll be standing on a chair."
+    },
+    {
+      "speaker": "D",
+      "start_s": 361.817,
+      "end_s": 373.807,
+      "text": "Well, since you guys have chosen the ones I wanted to do, Okay. I have to go for something a bit random. Also, my drawing skill isn't that great."
+    },
+    {
+      "speaker": "A",
+      "start_s": 374.179,
+      "end_s": 376.75,
+      "text": "As you can see, the quality of the work today is—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 376.928,
+      "end_s": 378.205,
+      "text": "I think it's outstandingly good."
+    },
+    {
+      "speaker": "D",
+      "start_s": 379.51,
+      "end_s": 384.077,
+      "text": "Okay, now I'm going to have to change what it was originally going to be, because that looks like a beak now."
+    },
+    {
+      "speaker": "D",
+      "start_s": 394.716,
+      "end_s": 397.145,
+      "text": "Crocodile? Yeah, it can be a crocodile."
+    },
+    {
+      "speaker": "A",
+      "start_s": 397.29,
+      "end_s": 398.528,
+      "text": "It can be a crocodile."
+    },
+    {
+      "speaker": "D",
+      "start_s": 398.705,
+      "end_s": 405.727,
+      "text": "Well, it was— firstly, it was an attempt at a T-Rex, and then it sort of changed into a pelican, but it can be a crocodile."
+    },
+    {
+      "speaker": "A",
+      "start_s": 420.106,
+      "end_s": 420.886,
+      "text": "That's lovely."
+    },
+    {
+      "speaker": "D",
+      "start_s": 421.243,
+      "end_s": 440.054,
+      "text": "Yeah, and I'll have to think on the spot of things that it is. Scary, strong, yeah, that's about it, I think."
+    },
+    {
+      "speaker": "C",
+      "start_s": 441.668,
+      "end_s": 446.265,
+      "text": "Okay, I'm very impressed with your artistic skills. Mine are dreadful."
+    },
+    {
+      "speaker": "C",
+      "start_s": 448.116,
+      "end_s": 454.893,
+      "text": "Oops, this is now coming apart. Let me just put the top in. I hope that clicks in."
+    },
+    {
+      "speaker": "C",
+      "start_s": 455.038,
+      "end_s": 460.699,
+      "text": "I'll just— I'll hold it on. Oops, oh dear, what happened there?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 461.46,
+      "end_s": 461.981,
+      "text": "Technical help."
+    },
+    {
+      "speaker": "C",
+      "start_s": 465.482,
+      "end_s": 474.471,
+      "text": "Hopefully that'll stay on. Two-handed version. Okay."
+    },
+    {
+      "speaker": "C",
+      "start_s": 474.521,
+      "end_s": 483.171,
+      "text": "Again, this is off the top of my head. I was going to do a big cat too. Oh dear, it doesn't look like what I want it to be."
+    },
+    {
+      "speaker": "C",
+      "start_s": 488.15,
+      "end_s": 494.665,
+      "text": "Ah. It's not a vampire bat, honestly. And somewhere there's a body behind."
+    },
+    {
+      "speaker": "C",
+      "start_s": 497.82,
+      "end_s": 501.541,
+      "text": "That's my dreadful. That's the worst. Yeah, it's meant to be an eagle."
+    },
+    {
+      "speaker": "D",
+      "start_s": 502.533,
+      "end_s": 502.728,
+      "text": "You"
+    },
+    {
+      "speaker": "C",
+      "start_s": 503.037,
+      "end_s": 507.591,
+      "text": "can tell it's a flying animal. Could have been a seagull. I never thought of a seagull."
+    },
+    {
+      "speaker": "C",
+      "start_s": 508.157,
+      "end_s": 512.896,
+      "text": "An eagle. Again, I'm thinking on my feet. Goodness. I suppose they're also independent."
+    },
+    {
+      "speaker": "C",
+      "start_s": 512.944,
+      "end_s": 518.135,
+      "text": "I'd put that one down again. Da da."
+    },
+    {
+      "speaker": "D",
+      "start_s": 519.986,
+      "end_s": 520.295,
+      "text": "Um. They"
+    },
+    {
+      "speaker": "C",
+      "start_s": 520.295,
+      "end_s": 524.218,
+      "text": "get a go. Independent, right? Did you say they're good at golf?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 524.446,
+      "end_s": 524.559,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "C",
+      "start_s": 525.03,
+      "end_s": 525.355,
+      "text": "Are they?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 526.395,
+      "end_s": 526.801,
+      "text": "Eagle."
+    },
+    {
+      "speaker": "C",
+      "start_s": 527.045,
+      "end_s": 536.498,
+      "text": "Oh, right. Okay. I'm not good at golf. I'll say they're quite free-spirited, flying around everywhere, doing their own thing."
+    },
+    {
+      "speaker": "C",
+      "start_s": 541.985,
+      "end_s": 546.831,
+      "text": "And birds of prey, aren't they? Oh dear. Intrepid."
+    },
+    {
+      "speaker": "C",
+      "start_s": 547.556,
+      "end_s": 556.293,
+      "text": "Intrepid. There we go. I hope that pen's going to be okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 558.88,
+      "end_s": 563.565,
+      "text": "Whoops. Okay, that was fun."
+    },
+    {
+      "speaker": "A",
+      "start_s": 564.305,
+      "end_s": 573.114,
+      "text": "Right, um, finance-wise, we've got a selling price at €25, which I don't actually know what that is in pounds at all."
+    },
+    {
+      "speaker": "A",
+      "start_s": 573.179,
+      "end_s": 576.63,
+      "text": "£25. Any ideas?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 576.63,
+      "end_s": 581.25,
+      "text": "It's about 1.4 or something like that. 1.4 euro would make a pound or something."
+    },
+    {
+      "speaker": "D",
+      "start_s": 581.25,
+      "end_s": 585.95,
+      "text": "Yeah, yeah, something like that. So yeah, about 17 pounds."
+    },
+    {
+      "speaker": "A",
+      "start_s": 587.17,
+      "end_s": 588.05,
+      "text": "Okay, that's expensive."
+    },
+    {
+      "speaker": "C",
+      "start_s": 588.39,
+      "end_s": 591.03,
+      "text": "Should we be making notes of this? We can just refer to this later, can't we?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 591.03,
+      "end_s": 595.27,
+      "text": "I think so. I think I'd be able to pull it up or put it in the shared folder."
+    },
+    {
+      "speaker": "D",
+      "start_s": 595.27,
+      "end_s": 601.883,
+      "text": "Having said that though, if you want to get one of those, the ones on the market at the moment, that's They're about £20 anyway."
+    },
+    {
+      "speaker": "D",
+      "start_s": 603.276,
+      "end_s": 606.306,
+      "text": "So, yeah, we had to buy one."
+    },
+    {
+      "speaker": "C",
+      "start_s": 608.13,
+      "end_s": 614.016,
+      "text": "So, I suppose later it depends if we want to undercut the price, or is it going to make our product look like a cheapy, cheapy option?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 614.371,
+      "end_s": 617.954,
+      "text": "Yeah, production costs at £12.50, so"
+    },
+    {
+      "speaker": "B",
+      "start_s": 618.373,
+      "end_s": 619.114,
+      "text": "pretty huge margin."
+    },
+    {
+      "speaker": "A",
+      "start_s": 619.179,
+      "end_s": 627.153,
+      "text": "Half of the selling price is taken up by building it, and profit aim is £15."
+    },
+    {
+      "speaker": "A",
+      "start_s": 627.362,
+      "end_s": 629.369,
+      "text": "million euros, which is a—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 630.428,
+      "end_s": 631.087,
+      "text": "In our first year?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 631.761,
+      "end_s": 635.31,
+      "text": "Yes. Yeah, I presume so."
+    },
+    {
+      "speaker": "C",
+      "start_s": 636.418,
+      "end_s": 645.104,
+      "text": "You've got market range international, and you did say earlier it's got to be accessible and usable by sort of all age groups."
+    },
+    {
+      "speaker": "C",
+      "start_s": 645.329,
+      "end_s": 650.772,
+      "text": "Just, we're not focusing on business market, any particular thing. It's everyone, user-friendly to everyone."
+    },
+    {
+      "speaker": "C",
+      "start_s": 651.206,
+      "end_s": 654.402,
+      "text": "Okay. Big target group."
+    },
+    {
+      "speaker": "A",
+      "start_s": 655.032,
+      "end_s": 661.396,
+      "text": "Yes, yes. I don't think we have to— I don't think it's a case of worrying about different languages and things like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 661.879,
+      "end_s": 662.12,
+      "text": "No."
+    },
+    {
+      "speaker": "A",
+      "start_s": 662.7,
+      "end_s": 668.685,
+      "text": "Making that key point, just that it's going to be in the international market like Australia, America, things like that."
+    },
+    {
+      "speaker": "A",
+      "start_s": 669.766,
+      "end_s": 677.579,
+      "text": "Okay. What are your experiences with remote controls?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 678.77,
+      "end_s": 687.927,
+      "text": "I mean, I've got— we got— we had 3 videos, a TV, and a sort of amp thing all set up."
+    },
+    {
+      "speaker": "A",
+      "start_s": 688.41,
+      "end_s": 700.764,
+      "text": "So we got one of the universal remote controls that you program each of your things into, but that kept losing the signals, so we'd have to reprogram it every now and again. I think it was quite a cheapy as well."
+    },
+    {
+      "speaker": "D",
+      "start_s": 701.233,
+      "end_s": 701.427,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 701.492,
+      "end_s": 704.566,
+      "text": "So that might have had something to do with it, but that was quite good, the fact that you You could"
+    },
+    {
+      "speaker": "D",
+      "start_s": 705.369,
+      "end_s": 705.995,
+      "text": "use all the ones"
+    },
+    {
+      "speaker": "A",
+      "start_s": 706.012,
+      "end_s": 708.837,
+      "text": "you have. You didn't have 6 remote controls in front of you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 709.223,
+      "end_s": 710.845,
+      "text": "You want to integrate everything into one, like—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 711.326,
+      "end_s": 721.94,
+      "text": "Yeah. My experience has only been being given the remote control with the object I buy, not doing any tampering with it and programming, using it to program TV videos and things."
+    },
+    {
+      "speaker": "C",
+      "start_s": 722.55,
+      "end_s": 727.511,
+      "text": "But basically on/off, volume up and down, channel 1, 2, that basic functions."
+    },
+    {
+      "speaker": "C",
+      "start_s": 727.865,
+      "end_s": 734.877,
+      "text": "I don't think I could go any further with it. than that. So I suppose it's got to be something usable by someone like me as well."
+    },
+    {
+      "speaker": "A",
+      "start_s": 735.086,
+      "end_s": 750.745,
+      "text": "Yeah, the main— that's the main stuff anyway. I mean, and you don't want to— I hate, I hate looking at a control and seeing a million tiny little buttons with tiny little words saying what they all do and just sitting there searching for the teletext button."
+    },
+    {
+      "speaker": "C",
+      "start_s": 750.889,
+      "end_s": 755.365,
+      "text": "And symbols that you don't necessarily understand, symbols you're meant to understand that you don't."
+    },
+    {
+      "speaker": "A",
+      "start_s": 757.468,
+      "end_s": 776.165,
+      "text": "When they're— when you've got the main things on the front of it and a section opens up or something to the other functions, when you can do sound or options, kind of recording, things like that inside it, because it doesn't make— when you pick it up, it doesn't make it really complicated to look at."
+    },
+    {
+      "speaker": "A",
+      "start_s": 776.342,
+      "end_s": 778.54,
+      "text": "It's obvious what you're doing."
+    },
+    {
+      "speaker": "C",
+      "start_s": 779.937,
+      "end_s": 787.028,
+      "text": "Actually, that just raises a point. I wonder what our design people think, but you know, on a mobile phone You can press a key and it gives you a menu."
+    },
+    {
+      "speaker": "C",
+      "start_s": 787.076,
+      "end_s": 794.29,
+      "text": "It's got a menu display. I wonder if incorporating that into the design of a remote control might be useful. So you've got a little LCD display."
+    },
+    {
+      "speaker": "B",
+      "start_s": 794.594,
+      "end_s": 803.427,
+      "text": "Right. I was thinking on the same lines. Instead of having too many buttons and make it complicated for the user, maybe have an LCD display or something like that, like a mobile."
+    },
+    {
+      "speaker": "C",
+      "start_s": 803.892,
+      "end_s": 804.357,
+      "text": "With menus."
+    },
+    {
+      "speaker": "B",
+      "start_s": 804.469,
+      "end_s": 810.849,
+      "text": "With menus. And if it's somewhat similar to what you have on mobile phone, people might find it easier to browse and navigate also."
+    },
+    {
+      "speaker": "C",
+      "start_s": 811.16,
+      "end_s": 812,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 812.388,
+      "end_s": 814.797,
+      "text": "What about the older generation? What about granny and granddads?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 816.524,
+      "end_s": 817.752,
+      "text": "Do you mean to say with less access?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 817.801,
+      "end_s": 823.137,
+      "text": "My granddad can answer his mobile phone, but he couldn't even dream of texting or something like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 823.881,
+      "end_s": 826.923,
+      "text": "Can he program his remote control, or is he basic with that too?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 828.171,
+      "end_s": 829.192,
+      "text": "I don't think they tape things."
+    },
+    {
+      "speaker": "D",
+      "start_s": 830.44,
+      "end_s": 832.968,
+      "text": "My granddad's actually better than me at using teletext, so—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 833.422,
+      "end_s": 838.604,
+      "text": "Right. So that's a problem regardless of any design modifications you come up with."
+    },
+    {
+      "speaker": "C",
+      "start_s": 839.312,
+      "end_s": 844.592,
+      "text": "That's going to be a problem anyway with the older generation, perhaps. That's another issue, how we tackle"
+    },
+    {
+      "speaker": "D",
+      "start_s": 844.721,
+      "end_s": 852.356,
+      "text": "that. As long as it's self-intuitive and you can work out what everything's doing."
+    },
+    {
+      "speaker": "D",
+      "start_s": 852.485,
+      "end_s": 862.02,
+      "text": "Menus on phones now, they've got all these pictures and stuff, which makes it fairly obvious what you're trying to do."
+    },
+    {
+      "speaker": "A",
+      "start_s": 864.308,
+      "end_s": 864.325,
+      "text": "I"
+    },
+    {
+      "speaker": "D",
+      "start_s": 864.375,
+      "end_s": 865.412,
+      "text": "don't know how."
+    },
+    {
+      "speaker": "A",
+      "start_s": 866.343,
+      "end_s": 871.587,
+      "text": "I don't like the, you know, the new phones that have kind of got a Windows-based running system."
+    },
+    {
+      "speaker": "A",
+      "start_s": 872.998,
+      "end_s": 877.12,
+      "text": "I find it really confusing. I kept getting lost in the phone. I did."
+    },
+    {
+      "speaker": "A",
+      "start_s": 877.232,
+      "end_s": 885.106,
+      "text": "I've not got a new one, but my friend got a new one. I was trying to do things with it and I just kept getting lost, but that's just me."
+    },
+    {
+      "speaker": "D",
+      "start_s": 885.331,
+      "end_s": 893.601,
+      "text": "Yeah, I don't, I don't know how for €25 or €12.50 how much of a excellent screen you could get."
+    },
+    {
+      "speaker": "D",
+      "start_s": 893.73,
+      "end_s": 898.604,
+      "text": "You'd have to keep it down to a black and white LCD thing anyway."
+    },
+    {
+      "speaker": "C",
+      "start_s": 898.831,
+      "end_s": 904.822,
+      "text": "Is it possible that for the older generation you could have an extra button that you press for large print, like you do in large print books?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 905.733,
+      "end_s": 911.545,
+      "text": "Obviously it displays less on the screen, but as long as they can read it, that's the main thing."
+    },
+    {
+      "speaker": "A",
+      "start_s": 911.981,
+      "end_s": 932,
+      "text": "Yeah. What about a dual function in that you've got the basic buttons for your play, volume, program things, and also, and then a menu to go into with obvious pictures, obvious symbols, and that's"
+    },
+    {
+      "speaker": "A",
+      "start_s": 932.113,
+      "end_s": 934.745,
+      "text": "where you control recording and things like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 935.258,
+      "end_s": 946.977,
+      "text": "The other thing is, just tacking into mobile phone design features again, you could have a flip-top remote control so that when you flip over the top, your screen is, you can have a bigger screen in the They flip over."
+    },
+    {
+      "speaker": "A",
+      "start_s": 948.506,
+      "end_s": 952.579,
+      "text": "I think that's a cost thing. I don't know how much we're going to know about—"
+    },
+    {
+      "speaker": "B",
+      "start_s": 952.772,
+      "end_s": 959.281,
+      "text": "It might save a bit of space. Instead of looking bulky, it might look small. But it might have its cost implications."
+    },
+    {
+      "speaker": "C",
+      "start_s": 959.783,
+      "end_s": 963.784,
+      "text": "And there's no reason we need to make it look as fashionable and stylish as a mobile phone."
+    },
+    {
+      "speaker": "C",
+      "start_s": 963.833,
+      "end_s": 970.978,
+      "text": "It can still be lightweight plastic, you know, something that's easily molded and produced. Sorry, I'm treading on your territory, guys."
+    },
+    {
+      "speaker": "A",
+      "start_s": 973.728,
+      "end_s": 978.239,
+      "text": "Right, okay, we've got half an hour before the next meeting, so we're all going to go off and do our individual things."
+    },
+    {
+      "speaker": "A",
+      "start_s": 981.249,
+      "end_s": 984.94,
+      "text": "I think that's probably about it, and then we'll come back and liaise again."
+    },
+    {
+      "speaker": "D",
+      "start_s": 985.685,
+      "end_s": 985.944,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 986.025,
+      "end_s": 989.068,
+      "text": "And I get to do another fantastic PowerPoint presentation."
+    },
+    {
+      "speaker": "D",
+      "start_s": 989.71,
+      "end_s": 996.68,
+      "text": "Just a quick thing about what you were saying about the— it doesn't need to be fashionable."
+    },
+    {
+      "speaker": "D",
+      "start_s": 997.652,
+      "end_s": 1004.878,
+      "text": "I had a quick look at the company website, and it's like, We put the fashion into electronics."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1005.023,
+      "end_s": 1009.242,
+      "text": "So I think the whole design thing might be quite—"
+    },
+    {
+      "speaker": "C",
+      "start_s": 1009.532,
+      "end_s": 1009.548,
+      "text": "I"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1009.773,
+      "end_s": 1009.918,
+      "text": "mean,"
+    },
+    {
+      "speaker": "C",
+      "start_s": 1010.82,
+      "end_s": 1010.917,
+      "text": "you"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1011.319,
+      "end_s": 1014.109,
+      "text": "can still have plastic and it look quite good."
+    },
+    {
+      "speaker": "C",
+      "start_s": 1014.851,
+      "end_s": 1019.658,
+      "text": "Yeah, I mean, it doesn't have to be— that was my main point. We don't have to use metal."
+    },
+    {
+      "speaker": "C",
+      "start_s": 1019.707,
+      "end_s": 1022.048,
+      "text": "I don't know if using plastic does make it cheaper. I presume it would."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1022.113,
+      "end_s": 1022.34,
+      "text": "Yeah,"
+    },
+    {
+      "speaker": "A",
+      "start_s": 1022.372,
+      "end_s": 1029.245,
+      "text": "it would, probably. I mean, the Sky remote controls and everything, they're kind of molded and look a bit different."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1029.48,
+      "end_s": 1034.388,
+      "text": "And the Tally West remote controls are silver plastic, which looks a bit smarter."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1036,
+      "end_s": 1041.535,
+      "text": "So yeah, I guess that's stuff we can think about. Okay, so let's break it up there."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1041.697,
+      "end_s": 1044.166,
+      "text": "Okay. So see you in half an hour."
+    },
+    {
+      "speaker": "C",
+      "start_s": 1046.397,
+      "end_s": 1047.849,
+      "text": "Do we go back to our rooms?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 1047.899,
+      "end_s": 1048.394,
+      "text": "I think so, yeah."
+    }
+  ]
+}

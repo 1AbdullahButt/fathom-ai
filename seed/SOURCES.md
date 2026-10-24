@@ -70,3 +70,12 @@ Command: `ffmpeg -i <original> -vn -ac 1 -ar 44100 -b:a 48k seed/media/<slug>.mp
 | `ami-es2002a` | ES2002a | Edinburgh | https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2002a/audio/ES2002a.Mix-Headset.wav | 21:13 (1272.6 s) | 4 |
 | `ami-es2004a` | ES2004a | Edinburgh | https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/ES2004a/audio/ES2004a.Mix-Headset.wav | 17:29 (1049.4 s) | 4 |
 | `ami-is1009a` | IS1009a | IDIAP | https://groups.inf.ed.ac.uk/ami/AMICorpusMirror/amicorpus/IS1009a/audio/IS1009a.Mix-Headset.wav | 13:59 (838.8 s) | 4 |
+
+## Speaker names and diarization caveats
+Names come from roll call and self-introductions (mapping in seed/speakers.json).
+- Seattle: AssemblyAI found 8 speakers. Councilmember Moore was not separated from other voices,
+  the two remote reappointees were merged into one speaker, and a few one-word roll-call
+  replies are attributed to the wrong person.
+- AMI IS1009a: Janhavi's self-introduction was merged into Francina's speaker.
+- AMI ES2004a: only the project manager says her name; other speakers are shown as "name not stated".
+- AMI dates are approximate (corpus recorded 2005); exact days are placeholders for ordering.

@@ -1,0 +1,2914 @@
+{
+  "slug": "seattle-len-2025-03-13",
+  "provider": "assemblyai",
+  "transcript_id": "b22f22c6-f4ca-4556-aa67-e2004ac14320",
+  "duration_s": 3355,
+  "utterances": [
+    {
+      "speaker": "A",
+      "start_s": 11.227,
+      "end_s": 13.328,
+      "text": "All right."
+    },
+    {
+      "speaker": "B",
+      "start_s": 13.732,
+      "end_s": 35.758,
+      "text": "Good morning, everyone. The March 13, 2025 meeting of the Libraries, Education, and Neighborhoods Committee will come to order. It's 9:31 a.m. I'm Maritza Rivera, chair of the committee. I would like to note that Councilmember Hollingsworth is excused today. Will the clerk please call the roll?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 35.758,
+      "end_s": 37.352,
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 37.352,
+      "end_s": 38.737,
+      "text": "Here."
+    },
+    {
+      "speaker": "C",
+      "start_s": 38.737,
+      "end_s": 40.347,
+      "text": "Councilmember Moore?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 40.347,
+      "end_s": 41.443,
+      "text": "Present."
+    },
+    {
+      "speaker": "C",
+      "start_s": 41.443,
+      "end_s": 43.215,
+      "text": "Vice Chair Rink?"
+    },
+    {
+      "speaker": "E",
+      "start_s": 43.215,
+      "end_s": 44.182,
+      "text": "Present."
+    },
+    {
+      "speaker": "C",
+      "start_s": 44.182,
+      "end_s": 45.81,
+      "text": "And Chair Rivera?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 45.81,
+      "end_s": 46.374,
+      "text": "Present."
+    },
+    {
+      "speaker": "C",
+      "start_s": 46.374,
+      "end_s": 48.613,
+      "text": "4 councilmembers are present."
+    },
+    {
+      "speaker": "B",
+      "start_s": 48.613,
+      "end_s": 98.087,
+      "text": "All right. If there's no objection, the agenda will be adopted. Hearing no objection, the agenda is adopted. There are 4 items of business on today's agenda. We have the reappointment of Carmen Bendixen to the Seattle Public Library Board of Trustees, the reappointments of Evan Smith and Linda Thompson Black to the Families Education Preschool and Promise Levy Oversight Committee, and a presentation from the Department of Neighborhoods on the update on Chinatown International District community capacity We will now open the hybrid public comment period. Public comments should relate to the items of the agenda that I just read out loud or within the purview of this committee. Clerk, how many speakers are signed up today?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 98.087,
+      "end_s": 103.589,
+      "text": "Currently we have one in-person speaker and no remote speakers on the list for today."
+    },
+    {
+      "speaker": "B",
+      "start_s": 103.589,
+      "end_s": 107.888,
+      "text": "Thank you, Clerk. Can you please read the public comment instructions?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 107.888,
+      "end_s": 141.972,
+      "text": "The public comment period will be moderated in the following manner. The public comment period is up to 20 minutes. Each speaker will have 2 minutes. Speakers will be called in the order in which they registered. We will start with in-person speakers first and then remote speakers until the public comment period has ended. Speakers will hear a chime when 10 seconds are left of their time. The public period— the public comment period is now open. We will begin with the first speaker on the list. The first in-person speaker is Wren Wheeler."
+    },
+    {
+      "speaker": "F",
+      "start_s": 141.972,
+      "end_s": 147.963,
+      "text": "Hello, is this working?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 148.076,
+      "end_s": 148.173,
+      "text": "Okay."
+    },
+    {
+      "speaker": "F",
+      "start_s": 148.948,
+      "end_s": 233.755,
+      "text": "Um, thank you, Chair Rivera, and all members of the committee. My name is Wren Wheeler. I use she/her pronouns, and I'm a staff member at the Wing Luke Museum and an active community member of the Chinatown International District. So I'm here to talk about that item on the agenda. The museum has been part of the CID Visioning Group since the beginning. I myself have only been part of the group on a regular basis since the last year, but I have to say that if, and I'll backtrack a little bit, the museum is known for our community advisory committee process, and for those who don't know what that is, we, for almost all of our exhibits, we gather community input and they really direct the, how an exhibit will go and what programs will go along with that exhibit. And similarly, the community, the CID Community Vision Group is very similar. It's comprised of community members from all facets of the CID, maybe not all, but a lot of members of the community. And we work together really well to— we know we have— we don't agree on everything, but we've figured out a process to work through all of those issues and come together on the things that really matter to all of us. So I'm here to just give a shout out to our Department of Neighborhoods and hope that you continue to support the CID through their work. And I'm excited to hear their presentation. Thank you."
+    },
+    {
+      "speaker": "D",
+      "start_s": 233.755,
+      "end_s": 235.383,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 239.544,
+      "end_s": 252.459,
+      "text": "All right. There are no additional speakers, registered speakers. The public comment period is now closed. So now we'll proceed to our items of business. Will the clerk please read today's first item into the record?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 252.459,
+      "end_s": 267.211,
+      "text": "Agenda item 1, appointment 03101, the reappointment of Carmen Bendixen as member of the Seattle Public Library Board of Trustees for a term to April 1st, 2030."
+    },
+    {
+      "speaker": "B",
+      "start_s": 267.211,
+      "end_s": 346.145,
+      "text": "Thank you, clerk. This reappointment has been read into the record. Carmen is joining us virtually. Welcome, Carmen. Thank you for joining us. Carmen Bendixen was initially appointed to the library board in April 2020 by Mayor Jenny Durkan and has served as an active and engaged trustee for 5 years, during which she has held the position of board president and vice president, as well as serving on the executive search committee during the national search to hire a new chief librarian in 2022. As a library board trustee, she has played an active role in guiding policy and budget issues, as well as the development of the library's 2024-2023 strategic— excuse me, 2033 strategic plan. Bendixen previously served on the board of the Friends of the Seattle Public Library, holding roles of president, vice president, and secretary, and helping to lead advocacy efforts during the 2012 and 2019 library levy campaigns. She's a regular user of the Greenwood and Green Lake branches and has served as a welcome desk and and events volunteer at the Central Library. Again, I want to thank Carmen for giving generously of her time and for agreeing to extend her time on the library board. Carmen, would you like to say a few words?"
+    },
+    {
+      "speaker": "G",
+      "start_s": 346.145,
+      "end_s": 367.615,
+      "text": "Um, good morning everyone. Sorry I'm not there, I'm a little under the weather, but, um, thank you for considering my reappointment. And, um, yeah, I'm just happy to continue the work and love the Seattle Public Library."
+    },
+    {
+      "speaker": "B",
+      "start_s": 367.615,
+      "end_s": 410.282,
+      "text": "Thank you, Carmen. I'm sorry that you're under the weather. Thank you for joining us virtually. And again, I agree with you, love the Seattle Public Library, and really want to thank you for your service. Again, we always talk about this, but these are volunteer positions. People do not get paid to serve. on these positions and very much appreciate people's willingness and generosity in giving of their time to this important work. So thank you, Carmen. Colleagues, do any of you have any questions or comments? If not, all right, seeing none, I move that the committee recommend confirmation of the appointment. Is there a second?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 410.282,
+      "end_s": 411.578,
+      "text": "Second."
+    },
+    {
+      "speaker": "B",
+      "start_s": 411.578,
+      "end_s": 421.047,
+      "text": "It is moved and seconded to confirm the appointment. Are there Any further comments? Will the clerk please call the roll on the confirmation of the appointment?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 421.047,
+      "end_s": 422.425,
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 422.425,
+      "end_s": 422.97,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 422.97,
+      "end_s": 424.508,
+      "text": "Councilmember Moore?"
+    },
+    {
+      "speaker": "H",
+      "start_s": 424.508,
+      "end_s": 425.133,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 425.133,
+      "end_s": 426.96,
+      "text": "Vice Chair Rink?"
+    },
+    {
+      "speaker": "H",
+      "start_s": 426.96,
+      "end_s": 427.392,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 427.392,
+      "end_s": 428.979,
+      "text": "Chair Rivera?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 428.979,
+      "end_s": 429.299,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 429.299,
+      "end_s": 432.424,
+      "text": "4 in favor, none opposed."
+    },
+    {
+      "speaker": "B",
+      "start_s": 432.424,
+      "end_s": 451.753,
+      "text": "The motion carries, and the recommendation that the appointment be confirmed will be sent to the full, uh, City Council committee on Tuesday, March 18th. We will now move to the 2nd and 3rd items on the agenda. Again, Carmen, thank you for being here. Will the clerk please read the 2nd and 3rd agenda items into the record?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 451.753,
+      "end_s": 484.589,
+      "text": "Agenda item 2, appointment 03104, the reappointment of Evan Smith as member of the Families Education Preschool and Promise Levy Oversight Committee for a term to December 31st, 2026. And agenda item 3, appointment 03105, the reappointment of Linda Thompson Black as a member of the Families Education Preschool and Promise Levy Oversight Committee for a term to December 31st, 2026."
+    },
+    {
+      "speaker": "B",
+      "start_s": 484.589,
+      "end_s": 550.507,
+      "text": "Thank you, Clerk. These appointments have been read into the record. Evan is joining us virtually. I see him on there. And Linda Thompson Black is in person. Thank you for being here this morning. I want to read about both of them. Evan Smith was appointed to Seattle Families Education Preschool and Promise Levy Oversight Committee in 2022. In his professional career, Evan has worked as the director of school openings and director for the Office of School Operations for the District of Columbia Public Schools. Evan transitioned to a different industry and is currently serving as the vice president of technology strategy and business transformation for Starbucks. He continues to be involved in the education sector as a member of multiple education boards. Evan currently serves as the board director of the College Success Foundation and as a board officer for Schools First while still being a part of the FEP, excuse me, FEP Levy Oversight Committee. I wanna thank Evan for agreeing to serve a second term on the Levy Oversight Committee. Evan, would you like to say a few words?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 550.507,
+      "end_s": 567.275,
+      "text": "Hi, yes, I'm just, would like to say I'm honored to be considered for reappointment. It's been a great honor to serve Seattle in the capacity in the first term, and I look forward to being considered. And thank you all, and apologies I couldn't be there in person today."
+    },
+    {
+      "speaker": "B",
+      "start_s": 567.275,
+      "end_s": 631.89,
+      "text": "Thank you, Evan. Thank you for agreeing to serve a second term on the Levy Oversight Committee on this important work. And now Linda Thompson Black, here in person. Linda Thompson Black was appointed to Seattle Families Education Preschool and Promise Levy Oversight Committee in 2022 as well. Linda currently works as the area development director for the United Negro College Fund, which helps minority students across Seattle by providing them with the funds they need to support their college education. Additionally, Linda has experience working for the City of Seattle, where she was a special assistant to Mayor Norm Rice, focusing on education and human services. While working with Mayor Norm Rice, Linda helped lead the very successful education summit during his tenure, which resulted in the passage of the Families in Education Levy, which is a precursor to the current Families Education Preschool Promise Levy. I want to thank Linda for agreeing to serve a second term to the Levy Oversight Committee. Linda, would you like to say a few words? You can step up to the mic."
+    },
+    {
+      "speaker": "G",
+      "start_s": 631.89,
+      "end_s": 661.861,
+      "text": "Yes, thank you so much for the opportunity to be a member of the Levy Oversight Committee. I want to thank the, um, education team. They are amazing and they do Great work. This is a passion project for me. We have to have that next generation of educated workplace, and we want opportunity for all. So I'm excited for a second term and look forward to working with my other committee members, if considered."
+    },
+    {
+      "speaker": "B",
+      "start_s": 661.861,
+      "end_s": 663.849,
+      "text": "Thank you, Linda."
+    },
+    {
+      "speaker": "G",
+      "start_s": 663.849,
+      "end_s": 664.442,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 664.442,
+      "end_s": 735.52,
+      "text": "And we just so appreciate your expertise, and, and yours too, Evan, and really appreciate again your willingness and your generosity to serve on the Levy Oversight Committee to do this important work. And I should say, colleagues, that the term— the levy expires this year. The terms are till next year unless there is some change, given now that there's a new levy coming on. And we have talked to both Linda and Evan about that possibility of that term, you know, if there are any changes to the term, and they both have agreed even with that. stipulations. So really so fortunate to have them here. And just Linda and I recently met, as I did Evan, I met with all the members of the Levy Oversight Committee, or most of them, and I, I, we just have great folks serving and we are just so lucky to have them on this committee. So thank you all. Colleagues, do you have any questions or comments? All right then, I will— I move that the committee recommend Confirmation of both appointments, um, of Evan Smith and Linda Thompson Black. Is there a second?"
+    },
+    {
+      "speaker": "G",
+      "start_s": 735.52,
+      "end_s": 736.162,
+      "text": "Second."
+    },
+    {
+      "speaker": "B",
+      "start_s": 736.162,
+      "end_s": 746.277,
+      "text": "It is moved and seconded to confirm the appointments. Are there further comments? Will the clerk please call the roll on the confirmation of the appointments?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 746.277,
+      "end_s": 747.626,
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 747.626,
+      "end_s": 748.108,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 748.108,
+      "end_s": 749.633,
+      "text": "Councilmember Moore?"
+    },
+    {
+      "speaker": "G",
+      "start_s": 749.633,
+      "end_s": 750.179,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 750.179,
+      "end_s": 751.849,
+      "text": "Vice Chair Rank?"
+    },
+    {
+      "speaker": "F",
+      "start_s": 751.849,
+      "end_s": 752.379,
+      "text": "Yes."
+    },
+    {
+      "speaker": "C",
+      "start_s": 753.278,
+      "end_s": 753.872,
+      "text": "Chair Rivera."
+    },
+    {
+      "speaker": "E",
+      "start_s": 754.241,
+      "end_s": 754.273,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 755.461,
+      "end_s": 757.242,
+      "text": "4 in favor, none opposed."
+    },
+    {
+      "speaker": "B",
+      "start_s": 757.387,
+      "end_s": 778.091,
+      "text": "All right, the motion carries, and the recommendation that the appointments be confirmed will be sent to the full City Council meeting on Tuesday, March 18th. Again, thank you for being here, Linda and Evan. Thanks for joining us online. We will now move to the 4th item on the agenda. Will the clerk please read the 4th agenda item into the record?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 778.585,
+      "end_s": 786.168,
+      "text": "Agenda item 4, update on Chinatown International District community capacity building for briefing and discussion."
+    },
+    {
+      "speaker": "B",
+      "start_s": 786.168,
+      "end_s": 842.663,
+      "text": "We are joined by the Department of Neighborhoods Director Jennifer Chow, director and my friend, I'm lucky to say, and Department of Neighborhoods staff Soka Don for this presentation. Thank you both for joining us at the table. Will you please state your names for the record and then you can begin your presentation. And while they're getting ready, I will also give a shout out to other members of the Don team who are in the audience. Always love seeing everyone. They come out to support each other. I love it. Um, and, uh, Director Chow, I say friend because we've been working together for so many years that now via our work we've become friends, and I just so enjoy knowing you and getting to work with you. So looks like you're situated now. I'll let you state your names for the record and begin. And then, uh, colleagues, if you'll just hold your questions till the end of the presentation. Thank you."
+    },
+    {
+      "speaker": "A",
+      "start_s": 842.663,
+      "end_s": 847.239,
+      "text": "Jennifer Chow, Director of Department of Neighborhoods."
+    },
+    {
+      "speaker": "D",
+      "start_s": 847.239,
+      "end_s": 851.542,
+      "text": "Soka Don, CID Community Capacity Coordinator, Department of Neighborhoods."
+    },
+    {
+      "speaker": "B",
+      "start_s": 851.542,
+      "end_s": 860.438,
+      "text": "Thank you. And also, I should say, colleagues, if you recall, we did have a presentation about this last year, and this is an update."
+    },
+    {
+      "speaker": "G",
+      "start_s": 861.707,
+      "end_s": 862.176,
+      "text": "Go ahead."
+    },
+    {
+      "speaker": "A",
+      "start_s": 862.176,
+      "end_s": 1317.602,
+      "text": "Thank you so much. Thank you, Council Chair Rivera and council members, for the opportunity to provide an update on our community capacity building work in the Chinatown International District. It is an honor to always be in this space and to be invited to be able to share about the connections, the relationships, and the impact the city and the community has in partnership to make sure that our city is thriving. And I would say before I start that the CID, as I will refer to it, as the Chinatown International District, known as the CID, is our beloved neighborhood across the city. I think every community, every neighborhood really does see it as their beloved place-based Chinatown International District where they find their own belonging and own connection. The Chinatown International District, which I will refer to as the CID, is a culturally rich neighborhood with a diverse community of people, businesses, and organizations. The community has historically experienced insufficient investment and has organized themselves for decades to ensure their voices and needs are heard for ensuring the livelihood of their neighborhood. In 2023, the CID was added to the list of America's 11 most endangered historic places by the National Trust for Historic Preservation. In response to the community's needs and requests, the city has invested significant resources and staff over the past 5 years for community-led visioning and policy changes to address community priorities. Mayor Harrell and City Council have further committed to prioritizing the CID as we continue to deepen our trust and relationship with the community by collaborating on community-led solutions for their neighborhood. Some examples of city investments include the Downtown Activation Team, which is focused on public safety in the downtown core. Which includes Little Saigon and the CID. This effective interdepartmental collaboration of 15 city departments is a prime example of the One Seattle approach and is led by Leanda Kraft, Seattle Restoration Director in the Mayor's Office. The Downtown Activation Team started scheduled restoration actions in the Little Saigon neighborhood on November 1st, 2024. These actions include cleaning 3 times a day to address Visual disorder, including sidewalk pressure washing, litter abatement, and graffiti removal. Scheduled restoration actions or in coordination with the Seattle Police Department to disrupt any criminal behavior and provide visible patrols in the area. The Downtown Activation Team is also working on coordinating outreach efforts in Little Saigon for a holistic response, which include We Deliver Care, which will start today, which starts today, March 13th, in the CID with a specific emphasis in the Little Saigon neighborhood. A central referral source through the Seattle Fire Department to detox and inpatient beds with Valley Cities, identifying a priority area for the Care Department, and working in collaboration with the Human Services Department to refer to outreach providers or the Law Enforcement Assisted Diversion, known as LEAD, and their program. Other city investments include the Downtown Activation Plan, Seattle Restored program, and the Tenant Improvement Fund in the Office of Economic Development. The Equitable— a lot of E's— the Equitable Development Initiative in the Office of Planning and Community Development also funds the Little Saigon Landmark Project, which is a mixed-use project that includes affordable housing and a cultural hub, International Community Health Services, which is capacity building in support of the Ron Chu Healthy Aging and Wellness Center, Interim Community Development Association to complete Busch Garden, Uncle Bob's Place, and the Wing Luke Memorial Foundation's capacity building to support their Ing Family Homestead. So those are some areas of the city investments that we have poured into the community. Now I am excited to share about the investments for the CID from the Department of Neighborhoods. Najma Sheikh is the Department of Neighborhoods Central Area Community Engagement Coordinator. She makes sure that the community is engaged with the city and connected to each other. After the tragic murder of Donnie Chin, the city funded a community safety coordinator position in the neighborhood in partnership with the CID Public Safety Council and the CID Business Improvement Area, an organization that supports the public safety coordinator. FODAP, beautiful neighborhood. In addition to funding the community safety coordinator position, the Department of Neighborhoods partnered with the Seattle Police Department Care and the mayor's office to support the Friends of Little Saigon community safety plan and strategies. Pho Dep means beautiful neighborhood, and this initiative took inspiration from a place-based effort in Rainier Beach called Rainier Beach: A Beautiful Safe Place for Youth. What is amazing and inspirational about Pho Dep is that it is bridging cultures and people are finding their place-based solutions, but across connecting with other communities. So seeing what Rainier Beach has been able to do really inspired them to be able to reach out. Department of Neighborhoods was able to connect the community members, and they got to share about their lessons learned and their journey and was able to create this. The goals of FODEP include building a coalition of community members, business owners, property managers, organizations, institutions, service providers, and local governments to collectively improve public safety in Little Saigon and identify ideas and strategies to address the root cause root causes of the neighborhood's biggest challenges. An element of the plan involves improving the public realm in Little Saigon using crime prevention through environmental design, known as CPTED, which can include strategies like lighting, tree pruning, and public art. This month, Seattle City Light completed 10 lights improvement in the area, including upgrading light wattages and installing floodlights. FoDEP had their phase 2 kickoff on February 27th. and I saw some council members there— with the community and city departments, and the ideas suggested in the 100-day challenge for public safety improvements are already being implemented. So it's already underway. So that's to share a little bit about FODEP, and then now to talk about the International Special Review District, known as the ISRD, which was established to promote and preserve the distinct history of architecture and the place in the CID. In order to preserve the cultural character, the International Special Review District Board must review and approve all uses, including public sidewalks, new construction, and changes to building exteriors within the district, including signs or new paint colors or security gates before installation or construction. The Department of Neighborhood also partners with other city departments to invest in culturally responsive and in-language engagement through our community liaisons and equity engagement advisors. Starting this year, DON has increased our staff presence in the neighborhood with 3 staff members holding regular office hours at Hinhay Cowork and Friends of Little Saigon workspace. Rebecca Freestad is DON's ISRD coordinator, Najma Sheikh, Central Area Community Engagement coordinator, and Sokha Don, our CID Community Capacity Building coordinator. Increasing staff presence helps us to belong in community, and we are embedded in the work. On that note, I would like to hand it over to Soka to introduce himself and his role and the phenomenal work he is doing in partnership with the community as Don's CID Community Capacity Building Coordinator."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1319.66,
+      "end_s": 1811.177,
+      "text": "Thank you, Director Chow, and thank you, Council, for having us today. Again, my name is Soka Don. I've been working with the Chinatown International District community for the last 10 years. I first began my work in the neighborhood in 2014 working for SCID PDA, or the Seattle Chinatown International District Preservation and Development Authority, and was appointed to Mayor Murray's Special Task Force on Public Safety and Neighborhood Vitality after the murder of community hero and founder of the International District Emergency Center, Donnie Chin, in 2015. I oversaw local lead operations for King County 2017, also known as Law Enforcement Assistance Diversion, for the Public Defender Association, now known as Purpose, Dignity, and Action. I expanded the LEAD program into the East Precinct in coordination with the Little Saigon neighborhood. Finally, I also work a second job on the weekends in the Chinatown International District. I guess you can say I'm very much rooted past and present. I'm also a renter in the neighborhood as well. Thank you for allowing me to share my connection to the community. Now on to the official part of the presentation. In 2019, the CID Vision Advisory Group saw a shared community vision for a neighborhood plan. These groups of leaders successfully advocated for seed funding and sponsored a community-led visioning process that reflects the diversity of the community and seeks to address the complexity of the Chinatown International District. The commitment of these community leaders to work has been rooted in providing an authentic community voice, representing business owners, community leaders, seniors, residents, and non-English-speaking community members. Hundreds of community members have participated and provided critical input through interviews, focus groups, and community-wide surveys through this community-led visioning process. The CID Vision Advisory Group, with support from the city, provides a clear path forward by community self-determination with strategies and a call to action to address community issues in both the near and long term through building infrastructure for inclusive community engagement and decision-making, ensuring community self-determination in projects that impact the CID, and finally, creating a long-term community visioning plan. All these 3 items which I have the privilege of talking and diving deeper during this presentation. The CID Visioning Advisory Group membership is the largest, most united coalition representing the Chinatown International District. The stakeholder group is comprised of 16 organizations, based in the neighborhood who saw a need for a shared community vision and neighborhood plan. The advisory group represents a significant cross-section of diverse stakeholders and organizations ranging from family associations to community nonprofits. It's important to stress that the CID Vision Advisory Group members have full-time jobs. The majority are executive directors of these organizations in addition to committing their time to the CID Vision Advisory Group and their incredible work. This is incredibly telling of the commitment and passion of these individuals and these organizations to continue to serve the CID and share a united vision for themselves and the community. As previously noted, the CID organizations came together informally in 2019 so the community could have a stronger voice and influence against multiple pressures occurring in the community. The CID Vision Advisory Group has really approached this community-led visioning model by focusing on 5 fundamental items that very much defines whether or not a neighborhood is able to thrive. The CIED vision advisory group created 5 subcommittees and areas of focus, including housing, that housing is available for both longtime and existing residents, particularly elders and families, and for residents who can strengthen the customer base to support businesses in the neighborhood. Business and economic strength. We know that a thriving neighborhood business district includes the preservation of longstanding and legacy businesses who wish to stay in the CID while also attractively— while also attractively attracting ethnically diverse businesses that contribute to the CID's distinct character. Neighborhood character and culture and history. It's undeniable that the Asian culture and history is central to the CID's identity and should be preserved and honored, and that other communities that are part of the neighborhood's diverse history and identity are also recognized. And celebrate it. Community self-safety and health. Individual and community safety, health, and wellness is paramount to the quality of life for residents. Thank you for Director Chow for talking about this in your presentation, especially for vulnerable community members who face language and literacy barriers. Transportation mobility. The connectivity and ease of getting around within and to from the CID will benefit residents. particularly elders and visitors to neighborhoods alike. These issues are grounded in the CID Vision Advisory Group's vision for a community that's inclusive of diverse groups and across generations who use their collective voice and power for community self-determination and the CID's growth and development. I'd like to talk now about the distinct phases of the CID Vision Advisory Group's visioning work. The Seattle Vision Advisory Group has engaged strategically in 4 phases of work to date, with a 4th phase occurring this year. Phase 1, community engagement framework. Phase 1 started in 2019 to 2020 with a focus on building a community-led and developed model for community engagement, decision-making, advocacy. This model includes strategies for community representation and desired roles for the City of Seattle and other project sponsors. It includes a plan for participation of community members in the Chinatown International District and decision-making and centering groups that do not have the opportunity to meaningfully participate, in particular in the past. This funding supported a consultant for research, structure and decision-making, values and priorities, and an attorney outreach and engagement plan. Phase 2, the community engagement toolkit. The primary objective of Phase 2 in 2020 to 2020-21 was the development of the CID Community Engagement Toolkit. This toolkit recognizes that different types of community issues or projects cannot be served by a one cookie-cutter model for community engagement in the CID. Scoping and planning intentional tailored process for the community is required for all stakeholders to come together for a specific issue or project. This toolkit can be used to collectively engage, make decisions, and advocate for community interests when faced with issues, concerns, or projects that impact the CID. This toolkit is a framework for private and public projects that impact the CID, from city, state agencies, and private developers, nonprofit agencies, and other stakeholders, to meaningfully and— to meaningfully and equitably engage the neighborhood and carry out these projects in a way that avoids community harm, respects community vision and self-determination. This collaborative model This toolkit developed by these 16 community organizations known as the CID Vision of Aja Group is the first of its kind for the CID in the neighborhood in the history of the community. This funding also supports direct costs for translations, stipends, communications, community meeting venues, food, childcare, data visualization, and storytelling materials for the CID Vision of Aja Group. Phase 3, neighborhood strategic plan. The creation of the, the CID neighborhood strategic plan in phase 3 was divided into 3 subphases. The first phase is engaging community in a community vision process that results in a neighborhood plan with long-term community vision, key issues, and strategies. And third, building a structure for Phase 3 work to create implementation details of the neighborhood plan. Key deliverables in Phase 3 included a community survey, which garnered close to 600 responses from community members, a refined communication toolkit, and the CID neighborhood strategic plan with a 10-year vision and identification of priority issues, goals, and strategies. The CID implementation plan also resulted in Phase 3, which I'll talk more about."
+    },
+    {
+      "speaker": "H",
+      "start_s": 1811.177,
+      "end_s": 1811.369,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1811.723,
+      "end_s": 1958.957,
+      "text": "But this translates the CID's visioning of Archer Group's 10-year vision into accountable tasks for the city, along with other responsible government and additional community partners. This includes details regarding actions, timelines, and budgets for implementation of the strategies of the neighborhood strategic plan. The key step of translating the, the 10-year vision into actual items as detailed into the plan was done through the CID's vision of AIGRA's groups, direct input from residents, community-based organizations, and small business owners. Phase 3 funding supported the hiring of new consultants tasked with facilitation and coordination of the CID management of AIGRA group and outreach engagement staff person, direct cost participant stipends, including CID community members, and translation. This also included commercial storefront rental space used for outreach and engagement in the CID. for the CID Vision of Aisha Group. Phase 4, implementation of this strategic plan. Phase 4 builds on the first 3 phases of the CID Vision of Aisha Group's 5 years of strategic work, planning with basic measures of accountability to implement and operationalize the community's vision for the CID. The CID Vision of Aisha Group has outlined the basic measures of accountability and what they should include. Timeline and milestones. Each commitment should have a clear timeline and milestone to ensure progress is measurable and accountable. Reporting requirements. Regular reporting from involved city departments to the city council and the public on the status of these recommendations, including challenges and the progress made. It's all about accountability. Community feedback loops. Mechanisms for ongoing feedback from CBOs and the broader community to adjust strategies, and approaches as needed, ensuring responsiveness to evolving needs and circumstances. Ultimately, Phase 4 is the result of years of coordination, volunteer time, and community-led engagement. As we know, the CID is a diverse, dynamic neighborhood of stakeholders with many different cultural and diverse backgrounds. Heather, the thinking here, represents an exceptional unified voice for the community. Overall funding for the CID Vision Advisory Group from 2019 to the present is $1,408,000. This investment seeks to help reconcile the historic impacts the community experienced from infrastructure, sports and entertainment, social agency placements, transportation, and development projects."
+    },
+    {
+      "speaker": "B",
+      "start_s": 1958.957,
+      "end_s": 1968.449,
+      "text": "Would you like to read all those 16 advisory board group members into the record so we know who they are?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1968.449,
+      "end_s": 1970.832,
+      "text": "Oh yes, perfect."
+    },
+    {
+      "speaker": "H",
+      "start_s": 1972.081,
+      "end_s": 1972.724,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1972.724,
+      "end_s": 2010.23,
+      "text": "Yeah, the 16 members of the coalition for the record. The API Coalition Advocating Together for Health, the Chinatown International District Business Improvement Association, Chinese Information and Service Center, Chung Wah Benevolent Association, Denise Louie Education Center, Friends of Chinatown Seattle, Friends of Japantown, Friends of Little Saigon, Hip Sing Top, We're halfway there. Inter-American Community Development Association, International Community Health Services, Japanese American Museum, Seattle Chinatown International District Preservation Development Authority, Seniors in Action, Wing Luke Museum, and Yi Fong Toy."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2010.23,
+      "end_s": 2042.919,
+      "text": "Thank you. I just wanted to make sure and give recognition to all these group members for the record. It's really important to name these names and recognize we have Wing Luke in the audience who spoke during public comment, but it's really important for folks to know who's been involved. And this is just the advisory group members. This isn't everyone who's been involved in the effort in community, but it's just so important to name the folks who have been on this advisory group. So thank you for doing that."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2042.919,
+      "end_s": 2054.094,
+      "text": "Thank you so much. Thank you for making that call to do that. Without the Vision Advisory Group members who have No work tirelessly these past 5 years to advocate for this plan, this would not be possible. So thank you for saying that."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2054.094,
+      "end_s": 2055.242,
+      "text": "Thank you, Soka."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2055.242,
+      "end_s": 2299.687,
+      "text": "A community-led and ongoing city partnership. The city partners with the CID's Vision Advisory Group. As we just said, as we just stated, it's vital to understand the needs, priorities, and the impacts of our work in the CID. This work is challenging and consequential. My director, Jennifer Chow, has communicated. This community-led visioning process is pivotal to how the city is building trust in BIPOC communities like the CID. Our job alongside Mayor Herbold is to invest in this community's visions for transformational change. Examples of Don's commitment and investment into community trust building and support for the CID Vision Advisory Group are partnering with OPCD as a strategic partner in the community-led and city-supported visioning process. including working in tandem with Open City's new Downtown Activation Coordinator, Taryn Morton, and the director of Open City, Rico Carandungo. Secondly, convening the city's internal CID core team comprised of leadership from DON, the Office of Planning and Community Development, Seattle Department of Transportation, and the mayor's office. And I have many examples, but I'll give a couple more. Partnering with the University of Washington's Master of Information Studies program develop a data visualization dashboard for tracking projects and investments in the CID. As Jennifer Chow stated, my director, alongside with 2 of my other Don colleagues, physically being in the CID by having regular office hours in the community several times a month to be accessible and truly embedded in our work. In 2024, at the request of the CID Vision Advisory Group, Don has coordinated meetings with leadership from the Department of Neighborhoods, Office of Planning of Community Developments, Office of Housing, Seattle Parks and Recreation, Seattle Department of Construction and Inspections, and Seattle Department of Transportation. The purpose of meeting with department directors and the Seattle Division Advisory Group is to provide an update to city directors on the work of the coalition and the needs for partnership in Seattle. The OPCD will continue to help steward and build a city-community-city partnership by connecting the 60-member coalition of CID stakeholders to other city departments, staff, and agencies that will play a role in actualizing this community's 10-year vision and implementation plan. My last slide before I pass it on to Director Chow. Last but not least, I actually want to share with you some key priorities of the CID implementation plan, and this includes public safety. Enhancing in-language public safety support is needed in the CID. A call to action in regard to public safety includes implementing technology-based solutions like multilingual servicing apps and websites which guide users through the reporting process, aided with visual and visual aids and translation, making reporting more accessible for residents with limited literacy skills. Coordination and support for building repairs with a focus on unreinforced masonry. One call to action in this implementation plan includes conducting regular meetings with community stakeholders, historic preservation groups, and building owners to ensure ongoing needs, share best practices, and coordinate these efforts on historic building rehabilitation. A local business needs assessment. The Chinatown International District is comprised of incredibly 260 small businesses, many of them which are legacy businesses. that have anchored the neighborhood for decades. A call to action includes the creation of a special parking strategy for event days to mitigate the impact of stadium events on local parking availability. This could include partnerships with regional transit agencies, dedicated shuttle services, services, and support from the Washington State Public Stadium Authority. Thank you again. I'm honored to serve as the city representative for this CID Vision Advisory Group. and this community-led visioning model, which provides the city an opportunity to potentially understand how to work in other communities and neighborhoods across our city as one Seattle. And I'll pass it on to Director Chow."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2299.687,
+      "end_s": 2466.835,
+      "text": "Thank you, Soka. I know that that was a lot to take. We will be following up to share handouts of the CID implementation plan to the council members. So Council Chair Rivera, we'll hand it to you and you can give it to the committee. But I hope that we'll have more opportunities to unpack in the future. But thank you, Soka, for sharing that breadth of information and how we have been working with the community in their community-led vision. As you can see from this slide, there are over a dozen city projects intersecting with the CID neighborhood. All of these projects impact the CID, recognizing large projects like Sound Transit, Ballard Link Extension, and the FIFA World Cup 2026 will have huge impacts on the neighborhood. This requires the city to strengthen coordination to avoid unintended impacts on the community. We must learn from history and continue to deepen our partnership with the CID Visioning Advisory Group in order to support the livelihood and vitalization of the neighborhood for generations to come. These city departments are an essential partner in ensuring the CID is centered in the planning and investments of neighborhood-identified priorities that intersect. with city projects. Department directors will continue to meet with the CID Visioning Advisory Group for relationship building and strategic coordination. And as Soka mentioned, there were a few departments that already met with the CID Visioning Advisory Group last year, and there will be more to come this year. So in closing, we want to highlight CID priorities for 2025 and 2026. We are committed to bringing the CID Neighborhood Implementation Plan to life. We will continue to work with our city departments and external partners to ensure their projects align with the CID Visioning Advisory Group's implementation plan. The CID Visioning Advisory Group has reached an exciting milestone. They have solidified their governance structure, which includes expanding the community coalition to increase community capacity and engage with city departments as a strategic partner. In my role as the Director of the Department of Neighborhoods, I work closely with my colleagues at the director level to share awareness and invite collaboration with the CID Visioning Advisory Group for coordination and alignment with the city's priorities and community's needs. We are deeply grateful for the trusted partnership with the CID Visioning Advisory Group. It takes a village, and investing in the Chinatown International District and the community's 10-year vision and beyond will require regional partnerships and investments by the state, federal, local agencies, and philanthropy. Thank you again, Council Chair Rivera, for the opportunity to share about the progress of our community capacity work in the CID. We look forward to coming back to this committee to provide future updates along with community members of the CID Vision Advisory Group."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2466.835,
+      "end_s": 2529.098,
+      "text": "Thank you, Director Chow, and thank you, um, SOCA, again for being here and giving this update. We know that there are definitely public safety, uh, as a priority need. There are other needs as well in the CID and Little Saigon, including Little Saigon. So Really appreciate your work. Soka, you've been working for 10 years. I didn't realize that long. So, really appreciate all the time that you've put into community and how important it is to give focus to the CID. And like I said, in particular, all the things that are happening in Little Saigon as well. So, colleagues, do you have any questions for Director Chau or Soka? Let's see. Doesn't look like there are any questions. Oh, Councilmember Solomon."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2529.098,
+      "end_s": 2609.008,
+      "text": "Thank you very much, Madam Chair. Thank you for your presentation on what you're doing in Chinatown International District, Little Saigon. I want to acknowledge that, you know, there are a few points that you brought out, like the full-depth safety plan, and want to acknowledge the work of the Seattle Police Department folks, Barbara Biondo and Monica Lee, that are working with community to replicate the place-based strategies that took hold in Rainier Beach in this particular area, because One of the things we found with Marina Beach is when it's community-driven, it's actually sustainable, as opposed to when it's law enforcement or city-directed. Along those lines, you mentioned partnerships with— and for full transparency, I'm going to be meeting with the West Precinct folks tomorrow to talk about what kind of support my office can provide for efforts in the CID and Little Saigon because it's my district. I know I've met with LEAD. I have yet to meet with REACH. But is REACH also one of our partners that's doing work in that area as well through Evergreen Treatment Services?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 2610.505,
+      "end_s": 2617.105,
+      "text": "I believe so. But I can confirm with you we have staff who are directly connected to that, that work."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2618.056,
+      "end_s": 2666.825,
+      "text": "Okay, cool. And then looking at the visioning advisory group membership, long impressive list of folks. But again, thinking about, you know, our 12th and Weller, 12th and King area, realizing that Seattle Indian Health Board and Seattle Indian Center, you know, have properties there and You know, the navigation center being owned or having been owned, you know, by one of the organizations serving the Native communities. So I'm wondering if they've been able to be in partnership with this group as we're reimagining or moving forward with public safety efforts in the area."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2671.259,
+      "end_s": 2692.136,
+      "text": "Thank you for that question, Councilmember Solomon. I think as the CID Visioning Advisory Group has now reached a milestone of their governance structure and as they're expanding their coalition, I think that is something that they are considering. And so I think that's something that we should come back with an update to see how that expansion works and how they would be connected. But—"
+    },
+    {
+      "speaker": "H",
+      "start_s": 2692.136,
+      "end_s": 2719.69,
+      "text": "Yeah, I'm just looking at all the players who are in the area, including seeing something about Parks Department closing off Huamei Park because it's not being used for its intended uses. And I think one of the things we talked about the other day was how we do some park activation. You know, maybe getting with the Seattle Kung Fu Club to do tai chi classes in the park."
+    },
+    {
+      "speaker": "F",
+      "start_s": 2720.08,
+      "end_s": 2720.405,
+      "text": "I don't know."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2722.309,
+      "end_s": 2747.191,
+      "text": "You know, trying to think out of the box of how we can do some positive space activation. innovation, you know, in that area, as well as making sure that all the different players and all the different parties that have skin in the game in the area are, you know, actively participating. And that's one of the things that sounds like there's a lot of that already going on in terms of, you know, that coordination and facilitation."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2747.191,
+      "end_s": 2748.387,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2748.387,
+      "end_s": 2750.468,
+      "text": "And I want to lend my efforts to that as well."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2753,
+      "end_s": 2773.383,
+      "text": "Thank you for these questions. I'm happy to just report out that Friends of Little Saigon, so Quyen Pham, Executive Director of that organization, has been directly involved in this Seattle Asian Advisory Group for the past number of years as well and is planning to give a formal presentation on this FADAP effort to the group."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2773.383,
+      "end_s": 2774.57,
+      "text": "Got it."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2774.57,
+      "end_s": 2782.031,
+      "text": "So that's just an example of the internal coordination on a community level that is, that's happening so everyone's on the same page and can support each other in alignment."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2782.031,
+      "end_s": 2824.822,
+      "text": "Okay, great. Uh, final thing I'll point out is that, uh, you already noticed on your, um, projects intersecting with the CAD, uh, you do have the World Cup on there, 2026. Great. Uh, but let's not forget we have the Club Cup coming up this year, and, um, you know, it's no secret that, uh, The CID did not benefit from when, you know, All-Star Game was here, right? And that probably fell on the city. So I would just encourage us to make sure that we don't forget the CID for the Club Cup that's coming up this year and not just focus on the World Cup next year. So."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2824.822,
+      "end_s": 2841.189,
+      "text": "Thank you, Councilmember Solomon. Definitely the World Club Cup is on our radar and we are already in the works with coordinating with community and making sure that they will be involved in the planning process as we are planning it out, and we appreciate your offer and will reach out for your support. Okay, great."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2841.448,
+      "end_s": 2841.739,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2850.679,
+      "end_s": 2851.868,
+      "text": "Vice Chair Rink."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2852.655,
+      "end_s": 2853.153,
+      "text": "Wonderful."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2854.664,
+      "end_s": 2892.426,
+      "text": "Thank you, Chair Rivera, and thank you both for today's presentation. I wanted to take us back actually to the beginning of your presentation and just state again for the record that The CID is one of America's most— 11 most endangered historic places. And just really letting that sink in, because I also think we don't necessarily talk about what we mean when we say endangered. We're not just talking about public safety challenges. We're talking about cultural erasure and displacement. And so making sure that community is leading the way and the city is supporting in community-driven efforts."
+    },
+    {
+      "speaker": "F",
+      "start_s": 2892.426,
+      "end_s": 2892.635,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2893.116,
+      "end_s": 3003.61,
+      "text": "And community-based ownership of spaces in the CID is so important to make sure we are actually addressing and making sure that the CID continues to be the thriving community that it is in so many ways. And I really want to applaud the efforts of the Department of Neighborhoods to be really leading in that fashion by having this CID Visioning Advisory Group that is really paving the way forward on how— what is the future of the CID. I just really want to name that and applaud that work and also note that the council, we up here need to be doing the work to make sure that we are supporting the investments that will allow for the CID to continue to thrive. And we're taking steps to make sure we're preventing displacement wherever possible. And I was really excited to join you all for the FODEP event. I feel like that was an event of seeing this really community-driven solutions work happening in real time. It was It was a packed room, and I know Councilmember Solomon's staff were there as well. It was a really incredible event bringing together different stakeholders across the Little Saigon neighborhood to make sure that we are actually hearing all perspectives and really being action-oriented and focused on what are we going to do next. And to that end, I just wanted to note that event. It was amazing. I'm really excited and would love to continue to hear, like, next And looking across some of the current city projects intersecting with the CID, I'm really glad that Councilmember Solomon brought up FIFA. And I know it's been really front of mind for me looking at what happened in the MLB All-Star Game. And I know in a lot of the discussions I've had with partners, there's still a lot of feelings and concern that we could be heading that way. So I wonder, for the record, what are some of the things that you've heard about MLB All-Stars and what happened there, and how can we mitigate that when we're looking ahead to FIFA? Thank you."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3008.33,
+      "end_s": 3117.107,
+      "text": "Great question, Councilmember Moringa. Thank you so much for your comment and acknowledgment of the community-led work. I also agree that at FODEP, seeing the community organize that was amazing because we really did attend as a guest. So it was great to be in community. With that said, I would say that a lot— there was a lot of factors, but I think that we are much more well prepared. This time around, more internally coordinated. The mayor's office has hired a World Cup director, Kylie Rolfe, in the mayor's office. And so now we have subcommittees that are more internally coordinated. The Department of Neighborhoods is leading the community activation committee with the other departments. So that's one. And we are also in the permitting committee just to make sure that, again, our historic districts are brought in and want to support the livelihood of the historic districts and making sure they're they're able to invite folks in and do what we want to do in alignment with compliance and what needs to be done for the community, right? Again, as we talked about preserving their cultural architecture. So with that, I say we're more— we have more planning that's ahead of us, that we have a little bit more runway. There still needs a lot to be done. It definitely— we don't want to take it for granted thinking we got it. We have to learn a lot from the community. We don't need them to repeat their harm or what did not work well. So we're very clear about what didn't work, about making sure that we point to the CID and to the other neighborhoods, but really to the CID to make sure that they are benefiting and figuring out what benefit— how do they identify what benefits them as folks come into the city and to engage and to patron their neighborhood? Because they are also residents that live there, and is there a cultural home? But they also want to invite, you know, folks into their community by making sure that it's safe and that it's welcomed."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3117.107,
+      "end_s": 3214.998,
+      "text": "Thank you for that. Thank you in so many ways. And I'm glad that that work is happening and certainly want to make sure that we're lending our support wherever possible to make sure that there is a real benefit, that community is benefiting from all of these new guests coming into our city. And with that, I also want to just name that, you know, so much of our discussions, especially lately as it relates to the CID, tend to focus on public safety. And I will never negate the public safety challenges that, that are going on. And this council certainly is trying to focus its attention on addressing those in partnership with community. And it can't be the only thing that we talk about when it comes to the CID. We want our community to know that the CID is a vibrant community that is also a fun place to go. And to eat and enjoy amazing establishments like Ma'am's Books, which I have to name. I mean, this is— we are home to the only independent Asian American bookstore in Seattle, or I believe in the Pacific Northwest. So special shout out to one of our panelists, Soka, for really holding that down for our community. But there's amazing places to go in the CID, and I hope that we can continue to use, you know, our platforms up here here to be really telling community that this is a place to go and connect and see again all the vibrance that Seattle has to offer. So I thank you again for your presentation. My office wants to be supportive in all of this work where possible. And again, just thank you for the approach that you've taken in working with community and uplifting their voice and empowering them. Thank you, Chair."
+    },
+    {
+      "speaker": "D",
+      "start_s": 3215.192,
+      "end_s": 3215.352,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "G",
+      "start_s": 3215.352,
+      "end_s": 3216.171,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3217.022,
+      "end_s": 3295.915,
+      "text": "Um, colleagues, I don't see any other hands up. I will thank again Department of Neighborhoods for coming and presenting and for the work that is happening in the CID. I will say that, uh, colleagues, I have a special place in my heart for the Department of Neighborhoods because I started my career really doing outreach work, and I see the Department of Neighborhoods is our outreach arm of the city, and it is our direct, um, uh, window into community and partnership with community, which is so important. And bringing back the voice of community to the city is so important. And so today we're talking about the CID, but the Department of Neighborhoods, um, laises with community across the city. And it is really a department that is very engaged under the leadership of Director Chow. I am so proud of the work that you all do to bring, like I said, the voice of community back to the city and to find opportunities for us to be engaged and in community, you know, on an on-hands way, not just sitting from up here. So I really appreciate being able to join you at events."
+    },
+    {
+      "speaker": "G",
+      "start_s": 3295.915,
+      "end_s": 3296.075,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3297.424,
+      "end_s": 3344.501,
+      "text": "et cetera. So really, thank you for all that you do, for all that your team does. Thank you for coming here today. Colleagues, thank you for your questions today. Are there any other questions or comments for Don? Seeing none. Any other questions or comments in general for today? Okay. Seeing no further questions, this concludes the March 13th, 2025 meeting of the Libraries Education and Neighborhoods Committee. Our next committee meeting is scheduled for Thursday, March 27th, 2025, at 9:30 AM. If there's no further business, this meeting will adjourn. Hearing no further business, it's 10:27 AM, and this meeting is adjourned."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3344.501,
+      "end_s": 3347.341,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "H",
+      "start_s": 3347.341,
+      "end_s": 3347.757,
+      "text": "Thank you."
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "A",
+      "start_s": 11.227,
+      "end_s": 13.328,
+      "text": "All right."
+    },
+    {
+      "speaker": "B",
+      "start_s": 13.732,
+      "end_s": 26.141,
+      "text": "Good morning, everyone. The March 13, 2025 meeting of the Libraries, Education, and Neighborhoods Committee will come to order."
+    },
+    {
+      "speaker": "B",
+      "start_s": 26.303,
+      "end_s": 35.758,
+      "text": "It's 9:31 a.m. I'm Maritza Rivera, chair of the committee. I would like to note that Councilmember Hollingsworth is excused today. Will the clerk please call the roll?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 36.289,
+      "end_s": 37.352,
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 38.608,
+      "end_s": 38.737,
+      "text": "Here."
+    },
+    {
+      "speaker": "C",
+      "start_s": 39.8,
+      "end_s": 40.347,
+      "text": "Councilmember Moore?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 40.96,
+      "end_s": 41.443,
+      "text": "Present."
+    },
+    {
+      "speaker": "C",
+      "start_s": 42.313,
+      "end_s": 43.215,
+      "text": "Vice Chair Rink?"
+    },
+    {
+      "speaker": "E",
+      "start_s": 43.699,
+      "end_s": 44.182,
+      "text": "Present."
+    },
+    {
+      "speaker": "C",
+      "start_s": 44.988,
+      "end_s": 45.81,
+      "text": "And Chair Rivera?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 45.939,
+      "end_s": 46.374,
+      "text": "Present."
+    },
+    {
+      "speaker": "C",
+      "start_s": 47.002,
+      "end_s": 48.613,
+      "text": "4 councilmembers are present."
+    },
+    {
+      "speaker": "B",
+      "start_s": 52.72,
+      "end_s": 60.946,
+      "text": "All right. If there's no objection, the agenda will be adopted. Hearing no objection, the agenda is adopted."
+    },
+    {
+      "speaker": "B",
+      "start_s": 61.235,
+      "end_s": 81.647,
+      "text": "There are 4 items of business on today's agenda. We have the reappointment of Carmen Bendixen to the Seattle Public Library Board of Trustees, the reappointments of Evan Smith and Linda Thompson Black to the Families Education Preschool and Promise Levy Oversight Committee, and a presentation from the Department of Neighborhoods on the update on"
+    },
+    {
+      "speaker": "B",
+      "start_s": 81.695,
+      "end_s": 88.912,
+      "text": "Chinatown International District community capacity We will now open the hybrid public comment period."
+    },
+    {
+      "speaker": "B",
+      "start_s": 89.057,
+      "end_s": 95.392,
+      "text": "Public comments should relate to the items of the agenda that I just read out loud or within the purview of this committee."
+    },
+    {
+      "speaker": "B",
+      "start_s": 95.809,
+      "end_s": 98.087,
+      "text": "Clerk, how many speakers are signed up today?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 98.777,
+      "end_s": 103.589,
+      "text": "Currently we have one in-person speaker and no remote speakers on the list for today."
+    },
+    {
+      "speaker": "B",
+      "start_s": 104.615,
+      "end_s": 107.888,
+      "text": "Thank you, Clerk. Can you please read the public comment instructions?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 109.283,
+      "end_s": 116.056,
+      "text": "The public comment period will be moderated in the following manner. The public comment period is up to 20 minutes."
+    },
+    {
+      "speaker": "C",
+      "start_s": 116.345,
+      "end_s": 121.74,
+      "text": "Each speaker will have 2 minutes. Speakers will be called in the order in which they registered."
+    },
+    {
+      "speaker": "C",
+      "start_s": 122.189,
+      "end_s": 127.472,
+      "text": "We will start with in-person speakers first and then remote speakers until the public comment period has ended."
+    },
+    {
+      "speaker": "C",
+      "start_s": 128.243,
+      "end_s": 135.259,
+      "text": "Speakers will hear a chime when 10 seconds are left of their time. The public period— the public comment period is now open."
+    },
+    {
+      "speaker": "C",
+      "start_s": 135.853,
+      "end_s": 141.972,
+      "text": "We will begin with the first speaker on the list. The first in-person speaker is Wren Wheeler."
+    },
+    {
+      "speaker": "F",
+      "start_s": 146.687,
+      "end_s": 147.963,
+      "text": "Hello, is this working?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 148.076,
+      "end_s": 148.173,
+      "text": "Okay."
+    },
+    {
+      "speaker": "F",
+      "start_s": 148.948,
+      "end_s": 160.743,
+      "text": "Um, thank you, Chair Rivera, and all members of the committee. My name is Wren Wheeler. I use she/her pronouns, and I'm a staff member at the Wing Luke Museum and an active community member of the Chinatown International District."
+    },
+    {
+      "speaker": "F",
+      "start_s": 160.807,
+      "end_s": 169.058,
+      "text": "So I'm here to talk about that item on the agenda. The museum has been part of the CID Visioning Group since the beginning."
+    },
+    {
+      "speaker": "F",
+      "start_s": 169.796,
+      "end_s": 190.571,
+      "text": "I myself have only been part of the group on a regular basis since the last year, but I have to say that if, and I'll backtrack a little bit, the museum is known for our community advisory committee process, and for those who don't know what that is, we, for almost all of our exhibits, we gather community input and they really direct"
+    },
+    {
+      "speaker": "F",
+      "start_s": 190.571,
+      "end_s": 194.665,
+      "text": "the, how an exhibit will go and what programs will go along with that exhibit."
+    },
+    {
+      "speaker": "F",
+      "start_s": 195.147,
+      "end_s": 201.216,
+      "text": "And similarly, the community, the CID Community Vision Group is very similar."
+    },
+    {
+      "speaker": "F",
+      "start_s": 201.73,
+      "end_s": 209.325,
+      "text": "It's comprised of community members from all facets of the CID, maybe not all, but a lot of members of the community."
+    },
+    {
+      "speaker": "F",
+      "start_s": 209.903,
+      "end_s": 222.07,
+      "text": "And we work together really well to— we know we have— we don't agree on everything, but we've figured out a process to work through all of those issues and come together on the things that really matter to all of us."
+    },
+    {
+      "speaker": "F",
+      "start_s": 222.651,
+      "end_s": 230.688,
+      "text": "So I'm here to just give a shout out to our Department of Neighborhoods and hope that you continue to support the CID through their work."
+    },
+    {
+      "speaker": "F",
+      "start_s": 231.173,
+      "end_s": 233.755,
+      "text": "And I'm excited to hear their presentation. Thank you."
+    },
+    {
+      "speaker": "D",
+      "start_s": 235.03,
+      "end_s": 235.383,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 239.544,
+      "end_s": 243.866,
+      "text": "All right. There are no additional speakers, registered speakers."
+    },
+    {
+      "speaker": "B",
+      "start_s": 243.963,
+      "end_s": 252.459,
+      "text": "The public comment period is now closed. So now we'll proceed to our items of business. Will the clerk please read today's first item into the record?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 253.437,
+      "end_s": 267.211,
+      "text": "Agenda item 1, appointment 03101, the reappointment of Carmen Bendixen as member of the Seattle Public Library Board of Trustees for a term to April 1st, 2030."
+    },
+    {
+      "speaker": "B",
+      "start_s": 268.205,
+      "end_s": 273.576,
+      "text": "Thank you, clerk. This reappointment has been read into the record. Carmen is joining us virtually."
+    },
+    {
+      "speaker": "B",
+      "start_s": 273.721,
+      "end_s": 294.011,
+      "text": "Welcome, Carmen. Thank you for joining us. Carmen Bendixen was initially appointed to the library board in April 2020 by Mayor Jenny Durkan and has served as an active and engaged trustee for 5 years, during which she has held the position of board president and vice president, as well as serving on the executive search committee"
+    },
+    {
+      "speaker": "B",
+      "start_s": 294.043,
+      "end_s": 298.475,
+      "text": "during the national search to hire a new chief librarian in 2022."
+    },
+    {
+      "speaker": "B",
+      "start_s": 299.165,
+      "end_s": 312.089,
+      "text": "As a library board trustee, she has played an active role in guiding policy and budget issues, as well as the development of the library's 2024-2023 strategic— excuse me, 2033 strategic plan."
+    },
+    {
+      "speaker": "B",
+      "start_s": 312.57,
+      "end_s": 329.251,
+      "text": "Bendixen previously served on the board of the Friends of the Seattle Public Library, holding roles of president, vice president, and secretary, and helping to lead advocacy efforts during the 2012 and 2019 library levy campaigns."
+    },
+    {
+      "speaker": "B",
+      "start_s": 329.588,
+      "end_s": 337.215,
+      "text": "She's a regular user of the Greenwood and Green Lake branches and has served as a welcome desk and and events volunteer at the Central Library."
+    },
+    {
+      "speaker": "B",
+      "start_s": 337.732,
+      "end_s": 346.145,
+      "text": "Again, I want to thank Carmen for giving generously of her time and for agreeing to extend her time on the library board. Carmen, would you like to say a few words?"
+    },
+    {
+      "speaker": "G",
+      "start_s": 351.83,
+      "end_s": 358.4,
+      "text": "Um, good morning everyone. Sorry I'm not there, I'm a little under the weather, but, um, thank you for considering my reappointment."
+    },
+    {
+      "speaker": "G",
+      "start_s": 358.706,
+      "end_s": 367.615,
+      "text": "And, um, yeah, I'm just happy to continue the work and love the Seattle Public Library."
+    },
+    {
+      "speaker": "B",
+      "start_s": 368.737,
+      "end_s": 373.92,
+      "text": "Thank you, Carmen. I'm sorry that you're under the weather. Thank you for joining us virtually."
+    },
+    {
+      "speaker": "B",
+      "start_s": 374.162,
+      "end_s": 381.74,
+      "text": "And again, I agree with you, love the Seattle Public Library, and really want to thank you for your service."
+    },
+    {
+      "speaker": "B",
+      "start_s": 382.322,
+      "end_s": 387.735,
+      "text": "Again, we always talk about this, but these are volunteer positions. People do not get paid to serve."
+    },
+    {
+      "speaker": "B",
+      "start_s": 388.369,
+      "end_s": 395.91,
+      "text": "on these positions and very much appreciate people's willingness and generosity in giving of their time to this important work."
+    },
+    {
+      "speaker": "B",
+      "start_s": 396.47,
+      "end_s": 401.312,
+      "text": "So thank you, Carmen. Colleagues, do any of you have any questions or comments?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 403.248,
+      "end_s": 410.282,
+      "text": "If not, all right, seeing none, I move that the committee recommend confirmation of the appointment. Is there a second?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 410.654,
+      "end_s": 411.578,
+      "text": "Second."
+    },
+    {
+      "speaker": "B",
+      "start_s": 411.87,
+      "end_s": 416.399,
+      "text": "It is moved and seconded to confirm the appointment. Are there Any further comments?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 417.665,
+      "end_s": 421.047,
+      "text": "Will the clerk please call the roll on the confirmation of the appointment?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 421.431,
+      "end_s": 422.425,
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 422.938,
+      "end_s": 422.97,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 423.739,
+      "end_s": 424.508,
+      "text": "Councilmember Moore?"
+    },
+    {
+      "speaker": "H",
+      "start_s": 425.101,
+      "end_s": 425.133,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 426.062,
+      "end_s": 426.96,
+      "text": "Vice Chair Rink?"
+    },
+    {
+      "speaker": "H",
+      "start_s": 427.344,
+      "end_s": 427.392,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 428.306,
+      "end_s": 428.979,
+      "text": "Chair Rivera?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 429.267,
+      "end_s": 429.299,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 430.549,
+      "end_s": 432.424,
+      "text": "4 in favor, none opposed."
+    },
+    {
+      "speaker": "B",
+      "start_s": 432.873,
+      "end_s": 440.789,
+      "text": "The motion carries, and the recommendation that the appointment be confirmed will be sent to the full, uh, City Council committee on Tuesday, March 18th."
+    },
+    {
+      "speaker": "B",
+      "start_s": 441.224,
+      "end_s": 446.431,
+      "text": "We will now move to the 2nd and 3rd items on the agenda. Again, Carmen, thank you for being here."
+    },
+    {
+      "speaker": "B",
+      "start_s": 448.21,
+      "end_s": 451.753,
+      "text": "Will the clerk please read the 2nd and 3rd agenda items into the record?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 452.51,
+      "end_s": 468.319,
+      "text": "Agenda item 2, appointment 03104, the reappointment of Evan Smith as member of the Families Education Preschool and Promise Levy Oversight Committee for a term to December 31st, 2026."
+    },
+    {
+      "speaker": "C",
+      "start_s": 469.04,
+      "end_s": 484.589,
+      "text": "And agenda item 3, appointment 03105, the reappointment of Linda Thompson Black as a member of the Families Education Preschool and Promise Levy Oversight Committee for a term to December 31st, 2026."
+    },
+    {
+      "speaker": "B",
+      "start_s": 485.712,
+      "end_s": 492.428,
+      "text": "Thank you, Clerk. These appointments have been read into the record. Evan is joining us virtually."
+    },
+    {
+      "speaker": "B",
+      "start_s": 492.781,
+      "end_s": 498.359,
+      "text": "I see him on there. And Linda Thompson Black is in person. Thank you for being here this morning."
+    },
+    {
+      "speaker": "B",
+      "start_s": 499.273,
+      "end_s": 508.89,
+      "text": "I want to read about both of them. Evan Smith was appointed to Seattle Families Education Preschool and Promise Levy Oversight Committee in 2022."
+    },
+    {
+      "speaker": "B",
+      "start_s": 509.371,
+      "end_s": 517.914,
+      "text": "In his professional career, Evan has worked as the director of school openings and director for the Office of School Operations for the District of Columbia Public Schools."
+    },
+    {
+      "speaker": "B",
+      "start_s": 518.347,
+      "end_s": 526.393,
+      "text": "Evan transitioned to a different industry and is currently serving as the vice president of technology strategy and business transformation for Starbucks."
+    },
+    {
+      "speaker": "B",
+      "start_s": 526.826,
+      "end_s": 531.54,
+      "text": "He continues to be involved in the education sector as a member of multiple education boards."
+    },
+    {
+      "speaker": "B",
+      "start_s": 531.973,
+      "end_s": 543.885,
+      "text": "Evan currently serves as the board director of the College Success Foundation and as a board officer for Schools First while still being a part of the FEP, excuse me, FEP Levy Oversight Committee."
+    },
+    {
+      "speaker": "B",
+      "start_s": 544.238,
+      "end_s": 550.507,
+      "text": "I wanna thank Evan for agreeing to serve a second term on the Levy Oversight Committee. Evan, would you like to say a few words?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 551.677,
+      "end_s": 556.616,
+      "text": "Hi, yes, I'm just, would like to say I'm honored to be considered for reappointment."
+    },
+    {
+      "speaker": "D",
+      "start_s": 556.664,
+      "end_s": 564.064,
+      "text": "It's been a great honor to serve Seattle in the capacity in the first term, and I look forward to being considered."
+    },
+    {
+      "speaker": "D",
+      "start_s": 564.112,
+      "end_s": 567.275,
+      "text": "And thank you all, and apologies I couldn't be there in person today."
+    },
+    {
+      "speaker": "B",
+      "start_s": 568.687,
+      "end_s": 575.397,
+      "text": "Thank you, Evan. Thank you for agreeing to serve a second term on the Levy Oversight Committee on this important work."
+    },
+    {
+      "speaker": "B",
+      "start_s": 575.927,
+      "end_s": 586.408,
+      "text": "And now Linda Thompson Black, here in person. Linda Thompson Black was appointed to Seattle Families Education Preschool and Promise Levy Oversight Committee in 2022 as well."
+    },
+    {
+      "speaker": "B",
+      "start_s": 586.922,
+      "end_s": 598.198,
+      "text": "Linda currently works as the area development director for the United Negro College Fund, which helps minority students across Seattle by providing them with the funds they need to support their college education."
+    },
+    {
+      "speaker": "B",
+      "start_s": 598.728,
+      "end_s": 608.254,
+      "text": "Additionally, Linda has experience working for the City of Seattle, where she was a special assistant to Mayor Norm Rice, focusing on education and human services."
+    },
+    {
+      "speaker": "B",
+      "start_s": 608.752,
+      "end_s": 622.972,
+      "text": "While working with Mayor Norm Rice, Linda helped lead the very successful education summit during his tenure, which resulted in the passage of the Families in Education Levy, which is a precursor to the current Families Education Preschool Promise Levy."
+    },
+    {
+      "speaker": "B",
+      "start_s": 623.373,
+      "end_s": 627.671,
+      "text": "I want to thank Linda for agreeing to serve a second term to the Levy Oversight Committee."
+    },
+    {
+      "speaker": "B",
+      "start_s": 628.104,
+      "end_s": 631.89,
+      "text": "Linda, would you like to say a few words? You can step up to the mic."
+    },
+    {
+      "speaker": "G",
+      "start_s": 632.034,
+      "end_s": 637.135,
+      "text": "Yes, thank you so much for the opportunity to be a member of the Levy Oversight Committee."
+    },
+    {
+      "speaker": "G",
+      "start_s": 637.568,
+      "end_s": 643.807,
+      "text": "I want to thank the, um, education team. They are amazing and they do Great work."
+    },
+    {
+      "speaker": "G",
+      "start_s": 645.17,
+      "end_s": 654.79,
+      "text": "This is a passion project for me. We have to have that next generation of educated workplace, and we want opportunity for all."
+    },
+    {
+      "speaker": "G",
+      "start_s": 654.886,
+      "end_s": 661.861,
+      "text": "So I'm excited for a second term and look forward to working with my other committee members, if considered."
+    },
+    {
+      "speaker": "B",
+      "start_s": 662.742,
+      "end_s": 663.849,
+      "text": "Thank you, Linda."
+    },
+    {
+      "speaker": "G",
+      "start_s": 664.025,
+      "end_s": 664.442,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 664.57,
+      "end_s": 675.743,
+      "text": "And we just so appreciate your expertise, and, and yours too, Evan, and really appreciate again your willingness and your generosity to serve on the Levy Oversight Committee to do this important work."
+    },
+    {
+      "speaker": "B",
+      "start_s": 676.128,
+      "end_s": 680.887,
+      "text": "And I should say, colleagues, that the term— the levy expires this year."
+    },
+    {
+      "speaker": "B",
+      "start_s": 681.336,
+      "end_s": 687.297,
+      "text": "The terms are till next year unless there is some change, given now that there's a new levy coming on."
+    },
+    {
+      "speaker": "B",
+      "start_s": 687.425,
+      "end_s": 698.081,
+      "text": "And we have talked to both Linda and Evan about that possibility of that term, you know, if there are any changes to the term, and they both have agreed even with that."
+    },
+    {
+      "speaker": "B",
+      "start_s": 699.03,
+      "end_s": 718.043,
+      "text": "stipulations. So really so fortunate to have them here. And just Linda and I recently met, as I did Evan, I met with all the members of the Levy Oversight Committee, or most of them, and I, I, we just have great folks serving and we are just so lucky to have them on this committee."
+    },
+    {
+      "speaker": "B",
+      "start_s": 718.173,
+      "end_s": 722.267,
+      "text": "So thank you all. Colleagues, do you have any questions or comments?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 723.43,
+      "end_s": 735.52,
+      "text": "All right then, I will— I move that the committee recommend Confirmation of both appointments, um, of Evan Smith and Linda Thompson Black. Is there a second?"
+    },
+    {
+      "speaker": "G",
+      "start_s": 735.728,
+      "end_s": 736.162,
+      "text": "Second."
+    },
+    {
+      "speaker": "B",
+      "start_s": 736.916,
+      "end_s": 741.316,
+      "text": "It is moved and seconded to confirm the appointments. Are there further comments?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 741.958,
+      "end_s": 746.277,
+      "text": "Will the clerk please call the roll on the confirmation of the appointments?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 746.631,
+      "end_s": 747.626,
+      "text": "Councilmember Solomon?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 748.06,
+      "end_s": 748.108,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 748.863,
+      "end_s": 749.633,
+      "text": "Councilmember Moore?"
+    },
+    {
+      "speaker": "G",
+      "start_s": 750.147,
+      "end_s": 750.179,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 751.046,
+      "end_s": 751.849,
+      "text": "Vice Chair Rank?"
+    },
+    {
+      "speaker": "F",
+      "start_s": 752.154,
+      "end_s": 752.379,
+      "text": "Yes."
+    },
+    {
+      "speaker": "C",
+      "start_s": 753.278,
+      "end_s": 753.872,
+      "text": "Chair Rivera."
+    },
+    {
+      "speaker": "E",
+      "start_s": 754.241,
+      "end_s": 754.273,
+      "text": "Aye."
+    },
+    {
+      "speaker": "C",
+      "start_s": 755.461,
+      "end_s": 757.242,
+      "text": "4 in favor, none opposed."
+    },
+    {
+      "speaker": "B",
+      "start_s": 757.387,
+      "end_s": 765.7,
+      "text": "All right, the motion carries, and the recommendation that the appointments be confirmed will be sent to the full City Council meeting on Tuesday, March 18th."
+    },
+    {
+      "speaker": "B",
+      "start_s": 766.696,
+      "end_s": 771.077,
+      "text": "Again, thank you for being here, Linda and Evan. Thanks for joining us online."
+    },
+    {
+      "speaker": "B",
+      "start_s": 772.072,
+      "end_s": 778.091,
+      "text": "We will now move to the 4th item on the agenda. Will the clerk please read the 4th agenda item into the record?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 778.585,
+      "end_s": 786.168,
+      "text": "Agenda item 4, update on Chinatown International District community capacity building for briefing and discussion."
+    },
+    {
+      "speaker": "B",
+      "start_s": 787.4,
+      "end_s": 800.2,
+      "text": "We are joined by the Department of Neighborhoods Director Jennifer Chow, director and my friend, I'm lucky to say, and Department of Neighborhoods staff Soka Don for this presentation."
+    },
+    {
+      "speaker": "B",
+      "start_s": 800.392,
+      "end_s": 807.58,
+      "text": "Thank you both for joining us at the table. Will you please state your names for the record and then you can begin your presentation."
+    },
+    {
+      "speaker": "B",
+      "start_s": 807.662,
+      "end_s": 813.573,
+      "text": "And while they're getting ready, I will also give a shout out to other members of the Don team who are in the audience."
+    },
+    {
+      "speaker": "B",
+      "start_s": 813.717,
+      "end_s": 818.003,
+      "text": "Always love seeing everyone. They come out to support each other. I love it."
+    },
+    {
+      "speaker": "B",
+      "start_s": 818.597,
+      "end_s": 830.333,
+      "text": "Um, and, uh, Director Chow, I say friend because we've been working together for so many years that now via our work we've become friends, and I just so enjoy knowing you and getting to work with you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 830.798,
+      "end_s": 835.919,
+      "text": "So looks like you're situated now. I'll let you state your names for the record and begin."
+    },
+    {
+      "speaker": "B",
+      "start_s": 836.834,
+      "end_s": 842.663,
+      "text": "And then, uh, colleagues, if you'll just hold your questions till the end of the presentation. Thank you."
+    },
+    {
+      "speaker": "A",
+      "start_s": 844.044,
+      "end_s": 847.239,
+      "text": "Jennifer Chow, Director of Department of Neighborhoods."
+    },
+    {
+      "speaker": "D",
+      "start_s": 848.074,
+      "end_s": 851.542,
+      "text": "Soka Don, CID Community Capacity Coordinator, Department of Neighborhoods."
+    },
+    {
+      "speaker": "B",
+      "start_s": 852.891,
+      "end_s": 860.438,
+      "text": "Thank you. And also, I should say, colleagues, if you recall, we did have a presentation about this last year, and this is an update."
+    },
+    {
+      "speaker": "G",
+      "start_s": 861.707,
+      "end_s": 862.176,
+      "text": "Go ahead."
+    },
+    {
+      "speaker": "A",
+      "start_s": 862.241,
+      "end_s": 872.006,
+      "text": "Thank you so much. Thank you, Council Chair Rivera and council members, for the opportunity to provide an update on our community capacity building work in the Chinatown International District."
+    },
+    {
+      "speaker": "A",
+      "start_s": 872.378,
+      "end_s": 883.752,
+      "text": "It is an honor to always be in this space and to be invited to be able to share about the connections, the relationships, and the impact the city and the community has in partnership to make sure that our city is thriving."
+    },
+    {
+      "speaker": "A",
+      "start_s": 885.771,
+      "end_s": 896.142,
+      "text": "And I would say before I start that the CID, as I will refer to it, as the Chinatown International District, known as the CID, is our beloved neighborhood across the city."
+    },
+    {
+      "speaker": "A",
+      "start_s": 896.223,
+      "end_s": 905.947,
+      "text": "I think every community, every neighborhood really does see it as their beloved place-based Chinatown International District where they find their own belonging and own connection."
+    },
+    {
+      "speaker": "A",
+      "start_s": 910.687,
+      "end_s": 919.129,
+      "text": "The Chinatown International District, which I will refer to as the CID, is a culturally rich neighborhood with a diverse community of people, businesses, and organizations."
+    },
+    {
+      "speaker": "A",
+      "start_s": 920.316,
+      "end_s": 930.196,
+      "text": "The community has historically experienced insufficient investment and has organized themselves for decades to ensure their voices and needs are heard for ensuring the livelihood of their neighborhood."
+    },
+    {
+      "speaker": "A",
+      "start_s": 931.58,
+      "end_s": 939.478,
+      "text": "In 2023, the CID was added to the list of America's 11 most endangered historic places by the National Trust for Historic Preservation."
+    },
+    {
+      "speaker": "A",
+      "start_s": 940.912,
+      "end_s": 952.394,
+      "text": "In response to the community's needs and requests, the city has invested significant resources and staff over the past 5 years for community-led visioning and policy changes to address community priorities."
+    },
+    {
+      "speaker": "A",
+      "start_s": 953.704,
+      "end_s": 965.5,
+      "text": "Mayor Harrell and City Council have further committed to prioritizing the CID as we continue to deepen our trust and relationship with the community by collaborating on community-led solutions for their neighborhood."
+    },
+    {
+      "speaker": "A",
+      "start_s": 968.29,
+      "end_s": 974.876,
+      "text": "Some examples of city investments include the Downtown Activation Team, which is focused on public safety in the downtown core."
+    },
+    {
+      "speaker": "A",
+      "start_s": 975.412,
+      "end_s": 989.343,
+      "text": "Which includes Little Saigon and the CID. This effective interdepartmental collaboration of 15 city departments is a prime example of the One Seattle approach and is led by Leanda Kraft, Seattle Restoration Director in the Mayor's Office."
+    },
+    {
+      "speaker": "A",
+      "start_s": 990.403,
+      "end_s": 997.416,
+      "text": "The Downtown Activation Team started scheduled restoration actions in the Little Saigon neighborhood on November 1st, 2024."
+    },
+    {
+      "speaker": "A",
+      "start_s": 998.203,
+      "end_s": 1006.024,
+      "text": "These actions include cleaning 3 times a day to address Visual disorder, including sidewalk pressure washing, litter abatement, and graffiti removal."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1007.32,
+      "end_s": 1014.422,
+      "text": "Scheduled restoration actions or in coordination with the Seattle Police Department to disrupt any criminal behavior and provide visible patrols in the area."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1015.856,
+      "end_s": 1030.359,
+      "text": "The Downtown Activation Team is also working on coordinating outreach efforts in Little Saigon for a holistic response, which include We Deliver Care, which will start today, which starts today, March 13th, in the CID with a specific emphasis in the Little Saigon neighborhood."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1031.6,
+      "end_s": 1051.95,
+      "text": "A central referral source through the Seattle Fire Department to detox and inpatient beds with Valley Cities, identifying a priority area for the Care Department, and working in collaboration with the Human Services Department to refer to outreach providers or the Law Enforcement Assisted Diversion, known as LEAD, and"
+    },
+    {
+      "speaker": "A",
+      "start_s": 1051.966,
+      "end_s": 1060.433,
+      "text": "their program. Other city investments include the Downtown Activation Plan, Seattle Restored program, and the Tenant Improvement Fund in the Office of Economic Development."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1062.625,
+      "end_s": 1082.82,
+      "text": "The Equitable— a lot of E's— the Equitable Development Initiative in the Office of Planning and Community Development also funds the Little Saigon Landmark Project, which is a mixed-use project that includes affordable housing and a cultural hub, International Community Health Services, which is capacity building in support of the Ron Chu Healthy"
+    },
+    {
+      "speaker": "A",
+      "start_s": 1082.916,
+      "end_s": 1094.105,
+      "text": "Aging and Wellness Center, Interim Community Development Association to complete Busch Garden, Uncle Bob's Place, and the Wing Luke Memorial Foundation's capacity building to support their Ing Family Homestead."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1095.18,
+      "end_s": 1100.105,
+      "text": "So those are some areas of the city investments that we have poured into the community."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1100.605,
+      "end_s": 1104.852,
+      "text": "Now I am excited to share about the investments for the CID from the Department of Neighborhoods."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1107.12,
+      "end_s": 1114.978,
+      "text": "Najma Sheikh is the Department of Neighborhoods Central Area Community Engagement Coordinator. She makes sure that the community is engaged with the city and connected to each other."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1116.709,
+      "end_s": 1131.311,
+      "text": "After the tragic murder of Donnie Chin, the city funded a community safety coordinator position in the neighborhood in partnership with the CID Public Safety Council and the CID Business Improvement Area, an organization that supports the public safety coordinator."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1133.55,
+      "end_s": 1147.48,
+      "text": "FODAP, beautiful neighborhood. In addition to funding the community safety coordinator position, the Department of Neighborhoods partnered with the Seattle Police Department Care and the mayor's office to support the Friends of Little Saigon community safety plan and strategies."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1148.379,
+      "end_s": 1157.247,
+      "text": "Pho Dep means beautiful neighborhood, and this initiative took inspiration from a place-based effort in Rainier Beach called Rainier Beach: A Beautiful Safe Place for Youth."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1158.275,
+      "end_s": 1167.64,
+      "text": "What is amazing and inspirational about Pho Dep is that it is bridging cultures and people are finding their place-based solutions, but across connecting with other communities."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1167.768,
+      "end_s": 1171.966,
+      "text": "So seeing what Rainier Beach has been able to do really inspired them to be able to reach out."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1172.432,
+      "end_s": 1179.307,
+      "text": "Department of Neighborhoods was able to connect the community members, and they got to share about their lessons learned and their journey and was able to create this."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1181.01,
+      "end_s": 1198.605,
+      "text": "The goals of FODEP include building a coalition of community members, business owners, property managers, organizations, institutions, service providers, and local governments to collectively improve public safety in Little Saigon and identify ideas and strategies to address the root cause root causes of the neighborhood's biggest challenges."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1200.12,
+      "end_s": 1211.695,
+      "text": "An element of the plan involves improving the public realm in Little Saigon using crime prevention through environmental design, known as CPTED, which can include strategies like lighting, tree pruning, and public art."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1212.389,
+      "end_s": 1219.87,
+      "text": "This month, Seattle City Light completed 10 lights improvement in the area, including upgrading light wattages and installing floodlights."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1221.692,
+      "end_s": 1233.9,
+      "text": "FoDEP had their phase 2 kickoff on February 27th. and I saw some council members there— with the community and city departments, and the ideas suggested in the 100-day challenge for public safety improvements are already being implemented."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1234.07,
+      "end_s": 1249.424,
+      "text": "So it's already underway. So that's to share a little bit about FODEP, and then now to talk about the International Special Review District, known as the ISRD, which was established to promote and preserve the distinct history of architecture and the place in the CID."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1250.612,
+      "end_s": 1265.655,
+      "text": "In order to preserve the cultural character, the International Special Review District Board must review and approve all uses, including public sidewalks, new construction, and changes to building exteriors within the district, including signs or new paint colors or security gates before installation or construction."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1268.79,
+      "end_s": 1277.369,
+      "text": "The Department of Neighborhood also partners with other city departments to invest in culturally responsive and in-language engagement through our community liaisons and equity engagement advisors."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1278.809,
+      "end_s": 1288.375,
+      "text": "Starting this year, DON has increased our staff presence in the neighborhood with 3 staff members holding regular office hours at Hinhay Cowork and Friends of Little Saigon workspace."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1289.353,
+      "end_s": 1300.233,
+      "text": "Rebecca Freestad is DON's ISRD coordinator, Najma Sheikh, Central Area Community Engagement coordinator, and Sokha Don, our CID Community Capacity Building coordinator."
+    },
+    {
+      "speaker": "A",
+      "start_s": 1301.066,
+      "end_s": 1317.602,
+      "text": "Increasing staff presence helps us to belong in community, and we are embedded in the work. On that note, I would like to hand it over to Soka to introduce himself and his role and the phenomenal work he is doing in partnership with the community as Don's CID Community Capacity Building Coordinator."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1319.66,
+      "end_s": 1324.222,
+      "text": "Thank you, Director Chow, and thank you, Council, for having us today. Again, my name is Soka Don."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1324.496,
+      "end_s": 1328.496,
+      "text": "I've been working with the Chinatown International District community for the last 10 years."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1329.091,
+      "end_s": 1350.13,
+      "text": "I first began my work in the neighborhood in 2014 working for SCID PDA, or the Seattle Chinatown International District Preservation and Development Authority, and was appointed to Mayor Murray's Special Task Force on Public Safety and Neighborhood Vitality after the murder of community hero and founder of the International District Emergency Center, Donnie Chin, in 2015."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1350.13,
+      "end_s": 1359.21,
+      "text": "I oversaw local lead operations for King County 2017, also known as Law Enforcement Assistance Diversion, for the Public Defender Association, now known as Purpose, Dignity, and Action."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1360.058,
+      "end_s": 1365.022,
+      "text": "I expanded the LEAD program into the East Precinct in coordination with the Little Saigon neighborhood."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1365.698,
+      "end_s": 1369.802,
+      "text": "Finally, I also work a second job on the weekends in the Chinatown International District."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1370.142,
+      "end_s": 1376.077,
+      "text": "I guess you can say I'm very much rooted past and present. I'm also a renter in the neighborhood as well."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1377.815,
+      "end_s": 1382.188,
+      "text": "Thank you for allowing me to share my connection to the community. Now on to the official part of the presentation."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1383.881,
+      "end_s": 1391.007,
+      "text": "In 2019, the CID Vision Advisory Group saw a shared community vision for a neighborhood plan."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1391.521,
+      "end_s": 1402.279,
+      "text": "These groups of leaders successfully advocated for seed funding and sponsored a community-led visioning process that reflects the diversity of the community and seeks to address the complexity of the Chinatown International District."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1403.001,
+      "end_s": 1414.047,
+      "text": "The commitment of these community leaders to work has been rooted in providing an authentic community voice, representing business owners, community leaders, seniors, residents, and non-English-speaking community members."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1414.545,
+      "end_s": 1422.636,
+      "text": "Hundreds of community members have participated and provided critical input through interviews, focus groups, and community-wide surveys through this community-led visioning process."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1423.374,
+      "end_s": 1443.61,
+      "text": "The CID Vision Advisory Group, with support from the city, provides a clear path forward by community self-determination with strategies and a call to action to address community issues in both the near and long term through building infrastructure for inclusive community engagement and decision-making, ensuring community self-determination in projects that impact the CID, and finally,"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1443.707,
+      "end_s": 1450.813,
+      "text": "creating a long-term community visioning plan. All these 3 items which I have the privilege of talking and diving deeper during this presentation."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1455.507,
+      "end_s": 1462.139,
+      "text": "The CID Visioning Advisory Group membership is the largest, most united coalition representing the Chinatown International District."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1462.624,
+      "end_s": 1469.835,
+      "text": "The stakeholder group is comprised of 16 organizations, based in the neighborhood who saw a need for a shared community vision and neighborhood plan."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1470.492,
+      "end_s": 1478.119,
+      "text": "The advisory group represents a significant cross-section of diverse stakeholders and organizations ranging from family associations to community nonprofits."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1478.856,
+      "end_s": 1490.681,
+      "text": "It's important to stress that the CID Vision Advisory Group members have full-time jobs. The majority are executive directors of these organizations in addition to committing their time to the CID Vision Advisory Group and their incredible work."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1491.418,
+      "end_s": 1500.74,
+      "text": "This is incredibly telling of the commitment and passion of these individuals and these organizations to continue to serve the CID and share a united vision for themselves and the community."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1501.726,
+      "end_s": 1512.188,
+      "text": "As previously noted, the CID organizations came together informally in 2019 so the community could have a stronger voice and influence against multiple pressures occurring in the community."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1516.77,
+      "end_s": 1526.874,
+      "text": "The CID Vision Advisory Group has really approached this community-led visioning model by focusing on 5 fundamental items that very much defines whether or not a neighborhood is able to thrive."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1527.531,
+      "end_s": 1542.911,
+      "text": "The CIED vision advisory group created 5 subcommittees and areas of focus, including housing, that housing is available for both longtime and existing residents, particularly elders and families, and for residents who can strengthen the customer base to support businesses in the neighborhood."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1543.969,
+      "end_s": 1562.52,
+      "text": "Business and economic strength. We know that a thriving neighborhood business district includes the preservation of longstanding and legacy businesses who wish to stay in the CID while also attractively— while also attractively attracting ethnically diverse businesses that contribute to the CID's distinct character."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1563.466,
+      "end_s": 1576.435,
+      "text": "Neighborhood character and culture and history. It's undeniable that the Asian culture and history is central to the CID's identity and should be preserved and honored, and that other communities that are part of the neighborhood's diverse history and identity are also recognized."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1577.253,
+      "end_s": 1586.31,
+      "text": "And celebrate it. Community self-safety and health. Individual and community safety, health, and wellness is paramount to the quality of life for residents."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1586.951,
+      "end_s": 1595.736,
+      "text": "Thank you for Director Chow for talking about this in your presentation, especially for vulnerable community members who face language and literacy barriers."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1596.489,
+      "end_s": 1602.821,
+      "text": "Transportation mobility. The connectivity and ease of getting around within and to from the CID will benefit residents."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1603.063,
+      "end_s": 1618.838,
+      "text": "particularly elders and visitors to neighborhoods alike. These issues are grounded in the CID Vision Advisory Group's vision for a community that's inclusive of diverse groups and across generations who use their collective voice and power for community self-determination and the CID's growth and development."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1623.962,
+      "end_s": 1628.504,
+      "text": "I'd like to talk now about the distinct phases of the CID Vision Advisory Group's visioning work."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1628.955,
+      "end_s": 1635.362,
+      "text": "The Seattle Vision Advisory Group has engaged strategically in 4 phases of work to date, with a 4th phase occurring this year."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1636.28,
+      "end_s": 1648.093,
+      "text": "Phase 1, community engagement framework. Phase 1 started in 2019 to 2020 with a focus on building a community-led and developed model for community engagement, decision-making, advocacy."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1648.753,
+      "end_s": 1654.278,
+      "text": "This model includes strategies for community representation and desired roles for the City of Seattle and other project sponsors."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1654.748,
+      "end_s": 1666.213,
+      "text": "It includes a plan for participation of community members in the Chinatown International District and decision-making and centering groups that do not have the opportunity to meaningfully participate, in particular in the past."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1666.855,
+      "end_s": 1673.963,
+      "text": "This funding supported a consultant for research, structure and decision-making, values and priorities, and an attorney outreach and engagement plan."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1675.73,
+      "end_s": 1685.346,
+      "text": "Phase 2, the community engagement toolkit. The primary objective of Phase 2 in 2020 to 2020-21 was the development of the CID Community Engagement Toolkit."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1685.971,
+      "end_s": 1693.477,
+      "text": "This toolkit recognizes that different types of community issues or projects cannot be served by a one cookie-cutter model for community engagement in the CID."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1694.166,
+      "end_s": 1701.527,
+      "text": "Scoping and planning intentional tailored process for the community is required for all stakeholders to come together for a specific issue or project."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1702.714,
+      "end_s": 1710.495,
+      "text": "This toolkit can be used to collectively engage, make decisions, and advocate for community interests when faced with issues, concerns, or projects that impact the CID."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1711.635,
+      "end_s": 1731.352,
+      "text": "This toolkit is a framework for private and public projects that impact the CID, from city, state agencies, and private developers, nonprofit agencies, and other stakeholders, to meaningfully and— to meaningfully and equitably engage the neighborhood and carry out these projects in a way that avoids community harm, respects community vision and self-determination."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1732.187,
+      "end_s": 1742.993,
+      "text": "This collaborative model This toolkit developed by these 16 community organizations known as the CID Vision of Aja Group is the first of its kind for the CID in the neighborhood in the history of the community."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1743.748,
+      "end_s": 1757.171,
+      "text": "This funding also supports direct costs for translations, stipends, communications, community meeting venues, food, childcare, data visualization, and storytelling materials for the CID Vision of Aja Group."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1759.164,
+      "end_s": 1766.399,
+      "text": "Phase 3, neighborhood strategic plan. The creation of the, the CID neighborhood strategic plan in phase 3 was divided into 3 subphases."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1767.61,
+      "end_s": 1775.85,
+      "text": "The first phase is engaging community in a community vision process that results in a neighborhood plan with long-term community vision, key issues, and strategies."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1784.692,
+      "end_s": 1790.275,
+      "text": "And third, building a structure for Phase 3 work to create implementation details of the neighborhood plan."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1791.253,
+      "end_s": 1806.396,
+      "text": "Key deliverables in Phase 3 included a community survey, which garnered close to 600 responses from community members, a refined communication toolkit, and the CID neighborhood strategic plan with a 10-year vision and identification of priority issues, goals, and strategies."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1807.375,
+      "end_s": 1811.177,
+      "text": "The CID implementation plan also resulted in Phase 3, which I'll talk more about."
+    },
+    {
+      "speaker": "H",
+      "start_s": 1811.241,
+      "end_s": 1811.369,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1811.723,
+      "end_s": 1820.848,
+      "text": "But this translates the CID's visioning of Archer Group's 10-year vision into accountable tasks for the city, along with other responsible government and additional community partners."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1821.764,
+      "end_s": 1828.962,
+      "text": "This includes details regarding actions, timelines, and budgets for implementation of the strategies of the neighborhood strategic plan."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1829.958,
+      "end_s": 1842.929,
+      "text": "The key step of translating the, the 10-year vision into actual items as detailed into the plan was done through the CID's vision of AIGRA's groups, direct input from residents, community-based organizations, and small business owners."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1844.067,
+      "end_s": 1858.799,
+      "text": "Phase 3 funding supported the hiring of new consultants tasked with facilitation and coordination of the CID management of AIGRA group and outreach engagement staff person, direct cost participant stipends, including CID community members, and translation."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1859.873,
+      "end_s": 1863.945,
+      "text": "This also included commercial storefront rental space used for outreach and engagement in the CID."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1864.51,
+      "end_s": 1871.383,
+      "text": "for the CID Vision of Aisha Group. Phase 4, implementation of this strategic plan."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1872.219,
+      "end_s": 1883.412,
+      "text": "Phase 4 builds on the first 3 phases of the CID Vision of Aisha Group's 5 years of strategic work, planning with basic measures of accountability to implement and operationalize the community's vision for the CID."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1884.461,
+      "end_s": 1889.448,
+      "text": "The CID Vision of Aisha Group has outlined the basic measures of accountability and what they should include."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1890.212,
+      "end_s": 1896.948,
+      "text": "Timeline and milestones. Each commitment should have a clear timeline and milestone to ensure progress is measurable and accountable."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1897.653,
+      "end_s": 1907.291,
+      "text": "Reporting requirements. Regular reporting from involved city departments to the city council and the public on the status of these recommendations, including challenges and the progress made."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1908.093,
+      "end_s": 1920.806,
+      "text": "It's all about accountability. Community feedback loops. Mechanisms for ongoing feedback from CBOs and the broader community to adjust strategies, and approaches as needed, ensuring responsiveness to evolving needs and circumstances."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1922.039,
+      "end_s": 1927.166,
+      "text": "Ultimately, Phase 4 is the result of years of coordination, volunteer time, and community-led engagement."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1927.727,
+      "end_s": 1935.466,
+      "text": "As we know, the CID is a diverse, dynamic neighborhood of stakeholders with many different cultural and diverse backgrounds."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1935.963,
+      "end_s": 1940.321,
+      "text": "Heather, the thinking here, represents an exceptional unified voice for the community."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1941.346,
+      "end_s": 1948.104,
+      "text": "Overall funding for the CID Vision Advisory Group from 2019 to the present is $1,408,000."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1948.573,
+      "end_s": 1958.957,
+      "text": "This investment seeks to help reconcile the historic impacts the community experienced from infrastructure, sports and entertainment, social agency placements, transportation, and development projects."
+    },
+    {
+      "speaker": "B",
+      "start_s": 1960.897,
+      "end_s": 1968.449,
+      "text": "Would you like to read all those 16 advisory board group members into the record so we know who they are?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1969.493,
+      "end_s": 1970.832,
+      "text": "Oh yes, perfect."
+    },
+    {
+      "speaker": "H",
+      "start_s": 1972.081,
+      "end_s": 1972.724,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "D",
+      "start_s": 1973.173,
+      "end_s": 1993.228,
+      "text": "Yeah, the 16 members of the coalition for the record. The API Coalition Advocating Together for Health, the Chinatown International District Business Improvement Association, Chinese Information and Service Center, Chung Wah Benevolent Association, Denise Louie Education Center, Friends of Chinatown Seattle, Friends of Japantown,"
+    },
+    {
+      "speaker": "D",
+      "start_s": 1993.902,
+      "end_s": 2010.23,
+      "text": "Friends of Little Saigon, Hip Sing Top, We're halfway there. Inter-American Community Development Association, International Community Health Services, Japanese American Museum, Seattle Chinatown International District Preservation Development Authority, Seniors in Action, Wing Luke Museum, and Yi Fong Toy."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2012.042,
+      "end_s": 2017.703,
+      "text": "Thank you. I just wanted to make sure and give recognition to all these group members for the record."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2018.35,
+      "end_s": 2029.437,
+      "text": "It's really important to name these names and recognize we have Wing Luke in the audience who spoke during public comment, but it's really important for folks to know who's been involved."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2029.501,
+      "end_s": 2042.919,
+      "text": "And this is just the advisory group members. This isn't everyone who's been involved in the effort in community, but it's just so important to name the folks who have been on this advisory group. So thank you for doing that."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2043.143,
+      "end_s": 2054.094,
+      "text": "Thank you so much. Thank you for making that call to do that. Without the Vision Advisory Group members who have No work tirelessly these past 5 years to advocate for this plan, this would not be possible. So thank you for saying that."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2054.417,
+      "end_s": 2055.242,
+      "text": "Thank you, Soka."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2057.766,
+      "end_s": 2063.26,
+      "text": "A community-led and ongoing city partnership. The city partners with the CID's Vision Advisory Group."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2063.582,
+      "end_s": 2069.285,
+      "text": "As we just said, as we just stated, it's vital to understand the needs, priorities, and the impacts of our work in the CID."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2070.111,
+      "end_s": 2075.749,
+      "text": "This work is challenging and consequential. My director, Jennifer Chow, has communicated."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2076.214,
+      "end_s": 2082.354,
+      "text": "This community-led visioning process is pivotal to how the city is building trust in BIPOC communities like the CID."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2082.803,
+      "end_s": 2087.612,
+      "text": "Our job alongside Mayor Herbold is to invest in this community's visions for transformational change."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2088.638,
+      "end_s": 2100.229,
+      "text": "Examples of Don's commitment and investment into community trust building and support for the CID Vision Advisory Group are partnering with OPCD as a strategic partner in the community-led and city-supported visioning process."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2100.754,
+      "end_s": 2108.933,
+      "text": "including working in tandem with Open City's new Downtown Activation Coordinator, Taryn Morton, and the director of Open City, Rico Carandungo."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2110.159,
+      "end_s": 2120.659,
+      "text": "Secondly, convening the city's internal CID core team comprised of leadership from DON, the Office of Planning and Community Development, Seattle Department of Transportation, and the mayor's office."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2122.762,
+      "end_s": 2134.013,
+      "text": "And I have many examples, but I'll give a couple more. Partnering with the University of Washington's Master of Information Studies program develop a data visualization dashboard for tracking projects and investments in the CID."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2135.688,
+      "end_s": 2146.285,
+      "text": "As Jennifer Chow stated, my director, alongside with 2 of my other Don colleagues, physically being in the CID by having regular office hours in the community several times a month to be accessible and truly embedded in our work."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2147.908,
+      "end_s": 2163.951,
+      "text": "In 2024, at the request of the CID Vision Advisory Group, Don has coordinated meetings with leadership from the Department of Neighborhoods, Office of Planning of Community Developments, Office of Housing, Seattle Parks and Recreation, Seattle Department of Construction and Inspections, and Seattle Department of Transportation."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2164.624,
+      "end_s": 2173.983,
+      "text": "The purpose of meeting with department directors and the Seattle Division Advisory Group is to provide an update to city directors on the work of the coalition and the needs for partnership in Seattle."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2174.303,
+      "end_s": 2191.654,
+      "text": "The OPCD will continue to help steward and build a city-community-city partnership by connecting the 60-member coalition of CID stakeholders to other city departments, staff, and agencies that will play a role in actualizing this community's 10-year vision and implementation plan."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2195.422,
+      "end_s": 2207.118,
+      "text": "My last slide before I pass it on to Director Chow. Last but not least, I actually want to share with you some key priorities of the CID implementation plan, and this includes public safety."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2207.782,
+      "end_s": 2228.132,
+      "text": "Enhancing in-language public safety support is needed in the CID. A call to action in regard to public safety includes implementing technology-based solutions like multilingual servicing apps and websites which guide users through the reporting process, aided with visual and visual aids and translation, making reporting more accessible for residents"
+    },
+    {
+      "speaker": "D",
+      "start_s": 2228.356,
+      "end_s": 2234.317,
+      "text": "with limited literacy skills. Coordination and support for building repairs with a focus on unreinforced masonry."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2234.873,
+      "end_s": 2249.744,
+      "text": "One call to action in this implementation plan includes conducting regular meetings with community stakeholders, historic preservation groups, and building owners to ensure ongoing needs, share best practices, and coordinate these efforts on historic building rehabilitation."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2252.03,
+      "end_s": 2260.852,
+      "text": "A local business needs assessment. The Chinatown International District is comprised of incredibly 260 small businesses, many of them which are legacy businesses."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2261.352,
+      "end_s": 2272.405,
+      "text": "that have anchored the neighborhood for decades. A call to action includes the creation of a special parking strategy for event days to mitigate the impact of stadium events on local parking availability."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2272.903,
+      "end_s": 2280.759,
+      "text": "This could include partnerships with regional transit agencies, dedicated shuttle services, services, and support from the Washington State Public Stadium Authority."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2281.9,
+      "end_s": 2288.037,
+      "text": "Thank you again. I'm honored to serve as the city representative for this CID Vision Advisory Group."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2288.586,
+      "end_s": 2299.687,
+      "text": "and this community-led visioning model, which provides the city an opportunity to potentially understand how to work in other communities and neighborhoods across our city as one Seattle. And I'll pass it on to Director Chow."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2301.207,
+      "end_s": 2310.786,
+      "text": "Thank you, Soka. I know that that was a lot to take. We will be following up to share handouts of the CID implementation plan to the council members."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2310.851,
+      "end_s": 2319.914,
+      "text": "So Council Chair Rivera, we'll hand it to you and you can give it to the committee. But I hope that we'll have more opportunities to unpack in the future."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2320.366,
+      "end_s": 2327.919,
+      "text": "But thank you, Soka, for sharing that breadth of information and how we have been working with the community in their community-led vision."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2329.479,
+      "end_s": 2334.812,
+      "text": "As you can see from this slide, there are over a dozen city projects intersecting with the CID neighborhood."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2335.668,
+      "end_s": 2346.516,
+      "text": "All of these projects impact the CID, recognizing large projects like Sound Transit, Ballard Link Extension, and the FIFA World Cup 2026 will have huge impacts on the neighborhood."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2347.41,
+      "end_s": 2352.392,
+      "text": "This requires the city to strengthen coordination to avoid unintended impacts on the community."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2353.023,
+      "end_s": 2362.042,
+      "text": "We must learn from history and continue to deepen our partnership with the CID Visioning Advisory Group in order to support the livelihood and vitalization of the neighborhood for generations to come."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2364.61,
+      "end_s": 2370.669,
+      "text": "These city departments are an essential partner in ensuring the CID is centered in the planning and investments of neighborhood-identified priorities that intersect."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2372.456,
+      "end_s": 2379.281,
+      "text": "with city projects. Department directors will continue to meet with the CID Visioning Advisory Group for relationship building and strategic coordination."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2380.14,
+      "end_s": 2386.674,
+      "text": "And as Soka mentioned, there were a few departments that already met with the CID Visioning Advisory Group last year, and there will be more to come this year."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2389.733,
+      "end_s": 2394.47,
+      "text": "So in closing, we want to highlight CID priorities for 2025 and 2026."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2395.392,
+      "end_s": 2407.234,
+      "text": "We are committed to bringing the CID Neighborhood Implementation Plan to life. We will continue to work with our city departments and external partners to ensure their projects align with the CID Visioning Advisory Group's implementation plan."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2408.068,
+      "end_s": 2421.175,
+      "text": "The CID Visioning Advisory Group has reached an exciting milestone. They have solidified their governance structure, which includes expanding the community coalition to increase community capacity and engage with city departments as a strategic partner."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2422.507,
+      "end_s": 2435.087,
+      "text": "In my role as the Director of the Department of Neighborhoods, I work closely with my colleagues at the director level to share awareness and invite collaboration with the CID Visioning Advisory Group for coordination and alignment with the city's priorities and community's needs."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2436.243,
+      "end_s": 2440.497,
+      "text": "We are deeply grateful for the trusted partnership with the CID Visioning Advisory Group."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2441.139,
+      "end_s": 2453.467,
+      "text": "It takes a village, and investing in the Chinatown International District and the community's 10-year vision and beyond will require regional partnerships and investments by the state, federal, local agencies, and philanthropy."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2454.784,
+      "end_s": 2460.065,
+      "text": "Thank you again, Council Chair Rivera, for the opportunity to share about the progress of our community capacity work in the CID."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2460.562,
+      "end_s": 2466.835,
+      "text": "We look forward to coming back to this committee to provide future updates along with community members of the CID Vision Advisory Group."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2468.103,
+      "end_s": 2473.173,
+      "text": "Thank you, Director Chow, and thank you, um, SOCA, again for being here and giving this update."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2473.221,
+      "end_s": 2480.152,
+      "text": "We know that there are definitely public safety, uh, as a priority need."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2480.28,
+      "end_s": 2485.206,
+      "text": "There are other needs as well in the CID and Little Saigon, including Little Saigon."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2485.254,
+      "end_s": 2491.124,
+      "text": "So Really appreciate your work. Soka, you've been working for 10 years."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2491.237,
+      "end_s": 2499.815,
+      "text": "I didn't realize that long. So, really appreciate all the time that you've put into community and how important it is to give focus to the CID."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2500.429,
+      "end_s": 2506.141,
+      "text": "And like I said, in particular, all the things that are happening in Little Saigon as well."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2506.692,
+      "end_s": 2512.558,
+      "text": "So, colleagues, do you have any questions for Director Chau or Soka?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 2513.187,
+      "end_s": 2524.9,
+      "text": "Let's see. Doesn't look like there are any questions."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2526.907,
+      "end_s": 2529.098,
+      "text": "Oh, Councilmember Solomon."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2530.226,
+      "end_s": 2537.506,
+      "text": "Thank you very much, Madam Chair. Thank you for your presentation on what you're doing in Chinatown International District, Little Saigon."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2538.772,
+      "end_s": 2559.122,
+      "text": "I want to acknowledge that, you know, there are a few points that you brought out, like the full-depth safety plan, and want to acknowledge the work of the Seattle Police Department folks, Barbara Biondo and Monica Lee, that are working with community to replicate the place-based strategies"
+    },
+    {
+      "speaker": "H",
+      "start_s": 2559.154,
+      "end_s": 2574.139,
+      "text": "that took hold in Rainier Beach in this particular area, because One of the things we found with Marina Beach is when it's community-driven, it's actually sustainable, as opposed to when it's law enforcement or city-directed."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2575.94,
+      "end_s": 2595.533,
+      "text": "Along those lines, you mentioned partnerships with— and for full transparency, I'm going to be meeting with the West Precinct folks tomorrow to talk about what kind of support my office can provide for efforts in the CID and Little Saigon because it's my district."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2597.87,
+      "end_s": 2602.401,
+      "text": "I know I've met with LEAD. I have yet to meet with REACH."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2602.561,
+      "end_s": 2609.008,
+      "text": "But is REACH also one of our partners that's doing work in that area as well through Evergreen Treatment Services?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 2610.505,
+      "end_s": 2617.105,
+      "text": "I believe so. But I can confirm with you we have staff who are directly connected to that, that work."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2618.056,
+      "end_s": 2625.817,
+      "text": "Okay, cool. And then looking at the visioning advisory group membership, long impressive list of folks."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2627.238,
+      "end_s": 2647.24,
+      "text": "But again, thinking about, you know, our 12th and Weller, 12th and King area, realizing that Seattle Indian Health Board and Seattle Indian Center, you know, have properties there and You know, the navigation center being owned or having been owned,"
+    },
+    {
+      "speaker": "H",
+      "start_s": 2649.448,
+      "end_s": 2654.432,
+      "text": "you know, by one of the organizations serving the Native communities."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2655.357,
+      "end_s": 2666.825,
+      "text": "So I'm wondering if they've been able to be in partnership with this group as we're reimagining or moving forward with public safety efforts in the area."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2671.259,
+      "end_s": 2685.027,
+      "text": "Thank you for that question, Councilmember Solomon. I think as the CID Visioning Advisory Group has now reached a milestone of their governance structure and as they're expanding their coalition, I think that is something that they are considering."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2686.086,
+      "end_s": 2692.136,
+      "text": "And so I think that's something that we should come back with an update to see how that expansion works and how they would be connected. But—"
+    },
+    {
+      "speaker": "H",
+      "start_s": 2692.601,
+      "end_s": 2708.331,
+      "text": "Yeah, I'm just looking at all the players who are in the area, including seeing something about Parks Department closing off Huamei Park because it's not being used for its intended uses."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2709.237,
+      "end_s": 2713.349,
+      "text": "And I think one of the things we talked about the other day was how we do some park activation."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2715.19,
+      "end_s": 2719.69,
+      "text": "You know, maybe getting with the Seattle Kung Fu Club to do tai chi classes in the park."
+    },
+    {
+      "speaker": "F",
+      "start_s": 2720.08,
+      "end_s": 2720.405,
+      "text": "I don't know."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2722.309,
+      "end_s": 2738.848,
+      "text": "You know, trying to think out of the box of how we can do some positive space activation. innovation, you know, in that area, as well as making sure that all the different players and all the different parties that have skin in the game in the area are, you know, actively participating."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2738.896,
+      "end_s": 2747.191,
+      "text": "And that's one of the things that sounds like there's a lot of that already going on in terms of, you know, that coordination and facilitation."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2748.206,
+      "end_s": 2748.387,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2748.436,
+      "end_s": 2750.468,
+      "text": "And I want to lend my efforts to that as well."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2753,
+      "end_s": 2773.383,
+      "text": "Thank you for these questions. I'm happy to just report out that Friends of Little Saigon, so Quyen Pham, Executive Director of that organization, has been directly involved in this Seattle Asian Advisory Group for the past number of years as well and is planning to give a formal presentation on this FADAP effort to the group."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2774.425,
+      "end_s": 2774.57,
+      "text": "Got it."
+    },
+    {
+      "speaker": "D",
+      "start_s": 2774.762,
+      "end_s": 2782.031,
+      "text": "So that's just an example of the internal coordination on a community level that is, that's happening so everyone's on the same page and can support each other in alignment."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2782.546,
+      "end_s": 2794.025,
+      "text": "Okay, great. Uh, final thing I'll point out is that, uh, you already noticed on your, um, projects intersecting with the CAD, uh, you do have the World Cup on there, 2026."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2794.315,
+      "end_s": 2810.058,
+      "text": "Great. Uh, but let's not forget we have the Club Cup coming up this year, and, um, you know, it's no secret that, uh, The CID did not benefit from when, you know, All-Star Game was here, right?"
+    },
+    {
+      "speaker": "H",
+      "start_s": 2811.341,
+      "end_s": 2824.822,
+      "text": "And that probably fell on the city. So I would just encourage us to make sure that we don't forget the CID for the Club Cup that's coming up this year and not just focus on the World Cup next year. So."
+    },
+    {
+      "speaker": "A",
+      "start_s": 2825.383,
+      "end_s": 2841.189,
+      "text": "Thank you, Councilmember Solomon. Definitely the World Club Cup is on our radar and we are already in the works with coordinating with community and making sure that they will be involved in the planning process as we are planning it out, and we appreciate your offer and will reach out for your support. Okay, great."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2841.448,
+      "end_s": 2841.739,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 2850.679,
+      "end_s": 2851.868,
+      "text": "Vice Chair Rink."
+    },
+    {
+      "speaker": "H",
+      "start_s": 2852.655,
+      "end_s": 2853.153,
+      "text": "Wonderful."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2854.664,
+      "end_s": 2871.029,
+      "text": "Thank you, Chair Rivera, and thank you both for today's presentation. I wanted to take us back actually to the beginning of your presentation and just state again for the record that The CID is one of America's most— 11 most endangered historic places."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2871.944,
+      "end_s": 2878.3,
+      "text": "And just really letting that sink in, because I also think we don't necessarily talk about what we mean when we say endangered."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2879.729,
+      "end_s": 2884.705,
+      "text": "We're not just talking about public safety challenges. We're talking about cultural erasure and displacement."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2885.909,
+      "end_s": 2892.426,
+      "text": "And so making sure that community is leading the way and the city is supporting in community-driven efforts."
+    },
+    {
+      "speaker": "F",
+      "start_s": 2892.491,
+      "end_s": 2892.635,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2893.116,
+      "end_s": 2902.885,
+      "text": "And community-based ownership of spaces in the CID is so important to make sure we are actually addressing and making sure that the CID continues to be the thriving community that it is in so many ways."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2903.478,
+      "end_s": 2917.449,
+      "text": "And I really want to applaud the efforts of the Department of Neighborhoods to be really leading in that fashion by having this CID Visioning Advisory Group that is really paving the way forward on how— what is the future of the CID."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2917.577,
+      "end_s": 2929.84,
+      "text": "I just really want to name that and applaud that work and also note that the council, we up here need to be doing the work to make sure that we are supporting the investments that will allow for the CID to continue to thrive."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2930.097,
+      "end_s": 2934.994,
+      "text": "And we're taking steps to make sure we're preventing displacement wherever possible."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2935.556,
+      "end_s": 2946.073,
+      "text": "And I was really excited to join you all for the FODEP event. I feel like that was an event of seeing this really community-driven solutions work happening in real time."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2946.426,
+      "end_s": 2950.764,
+      "text": "It was It was a packed room, and I know Councilmember Solomon's staff were there as well."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2950.828,
+      "end_s": 2965.77,
+      "text": "It was a really incredible event bringing together different stakeholders across the Little Saigon neighborhood to make sure that we are actually hearing all perspectives and really being action-oriented and focused on what are we going to do next."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2966.637,
+      "end_s": 2970.766,
+      "text": "And to that end, I just wanted to note that event. It was amazing."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2970.815,
+      "end_s": 2984.49,
+      "text": "I'm really excited and would love to continue to hear, like, next And looking across some of the current city projects intersecting with the CID, I'm really glad that Councilmember Solomon brought up FIFA."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2984.49,
+      "end_s": 2990.41,
+      "text": "And I know it's been really front of mind for me looking at what happened in the MLB All-Star Game."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2990.41,
+      "end_s": 2997.61,
+      "text": "And I know in a lot of the discussions I've had with partners, there's still a lot of feelings and concern that we could be heading that way."
+    },
+    {
+      "speaker": "E",
+      "start_s": 2997.61,
+      "end_s": 3003.61,
+      "text": "So I wonder, for the record, what are some of the things that you've heard about MLB All-Stars and what happened there, and how can we mitigate that when we're looking ahead to FIFA? Thank you."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3008.33,
+      "end_s": 3013.378,
+      "text": "Great question, Councilmember Moringa. Thank you so much for your comment and acknowledgment of the community-led work."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3014.756,
+      "end_s": 3020.942,
+      "text": "I also agree that at FODEP, seeing the community organize that was amazing because we really did attend as a guest."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3022.144,
+      "end_s": 3030.989,
+      "text": "So it was great to be in community. With that said, I would say that a lot— there was a lot of factors, but I think that we are much more well prepared."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3031.566,
+      "end_s": 3039.933,
+      "text": "This time around, more internally coordinated. The mayor's office has hired a World Cup director, Kylie Rolfe, in the mayor's office."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3039.997,
+      "end_s": 3048.989,
+      "text": "And so now we have subcommittees that are more internally coordinated. The Department of Neighborhoods is leading the community activation committee with the other departments."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3049.053,
+      "end_s": 3067.34,
+      "text": "So that's one. And we are also in the permitting committee just to make sure that, again, our historic districts are brought in and want to support the livelihood of the historic districts and making sure they're they're able to invite folks in and do what we want to do in alignment with compliance and what needs to be done for the community, right?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 3067.42,
+      "end_s": 3072.816,
+      "text": "Again, as we talked about preserving their cultural architecture."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3072.896,
+      "end_s": 3078.981,
+      "text": "So with that, I say we're more— we have more planning that's ahead of us, that we have a little bit more runway."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3079.543,
+      "end_s": 3084.28,
+      "text": "There still needs a lot to be done. It definitely— we don't want to take it for granted thinking we got it."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3085.323,
+      "end_s": 3090.469,
+      "text": "We have to learn a lot from the community. We don't need them to repeat their harm or what did not work well."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3090.613,
+      "end_s": 3107.413,
+      "text": "So we're very clear about what didn't work, about making sure that we point to the CID and to the other neighborhoods, but really to the CID to make sure that they are benefiting and figuring out what benefit— how do they identify what benefits them as folks come into the city and to engage and to patron their neighborhood?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 3107.846,
+      "end_s": 3117.107,
+      "text": "Because they are also residents that live there, and is there a cultural home? But they also want to invite, you know, folks into their community by making sure that it's safe and that it's welcomed."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3120.333,
+      "end_s": 3132.82,
+      "text": "Thank you for that. Thank you in so many ways. And I'm glad that that work is happening and certainly want to make sure that we're lending our support wherever possible to make sure that there is a real benefit, that community is benefiting from all of these new guests coming into our city."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3133.64,
+      "end_s": 3143.246,
+      "text": "And with that, I also want to just name that, you know, so much of our discussions, especially lately as it relates to the CID, tend to focus on public safety."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3143.294,
+      "end_s": 3147.359,
+      "text": "And I will never negate the public safety challenges that, that are going on."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3147.488,
+      "end_s": 3152.357,
+      "text": "And this council certainly is trying to focus its attention on addressing those in partnership with community."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3153.096,
+      "end_s": 3162.191,
+      "text": "And it can't be the only thing that we talk about when it comes to the CID. We want our community to know that the CID is a vibrant community that is also a fun place to go."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3162.977,
+      "end_s": 3168.034,
+      "text": "And to eat and enjoy amazing establishments like Ma'am's Books, which I have to name."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3168.131,
+      "end_s": 3175.917,
+      "text": "I mean, this is— we are home to the only independent Asian American bookstore in Seattle, or I believe in the Pacific Northwest."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3176.559,
+      "end_s": 3182.996,
+      "text": "So special shout out to one of our panelists, Soka, for really holding that down for our community."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3183.125,
+      "end_s": 3197.864,
+      "text": "But there's amazing places to go in the CID, and I hope that we can continue to use, you know, our platforms up here here to be really telling community that this is a place to go and connect and see again all the vibrance that Seattle has to offer."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3198.91,
+      "end_s": 3204.98,
+      "text": "So I thank you again for your presentation. My office wants to be supportive in all of this work where possible."
+    },
+    {
+      "speaker": "E",
+      "start_s": 3205.561,
+      "end_s": 3214.998,
+      "text": "And again, just thank you for the approach that you've taken in working with community and uplifting their voice and empowering them. Thank you, Chair."
+    },
+    {
+      "speaker": "D",
+      "start_s": 3215.192,
+      "end_s": 3215.352,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "G",
+      "start_s": 3215.673,
+      "end_s": 3216.171,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3217.022,
+      "end_s": 3228.885,
+      "text": "Um, colleagues, I don't see any other hands up. I will thank again Department of Neighborhoods for coming and presenting and for the work that is happening in the CID."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3229.864,
+      "end_s": 3250.156,
+      "text": "I will say that, uh, colleagues, I have a special place in my heart for the Department of Neighborhoods because I started my career really doing outreach work, and I see the Department of Neighborhoods is our outreach arm of the city, and it is our direct, um, uh, window into community"
+    },
+    {
+      "speaker": "B",
+      "start_s": 3250.413,
+      "end_s": 3259.036,
+      "text": "and partnership with community, which is so important. And bringing back the voice of community to the city is so important."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3259.1,
+      "end_s": 3267.899,
+      "text": "And so today we're talking about the CID, but the Department of Neighborhoods, um, laises with community across the city."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3268.396,
+      "end_s": 3274.109,
+      "text": "And it is really a department that is very engaged under the leadership of Director Chow."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3275.216,
+      "end_s": 3293.219,
+      "text": "I am so proud of the work that you all do to bring, like I said, the voice of community back to the city and to find opportunities for us to be engaged and in community, you know, on an on-hands way, not just sitting from up here."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3293.38,
+      "end_s": 3295.915,
+      "text": "So I really appreciate being able to join you at events."
+    },
+    {
+      "speaker": "G",
+      "start_s": 3295.963,
+      "end_s": 3296.075,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3297.424,
+      "end_s": 3302.005,
+      "text": "et cetera. So really, thank you for all that you do, for all that your team does."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3302.183,
+      "end_s": 3308.249,
+      "text": "Thank you for coming here today. Colleagues, thank you for your questions today."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3310.096,
+      "end_s": 3315.817,
+      "text": "Are there any other questions or comments for Don? Seeing none."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3316.722,
+      "end_s": 3321.486,
+      "text": "Any other questions or comments in general for today? Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3321.551,
+      "end_s": 3329.504,
+      "text": "Seeing no further questions, this concludes the March 13th, 2025 meeting of the Libraries Education and Neighborhoods Committee."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3329.938,
+      "end_s": 3335.606,
+      "text": "Our next committee meeting is scheduled for Thursday, March 27th, 2025, at 9:30 AM."
+    },
+    {
+      "speaker": "B",
+      "start_s": 3336.234,
+      "end_s": 3344.501,
+      "text": "If there's no further business, this meeting will adjourn. Hearing no further business, it's 10:27 AM, and this meeting is adjourned."
+    },
+    {
+      "speaker": "A",
+      "start_s": 3346.575,
+      "end_s": 3347.341,
+      "text": "Thank you."
+    },
+    {
+      "speaker": "H",
+      "start_s": 3347.574,
+      "end_s": 3347.757,
+      "text": "Thank you."
+    }
+  ]
+}

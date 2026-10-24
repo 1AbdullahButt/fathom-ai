@@ -1,0 +1,1366 @@
+{
+  "slug": "ami-is1009a",
+  "provider": "assemblyai",
+  "transcript_id": "276fdbb9-12cf-4b33-8f3d-8875b992bb8a",
+  "duration_s": 839,
+  "utterances": [
+    {
+      "speaker": "A",
+      "start_s": 3.17,
+      "end_s": 24.718,
+      "text": "How does that work? The microphone's supposed to be to your right."
+    },
+    {
+      "speaker": "B",
+      "start_s": 25.812,
+      "end_s": 55.362,
+      "text": "Right, so, and then where's the other one? Oh, here. Okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 55.362,
+      "end_s": 55.924,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 55.924,
+      "end_s": 56.518,
+      "text": "Everybody ready?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 56.518,
+      "end_s": 57.674,
+      "text": "I think so."
+    },
+    {
+      "speaker": "B",
+      "start_s": 57.674,
+      "end_s": 60.772,
+      "text": "I think the first thing we do is introduce ourselves."
+    },
+    {
+      "speaker": "A",
+      "start_s": 60.772,
+      "end_s": 62.538,
+      "text": "Yeah, that's a good"
+    },
+    {
+      "speaker": "B",
+      "start_s": 62.586,
+      "end_s": 67.29,
+      "text": "plan. With name and what your function is. So maybe we start with you."
+    },
+    {
+      "speaker": "C",
+      "start_s": 67.29,
+      "end_s": 80.759,
+      "text": "Yeah, my name is Francina and I'm in user interface. My role is— the main responsibility is user interface. And my role is to design a television remote control."
+    },
+    {
+      "speaker": "D",
+      "start_s": 81.13,
+      "end_s": 81.406,
+      "text": "Mm-hmm."
+    },
+    {
+      "speaker": "B",
+      "start_s": 81.406,
+      "end_s": 81.99,
+      "text": "Okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 81.99,
+      "end_s": 87.008,
+      "text": "And I'm a marketing person. I want to figure out how to sell them."
+    },
+    {
+      "speaker": "D",
+      "start_s": 87.008,
+      "end_s": 87.835,
+      "text": "Mm-hmm."
+    },
+    {
+      "speaker": "B",
+      "start_s": 87.997,
+      "end_s": 88.532,
+      "text": "And your name is?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 88.532,
+      "end_s": 89.586,
+      "text": "My name is Eileen."
+    },
+    {
+      "speaker": "B",
+      "start_s": 89.586,
+      "end_s": 90.527,
+      "text": "Okay."
+    },
+    {
+      "speaker": "C",
+      "start_s": 90.527,
+      "end_s": 107.285,
+      "text": "Yeah, I'm Janhavi. I'm— my role is industrial designer, and my responsibilities are deal with technical functional designs and specifications of user interface and dealing with user interface design."
+    },
+    {
+      "speaker": "B",
+      "start_s": 107.887,
+      "end_s": 118.15,
+      "text": "Very good. And as you already know, I'm Betsy. I'm the project manager for today. So why don't we look at the presentation to see what we really are supposed to do?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 118.15,
+      "end_s": 119.019,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 119.019,
+      "end_s": 166.872,
+      "text": "Yes, opening, acquaintance, tool training. Well, the tools, I think we already— I guess the tool is really our— the computer, as far as I can see. We get— each of us will get instructions and we'll take it from there. Project plan, that falls under the same heading pretty much. I don't think we have any great discussion at this point. No. Here is what this thing should be. This thing we are going to design is a new remote control. Should be original, trendy, and of course user-friendly. So maybe you want to make some notes of that."
+    },
+    {
+      "speaker": "A",
+      "start_s": 166.872,
+      "end_s": 179.77,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 195.858,
+      "end_s": 222.123,
+      "text": "Okay. All right. Here is what the functional design is supposed to achieve. That is, it's going to be individual work, and then at the meeting we'll discuss what we have come up with. The same goes for the conceptual design. There will be individual work. And then discussion afterwards, detailed design. Same thing, basically."
+    },
+    {
+      "speaker": "A",
+      "start_s": 222.123,
+      "end_s": 241.577,
+      "text": "3 different types of design that we're going to be concerned with. Okay. Functional, conceptual, and detailed."
+    },
+    {
+      "speaker": "B",
+      "start_s": 243.99,
+      "end_s": 245.026,
+      "text": "I can't write with this thing."
+    },
+    {
+      "speaker": "A",
+      "start_s": 245.026,
+      "end_s": 255.912,
+      "text": "Maybe we should redesign it. Yes. After we finish the remote control, we'll get to that. Yeah, okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 256.299,
+      "end_s": 275.569,
+      "text": "All right. Then tool training, try out the whiteboard, participants can draw their favorite animal. Does anybody want to go and see how the whiteboard works? So that in case we have to in the next meeting present something on the whiteboard. You want to go, Eileen?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 275.569,
+      "end_s": 277.383,
+      "text": "Okay, I'll see what I can do."
+    },
+    {
+      "speaker": "B",
+      "start_s": 277.383,
+      "end_s": 279.877,
+      "text": "Whether you— without hanging yourself."
+    },
+    {
+      "speaker": "A",
+      "start_s": 279.877,
+      "end_s": 283.715,
+      "text": "See if I remember how to draw a kitty cat or a rabbit or something."
+    },
+    {
+      "speaker": "B",
+      "start_s": 283.715,
+      "end_s": 290.174,
+      "text": "And remember, you have to press so it works."
+    },
+    {
+      "speaker": "A",
+      "start_s": 290.174,
+      "end_s": 297.635,
+      "text": "So that it will record, okay. Traditional kitty cat."
+    },
+    {
+      "speaker": "B",
+      "start_s": 308.036,
+      "end_s": 309.716,
+      "text": "I have a fat cat."
+    },
+    {
+      "speaker": "A",
+      "start_s": 310.303,
+      "end_s": 317.102,
+      "text": "I have a very fat cat. And it likes to sit like that."
+    },
+    {
+      "speaker": "B",
+      "start_s": 317.102,
+      "end_s": 317.982,
+      "text": "Okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 317.982,
+      "end_s": 318.455,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 320.618,
+      "end_s": 327.459,
+      "text": "And your front scene, right? Would you like like just to see how it feels so that you have a little idea?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 328.888,
+      "end_s": 330.172,
+      "text": "Am I supposed to wipe off that?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 330.252,
+      "end_s": 331.73,
+      "text": "No, no, no, that's okay. No,"
+    },
+    {
+      "speaker": "C",
+      "start_s": 331.954,
+      "end_s": 332.211,
+      "text": "okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 332.356,
+      "end_s": 332.452,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 333.705,
+      "end_s": 335.487,
+      "text": "I don't know. Get to that later."
+    },
+    {
+      "speaker": "A",
+      "start_s": 336.113,
+      "end_s": 336.37,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 337.558,
+      "end_s": 338.65,
+      "text": "What should I do?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 347.93,
+      "end_s": 349.33,
+      "text": "I'm going to draw a snake."
+    },
+    {
+      "speaker": "B",
+      "start_s": 349.33,
+      "end_s": 356.68,
+      "text": "Oh,"
+    },
+    {
+      "speaker": "A",
+      "start_s": 357.63,
+      "end_s": 363.101,
+      "text": "okay. I hope the kitty cat is hungry because I don't like snakes."
+    },
+    {
+      "speaker": "B",
+      "start_s": 363.101,
+      "end_s": 386.01,
+      "text": "Here's a project finance, which of course we all have to think about when we design this thing. Um, selling price is supposed to be €25. Profit aim for the company is €50 million. The market range unlimited, meaning international."
+    },
+    {
+      "speaker": "A",
+      "start_s": 386.01,
+      "end_s": 386.946,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 386.946,
+      "end_s": 392.431,
+      "text": "And the production cost should not exceed, hopefully should be less than €12.50."
+    },
+    {
+      "speaker": "A",
+      "start_s": 392.431,
+      "end_s": 398.538,
+      "text": "Okay, that should keep everybody on their toes and challenged."
+    },
+    {
+      "speaker": "B",
+      "start_s": 403.834,
+      "end_s": 460.62,
+      "text": "So these are all things, of course, to remember with the budget and when you design, materials, cost, etc. Now, the discussion, I guess, is, does any one of you have experience with remote control. Yeah, of course. I guess we use them, we use them, right, every day. And, um, now having used the remote control for years, does anybody already have like an idea, like things you didn't like with it, things you would like to change, things you would like to improve with this thing? Any first ideas? Would you like it to be smaller, Bigger, have more, have more buttons on it, or maybe clearly better marked buttons, you know, things like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 460.62,
+      "end_s": 465.11,
+      "text": "Yes, I, I feel that all the remotes should be very compact,"
+    },
+    {
+      "speaker": "B",
+      "start_s": 465.27,
+      "end_s": 465.462,
+      "text": "small,"
+    },
+    {
+      "speaker": "C",
+      "start_s": 465.687,
+      "end_s": 486.619,
+      "text": "right? Those which we get here nowadays, it's very long. And, um, and it should have multi-purpose, like the remote control which we use for TV, it should, it should be used for some other purpose also, like Controlling the temperature inside the house, or for air conditioners, or for heating system."
+    },
+    {
+      "speaker": "B",
+      "start_s": 486.619,
+      "end_s": 495.116,
+      "text": "So it should be a multifunctional gadget that would control all your household machines, basically."
+    },
+    {
+      "speaker": "C",
+      "start_s": 495.116,
+      "end_s": 495.684,
+      "text": "Exactly."
+    },
+    {
+      "speaker": "A",
+      "start_s": 495.684,
+      "end_s": 502.525,
+      "text": "€1,250 per—"
+    },
+    {
+      "speaker": "B",
+      "start_s": 502.525,
+      "end_s": 503.089,
+      "text": "Well,"
+    },
+    {
+      "speaker": "A",
+      "start_s": 503.604,
+      "end_s": 513.041,
+      "text": "who knows, if we get a really good designer, maybe we can do that. We certainly can try to— I agree with her that to market something successfully, it should do some more things."
+    },
+    {
+      "speaker": "B",
+      "start_s": 513.041,
+      "end_s": 520.896,
+      "text": "It should be something new. It should do something different than just what we have. Now, of course, the other thing to think there is maybe the design."
+    },
+    {
+      "speaker": "C",
+      "start_s": 520.896,
+      "end_s": 524.278,
+      "text": "Yeah, design should be— yeah, it should be different. All the— almost all the—"
+    },
+    {
+      "speaker": "B",
+      "start_s": 524.278,
+      "end_s": 538.449,
+      "text": "Like trendy, you know, like earlier we saw maybe it should be something trendy, you know. Maybe different colors or materials or, you know. So, yeah, shapes, right? You know, like kidney-shaped feels better in your hand or something."
+    },
+    {
+      "speaker": "A",
+      "start_s": 539.106,
+      "end_s": 539.829,
+      "text": "Friendly shape."
+    },
+    {
+      "speaker": "B",
+      "start_s": 539.829,
+      "end_s": 540.182,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 540.182,
+      "end_s": 551.163,
+      "text": "That would help. I think another thing that would help is if it beeps when you clap, because I think one of the big things that happens is people lose them. They can't find it."
+    },
+    {
+      "speaker": "B",
+      "start_s": 551.163,
+      "end_s": 573.533,
+      "text": "That is true. They put the newspaper or they put it behind a plant or, you know, whatever, and suddenly the phone rings and they want to turn the TV off and they say, where the hell is my remote control? Yeah, well, or yeah, or if it's really If it's really in a dark spot, that it gives out a sound or a signal. Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 573.629,
+      "end_s": 576.658,
+      "text": "So it should either beep or a light should blink."
+    },
+    {
+      "speaker": "B",
+      "start_s": 576.818,
+      "end_s": 581.384,
+      "text": "If lost, signal. Throw signal, you know."
+    },
+    {
+      "speaker": "D",
+      "start_s": 581.545,
+      "end_s": 585.294,
+      "text": "Yeah, maybe it should have a light so that we can just recognize where it is."
+    },
+    {
+      "speaker": "B",
+      "start_s": 585.742,
+      "end_s": 592.216,
+      "text": "Exactly. I mean, just that's why I'm saying, I'm just saying throw signal, meaning just whether it's a beep or whether a light or a flag."
+    },
+    {
+      "speaker": "A",
+      "start_s": 592.36,
+      "end_s": 605.68,
+      "text": "And do you think a good clue for That is that it would respond to a clap or respond to your voice or it would respond— what should you have to do to make it beep or blink?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 605.68,
+      "end_s": 625.355,
+      "text": "Okay, my idea is maybe that the minute it's really hidden, in other words, if it's like in a dark spot, meaning, you know, like a newspaper is on top, a sweater is on top, or it's behind a plant, at that moment it's like, what do you call it, the light sensors, you know."
+    },
+    {
+      "speaker": "A",
+      "start_s": 625.456,
+      "end_s": 626.246,
+      "text": "In that moment it has a sensor."
+    },
+    {
+      "speaker": "B",
+      "start_s": 627.892,
+      "end_s": 637.164,
+      "text": "It gets a certain darkness, it has a sensor and it gives out a signal. Whether that be a light signal or a beep, I mean, we can discuss that later, you know."
+    },
+    {
+      "speaker": "A",
+      "start_s": 637.164,
+      "end_s": 641.186,
+      "text": "So the light sensor would activate the signal?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 641.186,
+      "end_s": 657.186,
+      "text": "That's right. You know, it would be— right, you have to have some kind of sensor. And I think voice or clapping, that's not specific enough. I know there are the lamps and stuff, you know, you can clap on and off. But I think they only work to a certain degree."
+    },
+    {
+      "speaker": "A",
+      "start_s": 657.186,
+      "end_s": 661.845,
+      "text": "But it could be someplace really obvious and you still wouldn't be able to find it."
+    },
+    {
+      "speaker": "D",
+      "start_s": 661.845,
+      "end_s": 664.8,
+      "text": "What, with—"
+    },
+    {
+      "speaker": "A",
+      "start_s": 664.8,
+      "end_s": 667.703,
+      "text": "Well, because you're silly, because people are silly."
+    },
+    {
+      "speaker": "B",
+      "start_s": 667.703,
+      "end_s": 670.494,
+      "text": "Oh yeah, well, but then those people, we can't help everybody."
+    },
+    {
+      "speaker": "A",
+      "start_s": 670.494,
+      "end_s": 679.581,
+      "text": "Well, if it were like on top of your bookcase and you usually kept it on the coffee table, you know. Okay, we have to move along."
+    },
+    {
+      "speaker": "B",
+      "start_s": 679.581,
+      "end_s": 702.578,
+      "text": "Yeah, we have to move along, but I think we have some good Good points to start with here. Okay, the next meeting will be in 30 minutes. I think you all did you get notices on your computer for this? Okay, so we'll you got the notice. The working design, I guess that's the function ID. Who is this? The industrial designer?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 703.045,
+      "end_s": 703.384,
+      "text": "Yeah,"
+    },
+    {
+      "speaker": "B",
+      "start_s": 703.61,
+      "end_s": 703.996,
+      "text": "that's you."
+    },
+    {
+      "speaker": "D",
+      "start_s": 704.722,
+      "end_s": 706.726,
+      "text": "Yeah, it's functional. Yeah, exactly."
+    },
+    {
+      "speaker": "B",
+      "start_s": 706.941,
+      "end_s": 710.983,
+      "text": "Okay, so. We're looking for a working design when we come back."
+    },
+    {
+      "speaker": "D",
+      "start_s": 710.983,
+      "end_s": 715.632,
+      "text": "Working design, yeah. It's mainly technical functional design."
+    },
+    {
+      "speaker": "B",
+      "start_s": 715.632,
+      "end_s": 744.296,
+      "text": "And then the technical function— you're the technical function, so you're the working design. So you have a working design and then a functional design. And the marketing manager is coming up with some user requirement specification, like friendliness and what we just discussed in general. That would be your idea. And of course, price. That it, that it, that the price is a good price. I mean, the price is given, but that was—"
+    },
+    {
+      "speaker": "A",
+      "start_s": 744.296,
+      "end_s": 749.675,
+      "text": "We have to justify that price by having sufficient features to make it sell at that price."
+    },
+    {
+      "speaker": "B",
+      "start_s": 749.675,
+      "end_s": 786.765,
+      "text": "That's right. And, you know, you, you will get specific instructions for that. I think that's the end of the show. Yeah. So we have, well, we have 2, 3 minutes. Any questions at this point or suggestions? I think basically you will get instructions to work with, and if you have any questions— I guess you can—"
+    },
+    {
+      "speaker": "A",
+      "start_s": 786.765,
+      "end_s": 792.417,
+      "text": "Okay, I think I have enough to think about till our next meeting. How about you people?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 792.417,
+      "end_s": 794.681,
+      "text": "Yeah, I think, yeah."
+    },
+    {
+      "speaker": "B",
+      "start_s": 794.681,
+      "end_s": 796.319,
+      "text": "Okay. All"
+    },
+    {
+      "speaker": "A",
+      "start_s": 796.544,
+      "end_s": 796.977,
+      "text": "right, well,"
+    },
+    {
+      "speaker": "B",
+      "start_s": 798.117,
+      "end_s": 803.577,
+      "text": "then we see you in about 30 minutes and see what we can come up with."
+    },
+    {
+      "speaker": "A",
+      "start_s": 803.577,
+      "end_s": 804.588,
+      "text": "Okay, very good."
+    },
+    {
+      "speaker": "B",
+      "start_s": 804.588,
+      "end_s": 805.118,
+      "text": "Okay."
+    },
+    {
+      "speaker": "C",
+      "start_s": 805.118,
+      "end_s": 807.671,
+      "text": "Yes."
+    }
+  ],
+  "segments": [
+    {
+      "speaker": "A",
+      "start_s": 3.17,
+      "end_s": 24.718,
+      "text": "How does that work? The microphone's supposed to be to your right."
+    },
+    {
+      "speaker": "B",
+      "start_s": 25.812,
+      "end_s": 55.362,
+      "text": "Right, so, and then where's the other one? Oh, here. Okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 55.747,
+      "end_s": 55.924,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 55.988,
+      "end_s": 56.518,
+      "text": "Everybody ready?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 57.288,
+      "end_s": 57.674,
+      "text": "I think so."
+    },
+    {
+      "speaker": "B",
+      "start_s": 57.818,
+      "end_s": 60.772,
+      "text": "I think the first thing we do is introduce ourselves."
+    },
+    {
+      "speaker": "A",
+      "start_s": 61.591,
+      "end_s": 62.538,
+      "text": "Yeah, that's a good"
+    },
+    {
+      "speaker": "B",
+      "start_s": 62.586,
+      "end_s": 67.29,
+      "text": "plan. With name and what your function is. So maybe we start with you."
+    },
+    {
+      "speaker": "C",
+      "start_s": 67.466,
+      "end_s": 76.039,
+      "text": "Yeah, my name is Francina and I'm in user interface. My role is— the main responsibility is user interface."
+    },
+    {
+      "speaker": "C",
+      "start_s": 76.761,
+      "end_s": 80.759,
+      "text": "And my role is to design a television remote control."
+    },
+    {
+      "speaker": "D",
+      "start_s": 81.13,
+      "end_s": 81.406,
+      "text": "Mm-hmm."
+    },
+    {
+      "speaker": "B",
+      "start_s": 81.795,
+      "end_s": 81.99,
+      "text": "Okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 83.501,
+      "end_s": 87.008,
+      "text": "And I'm a marketing person. I want to figure out how to sell them."
+    },
+    {
+      "speaker": "D",
+      "start_s": 87.608,
+      "end_s": 87.835,
+      "text": "Mm-hmm."
+    },
+    {
+      "speaker": "B",
+      "start_s": 87.997,
+      "end_s": 88.532,
+      "text": "And your name is?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 88.873,
+      "end_s": 89.586,
+      "text": "My name is Eileen."
+    },
+    {
+      "speaker": "B",
+      "start_s": 90.364,
+      "end_s": 90.527,
+      "text": "Okay."
+    },
+    {
+      "speaker": "C",
+      "start_s": 91.386,
+      "end_s": 107.285,
+      "text": "Yeah, I'm Janhavi. I'm— my role is industrial designer, and my responsibilities are deal with technical functional designs and specifications of user interface and dealing with user interface design."
+    },
+    {
+      "speaker": "B",
+      "start_s": 107.887,
+      "end_s": 112.439,
+      "text": "Very good. And as you already know, I'm Betsy. I'm the project manager for today."
+    },
+    {
+      "speaker": "B",
+      "start_s": 113.19,
+      "end_s": 118.15,
+      "text": "So why don't we look at the presentation to see what we really are supposed to do?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 118.794,
+      "end_s": 119.019,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 122.45,
+      "end_s": 132.345,
+      "text": "Yes, opening, acquaintance, tool training. Well, the tools, I think we already— I guess the tool is really our— the computer, as far as I can see."
+    },
+    {
+      "speaker": "B",
+      "start_s": 133.225,
+      "end_s": 137.41,
+      "text": "We get— each of us will get instructions and we'll take it from there."
+    },
+    {
+      "speaker": "B",
+      "start_s": 138.068,
+      "end_s": 145.084,
+      "text": "Project plan, that falls under the same heading pretty much. I don't think we have any great discussion at this point."
+    },
+    {
+      "speaker": "B",
+      "start_s": 149.441,
+      "end_s": 156.645,
+      "text": "No. Here is what this thing should be. This thing we are going to design is a new remote control."
+    },
+    {
+      "speaker": "B",
+      "start_s": 157.679,
+      "end_s": 166.872,
+      "text": "Should be original, trendy, and of course user-friendly. So maybe you want to make some notes of that."
+    },
+    {
+      "speaker": "A",
+      "start_s": 179.45,
+      "end_s": 179.77,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 195.858,
+      "end_s": 201.421,
+      "text": "Okay. All right. Here is what the functional design is supposed to achieve."
+    },
+    {
+      "speaker": "B",
+      "start_s": 203.768,
+      "end_s": 210.923,
+      "text": "That is, it's going to be individual work, and then at the meeting we'll discuss what we have come up with."
+    },
+    {
+      "speaker": "B",
+      "start_s": 211.666,
+      "end_s": 222.123,
+      "text": "The same goes for the conceptual design. There will be individual work. And then discussion afterwards, detailed design. Same thing, basically."
+    },
+    {
+      "speaker": "A",
+      "start_s": 222.77,
+      "end_s": 234.149,
+      "text": "3 different types of design that we're going to be concerned with. Okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 236.086,
+      "end_s": 241.577,
+      "text": "Functional, conceptual, and detailed."
+    },
+    {
+      "speaker": "B",
+      "start_s": 243.99,
+      "end_s": 245.026,
+      "text": "I can't write with this thing."
+    },
+    {
+      "speaker": "A",
+      "start_s": 248.39,
+      "end_s": 252.604,
+      "text": "Maybe we should redesign it. Yes."
+    },
+    {
+      "speaker": "A",
+      "start_s": 252.83,
+      "end_s": 255.912,
+      "text": "After we finish the remote control, we'll get to that. Yeah, okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 256.299,
+      "end_s": 264.313,
+      "text": "All right. Then tool training, try out the whiteboard, participants can draw their favorite animal."
+    },
+    {
+      "speaker": "B",
+      "start_s": 264.764,
+      "end_s": 275.569,
+      "text": "Does anybody want to go and see how the whiteboard works? So that in case we have to in the next meeting present something on the whiteboard. You want to go, Eileen?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 276.249,
+      "end_s": 277.383,
+      "text": "Okay, I'll see what I can do."
+    },
+    {
+      "speaker": "B",
+      "start_s": 277.626,
+      "end_s": 279.877,
+      "text": "Whether you— without hanging yourself."
+    },
+    {
+      "speaker": "A",
+      "start_s": 280.136,
+      "end_s": 283.715,
+      "text": "See if I remember how to draw a kitty cat or a rabbit or something."
+    },
+    {
+      "speaker": "B",
+      "start_s": 288.16,
+      "end_s": 290.174,
+      "text": "And remember, you have to press so it works."
+    },
+    {
+      "speaker": "A",
+      "start_s": 290.255,
+      "end_s": 297.635,
+      "text": "So that it will record, okay. Traditional kitty cat."
+    },
+    {
+      "speaker": "B",
+      "start_s": 308.036,
+      "end_s": 309.716,
+      "text": "I have a fat cat."
+    },
+    {
+      "speaker": "A",
+      "start_s": 310.303,
+      "end_s": 317.102,
+      "text": "I have a very fat cat. And it likes to sit like that."
+    },
+    {
+      "speaker": "B",
+      "start_s": 317.705,
+      "end_s": 317.982,
+      "text": "Okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 318.21,
+      "end_s": 318.455,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 320.618,
+      "end_s": 327.459,
+      "text": "And your front scene, right? Would you like like just to see how it feels so that you have a little idea?"
+    },
+    {
+      "speaker": "A",
+      "start_s": 328.888,
+      "end_s": 330.172,
+      "text": "Am I supposed to wipe off that?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 330.252,
+      "end_s": 331.73,
+      "text": "No, no, no, that's okay. No,"
+    },
+    {
+      "speaker": "C",
+      "start_s": 331.954,
+      "end_s": 332.211,
+      "text": "okay."
+    },
+    {
+      "speaker": "A",
+      "start_s": 332.356,
+      "end_s": 332.452,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 333.705,
+      "end_s": 335.487,
+      "text": "I don't know. Get to that later."
+    },
+    {
+      "speaker": "A",
+      "start_s": 336.113,
+      "end_s": 336.37,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 337.558,
+      "end_s": 338.65,
+      "text": "What should I do?"
+    },
+    {
+      "speaker": "C",
+      "start_s": 347.93,
+      "end_s": 349.33,
+      "text": "I'm going to draw a snake."
+    },
+    {
+      "speaker": "B",
+      "start_s": 356.664,
+      "end_s": 356.68,
+      "text": "Oh,"
+    },
+    {
+      "speaker": "A",
+      "start_s": 357.63,
+      "end_s": 363.101,
+      "text": "okay. I hope the kitty cat is hungry because I don't like snakes."
+    },
+    {
+      "speaker": "B",
+      "start_s": 367.262,
+      "end_s": 371.928,
+      "text": "Here's a project finance, which of course we all have to think about when we design this thing."
+    },
+    {
+      "speaker": "B",
+      "start_s": 373.29,
+      "end_s": 381.026,
+      "text": "Um, selling price is supposed to be €25. Profit aim for the company is €50 million."
+    },
+    {
+      "speaker": "B",
+      "start_s": 382.78,
+      "end_s": 386.01,
+      "text": "The market range unlimited, meaning international."
+    },
+    {
+      "speaker": "A",
+      "start_s": 386.623,
+      "end_s": 386.946,
+      "text": "Okay."
+    },
+    {
+      "speaker": "B",
+      "start_s": 387.479,
+      "end_s": 392.431,
+      "text": "And the production cost should not exceed, hopefully should be less than €12.50."
+    },
+    {
+      "speaker": "A",
+      "start_s": 395.295,
+      "end_s": 398.538,
+      "text": "Okay, that should keep everybody on their toes and challenged."
+    },
+    {
+      "speaker": "B",
+      "start_s": 403.834,
+      "end_s": 412.719,
+      "text": "So these are all things, of course, to remember with the budget and when you design, materials, cost, etc."
+    },
+    {
+      "speaker": "B",
+      "start_s": 419.26,
+      "end_s": 427.391,
+      "text": "Now, the discussion, I guess, is, does any one of you have experience with remote control."
+    },
+    {
+      "speaker": "B",
+      "start_s": 428.395,
+      "end_s": 432.396,
+      "text": "Yeah, of course. I guess we use them, we use them, right, every day."
+    },
+    {
+      "speaker": "B",
+      "start_s": 434.128,
+      "end_s": 447.596,
+      "text": "And, um, now having used the remote control for years, does anybody already have like an idea, like things you didn't like with it, things you would like to change, things you would like to improve with this thing?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 448.015,
+      "end_s": 460.62,
+      "text": "Any first ideas? Would you like it to be smaller, Bigger, have more, have more buttons on it, or maybe clearly better marked buttons, you know, things like that."
+    },
+    {
+      "speaker": "C",
+      "start_s": 461.422,
+      "end_s": 465.11,
+      "text": "Yes, I, I feel that all the remotes should be very compact,"
+    },
+    {
+      "speaker": "B",
+      "start_s": 465.27,
+      "end_s": 465.462,
+      "text": "small,"
+    },
+    {
+      "speaker": "C",
+      "start_s": 465.687,
+      "end_s": 486.619,
+      "text": "right? Those which we get here nowadays, it's very long. And, um, and it should have multi-purpose, like the remote control which we use for TV, it should, it should be used for some other purpose also, like Controlling the temperature inside the house, or for air conditioners, or for heating system."
+    },
+    {
+      "speaker": "B",
+      "start_s": 486.668,
+      "end_s": 495.116,
+      "text": "So it should be a multifunctional gadget that would control all your household machines, basically."
+    },
+    {
+      "speaker": "C",
+      "start_s": 495.246,
+      "end_s": 495.684,
+      "text": "Exactly."
+    },
+    {
+      "speaker": "A",
+      "start_s": 497.63,
+      "end_s": 502.525,
+      "text": "€1,250 per—"
+    },
+    {
+      "speaker": "B",
+      "start_s": 502.815,
+      "end_s": 503.089,
+      "text": "Well,"
+    },
+    {
+      "speaker": "A",
+      "start_s": 503.604,
+      "end_s": 513.041,
+      "text": "who knows, if we get a really good designer, maybe we can do that. We certainly can try to— I agree with her that to market something successfully, it should do some more things."
+    },
+    {
+      "speaker": "B",
+      "start_s": 513.153,
+      "end_s": 517.866,
+      "text": "It should be something new. It should do something different than just what we have."
+    },
+    {
+      "speaker": "B",
+      "start_s": 518.122,
+      "end_s": 520.896,
+      "text": "Now, of course, the other thing to think there is maybe the design."
+    },
+    {
+      "speaker": "C",
+      "start_s": 521.104,
+      "end_s": 524.278,
+      "text": "Yeah, design should be— yeah, it should be different. All the— almost all the—"
+    },
+    {
+      "speaker": "B",
+      "start_s": 524.278,
+      "end_s": 533.095,
+      "text": "Like trendy, you know, like earlier we saw maybe it should be something trendy, you know. Maybe different colors or materials or, you know."
+    },
+    {
+      "speaker": "B",
+      "start_s": 534.169,
+      "end_s": 538.449,
+      "text": "So, yeah, shapes, right? You know, like kidney-shaped feels better in your hand or something."
+    },
+    {
+      "speaker": "A",
+      "start_s": 539.106,
+      "end_s": 539.829,
+      "text": "Friendly shape."
+    },
+    {
+      "speaker": "B",
+      "start_s": 540.005,
+      "end_s": 540.182,
+      "text": "Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 540.631,
+      "end_s": 551.163,
+      "text": "That would help. I think another thing that would help is if it beeps when you clap, because I think one of the big things that happens is people lose them. They can't find it."
+    },
+    {
+      "speaker": "B",
+      "start_s": 552.592,
+      "end_s": 565.26,
+      "text": "That is true. They put the newspaper or they put it behind a plant or, you know, whatever, and suddenly the phone rings and they want to turn the TV off and they say, where the hell is my remote control?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 565.452,
+      "end_s": 573.533,
+      "text": "Yeah, well, or yeah, or if it's really If it's really in a dark spot, that it gives out a sound or a signal. Yeah."
+    },
+    {
+      "speaker": "A",
+      "start_s": 573.629,
+      "end_s": 576.658,
+      "text": "So it should either beep or a light should blink."
+    },
+    {
+      "speaker": "B",
+      "start_s": 576.818,
+      "end_s": 581.384,
+      "text": "If lost, signal. Throw signal, you know."
+    },
+    {
+      "speaker": "D",
+      "start_s": 581.545,
+      "end_s": 585.294,
+      "text": "Yeah, maybe it should have a light so that we can just recognize where it is."
+    },
+    {
+      "speaker": "B",
+      "start_s": 585.742,
+      "end_s": 592.216,
+      "text": "Exactly. I mean, just that's why I'm saying, I'm just saying throw signal, meaning just whether it's a beep or whether a light or a flag."
+    },
+    {
+      "speaker": "A",
+      "start_s": 592.36,
+      "end_s": 605.68,
+      "text": "And do you think a good clue for That is that it would respond to a clap or respond to your voice or it would respond— what should you have to do to make it beep or blink?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 605.826,
+      "end_s": 625.355,
+      "text": "Okay, my idea is maybe that the minute it's really hidden, in other words, if it's like in a dark spot, meaning, you know, like a newspaper is on top, a sweater is on top, or it's behind a plant, at that moment it's like, what do you call it, the light sensors, you know."
+    },
+    {
+      "speaker": "A",
+      "start_s": 625.456,
+      "end_s": 626.246,
+      "text": "In that moment it has a sensor."
+    },
+    {
+      "speaker": "B",
+      "start_s": 627.892,
+      "end_s": 632.399,
+      "text": "It gets a certain darkness, it has a sensor and it gives out a signal."
+    },
+    {
+      "speaker": "B",
+      "start_s": 632.721,
+      "end_s": 637.164,
+      "text": "Whether that be a light signal or a beep, I mean, we can discuss that later, you know."
+    },
+    {
+      "speaker": "A",
+      "start_s": 639.094,
+      "end_s": 641.186,
+      "text": "So the light sensor would activate the signal?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 641.331,
+      "end_s": 650.197,
+      "text": "That's right. You know, it would be— right, you have to have some kind of sensor. And I think voice or clapping, that's not specific enough."
+    },
+    {
+      "speaker": "B",
+      "start_s": 651.18,
+      "end_s": 657.186,
+      "text": "I know there are the lamps and stuff, you know, you can clap on and off. But I think they only work to a certain degree."
+    },
+    {
+      "speaker": "A",
+      "start_s": 658.063,
+      "end_s": 661.845,
+      "text": "But it could be someplace really obvious and you still wouldn't be able to find it."
+    },
+    {
+      "speaker": "D",
+      "start_s": 664.3,
+      "end_s": 664.8,
+      "text": "What, with—"
+    },
+    {
+      "speaker": "A",
+      "start_s": 665.284,
+      "end_s": 667.703,
+      "text": "Well, because you're silly, because people are silly."
+    },
+    {
+      "speaker": "B",
+      "start_s": 667.784,
+      "end_s": 670.494,
+      "text": "Oh yeah, well, but then those people, we can't help everybody."
+    },
+    {
+      "speaker": "A",
+      "start_s": 670.543,
+      "end_s": 679.581,
+      "text": "Well, if it were like on top of your bookcase and you usually kept it on the coffee table, you know. Okay, we have to move along."
+    },
+    {
+      "speaker": "B",
+      "start_s": 679.696,
+      "end_s": 683.767,
+      "text": "Yeah, we have to move along, but I think we have some good Good points to start with here."
+    },
+    {
+      "speaker": "B",
+      "start_s": 685.913,
+      "end_s": 692,
+      "text": "Okay, the next meeting will be in 30 minutes. I think you all did you get notices on your computer for this?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 692.195,
+      "end_s": 702.578,
+      "text": "Okay, so we'll you got the notice. The working design, I guess that's the function ID. Who is this? The industrial designer?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 703.045,
+      "end_s": 703.384,
+      "text": "Yeah,"
+    },
+    {
+      "speaker": "B",
+      "start_s": 703.61,
+      "end_s": 703.996,
+      "text": "that's you."
+    },
+    {
+      "speaker": "D",
+      "start_s": 704.722,
+      "end_s": 706.726,
+      "text": "Yeah, it's functional. Yeah, exactly."
+    },
+    {
+      "speaker": "B",
+      "start_s": 706.941,
+      "end_s": 710.983,
+      "text": "Okay, so. We're looking for a working design when we come back."
+    },
+    {
+      "speaker": "D",
+      "start_s": 712.153,
+      "end_s": 715.632,
+      "text": "Working design, yeah. It's mainly technical functional design."
+    },
+    {
+      "speaker": "B",
+      "start_s": 715.776,
+      "end_s": 720.041,
+      "text": "And then the technical function— you're the technical function, so you're the working design."
+    },
+    {
+      "speaker": "B",
+      "start_s": 720.105,
+      "end_s": 733.715,
+      "text": "So you have a working design and then a functional design. And the marketing manager is coming up with some user requirement specification, like friendliness and what we just discussed in general."
+    },
+    {
+      "speaker": "B",
+      "start_s": 734.292,
+      "end_s": 741.004,
+      "text": "That would be your idea. And of course, price. That it, that it, that the price is a good price."
+    },
+    {
+      "speaker": "B",
+      "start_s": 741.759,
+      "end_s": 744.296,
+      "text": "I mean, the price is given, but that was—"
+    },
+    {
+      "speaker": "A",
+      "start_s": 745.355,
+      "end_s": 749.675,
+      "text": "We have to justify that price by having sufficient features to make it sell at that price."
+    },
+    {
+      "speaker": "B",
+      "start_s": 749.787,
+      "end_s": 756.065,
+      "text": "That's right. And, you know, you, you will get specific instructions for that."
+    },
+    {
+      "speaker": "B",
+      "start_s": 756.194,
+      "end_s": 770.342,
+      "text": "I think that's the end of the show. Yeah. So we have, well, we have 2, 3 minutes."
+    },
+    {
+      "speaker": "B",
+      "start_s": 771.499,
+      "end_s": 775.647,
+      "text": "Any questions at this point or suggestions?"
+    },
+    {
+      "speaker": "B",
+      "start_s": 777.828,
+      "end_s": 786.765,
+      "text": "I think basically you will get instructions to work with, and if you have any questions— I guess you can—"
+    },
+    {
+      "speaker": "A",
+      "start_s": 786.814,
+      "end_s": 792.417,
+      "text": "Okay, I think I have enough to think about till our next meeting. How about you people?"
+    },
+    {
+      "speaker": "D",
+      "start_s": 792.642,
+      "end_s": 794.681,
+      "text": "Yeah, I think, yeah."
+    },
+    {
+      "speaker": "B",
+      "start_s": 795.629,
+      "end_s": 796.319,
+      "text": "Okay. All"
+    },
+    {
+      "speaker": "A",
+      "start_s": 796.544,
+      "end_s": 796.977,
+      "text": "right, well,"
+    },
+    {
+      "speaker": "B",
+      "start_s": 798.117,
+      "end_s": 803.577,
+      "text": "then we see you in about 30 minutes and see what we can come up with."
+    },
+    {
+      "speaker": "A",
+      "start_s": 803.898,
+      "end_s": 804.588,
+      "text": "Okay, very good."
+    },
+    {
+      "speaker": "B",
+      "start_s": 804.925,
+      "end_s": 805.118,
+      "text": "Okay."
+    },
+    {
+      "speaker": "C",
+      "start_s": 805.487,
+      "end_s": 807.671,
+      "text": "Yes."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "_note": "Diarization letter -> display name, identified from roll call and self-introductions in each transcript. Where the recording never names a speaker we say so instead of inventing a name. Known diarization merges are listed in seed/SOURCES.md.",
+  "seattle-len-2025-03-13": {
+    "title": "Seattle City Council: Libraries, Education & Neighborhoods Committee",
+    "date": "2025-03-13",
+    "speakers": {
+      "B": "Chair Maritza Rivera",
+      "C": "Committee clerk",
+      "A": "Jennifer Chao (Dept. of Neighborhoods)",
+      "D": "Sokha Danh (Dept. of Neighborhoods)",
+      "E": "Councilmember Alexis Mercedes Rinck",
+      "H": "Councilmember Mark Solomon",
+      "F": "Wren Wheeler (public comment)",
+      "G": "Remote appointees"
+    }
+  },
+  "ami-es2002a": {
+    "title": "Remote control kickoff: Laura's team (AMI ES2002a)",
+    "date": "2005-01-10",
+    "speakers": { "B": "Laura (project manager)", "A": "Andrew (marketing)", "C": "David (industrial design)", "D": "Greg (user interface)" }
+  },
+  "ami-es2004a": {
+    "title": "Remote control kickoff: Sarah's team (AMI ES2004a)",
+    "date": "2005-01-17",
+    "speakers": { "A": "Sarah (project manager)", "B": "Team member, name not stated (B)", "C": "Team member, name not stated (C)", "D": "Team member, name not stated (D)" }
+  },
+  "ami-is1009a": {
+    "title": "Remote control kickoff: Betsy's team (AMI IS1009a)",
+    "date": "2005-02-07",
+    "speakers": { "B": "Betsy (project manager)", "A": "Eileen (marketing)", "C": "Francina (user interface)", "D": "Team member, name not stated (D)" }
+  }
+}
