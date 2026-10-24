@@ -1,0 +1,68 @@
+/* Top pending bar for in-app navigations (fixed, so it never shifts layout). */
+.bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  z-index: 1000;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-out);
+}
+
+.bar[data-active="true"] {
+  opacity: 1;
+  /* Fast navigations finish before the bar ever shows. */
+  transition-delay: 80ms;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.bar[data-active="true"] .fill {
+  animation: nav-creep 8s var(--ease-out) forwards;
+}
+
+/* Creeps quickly to ~30%, then slows towards 90% and waits for the route to commit. */
+@keyframes nav-creep {
+  0% { transform: scaleX(0); }
+  10% { transform: scaleX(0.3); }
+  40% { transform: scaleX(0.6); }
+  100% { transform: scaleX(0.9); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar,
+  .bar[data-active="true"] {
+    transition: none;
+  }
+  .bar[data-active="true"] .fill {
+    animation: none;
+    transform: scaleX(0.6);
+  }
+}
+
+.marker {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

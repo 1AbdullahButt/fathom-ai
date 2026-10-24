@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LinkPendingMarker } from "@/components/nav/NavProgress";
 import { Avatar } from "@/components/ui/Avatar";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -49,6 +50,7 @@ export function MeetingRow({ meeting, upload }: { meeting: Meeting; upload?: Row
     <>
       <span className={`${styles.tile} ${status === "error" ? styles.tileError : ""}`} aria-hidden="true">
         <Icon name={tileIcon({ ...meeting, status })} size={18} />
+        {ready ? <LinkPendingMarker href={`/m/${id}`} spinner className={styles.tilePending} /> : null}
       </span>
       <span className={styles.body}>
         <span className={`${styles.title} ${ready ? "" : styles.titleMuted}`}>{title}</span>

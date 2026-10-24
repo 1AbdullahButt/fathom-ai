@@ -1,8 +1,8 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { AskResponse } from "@/app/api/ask/route";
+import { useNavPush } from "@/components/nav/NavProgress";
 import { QuoteChip } from "@/components/meeting/QuoteChip";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
@@ -21,7 +21,9 @@ type State =
  * sentence carries the quotes it came from, or a plain "not found" when nothing said supports it.
  */
 export function AskBox() {
-  const router = useRouter();
+  const nav = useNavPush();
+  /** Segment whose chip was clicked; the chip is aria-busy while its meeting loads. */
+  const [openingId, setOpeningId] = useState<string | null>(null);
   const [question, setQuestion] = useState("");
   const [state, setState] = useState<State>({ kind: "idle" });
 
@@ -111,7 +113,7 @@ export function AskBox() {
                     if (!src) return null;
                     const color = src.speaker_index >= 0 ? `var(--spk-${(src.speaker_index % 8) + 1})` : "var(--ink-600)";
                     return (
-                      <li key={c.segment_id}>
+                      <li key={c.segment_id} aria-busy={openingId === c.segment_id || undefined}>
                         <span className={styles.meeting}>{src.meeting_title}</span>
                         <QuoteChip
                           segment={{
@@ -124,7 +126,10 @@ export function AskBox() {
                           }}
                           speaker={{ id: "", name: src.speaker }}
                           color={color}
-                          onSeek={(s) => router.push(`/m/${encodeURIComponent(src.meeting_id)}?t=${s}`)}
+                          onSeek={(s) => {
+                            setOpeningId(c.segment_id);
+                            nav.push(`/m/${encodeURIComponent(src.meeting_id)}?t=${s}`);
+                          }}
                         />
                       </li>
                     );

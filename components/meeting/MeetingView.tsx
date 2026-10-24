@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { MeetingBundle } from "@/lib/data";
 import type { ActionItem as ActionItemData, Highlight, Speaker } from "@/lib/types";
@@ -8,6 +7,7 @@ import { sendEdit } from "@/lib/edits";
 import { formatDuration, formatTimestamp, shownTotal } from "@/lib/time";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { usePlayback } from "@/lib/usePlayback";
+import { NavLink } from "@/components/nav/NavProgress";
 import { Avatar } from "@/components/ui/Avatar";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -351,10 +351,10 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
   return (
     <div className={styles.root} data-phone-tab={phoneTab}>
       <header className={styles.topBar}>
-        <Link href="/" className={styles.back} aria-label="Back to meetings">
+        <NavLink href="/" className={styles.back} aria-label="Back to meetings">
           <Icon name="arrow-left" size={17} />
           <span className={styles.backLabel}>Meetings</span>
-        </Link>
+        </NavLink>
         <span className={styles.divider} />
         <div className={styles.heading}>
           <h1 className={styles.title}>{meeting.title}</h1>
