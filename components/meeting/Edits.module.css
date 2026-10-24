@@ -1,0 +1,113 @@
+/* P2-3 inline edits: hover pencil, serif edit fields, Save / Cancel. */
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.row > :first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.editBtn {
+  opacity: 0;
+  transition: opacity var(--dur-1) var(--ease-out);
+}
+
+.editable:hover .editBtn,
+.editBtn:focus-visible {
+  opacity: 1;
+}
+
+/* No hover on touch screens: keep the pencil visible. */
+@media (hover: none) {
+  .editBtn {
+    opacity: 1;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font: 500 12px/1.3 var(--font-sans);
+  color: var(--text-2);
+}
+
+.text,
+.input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-card);
+  color: var(--human-text);
+}
+
+.text {
+  min-height: 64px;
+  resize: vertical;
+  font: var(--type-human);
+}
+
+.input {
+  height: 32px;
+  font: 400 14px/1.3 var(--font-sans);
+}
+
+.text:focus,
+.input:focus {
+  outline: none;
+  border-color: var(--line-focus);
+  box-shadow: var(--ring-focus);
+}
+
+.text[aria-invalid],
+.input[aria-invalid] {
+  border-color: var(--danger);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 420px) {
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.error {
+  flex: 1;
+  margin: 0;
+  font: 400 12.5px/1.4 var(--font-sans);
+  color: var(--danger-text);
+}
+
+.count {
+  flex: 1;
+  font: 400 12px/1 var(--font-mono);
+  color: var(--text-muted);
+}
+
+.count[data-over] {
+  color: var(--danger-text);
+}
