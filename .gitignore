@@ -13,6 +13,7 @@ next-env.d.ts
 playwright-report/
 test-results/
 seed/raw/
+/.claude/worktrees/
 
 .vercel
 .env*

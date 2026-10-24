@@ -35,3 +35,14 @@ Format: what the reference (Fathom) does / what we do / why.
   evidence-only `lib/ask.ts` is needed for the eval to pass.
 - **Meeting page sizes the transcript for 1h.** The 1-hour meeting has ~1,000+ segments; the
   transcript is windowed so playback sync stays smooth.
+
+## Product (from the design import)
+- **Templates:** Fathom offers many templates. We ship the three SPEC names (General / Sales call /
+  1:1 & Standup) and drop the design kit's extra ones. Why: fewer, tested templates.
+- **Record is stubbed.** Fathom joins calls with a bot. Our Record button opens a no-bot dialog
+  saying capture isn't available in this demo; upload is the working path. Why: brief allows a
+  stubbed capture layer; a fake recording bar would mislead.
+- **Upload limits shown up front** (max 60 min, 3 per hour) instead of the kit's "up to 4 hours".
+  Why: public demo cost guard.
+- **Long seed meeting is 56 min, not 60.** Seattle City Council LEN committee, 13 Mar 2025
+  (public record). Close enough to the ~1h target; not padded.

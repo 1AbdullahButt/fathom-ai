@@ -1,0 +1,29 @@
+:root{
+/* Paper — warm neutrals (surfaces, lines) */
+--paper-0:#FFFFFF;--paper-50:#FBFAF7;--paper-100:#F5F3EE;--paper-150:#EFECE5;--paper-200:#E7E3DA;--paper-300:#D6D1C5;
+/* Ink — warm text greys */
+--ink-400:#9C978B;--ink-500:#6F6A5E;--ink-600:#57534A;--ink-700:#3D3A33;--ink-800:#2B2924;--ink-900:#1C1A17;
+/* Tide — the single brand accent (calm deep teal) */
+--tide-50:#ECF4F2;--tide-100:#D5E8E4;--tide-200:#ABD1C9;--tide-500:#2E7A70;--tide-600:#246760;--tide-700:#1C524C;
+/* Pencil — human-authored / edited text */
+--pencil-50:#EEF1F9;--pencil-100:#DCE2F2;--pencil-500:#3D5A9E;--pencil-700:#2D4479;
+/* Amber — low confidence / needs review */
+--amber-50:#FBF3E1;--amber-100:#F4E2BA;--amber-500:#B3761C;--amber-700:#86560F;
+/* Rust — errors, destructive, recording */
+--rust-50:#FBEDE9;--rust-100:#F4D3CA;--rust-500:#B4462F;--rust-700:#8C3221;
+/* Night — media player surfaces */
+--night-950:#111314;--night-900:#17191B;--night-800:#212427;--night-700:#2D3135;--night-500:#5B6167;--night-300:#A9AFB4;--night-100:#E8EAEB;
+/* Speakers — 8 calm, distinguishable hues (fg on paper ≥ 4.5:1) */
+--spk-1:#2E7A70;--spk-2:#3D5A9E;--spk-3:#8E4F84;--spk-4:#9A6614;--spk-5:#567226;--spk-6:#B0442E;--spk-7:#3F7593;--spk-8:#76593F;
+
+/* Semantic aliases */
+--surface-app:var(--paper-50);--surface-card:var(--paper-0);--surface-sunken:var(--paper-100);--surface-hover:var(--paper-150);--surface-selected:var(--tide-50);
+--surface-player:var(--night-900);--surface-player-raised:var(--night-800);
+--line-1:var(--paper-200);--line-2:var(--paper-300);--line-focus:var(--tide-500);
+--text-1:var(--ink-900);--text-2:var(--ink-600);--text-muted:var(--ink-500);--text-disabled:var(--ink-400);--text-on-accent:#FFFFFF;--text-on-player:var(--night-100);--text-on-player-muted:var(--night-300);
+--accent:var(--tide-500);--accent-hover:var(--tide-600);--accent-press:var(--tide-700);--accent-soft:var(--tide-50);--accent-soft-2:var(--tide-100);
+--human-text:var(--pencil-700);--human-soft:var(--pencil-50);--human-mark:var(--pencil-500);
+--warn-text:var(--amber-700);--warn-soft:var(--amber-50);--warn-mark:var(--amber-500);
+--danger-text:var(--rust-700);--danger-soft:var(--rust-50);--danger:var(--rust-500);--record:var(--rust-500);
+--playhead:var(--tide-500);--quote-bg:var(--paper-100);
+}
