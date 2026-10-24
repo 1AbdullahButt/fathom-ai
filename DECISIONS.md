@@ -150,6 +150,29 @@ Format: what the reference (Fathom) does / what we do / why.
   because AssemblyAI reports no percentage.
 - **Memory mode stores uploaded bytes in process memory** behind `PUT/GET /api/uploads/[id]/file`
   (with Range support so the player can seek). Enough for e2e/CI; real files go to Supabase Storage.
+
+## Template switch (P1-1)
+- **Action items stay from the general extraction.** Reference: Fathom templates reshape the whole
+  note. We: switching template changes only the summary; the Action items tab always shows the
+  general run's items (a template call's own action items are discarded). Why: one stable task
+  list (and its human edits) per meeting, and no duplicate or contradictory items between templates.
+- **Template label is "1:1 / Standup"** (SPEC §2 item 4), not design/screens.md's "1:1 & Standup":
+  SPEC is the source of truth.
+- **Templates are flat point lists with an inline category prefix** ("Pain point: ...",
+  "Maria: ..."). Reference/design kit: section headers per category. We: keep the `Summary` shape
+  (points with evidence) unchanged and let the prompt prefix each point. Why: no schema change; the
+  evidence rules and tests stay identical across templates.
+- **Generation happens once per (meeting, template), ever.** `POST /api/meetings/[id]/summary`
+  returns a saved row if one exists (seeded JSON, precomputed, or generated earlier); there is no
+  "regenerate". Seeded meetings have Sales and 1:1 precomputed by `scripts/generate-summaries.ts
+  --template all`, so the demo switch costs nothing live; anything missing is generated on demand
+  and saved as an overlay row.
+- **Per-client limit of 10 generations/hour reuses `upload_log`** under the key `gen:<ip hash>`.
+  Why: durable across serverless instances without a new table/migration; upload counts use the bare
+  hash, so the two limits never mix. A double click is de-duplicated in-process.
+- **The client caches every summary it has seen for the page's lifetime**, and the Summary tab stays
+  mounted (hidden) while another tab is open, so switching back is instant (A4).
+
 - **`?t=` link autoplay.** Reference / design §5: the search jump "seeks and plays". We seek, place
   the line a quarter from the top, and call play() on load. Browsers block autoplay with sound
   without a prior gesture (fresh tab, shared link), so then the page stays paused at that moment
