@@ -70,3 +70,9 @@ Format: what the reference (Fathom) does / what we do / why.
   ActionItem data has no done state and PLAN.md does not ask for one, so the P0-2 restyle keeps
   the locked props and leaves the checkbox out. Human-edited text gets the serif/pencil styling
   but no editor-name chip, because SummaryPoint/ActionItem carry no editor name.
+
+## Where the AI got it wrong (kept for the walkthrough)
+- Seattle seed, action item "Confirm REACH partnership staff involvement": the model set owner
+  "Sokha Danh", high confidence, but the cited quote is Councilmember Solomon asking a question;
+  no one committed. Corrected by hand to owner null / low confidence and marked edited_by_human,
+  which is exactly the case the trust layer (quote shown inline) is meant to expose.

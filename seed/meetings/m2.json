@@ -69,6 +69,60 @@
     }
   ],
   "chapters": [],
-  "summaries": {},
-  "action_items": []
+  "summaries": {
+    "general": {
+      "meeting_id": "m2",
+      "template": "general",
+      "points": [
+        {
+          "text": "Ayesha said onboarding was confusing, noting the verification step required three attempts for two of her team members.",
+          "evidence": [
+            "m2-s2"
+          ]
+        },
+        {
+          "text": "Ayesha requested the ability to export reports to Excel, and Sara responded that she will send the export roadmap.",
+          "evidence": [
+            "m2-s3",
+            "m2-s4"
+          ]
+        },
+        {
+          "text": "Ayesha highlighted that the pricing page is unclear about what’s included, and Sara acknowledged the issue.",
+          "evidence": [
+            "m2-s5",
+            "m2-s6"
+          ]
+        }
+      ]
+    }
+  },
+  "action_items": [
+    {
+      "id": "m2-a1",
+      "meeting_id": "m2",
+      "task": "Send the export roadmap to Ayesha",
+      "owner": "Sara",
+      "due": null,
+      "due_phrase": null,
+      "confidence": "high",
+      "evidence": [
+        "m2-s4"
+      ],
+      "edited_by_human": false
+    },
+    {
+      "id": "m2-a2",
+      "meeting_id": "m2",
+      "task": "Review the pricing page to clarify what’s included",
+      "owner": null,
+      "due": null,
+      "due_phrase": null,
+      "confidence": "low",
+      "evidence": [
+        "m2-s5"
+      ],
+      "edited_by_human": false
+    }
+  ]
 }
