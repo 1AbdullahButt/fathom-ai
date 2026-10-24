@@ -2,8 +2,8 @@
 // For each seed/meetings/<id>.json missing the requested template: run lib/extract on the
 // transcript and write summaries.<template>. The general run also writes action_items (ids
 // "<meeting>-a<n>", edited_by_human false); other templates keep the general action items.
-// Meetings longer than one call's comfortable size are chunked (~10 min), extracted per chunk,
-// and merged here (concat + dedupe). P2-1 moves chunking into lib/chunk.ts.
+// Meetings over 15 minutes are map-reduced inside lib/extract (same path as uploads).
+// Human-edited action items (edited_by_human) are kept across a --force regeneration.
 // A failed meeting/template is reported and skipped; the rest still run (and are saved).
 // Usage: npx tsx scripts/generate-summaries.ts [--force] [--template general|sales|one_on_one|all] [--pause <s>] [meeting-id ...]
 //        (--template defaults to general; "one-on-one" and "1on1" also work; --pause waits
@@ -12,81 +12,36 @@ import "dotenv/config";
 import fs from "node:fs";
 import path from "node:path";
 import { extract } from "../lib/extract";
-import type { ExtractedActionItem } from "../lib/validate";
 import type { SeedMeetingFile } from "../lib/seed";
-import type { ActionItem, Segment, SummaryPoint, Template } from "../lib/types";
+import type { ActionItem, Template } from "../lib/types";
 import { isTemplate, TEMPLATES } from "../lib/templates";
 
 const DIR = path.resolve(__dirname, "..", "seed", "meetings");
-const CHUNK_S = 600;
-/** Above this, one call risks the Groq free-tier token-per-minute limit. */
-const SINGLE_CALL_MAX_S = 15 * 60;
-const MAX_POINTS = 12;
 
-function chunk(segments: Segment[]): Segment[][] {
-  const out: Segment[][] = [];
-  let cur: Segment[] = [];
-  let start = segments[0]?.start_s ?? 0;
-  for (const s of segments) {
-    if (cur.length && s.start_s - start >= CHUNK_S) {
-      out.push(cur);
-      cur = [];
-      start = s.start_s;
-    }
-    cur.push(s);
+/**
+ * Human-corrected action items survive a regeneration: each replaces the new item that cites
+ * any of the same segments (or is appended if none does).
+ */
+function keepHumanEdits(fresh: ActionItem[], previous: ActionItem[]): ActionItem[] {
+  const out = [...fresh];
+  for (const h of previous.filter((a) => a.edited_by_human)) {
+    const ev = new Set(h.evidence);
+    const i = out.findIndex((a) => !a.edited_by_human && a.evidence.some((id) => ev.has(id)));
+    if (i >= 0) out[i] = h;
+    else out.push(h);
   }
-  if (cur.length) out.push(cur);
-  return out;
-}
-
-const norm = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-
-function dedupePoints(points: SummaryPoint[]): SummaryPoint[] {
-  const seen = new Set<string>();
-  return points.filter((p) => {
-    const k = norm(p.text);
-    if (seen.has(k)) return false;
-    seen.add(k);
-    return true;
-  });
-}
-
-function dedupeItems(items: ExtractedActionItem[]): ExtractedActionItem[] {
-  const byKey = new Map<string, ExtractedActionItem>();
-  for (const a of items) {
-    const k = `${norm(a.task)}|${a.owner ?? ""}`;
-    const prev = byKey.get(k);
-    if (!prev) byKey.set(k, a);
-    else prev.evidence = [...new Set([...prev.evidence, ...a.evidence])];
-  }
-  return [...byKey.values()];
+  return out.map((a, i) => ({ ...a, id: `${a.meeting_id}-a${i + 1}` }));
 }
 
 async function generate(f: SeedMeetingFile, template: Template, pauseS = 0) {
   const { meeting, segments } = f;
-  const parts = meeting.duration_s > SINGLE_CALL_MAX_S ? chunk(segments) : [segments];
-  // About 3 points per 10-minute chunk, never more than MAX_POINTS in total.
-  const perChunk = Math.max(1, Math.min(3, Math.floor(MAX_POINTS / parts.length)));
-  const points: SummaryPoint[] = [];
-  const items: ExtractedActionItem[] = [];
-  let dropped = 0;
-  for (const [i, part] of parts.entries()) {
-    if (i > 0 && pauseS > 0) await new Promise((r) => setTimeout(r, pauseS * 1000));
-    const r = await extract(part, meeting.speakers, meeting.date, template, parts.length > 1 ? { maxPoints: perChunk } : {});
-    if (!r.ok) throw new Error(`${meeting.id} ${template} chunk ${i + 1}/${parts.length}: ${r.error}`);
-    points.push(...r.summary);
-    items.push(...r.actionItems);
-    dropped += r.dropped;
-    if (parts.length > 1) console.log(`  chunk ${i + 1}/${parts.length}: ${r.summary.length} points, ${r.actionItems.length} items`);
-  }
-  const summary = dedupePoints(points).slice(0, MAX_POINTS);
-  const actionItems: ActionItem[] = dedupeItems(items).map((a, i) => ({
-    id: `${meeting.id}-a${i + 1}`,
-    meeting_id: meeting.id,
-    ...a,
-    edited_by_human: false,
-  }));
-  return { summary, actionItems, dropped };
+  const r = await extract(segments, meeting.speakers, meeting.date, template, {
+    pauseMs: pauseS * 1000,
+    onProgress: (line) => console.log(`  ${line}`),
+  });
+  if (!r.ok) throw new Error(r.error);
+  const fresh: ActionItem[] = r.actionItems.map((a) => ({ id: "", meeting_id: meeting.id, ...a, edited_by_human: false }));
+  return { summary: r.summary, actionItems: keepHumanEdits(fresh, f.action_items ?? []), dropped: r.dropped };
 }
 
 function parseTemplates(args: string[]): Template[] {
