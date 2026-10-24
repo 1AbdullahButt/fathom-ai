@@ -106,7 +106,7 @@ export function ask(question: string, corpus: { meeting: Meeting; segments: Segm
 - [x] P1-1 Template switch (General / Sales call / 1:1 & Standup): `lib/templates.ts`; seeded meetings precomputed, uploads generated on demand and cached; switching back is instant.
 - [x] P1-2 Search across meetings: `lib/search.ts`, `/search` page + list search box; result opens `/m/[id]?t=<start_s>` and seeks.
 - [x] P1-3 Highlights: select transcript text -> "Highlight" or press H during playback (last 15 s); note; Highlights tab; `POST /api/highlights`.
-- [ ] P1-4 Clips: highlight or range -> `POST /api/clips` -> `/c/[id]` plays only that range with its transcript, signed out; copy link.
+- [x] P1-4 Clips: highlight or range -> `POST /api/clips` -> `/c/[id]` plays only that range with its transcript, signed out; copy link.
 
 ### P2 (deploy after)
 - [ ] P2-1 Map-reduce summary: `lib/chunk.ts` (~10 min chunks), summarise chunks then merge, evidence ids preserved; used for meetings > 15 min.
