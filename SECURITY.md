@@ -44,6 +44,21 @@ here; they need a follow-up pass.
 
 ## What was found and fixed
 
+`supabase/migrations/0004_summary_edits.sql` (P2-3 inline edits) keeps summaries write-once
+instead of granting an update on `points`: a human edit of a summary point is an insert-only row
+in `summary_edits` (meeting, template, point index, text ≤ 1000, the AI text it replaced,
+created_at). On read the newest row per point replaces only that point's text (and only while
+the point still has the replaced AI text); evidence is never stored or changed by an edit.
+Insert requires a ready meeting (`public.meeting_length(id)`: seeded ids are listed in
+`seed_meeting_length`, uploads must be `ready`) and `created_at` within 1 minute of now; no
+update or delete. Action-item edits use the 0002 column grants (task, owner, due, due_phrase,
+edited_by_human). The app path is `PATCH /api/meetings/[id]/edits`: plain text (control
+characters stripped), task/point 1..1000 chars, owner ≤ 200, due a real ISO date or null, the
+item/point must exist in that meeting, 60 edits per client per hour (`edit:` rows in
+`upload_log`). Anon probe (rolled back): seeded-meeting insert allowed; unknown meeting,
+back-dated row, 1001-char text, update and delete of `summary_edits`, and update of
+`summaries` all denied. Advisors: unchanged (only the intended `count_upload_log` WARN).
+
 `supabase/migrations/0003_chapters.sql` (P2-2) adds `chapters` under the same rules: public read,
 insert only while the meeting is `processing`, no update or delete (anon probe, rolled back:
 ready-meeting insert, update and delete denied; processing insert allowed).
@@ -108,6 +123,9 @@ No delete is possible for anon/authenticated on any table or on storage.
   and transcription fails on it, so it is not an XSS vector.
 - **Highlights/clips** inserts are still `with check (true)` / `(public)` from 0001; review with
   the highlights/clips work.
-- **P2-3 inline edits** will need a points-only summary update grant + policy.
+- **Edits are anonymous and last-writer-wins.** Anyone can edit any summary point or action
+  item of a ready meeting (public demo); direct PostgREST inserts skip the 60/h limit. Older
+  edits stay in `summary_edits` (history), nothing is deleted. Seed lengths in
+  `seed_meeting_length` are a copy of the seed JSON; a new seeded meeting needs a migration line.
 - Test rows created during verification (meeting "sec-1-check" and earlier QA uploads) remain in
   the public list, since nothing can delete them through the app's role.

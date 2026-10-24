@@ -298,3 +298,19 @@ Format: what the reference (Fathom) does / what we do / why.
   one card with an input, per-sentence quote chips (meeting title above each chip) that open
   `/m/<id>?t=<start_s>`, a plain "Not found in your meetings" state, Skeleton while loading.
   Limit: 20 questions per IP per hour (shared rate log, prefix `ask:`), 300 characters each.
+## P2-3 Inline edits
+- **Edits are a separate layer, not a rewrite of the summary.** Reference (Fathom) edits the
+  notes in place. We keep the AI summary write-once and store each point edit as an insert-only
+  `summary_edits` row; the newest per point wins on read. Why: the AI text and its evidence can't
+  be overwritten through the public key, and a point keeps its quotes untouched. An edit only
+  applies while the point still has the AI text it replaced, so a regenerated seed summary never
+  shows an old edit on a different point.
+- **"Edited" chip instead of the editor's name.** The design's HumanEdit chip shows a name; there
+  are no accounts, so it says "Edited" (tooltip "Edited by a person"). Edited text is Newsreader
+  in pencil blue; AI text stays sans. A legend under the template picker says which is which.
+- **No "Restore AI text" yet.** The design offers it; cut to keep P2-3 to edit + save. The AI
+  text is still stored (summary row and `ai_text`), so it can be added later (IDEAS.md).
+- **Action items: task, owner and due are editable; confidence and evidence are not.** Empty
+  owner/due save as null and render "not stated". Changing the date drops the spoken phrase
+  ("by Thursday"), which would no longer match it. Enter saves, Shift+Enter is a new line, Esc
+  cancels. 60 edits per client per hour.

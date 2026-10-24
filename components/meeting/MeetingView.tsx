@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { MeetingBundle } from "@/lib/data";
-import type { Highlight, Speaker } from "@/lib/types";
+import type { ActionItem as ActionItemData, Highlight, Speaker } from "@/lib/types";
+import { sendEdit } from "@/lib/edits";
 import { formatTimestamp } from "@/lib/time";
 import { useMediaQuery } from "@/lib/useMediaQuery";
 import { usePlayback } from "@/lib/usePlayback";
@@ -17,7 +18,7 @@ import { Tabs } from "@/components/ui/Tabs";
 import { Toast } from "@/components/ui/Toast";
 import { clipRange, segmentsInRange } from "@/lib/ranges";
 import { talkTime } from "@/lib/talktime";
-import { ActionItem } from "./ActionItem";
+import { ActionItem, type ActionItemEdit } from "./ActionItem";
 import { ChapterItem } from "./ChapterItem";
 import { ClipButton, ClipDialog } from "./ClipDialog";
 import { HighlightCard } from "./HighlightCard";
@@ -160,6 +161,19 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
     const t = window.setTimeout(() => setToast(null), toast.tone === "error" || toast.action ? 8000 : 4000);
     return () => window.clearTimeout(t);
   }, [toast]);
+
+  const [actionItems, setActionItems] = useState<ActionItemData[]>(() => bundle.action_items);
+  /** Inline action-item edit (P2-3). Resolves null when saved, else the error to show in the form. */
+  const saveActionItem = useCallback(
+    async (id: string, patch: ActionItemEdit): Promise<string | null> => {
+      const r = await sendEdit<{ action_item?: ActionItemData }>(meeting.id, { kind: "action_item", id, ...patch });
+      if (!r.ok) return r.error;
+      const saved = r.data.action_item;
+      if (saved) setActionItems((list) => list.map((a) => (a.id === id ? saved : a)));
+      return null;
+    },
+    [meeting.id],
+  );
 
   /** POST /api/highlights; the same range again replaces its note. Resolves the saved row or null. */
   const saveHighlight = useCallback(
@@ -484,6 +498,8 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
 
         <SidePanel
           bundle={bundle}
+          items={actionItems}
+          onSaveAction={meeting.status === "ready" ? saveActionItem : undefined}
           segments={segments}
           tab={tab}
           onTab={setTab}
@@ -719,6 +735,8 @@ const SpeakerList = memo(function SpeakerList({
 
 const SidePanel = memo(function SidePanel({
   bundle,
+  items,
+  onSaveAction,
   segments,
   tab,
   onTab,
@@ -732,6 +750,10 @@ const SidePanel = memo(function SidePanel({
   nowSecond,
 }: {
   bundle: MeetingBundle;
+  /** Action items, with any edits made on this page. */
+  items: ActionItemData[];
+  /** Inline action-item edit; undefined while the meeting isn't ready. */
+  onSaveAction?(id: string, patch: ActionItemEdit): Promise<string | null>;
   segments: MeetingBundle["segments"];
   tab: PanelTab;
   onTab(t: PanelTab): void;
@@ -750,7 +772,6 @@ const SidePanel = memo(function SidePanel({
 }) {
   const speakers = bundle.meeting.speakers;
   const summary = bundle.summaries.general;
-  const items = bundle.action_items;
   const generated = !!summary || items.length > 0;
   const labels: Record<PanelTab, string> = { summary: "Summary", actions: "Action items", highlights: "Highlights" };
 
@@ -768,7 +789,14 @@ const SidePanel = memo(function SidePanel({
         </p>
         {items.map((a) => (
           <div key={a.id} className={styles.actionRow}>
-            <ActionItem item={a} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
+            <ActionItem
+              item={a}
+              segments={segments}
+              speakers={speakers}
+              onSeek={onSeek}
+              activeId={activeId}
+              onSave={onSaveAction ? (patch) => onSaveAction(a.id, patch) : undefined}
+            />
           </div>
         ))}
       </>
@@ -845,7 +873,7 @@ const SidePanel = memo(function SidePanel({
       </div>
       <div role="tabpanel" aria-label={labels[tab]} className={styles.panelBody}>
         <div hidden={tab !== "summary"}>
-          <SummaryTab meetingId={bundle.meeting.id} initial={bundle.summaries} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
+          <SummaryTab meetingId={bundle.meeting.id} editable={bundle.meeting.status === "ready"} initial={bundle.summaries} segments={segments} speakers={speakers} onSeek={onSeek} activeId={activeId} />
         </div>
         {content}
       </div>
