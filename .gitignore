@@ -6,3 +6,10 @@ QA_REPORT.md
 .loop/stop_rounds
 .loop/pause
 qa/screens/
+.env*.local
+.vercel
+next-env.d.ts
+*.tsbuildinfo
+playwright-report/
+test-results/
+seed/raw/

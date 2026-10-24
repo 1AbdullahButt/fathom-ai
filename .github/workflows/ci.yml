@@ -1,4 +1,5 @@
 # Gate every pull request: type checks, lint, tests, production build (matches 8x's repo standard).
+# e2e runs as its own step after check, against the production build (DECISIONS.md).
 name: CI
 on:
   pull_request:
@@ -15,3 +16,5 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e -- --pass-with-no-tests

@@ -24,7 +24,7 @@ process.stdin.on("data", d => s += d).on("end", () => {
     return;
   }
   if (tool === "Bash") {
-    const cmd = norm(ti.command);
+    const cmd = norm(ti.command).replace(/[0-9]*>&[0-9]+|[0-9]*>\s*(\/dev\/null|nul)\b/gi, "");
     const touchesLocked = (testsLocked && /tests\//.test(cmd)) || /(SPEC\.md|tests-locked|\.claude\/)/.test(cmd);
     const writes = /(sed\s+-i|>\s*\S|\brm\b|\bmv\b|\bcp\b|\btee\b|truncate|git\s+(checkout|restore|rm))/.test(cmd);
     console.log(touchesLocked && writes ? "block" : "ok");
