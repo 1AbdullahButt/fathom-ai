@@ -1,0 +1,8 @@
+.env
+node_modules/
+.next/
+# loop state: never commit (QA_REPORT must not move HEAD)
+QA_REPORT.md
+.loop/stop_rounds
+.loop/pause
+qa/screens/

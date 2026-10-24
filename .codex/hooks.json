@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'D:\\Project\\Fathom AI\\.codex\\hooks\\protect-tests.sh'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash 'D:\\Project\\Fathom AI\\.codex\\hooks\\gate-stop.sh'"
+          }
+        ]
+      }
+    ]
+  }
+}
