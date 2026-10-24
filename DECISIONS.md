@@ -374,3 +374,10 @@ Format: what the reference (Fathom) does / what we do / why.
   1 s away (so Seattle reads 55:55 everywhere, not 55:54 in the player).
 - **Ask citation chips link to the cited line's exact start (`?t=1234.56`),** like search hits,
   so the meeting opens with that line active instead of the one before it.
+- **QA test data removed (human-approved, 2026-10-24).** Deleted in one transaction, after the
+  human reviewed a SELECT of exactly these rows: 6 test uploads (sec-1-check, real-upload-check,
+  clip60, key-rotation-check, qa-p2-upload, final-qa-upload) with 26 segments, 7 summaries, 3
+  action items (incl. a QA override of seed item ami-is1009a-a1), 11 highlights, 8 clips and 3
+  summary edits made by agents during QA. The seeded meetings are bundled JSON and were not touched.
+  Kept on purpose: upload_log (rate-limit hashes) and the 6 test audio files in Storage, which the
+  owner will remove from the dashboard.
