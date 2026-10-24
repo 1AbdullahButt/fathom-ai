@@ -107,3 +107,32 @@ Format: what the reference (Fathom) does / what we do / why.
 - **Template select and the AI/human legend are not in the Summary tab yet** (P1-1 / P2-3).
 - **Tab counts are hidden from the tab's accessible name** (`aria-hidden` on the count) so the tab
   is named exactly "Action items", as the locked e2e test expects.
+
+## Upload pipeline (P0-7)
+- **Uploaded speakers are named "Speaker A", "Speaker B", ...** AssemblyAI diarizes but does not
+  know names; the reference product names speakers from the calendar invite. We have no calendar,
+  and guessing names from the transcript would invent owners for action items.
+- **Transcripts are split into sentence segments of at most 20 s** by word timings (same rule as
+  scripts/split-seed.ts), so seeking and the following transcript land within a few seconds.
+- **Processing runs inside the process route via `after()` with `maxDuration = 300`**, polling
+  AssemblyAI in the function. A file whose transcription plus notes take longer than ~285 s fails
+  with "Transcription took longer than this demo allows" and Retry. Short demo uploads finish in
+  well under that (a 60 s clip transcribes in ~12 s). A webhook/queue design is in IDEAS.md.
+- **Cost guard is checked twice**: the browser reads the duration from an `<audio>`/`<video>`
+  element and rejects > 60 min before anything is uploaded; the server rejects a reported
+  duration > 60 min, size > 200 MB, non audio/video types, and > 3 uploads per hour per client,
+  and re-checks the real duration after transcription. Files whose duration the browser can't
+  read are let through to that server check.
+- **Rate limit key is a salted SHA-256 of the client IP** (first `x-forwarded-for` hop); the raw IP
+  is never stored. Salt: `UPLOAD_SALT` if set, else a hash derived from the server-only
+  `ASSEMBLYAI_API_KEY`, else a constant (memory mode only). To set a dedicated salt on Vercel:
+  `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))" | vercel env add UPLOAD_SALT production`
+  (changing it resets the hourly counters, nothing else).
+- **Processing and failed rows are not links** (design/screens.md §2); this replaces the P0-4 note.
+  A failed row shows the reason in plain words and Retry: a failed upload re-sends the file kept in
+  the tab; a failed processing step re-runs the pipeline (reusing a saved transcript, so a notes
+  failure doesn't pay for transcription twice). Progress is real for the upload (XHR progress);
+  after that the row shows the stage ("Transcribing", "Writing notes") with an indeterminate bar,
+  because AssemblyAI reports no percentage.
+- **Memory mode stores uploaded bytes in process memory** behind `PUT/GET /api/uploads/[id]/file`
+  (with Range support so the player can seek). Enough for e2e/CI; real files go to Supabase Storage.
