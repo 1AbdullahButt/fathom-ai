@@ -314,3 +314,7 @@ Format: what the reference (Fathom) does / what we do / why.
   owner/due save as null and render "not stated". Changing the date drops the spoken phrase
   ("by Thursday"), which would no longer match it. Enter saves, Shift+Enter is a new line, Esc
   cancels. 60 edits per client per hour.
+- **Key rotation done (human) and production redeployed without new code.** After the rotation,
+  production was rebuilt with `vercel redeploy` of the last verified deployment (main 6725d46)
+  rather than deploying main, so P2 code still waits for P2 QA. An unexplained CLI production
+  deployment (no git metadata) had appeared just before; the redeploy replaced it on the alias.
