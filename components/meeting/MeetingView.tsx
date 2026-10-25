@@ -542,8 +542,13 @@ export function MeetingView({ bundle, initialTime = 0 }: MeetingViewProps) {
           range={clipDialog}
           onClose={() => setClipDialog(null)}
           onCreate={async (title) => {
-            const ok = await makeClip(clipDialog.start_s, clipDialog.end_s, title);
-            if (ok) setClipDialog(null);
+            const range = clipDialog;
+            const ok = await makeClip(range.start_s, range.end_s, title);
+            if (!ok) return;
+            setClipDialog(null);
+            // A clip made from "Clip from m:ss" has no highlight yet; save one for the same
+            // range so it shows in the Highlights tab straight away.
+            await saveHighlight(range.start_s, range.end_s, title);
           }}
         />
       ) : null}
